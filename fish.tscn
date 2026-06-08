@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://do8d6ro7xpye0"]
+
+[ext_resource type="Script" uid="uid://dmv10nfby3yhw" path="res://fish.gd" id="1_xu20i"]
+
+[node name="Fish" type="Node2D" unique_id=676772702]
+script = ExtResource("1_xu20i")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1971264500]
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0.96873194, 0.6972593, 0.92727554, 1)
