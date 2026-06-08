@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://ce1ni0iam7ffh"]
 
 [ext_resource type="PackedScene" uid="uid://do8d6ro7xpye0" path="res://fish.tscn" id="1_h80o2"]
+[ext_resource type="Script" uid="uid://s453nh2amw80" path="res://polygon_2d.gd" id="1_hkvct"]
+[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="3_dgwcg"]
+[ext_resource type="Script" uid="uid://beq7d2f4hlba1" path="res://sprite_2d.gd" id="4_cqgd6"]
 
 [node name="Node2D" type="Node2D" unique_id=1151149152]
 
@@ -9,4 +12,13 @@ offset_right = 1150.0
 offset_bottom = 647.0
 color = Color(0.10934069, 0.71981853, 0.7733629, 1)
 
-[node name="Fish" parent="." unique_id=676772702 instance=ExtResource("1_h80o2")]
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=1672481246]
+script = ExtResource("1_hkvct")
+
+[node name="Fish" parent="Polygon2D" unique_id=676772702 instance=ExtResource("1_h80o2")]
+modulate = Color(1, 1, 1, 0.98039216)
+z_index = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="Polygon2D/Fish" unique_id=468246105]
+texture = ExtResource("3_dgwcg")
+script = ExtResource("4_cqgd6")
