@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://01ail3mknlwo"]
+
+[ext_resource type="Script" uid="uid://s453nh2amw80" path="res://polygon_2d.gd" id="1_aqvet"]
+[ext_resource type="Texture2D" uid="uid://8k2dq7iq5c4k" path="res://sapsucker.png" id="2_v40us"]
+[ext_resource type="Script" uid="uid://dmv10nfby3yhw" path="res://fish.gd" id="3_3rth8"]
+
+[node name="Swimming" type="Node2D" unique_id=1151149152]
+
+[node name="Bowl" type="Polygon2D" parent="." unique_id=1672481246]
+script = ExtResource("1_aqvet")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Bowl" unique_id=1542333559]
+
+[node name="Fish" type="Sprite2D" parent="." unique_id=787007125]
+texture = ExtResource("2_v40us")
+script = ExtResource("3_3rth8")

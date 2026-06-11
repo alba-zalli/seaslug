@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://crev2inf1u6xe"]
+
+[node name="MainMenu" type="Node2D" unique_id=1530463089]
+
+[node name="Label" type="Label" parent="." unique_id=752815357]
+offset_right = 1920.0
+offset_bottom = 500.0
+text = "Sea Slug Microaquarium"
+horizontal_alignment = 1
+vertical_alignment = 1

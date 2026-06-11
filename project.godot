@@ -11,9 +11,16 @@ config_version=5
 [application]
 
 config/name="New Game Project"
-run/main_scene="uid://ce1ni0iam7ffh"
+run/main_scene="uid://01ail3mknlwo"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/size/mode=4
+window/stretch/mode="canvas_items"
 
 [physics]
 
@@ -24,3 +31,4 @@ config/icon="res://icon.svg"
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0.57982564, 0.7223943, 0.9506306, 1)

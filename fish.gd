@@ -17,7 +17,7 @@ var wiggle_amount = 0.15
 var c = [] 
 
 func _ready():
-	var ellipse = get_node("../Bowl")  # adjust the name to match your tank's exact node name
+	var ellipse = get_node("../Bowl")
 	radius_x = ellipse.radius_x * edge - ball_size / 2
 	radius_y = ellipse.radius_y * edge - ball_size / 2
 	ellipse_center = get_viewport_rect().size / 2
