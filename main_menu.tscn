@@ -1,10 +1,43 @@
 [gd_scene format=3 uid="uid://crev2inf1u6xe"]
 
+[sub_resource type="Theme" id="Theme_rhts7"]
+
 [node name="MainMenu" type="Node2D" unique_id=1530463089]
 
-[node name="Label" type="Label" parent="." unique_id=752815357]
+[node name="Title" type="Label" parent="." unique_id=752815357]
 offset_right = 1920.0
 offset_bottom = 500.0
+theme_override_font_sizes/font_size = 150
 text = "Sea Slug Microaquarium"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=2071457234]
+offset_top = 500.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+theme = SubResource("Theme_rhts7")
+
+[node name="MainButtons" type="VBoxContainer" parent="CenterContainer" unique_id=928664067]
+layout_mode = 2
+theme_override_constants/separation = 27
+
+[node name="Button" type="Button" parent="CenterContainer/MainButtons" unique_id=2083941540]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Play"
+
+[node name="Button2" type="Button" parent="CenterContainer/MainButtons" unique_id=1925321198]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Settings"
+
+[node name="Button3" type="Button" parent="CenterContainer/MainButtons" unique_id=1535633199]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Credits"
+
+[node name="Button4" type="Button" parent="CenterContainer/MainButtons" unique_id=2110066894]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Quit"

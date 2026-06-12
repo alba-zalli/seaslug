@@ -22,6 +22,10 @@ window/size/viewport_height=1080
 window/size/mode=4
 window/stretch/mode="canvas_items"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/auto_polygon2d_triangulation/plugin.cfg")
+
 [physics]
 
 3d/physics_engine="Jolt Physics"
