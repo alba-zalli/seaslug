@@ -16,6 +16,8 @@ var wiggle_speed = 8.0
 var wiggle_amount = 0.15
 var c = [] 
 
+@onready var swim_animation = $AnimationPlayer
+
 func _ready():
 	var ellipse = get_node("../Bowl")
 	radius_x = ellipse.radius_x * edge - ball_size / 2
@@ -24,6 +26,7 @@ func _ready():
 	scale = Vector2(0.02, 0.02)
 	for i in 6:
 		c.append(randf_range(0.1, 0.8))
+	swim_animation.play("swim_animation")
 
 func _process(delta):
 	time += delta

@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://crev2inf1u6xe"]
 
+[ext_resource type="Script" uid="uid://uusxfhw2epny" path="res://button.gd" id="1_06t4h"]
+
 [sub_resource type="Theme" id="Theme_rhts7"]
 
 [node name="MainMenu" type="Node2D" unique_id=1530463089]
@@ -26,6 +28,7 @@ theme_override_constants/separation = 27
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "Play"
+script = ExtResource("1_06t4h")
 
 [node name="Button2" type="Button" parent="CenterContainer/MainButtons" unique_id=1925321198]
 layout_mode = 2
@@ -41,3 +44,5 @@ text = "Credits"
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "Quit"
+
+[connection signal="pressed" from="CenterContainer/MainButtons/Button" to="CenterContainer/MainButtons/Button" method="_on_pressed"]
