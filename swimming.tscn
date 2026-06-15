@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://01ail3mknlwo"]
 
 [ext_resource type="Script" uid="uid://s453nh2amw80" path="res://polygon_2d.gd" id="1_aqvet"]
+[ext_resource type="Script" uid="uid://dqb7xp775y7bg" path="res://quit.gd" id="2_3rth8"]
 [ext_resource type="Texture2D" uid="uid://8k2dq7iq5c4k" path="res://sapsucker.png" id="2_v40us"]
 [ext_resource type="Script" uid="uid://dmv10nfby3yhw" path="res://fish.gd" id="3_3rth8"]
+[ext_resource type="Script" uid="uid://uusxfhw2epny" path="res://button.gd" id="4_v40us"]
 
 [sub_resource type="Animation" id="Animation_aqvet"]
 length = 0.001
@@ -355,3 +357,27 @@ rest = Transform2D(1, 0, 0, 1, 3, 1430)
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Fish" unique_id=1542333559]
 root_node = NodePath("../../Bowl")
 libraries/ = SubResource("AnimationLibrary_85bie")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=2038805613]
+offset_right = 71.0
+offset_bottom = 31.0
+size_flags_stretch_ratio = 0.0
+
+[node name="Quit" type="Button" parent="HBoxContainer" unique_id=1660233466]
+layout_mode = 2
+text = "X"
+script = ExtResource("2_3rth8")
+
+[node name="Control" type="Control" parent="HBoxContainer" unique_id=1835694574]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Back" type="Button" parent="HBoxContainer" unique_id=391075290]
+layout_direction = 2
+layout_mode = 2
+text = "Back"
+icon_alignment = 1
+script = ExtResource("4_v40us")
+
+[connection signal="button_down" from="HBoxContainer/Quit" to="HBoxContainer/Quit" method="_on_button_down"]
+[connection signal="button_down" from="HBoxContainer/Back" to="HBoxContainer/Back" method="_on_button_down"]

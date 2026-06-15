@@ -1,10 +1,17 @@
 [gd_scene format=3 uid="uid://crev2inf1u6xe"]
 
 [ext_resource type="Script" uid="uid://uusxfhw2epny" path="res://button.gd" id="1_06t4h"]
+[ext_resource type="Script" uid="uid://dqb7xp775y7bg" path="res://quit.gd" id="1_7vrkn"]
 
 [sub_resource type="Theme" id="Theme_rhts7"]
 
 [node name="MainMenu" type="Node2D" unique_id=1530463089]
+
+[node name="Button" type="Button" parent="." unique_id=761972361]
+offset_right = 18.0
+offset_bottom = 31.0
+text = "X"
+script = ExtResource("1_7vrkn")
 
 [node name="Title" type="Label" parent="." unique_id=752815357]
 offset_right = 1920.0
@@ -40,9 +47,12 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "Credits"
 
-[node name="Button4" type="Button" parent="CenterContainer/MainButtons" unique_id=2110066894]
+[node name="Quit" type="Button" parent="CenterContainer/MainButtons" unique_id=2110066894]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "Quit"
+script = ExtResource("1_7vrkn")
 
+[connection signal="button_down" from="Button" to="Button" method="_on_button_down"]
 [connection signal="pressed" from="CenterContainer/MainButtons/Button" to="CenterContainer/MainButtons/Button" method="_on_pressed"]
+[connection signal="button_down" from="CenterContainer/MainButtons/Quit" to="Button" method="_on_quit_button_down"]

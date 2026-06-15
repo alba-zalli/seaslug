@@ -1,7 +1,5 @@
 extends Button
 
-#handles switching scenes?
-#could probably put this all into one file wiht quit idk whats happening lowk
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -13,9 +11,8 @@ func _process(delta: float) -> void:
 	pass
 
 
-func _on_pressed() -> void:
-	get_tree().change_scene_to_file("res://swimming.tscn")
-
-
 func _on_button_down() -> void:
-	get_tree().change_scene_to_file("res://main_menu.tscn")
+	get_tree().quit()
+
+func _on_quit_button_down() -> void:
+	get_tree().quit()
