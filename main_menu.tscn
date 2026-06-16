@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://uusxfhw2epny" path="res://button.gd" id="1_06t4h"]
 [ext_resource type="Script" uid="uid://dqb7xp775y7bg" path="res://quit.gd" id="1_7vrkn"]
+[ext_resource type="Script" uid="uid://egrovh1ytx4n" path="res://settings.gd" id="3_fu7sn"]
 
 [sub_resource type="Theme" id="Theme_rhts7"]
 
@@ -31,18 +32,19 @@ theme = SubResource("Theme_rhts7")
 layout_mode = 2
 theme_override_constants/separation = 27
 
-[node name="Button" type="Button" parent="CenterContainer/MainButtons" unique_id=2083941540]
+[node name="Play" type="Button" parent="CenterContainer/MainButtons" unique_id=2083941540]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "Play"
 script = ExtResource("1_06t4h")
 
-[node name="Button2" type="Button" parent="CenterContainer/MainButtons" unique_id=1925321198]
+[node name="Settings" type="Button" parent="CenterContainer/MainButtons" unique_id=1925321198]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "Settings"
+script = ExtResource("3_fu7sn")
 
-[node name="Button3" type="Button" parent="CenterContainer/MainButtons" unique_id=1535633199]
+[node name="Credits" type="Button" parent="CenterContainer/MainButtons" unique_id=1535633199]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "Credits"
@@ -54,5 +56,7 @@ text = "Quit"
 script = ExtResource("1_7vrkn")
 
 [connection signal="button_down" from="Button" to="Button" method="_on_button_down"]
-[connection signal="pressed" from="CenterContainer/MainButtons/Button" to="CenterContainer/MainButtons/Button" method="_on_pressed"]
+[connection signal="pressed" from="CenterContainer/MainButtons/Play" to="CenterContainer/MainButtons/Play" method="_on_pressed"]
+[connection signal="pressed" from="CenterContainer/MainButtons/Settings" to="Button" method="_on_settings_pressed"]
+[connection signal="button_down" from="CenterContainer/MainButtons/Credits" to="Button" method="_on_credits_button_down"]
 [connection signal="button_down" from="CenterContainer/MainButtons/Quit" to="Button" method="_on_quit_button_down"]

@@ -1,9 +1,0 @@
-[gd_scene format=3 uid="uid://do8d6ro7xpye0"]
-
-[ext_resource type="Script" uid="uid://dmv10nfby3yhw" path="res://fish.gd" id="1_xu20i"]
-
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_xu20i"]
-
-[node name="Fish" type="Node2D" unique_id=676772702]
-material = SubResource("CanvasItemMaterial_xu20i")
-script = ExtResource("1_xu20i")

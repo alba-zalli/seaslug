@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bvyujljyfjq5h"]
+
+[node name="Node2D" type="Node2D" unique_id=1747660189]
+
+[node name="Label" type="Label" parent="." unique_id=1587862441]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Settings"

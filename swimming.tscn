@@ -167,10 +167,10 @@ tracks/0/path = NodePath("../Fish/Skeleton2D/head/body/back:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.7, 3.0333333),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 1, 2, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(-27, 1165), Vector2(-27, 1165), Vector2(27, 916)]
+"values": [Vector2(-27, 1165), Vector2(-244, 1252.0005), Vector2(160.00002, 1155), Vector2(-381.42093, 1214.1177)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -179,10 +179,10 @@ tracks/1/path = NodePath("../Fish/Skeleton2D/head/body/right wing:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 1, 1.05, 3.0333333),
+"times": PackedFloat32Array(0, 1, 2, 4),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(1217, -268), Vector2(1141, -571), Vector2(1390, -343), Vector2(1130, -289)]
+"values": [Vector2(1217, -268), Vector2(1217, -104.999756), Vector2(1178.6167, -601.7297), Vector2(980.57904, -425.8828)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -191,10 +191,10 @@ tracks/2/path = NodePath("../Fish/Skeleton2D/head/body/left wing:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 1, 1.05, 3.0333333),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(1, 2, 3.9333334),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(-1449, -344), Vector2(-1406, -691), Vector2(-1634, -474), Vector2(-1255, -474)]
+"values": [Vector2(-1351.0001, -592.99976), Vector2(-1652.0001, -395.0001), Vector2(-1578.0001, -358.00006)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -203,10 +203,10 @@ tracks/3/path = NodePath("../Fish/Skeleton2D/head/body:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 1.05, 3.0333333),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 1, 2, 4.0333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(60, 1311), Vector2(136, 1430), Vector2(16, 1040)]
+"values": [Vector2(60, 1311), Vector2(391.24323, 1270.8269), Vector2(70, 1360), Vector2(60, 1311)]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -215,10 +215,10 @@ tracks/4/path = NodePath("../Fish/Skeleton2D/head:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 1.05, 3.0333333),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 1, 2, 3.9333334),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(-2, -1273), Vector2(-2, -1273), Vector2(-67, -1056)]
+"values": [Vector2(-2, -1273), Vector2(-2, -1273), Vector2(-2, -1273), Vector2(-219.00003, -1253)]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
@@ -227,10 +227,10 @@ tracks/5/path = NodePath("../Fish/Skeleton2D/head/body/back:rotation")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0, 1.05, 3.0333333),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 1, 2, 3.9666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [0.0, 0.0, 0.0]
+"values": [0.0, 0.0, 0.0, 0.4956735]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
@@ -239,10 +239,10 @@ tracks/6/path = NodePath("../Fish/Skeleton2D/head/body/right wing:rotation")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(0, 1, 1.05, 3.0333333),
+"times": PackedFloat32Array(0, 1, 2, 3.9666667),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [0.0, 0.0, 0.0, 0.0]
+"values": [0.0, 0.0, 0.0, -0.16580628]
 }
 tracks/7/type = "value"
 tracks/7/imported = false
@@ -251,7 +251,7 @@ tracks/7/path = NodePath("../Fish/Skeleton2D/head/body/left wing:rotation")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(0, 1, 1.05, 3.0333333),
+"times": PackedFloat32Array(0, 1, 2, 3.9666667),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [0.0, 0.0, 0.0, 0.0]
@@ -263,10 +263,10 @@ tracks/8/path = NodePath("../Fish/Skeleton2D/head/body:rotation")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
-"times": PackedFloat32Array(0, 1.05, 3.0333333),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 1, 2, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [0.0, 0.0, 0.0]
+"values": [0.0, -0.34906584, 0.0, 0.3298672]
 }
 tracks/9/type = "value"
 tracks/9/imported = false
@@ -275,10 +275,10 @@ tracks/9/path = NodePath("../Fish/Skeleton2D/head:rotation")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
-"times": PackedFloat32Array(0, 1.05, 3.0333333),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 1, 2, 3.9333334),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [0.0, 0.0, 0.0]
+"values": [0.0, 0.34906584, 0.0, -0.3298672]
 }
 tracks/10/type = "value"
 tracks/10/imported = false
@@ -287,10 +287,10 @@ tracks/10/path = NodePath("../Fish/Skeleton2D/head/body/back/tail:position")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
-"times": PackedFloat32Array(0, 1, 1.05, 3.0333333),
+"times": PackedFloat32Array(0, 1, 2, 3.9666667),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(-79, 1407), Vector2(-79, 1407), Vector2(-79, 1407), Vector2(-187, 1342)]
+"values": [Vector2(-79, 1407), Vector2(-46, 1440), Vector2(59.000015, 1555), Vector2(-286.00003, 1486)]
 }
 tracks/11/type = "value"
 tracks/11/imported = false
@@ -299,10 +299,10 @@ tracks/11/path = NodePath("../Fish/Skeleton2D/head/body/back/tail:rotation")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
-"times": PackedFloat32Array(0, 1, 1.05, 3.0333333),
+"times": PackedFloat32Array(0, 1, 2, 3.9666667),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [0.0, 0.0, 0.0, 0.16580628]
+"values": [0.0, 0.0, 0.0, 0.4956735]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_85bie"]
@@ -318,7 +318,7 @@ _data = {
 script = ExtResource("1_aqvet")
 
 [node name="Fish" type="Polygon2D" parent="." unique_id=1484092927]
-position = Vector2(226, -157)
+position = Vector2(216, -255)
 texture = ExtResource("2_v40us")
 skeleton = NodePath("Skeleton2D")
 polygon = PackedVector2Array(2330.1, 0, 2125.5, 0, 2070.5, 45, 2066.8, 45, 2022.8, 134, 2018.9, 134, 1996.9, 359, 1993.9, 359, 2014, 545, 2014, 545.8, 1955.8, 629, 1953.5, 629, 1913.5, 719, 1910.6, 719, 1868.7, 955, 1864.8, 955, 1880, 1084, 1880, 1090.1, 1943, 1233.1, 1943, 1238.7, 1998.8, 1272.1, 2074, 1355.8, 2074, 1359.9, 2162.8, 1394.2, 2162, 1457.9, 2162, 1461.4, 2145, 1513.1, 2126.6, 1528, 2118.6, 1528, 2119.6, 1555.7, 2064.1, 1566.3, 1990.8, 1554, 1989.1, 1554, 1766.1, 1458, 1764.1, 1458, 1674, 1393.8, 1674, 1391, 1588, 1359.9, 1588, 1356.8, 1283, 1331.7, 1283, 1328.7, 1097.6, 1351, 1090.2, 1351, 996.1, 1409, 992.8, 1409, 851.8, 1555, 848, 1555, 798, 1692, 794.9, 1692, 779, 1864.5, 779, 1898.4, 818, 2031.4, 818, 2035.5, 900, 2138.4, 900, 2142.2, 1038, 2210.2, 1038, 2212.4, 1078.5, 2225, 1101.4, 2225, 1179.9106, 2229.641, 1259.2, 2264, 1261.3, 2264, 1334.3, 2307, 1383.3, 2365.4, 1394.7, 2409.4, 1255.4, 2633, 1253, 2633, 1213, 2743, 1210.2, 2743, 1196, 2850.3, 1196, 2891.8, 1220, 3042.9, 1220, 3047.5, 1266, 3134.4, 1266, 3137.8, 1333, 3213.7, 1333, 3216.4, 1548, 3356, 1548.7, 3356, 1629.7, 3443.8, 1683.7, 3609.9, 1667, 3892.7, 1667, 3902.1, 1645.5, 3936, 1637.8, 3936, 1651, 4001, 1651, 4006.1, 1695, 4070, 1695, 4073.6, 1785, 4150.6, 1785, 4154.2, 2019.4, 4232, 2021.6, 4232, 2106, 4277, 2099, 4327.3, 2099, 4335.2, 2163.1, 4426, 2213.3, 4537.3, 2267, 4795, 2267, 4800, 2343, 4916, 2343, 4919.5, 2423, 4970.4, 2423, 4975.2, 2525.6, 4984, 2533.4, 4984, 2613.3, 4944, 2617.1, 4944, 2715.2, 4846, 2717.7, 4846, 2782.7, 4738, 2785.2, 4738, 2811.2, 4659, 2813.7, 4659, 2846.7, 4418, 2852.6, 4418, 2835.5, 4363.2, 2858, 4318.4, 2927.9, 4247.2, 3085.7, 4193, 3089.9, 4193, 3134.9, 4164, 3138.7, 4164, 3201.7, 4088, 3204.8, 4088, 3236.8, 4008, 3240.4, 4008, 3250, 3858.3, 3250, 3850.4, 3159.5, 3691, 3146, 3639.2, 3155.5, 3615.4, 3172, 3612, 3178.9, 3612, 3213.7, 3566.5, 3236.6, 3560.6, 3330, 3576.4, 3330, 3579.8, 3439.8, 3571, 3445, 3571, 3496, 3537, 3499.4, 3537, 3563.3, 3440, 3565.7, 3440, 3636.8, 3266, 3639.8, 3266, 3657, 3135.7, 3657, 3120.9, 3634, 3021.9, 3634, 3017.5, 3580.4, 2918.4, 3574, 2857, 3574, 2850.8, 3488.1, 2662.9, 3490, 2583.1, 3490, 2580.4, 3547, 2474, 3552.8, 2474, 3550.3, 2441.4, 3624.2, 2380.1, 3686.9, 2349.7, 3864.5, 2313.3, 3940.7, 2318, 3967, 2318, 4053.9, 2282, 4058.3, 2282, 4145.3, 2189, 4148, 2189, 4216, 2060, 4219.1, 2060, 4233.1, 1994, 4237.4, 1994, 4217, 1839.4, 4217, 1833.1, 4172, 1720, 4172, 1715.1, 4021, 1597, 4021, 1594.2, 3949, 1566.1, 3949, 1562.2, 3877.1, 1561, 3869.1, 1561, 3697, 1442.7, 3697, 1440.1, 3512, 1369.1, 3512, 1366.5, 3395.8, 1348, 3299.2, 1348, 3119.9, 1378, 3117.3, 1378, 3027.3, 1357.8, 3070.2, 1315, 3072.6, 1315, 3166.6, 1164, 3169, 1164, 3201, 1075, 3203.6, 1075, 3218.6, 972, 3222.1, 972, 3206, 815, 3206, 807.2, 3162, 686.2, 3162, 681.1, 3017.7, 570.6, 3075.6, 435, 3078.1, 435, 3118.1, 242, 3121.9, 242, 3111, 119.1, 3111, 112.9, 3060, 38.9, 3060, 34.6, 3010, 11.5, 3010, 5.8, 2954.8, 12, 2948.1, 12, 2826.1, 89, 2822.3, 89, 2741.3, 224, 2738.4, 224, 2677.7, 439.7, 2577, 416.1, 2577, 412.3, 2430.6, 422.4, 2400, 199.3, 2400, 192, 2373.8, 152.7, 2344, 18.6, 2344, 13.9)
@@ -332,10 +332,12 @@ position = Vector2(2557, 2294)
 
 [node name="head" type="Bone2D" parent="Fish/Skeleton2D" unique_id=1194168053]
 position = Vector2(-2, -1273)
+scale = Vector2(0.9999998, 0.9999998)
 rest = Transform2D(1, 0, 0, 1, -20, -1261)
 
 [node name="body" type="Bone2D" parent="Fish/Skeleton2D/head" unique_id=941410755]
 position = Vector2(60, 1311)
+scale = Vector2(0.9999998, 0.9999998)
 rest = Transform2D(1, 0, 0, 1, -1, 1158)
 
 [node name="left wing" type="Bone2D" parent="Fish/Skeleton2D/head/body" unique_id=104552842]

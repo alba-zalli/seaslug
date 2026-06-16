@@ -45,6 +45,5 @@ func _process(delta):
 	var direction = position - prev_pos
 	if direction.length() > 0.01:
 		var target_angle = direction.angle() + PI / 2
-		var wiggle = sin(time * 8.0) * 0.15
-		rotation = lerp_angle(rotation, target_angle + wiggle, 0.03)
+		rotation = lerp_angle(rotation, target_angle, 0.03)
 	
