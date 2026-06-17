@@ -57,6 +57,6 @@ script = ExtResource("1_7vrkn")
 
 [connection signal="button_down" from="Button" to="Button" method="_on_button_down"]
 [connection signal="pressed" from="CenterContainer/MainButtons/Play" to="CenterContainer/MainButtons/Play" method="_on_pressed"]
-[connection signal="pressed" from="CenterContainer/MainButtons/Settings" to="Button" method="_on_settings_pressed"]
+[connection signal="button_down" from="CenterContainer/MainButtons/Settings" to="Button" method="_on_settings_button_down"]
 [connection signal="button_down" from="CenterContainer/MainButtons/Credits" to="Button" method="_on_credits_button_down"]
 [connection signal="button_down" from="CenterContainer/MainButtons/Quit" to="Button" method="_on_quit_button_down"]

@@ -1,9 +1,35 @@
 [gd_scene format=3 uid="uid://c1eimu22a4rdc"]
 
+[ext_resource type="Script" uid="uid://dqb7xp775y7bg" path="res://quit.gd" id="1_c1t8d"]
+[ext_resource type="Script" uid="uid://uusxfhw2epny" path="res://button.gd" id="2_g4wvt"]
+
 [node name="Node2D" type="Node2D" unique_id=1360076914]
 
-[node name="Label" type="Label" parent="." unique_id=662493643]
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=727553234]
 offset_right = 40.0
-offset_bottom = 23.0
-text = "Credits
-"
+offset_bottom = 40.0
+
+[node name="Quit" type="Button" parent="HBoxContainer" unique_id=565751090]
+layout_mode = 2
+text = "X"
+script = ExtResource("1_c1t8d")
+
+[node name="Back" type="Button" parent="HBoxContainer" unique_id=2083160852]
+layout_direction = 2
+layout_mode = 2
+text = "Back"
+icon_alignment = 1
+script = ExtResource("2_g4wvt")
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=959750198]
+offset_left = 924.0
+offset_top = 101.0
+offset_right = 986.0
+offset_bottom = 124.0
+
+[node name="Label" type="Label" parent="CenterContainer" unique_id=1793033858]
+layout_mode = 2
+text = "Credits"
+
+[connection signal="button_down" from="HBoxContainer/Quit" to="HBoxContainer/Quit" method="_on_button_down"]
+[connection signal="button_down" from="HBoxContainer/Back" to="HBoxContainer/Back" method="_on_button_down"]

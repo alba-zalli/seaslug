@@ -1,13 +1,19 @@
-[gd_scene format=3 uid="uid://01ail3mknlwo"]
+[gd_scene format=3 uid="uid://c8b86nufkthgs"]
 
-[ext_resource type="Script" uid="uid://s453nh2amw80" path="res://polygon_2d.gd" id="1_aqvet"]
-[ext_resource type="Script" uid="uid://dqb7xp775y7bg" path="res://quit.gd" id="2_3rth8"]
-[ext_resource type="Script" uid="uid://uusxfhw2epny" path="res://button.gd" id="4_v40us"]
+[ext_resource type="Script" uid="uid://s453nh2amw80" path="res://polygon_2d.gd" id="1_evrla"]
+[ext_resource type="Script" uid="uid://dqb7xp775y7bg" path="res://quit.gd" id="2_6yfex"]
+[ext_resource type="Script" uid="uid://uusxfhw2epny" path="res://button.gd" id="3_f4wr4"]
 
 [node name="Swimming" type="Node2D" unique_id=1151149152]
 
 [node name="Bowl" type="Polygon2D" parent="." unique_id=1672481246]
-script = ExtResource("1_aqvet")
+script = ExtResource("1_evrla")
+
+[node name="Sapsucker" type="Button" parent="Bowl" unique_id=767077272]
+offset_left = 75.0
+offset_right = 83.0
+offset_bottom = 31.0
+text = "Make sapsucker"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=2038805613]
 offset_right = 71.0
@@ -17,7 +23,7 @@ size_flags_stretch_ratio = 0.0
 [node name="Quit" type="Button" parent="HBoxContainer" unique_id=1660233466]
 layout_mode = 2
 text = "X"
-script = ExtResource("2_3rth8")
+script = ExtResource("2_6yfex")
 
 [node name="Control" type="Control" parent="HBoxContainer" unique_id=1835694574]
 layout_mode = 2
@@ -28,11 +34,8 @@ layout_direction = 2
 layout_mode = 2
 text = "Back"
 icon_alignment = 1
-script = ExtResource("4_v40us")
+script = ExtResource("3_f4wr4")
 
-[node name="Sapsucker" type="Button" parent="HBoxContainer" unique_id=767077272]
-layout_mode = 2
-
+[connection signal="button_down" from="Bowl/Sapsucker" to="Bowl" method="_on_sapsucker_button_down"]
 [connection signal="button_down" from="HBoxContainer/Quit" to="HBoxContainer/Quit" method="_on_button_down"]
 [connection signal="button_down" from="HBoxContainer/Back" to="HBoxContainer/Back" method="_on_button_down"]
-[connection signal="button_down" from="HBoxContainer/Sapsucker" to="Bowl" method="_on_sapsucker_button_down"]

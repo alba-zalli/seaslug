@@ -19,13 +19,14 @@ var c = []
 @onready var swim_animation = $AnimationPlayer
 
 func _ready():
-	var ellipse = get_node("../Bowl")
-	radius_x = ellipse.radius_x * edge - ball_size / 2
-	radius_y = ellipse.radius_y * edge - ball_size / 2
+	angle = randf() * TAU
+
 	ellipse_center = get_viewport_rect().size / 2
 	scale = Vector2(0.02, 0.02)
-	for i in 6:
+
+	for i in range(6):
 		c.append(randf_range(0.1, 0.8))
+
 	swim_animation.play("swim_animation")
 
 func _process(delta):
