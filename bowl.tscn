@@ -1,19 +1,54 @@
 [gd_scene format=3 uid="uid://c8b86nufkthgs"]
 
-[ext_resource type="Script" uid="uid://s453nh2amw80" path="res://polygon_2d.gd" id="1_evrla"]
+[ext_resource type="Texture2D" uid="uid://ch2fi2csdtu5s" path="res://dorid.png" id="1_6yfex"]
+[ext_resource type="Script" uid="uid://cemp8kuaynvje" path="res://bowl_logic.gd" id="1_evrla"]
 [ext_resource type="Script" uid="uid://dqb7xp775y7bg" path="res://quit.gd" id="2_6yfex"]
 [ext_resource type="Script" uid="uid://uusxfhw2epny" path="res://button.gd" id="3_f4wr4"]
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_evrla"]
+load_path = "res://.godot/imported/sapsucker.png-de6e083bf0f1b8bae9e336ecdb58a0fe.ctex"
+
 [node name="Swimming" type="Node2D" unique_id=1151149152]
+
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=810999004]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 68.0
+offset_top = 135.0
+offset_right = 268.0
+offset_bottom = 385.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer" unique_id=1714242740]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer" unique_id=111319718]
+layout_mode = 2
+text = "Sea Slugs"
+horizontal_alignment = 1
+
+[node name="Sapsucker" type="Button" parent="ScrollContainer/VBoxContainer" unique_id=767077272]
+layout_mode = 2
+theme_override_constants/icon_max_width = 24
+text = "Sapsucker"
+icon = SubResource("CompressedTexture2D_evrla")
+
+[node name="Cal Dorid" type="Button" parent="ScrollContainer/VBoxContainer" unique_id=1875796786]
+layout_mode = 2
+theme_override_constants/icon_max_width = 24
+text = "California Dorid"
+icon = ExtResource("1_6yfex")
+
+[node name="Button" type="Button" parent="ScrollContainer/VBoxContainer" unique_id=1889667325]
+layout_mode = 2
+
+[node name="Button2" type="Button" parent="ScrollContainer/VBoxContainer" unique_id=1785172312]
+layout_mode = 2
 
 [node name="Bowl" type="Polygon2D" parent="." unique_id=1672481246]
 script = ExtResource("1_evrla")
-
-[node name="Sapsucker" type="Button" parent="Bowl" unique_id=767077272]
-offset_left = 75.0
-offset_right = 83.0
-offset_bottom = 31.0
-text = "Make sapsucker"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=2038805613]
 offset_right = 71.0
@@ -36,6 +71,7 @@ text = "Back"
 icon_alignment = 1
 script = ExtResource("3_f4wr4")
 
-[connection signal="button_down" from="Bowl/Sapsucker" to="Bowl" method="_on_sapsucker_button_down"]
+[connection signal="button_down" from="ScrollContainer/VBoxContainer/Sapsucker" to="Bowl" method="_on_sapsucker_button_down"]
+[connection signal="button_down" from="ScrollContainer/VBoxContainer/Cal Dorid" to="Bowl" method="_on_cal_dorid_button_down"]
 [connection signal="button_down" from="HBoxContainer/Quit" to="HBoxContainer/Quit" method="_on_button_down"]
 [connection signal="button_down" from="HBoxContainer/Back" to="HBoxContainer/Back" method="_on_button_down"]

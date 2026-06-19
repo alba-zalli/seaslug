@@ -22,7 +22,11 @@ func _ready():
 	angle = randf() * TAU
 
 	ellipse_center = get_viewport_rect().size / 2
-	scale = Vector2(0.02, 0.02)
+	
+	if scene_file_path.ends_with("caldorid.tscn"):
+		scale = Vector2(0.035, 0.035)
+	elif scene_file_path.ends_with("sapsucker.tscn"):
+		scale = Vector2(0.02, 0.02)
 
 	for i in range(6):
 		c.append(randf_range(0.1, 0.8))
@@ -35,7 +39,7 @@ func _process(delta):
 	var chaos_y = sin(time) * radius_y
 	var current_radius_x = clamp(radius_x, -radius_x * 0.8, radius_x * 0.8)
 	var current_radius_y = clamp(radius_y, -radius_y * 0.8, radius_y * 0.8)
-	speed = clamp(sin(time), 0.1, 0.25)
+	speed = clamp(sin(time), 0.2, 0.25)
 	angle += speed * delta
 	var prev_pos = position
 	position = ellipse_center + Vector2(cos(angle) * current_radius_x, sin(angle) * current_radius_y)
