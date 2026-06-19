@@ -31,15 +31,11 @@ func _ready():
 
 func _process(delta):
 	time += delta
-	var chaos_x = (sin(time * 0.3173) * c[0]
-				+ sin(time * 0.7919) * c[1]
-				+ sin(time * 1.4142) * c[2]) * radius_x * chaos
-	var chaos_y = (sin(time * 0.5261) * c[3]
-				+ sin(time * 1.1180) * c[4]
-				+ sin(time * 0.6180) * c[5]) * radius_y * chaos
-	var current_radius_x = clamp(radius_x + chaos_x, -radius_x * 0.8, radius_x * 0.8)
-	var current_radius_y = clamp(radius_y + chaos_y, -radius_y * 0.8, radius_y * 0.8)
-	speed = clamp(0.2 + 0.1 * sin(time * 0.2393), 0.1, 0.25)
+	var chaos_x = sin(time) * radius_x
+	var chaos_y = sin(time) * radius_y
+	var current_radius_x = clamp(radius_x, -radius_x * 0.8, radius_x * 0.8)
+	var current_radius_y = clamp(radius_y, -radius_y * 0.8, radius_y * 0.8)
+	speed = clamp(sin(time), 0.1, 0.25)
 	angle += speed * delta
 	var prev_pos = position
 	position = ellipse_center + Vector2(cos(angle) * current_radius_x, sin(angle) * current_radius_y)
