@@ -50,6 +50,11 @@ layout_mode = 2
 [node name="Bowl" type="Polygon2D" parent="." unique_id=1672481246]
 script = ExtResource("1_evrla")
 
+[node name="StaticBody2D" type="StaticBody2D" parent="Bowl" unique_id=848718846]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Bowl/StaticBody2D" unique_id=997705127]
+polygon = PackedVector2Array(0, 0, 0, 0, 0, 0)
+
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=2038805613]
 offset_right = 71.0
 offset_bottom = 31.0
