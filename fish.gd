@@ -21,9 +21,13 @@ var avoid_strength := 2.5
 
 func _ready():
 	if scene_file_path.ends_with("caldorid.tscn"):
-		scale = Vector2(0.035, 0.035)
+		scale = Vector2(0.04, 0.04)
 	elif scene_file_path.ends_with("sapsucker.tscn"):
 		scale = Vector2(0.02, 0.02)
+	elif scene_file_path.ends_with("hyps.tscn"):
+		scale = Vector2(0.2, 0.2)
+	elif scene_file_path.ends_with("phyl.tscn"):
+		scale = Vector2(0.07, 0.07)
 
 	swim_direction = Vector2.RIGHT.rotated(randf() * TAU)
 	turn_timer = randf_range(2.0, 5.0)
