@@ -28,6 +28,12 @@ func _ready():
 		scale = Vector2(0.2, 0.2)
 	elif scene_file_path.ends_with("phyl.tscn"):
 		scale = Vector2(0.07, 0.07)
+	elif scene_file_path.ends_with("mari.tscn"):
+		scale = Vector2(0.07, 0.07)
+	elif scene_file_path.ends_with("flab.tscn"):
+		scale = Vector2(0.07, 0.07)
+	elif scene_file_path.ends_with("gonio.tscn"):
+		scale = Vector2(0.07, 0.07)		
 
 	swim_direction = Vector2.RIGHT.rotated(randf() * TAU)
 	turn_timer = randf_range(2.0, 5.0)

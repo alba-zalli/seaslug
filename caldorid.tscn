@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://5cxumw25jslq"]
 
 [ext_resource type="Script" uid="uid://dmv10nfby3yhw" path="res://fish.gd" id="1_1jg0s"]
-[ext_resource type="Texture2D" uid="uid://ch2fi2csdtu5s" path="res://dorid.png" id="1_j12cy"]
+[ext_resource type="Texture2D" uid="uid://ch2fi2csdtu5s" path="res://slugimages/dorid.png" id="1_j12cy"]
 
 [sub_resource type="Animation" id="Animation_1jg0s"]
 length = 0.001

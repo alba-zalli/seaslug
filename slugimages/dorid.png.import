@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://8k2dq7iq5c4k"
-path="res://.godot/imported/sapsucker.png-de6e083bf0f1b8bae9e336ecdb58a0fe.ctex"
+uid="uid://ch2fi2csdtu5s"
+path="res://.godot/imported/dorid.png-290f918a73cf0d66589ca6b2a9d6977e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sapsucker.png"
-dest_files=["res://.godot/imported/sapsucker.png-de6e083bf0f1b8bae9e336ecdb58a0fe.ctex"]
+source_file="res://slugimages/dorid.png"
+dest_files=["res://.godot/imported/dorid.png-290f918a73cf0d66589ca6b2a9d6977e.ctex"]
 
 [params]
 

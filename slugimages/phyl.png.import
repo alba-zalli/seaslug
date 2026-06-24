@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ch2fi2csdtu5s"
-path="res://.godot/imported/dorid.png-d2c28a88964ae86f101c3c3f883b0b3d.ctex"
+uid="uid://ch13d35ifj5fs"
+path="res://.godot/imported/phyl.png-f16c9288fe5d44976591642db4f55871.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://dorid.png"
-dest_files=["res://.godot/imported/dorid.png-d2c28a88964ae86f101c3c3f883b0b3d.ctex"]
+source_file="res://slugimages/phyl.png"
+dest_files=["res://.godot/imported/phyl.png-f16c9288fe5d44976591642db4f55871.ctex"]
 
 [params]
 

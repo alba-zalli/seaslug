@@ -1,27 +1,20 @@
 [gd_scene format=3 uid="uid://c8b86nufkthgs"]
 
-[ext_resource type="Texture2D" uid="uid://ch2fi2csdtu5s" path="res://dorid.png" id="1_6yfex"]
+[ext_resource type="Texture2D" uid="uid://ch2fi2csdtu5s" path="res://slugimages/dorid.png" id="1_6yfex"]
 [ext_resource type="Script" uid="uid://cemp8kuaynvje" path="res://bowl_logic.gd" id="1_evrla"]
 [ext_resource type="Script" uid="uid://dqb7xp775y7bg" path="res://quit.gd" id="2_6yfex"]
-[ext_resource type="Texture2D" uid="uid://r6eipayrvqou" path="res://hyps.png" id="2_f4wr4"]
+[ext_resource type="Texture2D" uid="uid://r6eipayrvqou" path="res://slugimages/hyps.png" id="2_f4wr4"]
 [ext_resource type="Script" uid="uid://uusxfhw2epny" path="res://button.gd" id="3_f4wr4"]
-[ext_resource type="Texture2D" uid="uid://ch13d35ifj5fs" path="res://phyl.png" id="3_mamk5"]
+[ext_resource type="Texture2D" uid="uid://ch13d35ifj5fs" path="res://slugimages/phyl.png" id="3_mamk5"]
+[ext_resource type="Texture2D" uid="uid://cc6bnpdg57ulj" path="res://slugimages/flab.png" id="4_vw461"]
+[ext_resource type="Texture2D" uid="uid://b0lj2qo8po0vo" path="res://slugimages/mari.png" id="5_cdvkh"]
+[ext_resource type="Texture2D" uid="uid://lwb6qo0oxs7l" path="res://slugimages/gonio.png" id="6_ls73u"]
+[ext_resource type="Texture2D" uid="uid://idjmf5fm1gq8" path="res://slugimages/paradisa.png" id="7_ge20t"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_evrla"]
 load_path = "res://.godot/imported/sapsucker.png-de6e083bf0f1b8bae9e336ecdb58a0fe.ctex"
 
 [node name="Swimming" type="Node2D" unique_id=1151149152]
-
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=394260444]
-offset_left = 72.0
-offset_top = 299.0
-offset_right = 234.0
-offset_bottom = 379.0
-
-[node name="CheckButton" type="CheckButton" parent="VBoxContainer" unique_id=1821516781]
-layout_mode = 2
-size_flags_vertical = 4
-text = "Bowl on?"
 
 [node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=810999004]
 anchors_preset = 15
@@ -30,7 +23,7 @@ anchor_bottom = 1.0
 offset_left = 68.0
 offset_top = 135.0
 offset_right = 268.0
-offset_bottom = 385.0
+offset_bottom = 342.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -65,6 +58,30 @@ layout_mode = 2
 theme_override_constants/icon_max_width = 24
 text = "Phyllidiella"
 icon = ExtResource("3_mamk5")
+
+[node name="Flabellina" type="Button" parent="ScrollContainer/VBoxContainer" unique_id=1940239109]
+layout_mode = 2
+theme_override_constants/icon_max_width = 24
+text = "Flabellina"
+icon = ExtResource("4_vw461")
+
+[node name="Marindica" type="Button" parent="ScrollContainer/VBoxContainer" unique_id=1538349091]
+layout_mode = 2
+theme_override_constants/icon_max_width = 24
+text = "Marindica"
+icon = ExtResource("5_cdvkh")
+
+[node name="Gonio" type="Button" parent="ScrollContainer/VBoxContainer" unique_id=220533175]
+layout_mode = 2
+theme_override_constants/icon_max_width = 24
+text = "Gonio"
+icon = ExtResource("6_ls73u")
+
+[node name="Paradisa" type="Button" parent="ScrollContainer/VBoxContainer" unique_id=1633262766]
+layout_mode = 2
+theme_override_constants/icon_max_width = 24
+text = "Marindica"
+icon = ExtResource("7_ge20t")
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="ScrollContainer" unique_id=50847003]
 layout_mode = 2
@@ -102,5 +119,9 @@ script = ExtResource("3_f4wr4")
 [connection signal="button_down" from="ScrollContainer/VBoxContainer/Cal Dorid" to="Bowl" method="_on_cal_dorid_button_down"]
 [connection signal="button_down" from="ScrollContainer/VBoxContainer/Hypselodoris" to="Bowl" method="_on_hypselodoris_button_down"]
 [connection signal="button_down" from="ScrollContainer/VBoxContainer/Phyllidiella" to="Bowl" method="_on_phyllidiella_button_down"]
+[connection signal="button_down" from="ScrollContainer/VBoxContainer/Flabellina" to="Bowl" method="_on_flabellina_button_down"]
+[connection signal="button_down" from="ScrollContainer/VBoxContainer/Marindica" to="Bowl" method="_on_marindica_button_down"]
+[connection signal="button_down" from="ScrollContainer/VBoxContainer/Gonio" to="Bowl" method="_on_gonio_button_down"]
+[connection signal="button_down" from="ScrollContainer/VBoxContainer/Paradisa" to="Bowl" method="_on_flabellina_button_down"]
 [connection signal="button_down" from="HBoxContainer/Quit" to="HBoxContainer/Quit" method="_on_button_down"]
 [connection signal="button_down" from="HBoxContainer/Back" to="HBoxContainer/Back" method="_on_button_down"]

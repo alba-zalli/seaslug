@@ -8,38 +8,44 @@ var sapsucker_scene = preload("res://sapsucker.tscn")
 var caldorid_scene = preload("res://caldorid.tscn")
 var hyps_scene = preload("res://hyps.tscn")
 var phyl_scene = preload("res://phyl.tscn")
+var mari_scene = preload("res://mari.tscn")
+var flab_scene = preload("res://flab.tscn")
+var gonio_scene = preload("res://gonio.tscn")
+
+func fish_maker(fish):
+	fish.radius_x = radius_x
+	fish.radius_y = radius_y
+	fish.bowl_center = DisplayServer.screen_get_size() / 2
+	add_child(fish)
+	fish.global_position = fish.bowl_center
+	
+func spawn_gonio():
+	var fish = gonio_scene.instantiate()
+	fish_maker(fish)
+	
+func spawn_flab():
+	var fish = flab_scene.instantiate()
+	fish_maker(fish)
+
+func spawn_mari():
+	var fish = mari_scene.instantiate()
+	fish_maker(fish)
 
 func spawn_sapsucker():
 	var fish = sapsucker_scene.instantiate()
-	fish.radius_x = radius_x
-	fish.radius_y = radius_y
-	fish.bowl_center = DisplayServer.screen_get_size() / 2
-	add_child(fish)
-	fish.global_position = fish.bowl_center
+	fish_maker(fish)
 	
 func spawn_caldorid():
 	var fish = caldorid_scene.instantiate()
-	fish.radius_x = radius_x
-	fish.radius_y = radius_y
-	fish.bowl_center = DisplayServer.screen_get_size() / 2
-	add_child(fish)
-	fish.global_position = fish.bowl_center
+	fish_maker(fish)
 	
 func spawn_hyps():
 	var fish = hyps_scene.instantiate()
-	fish.radius_x = radius_x
-	fish.radius_y = radius_y
-	fish.bowl_center = DisplayServer.screen_get_size() / 2
-	add_child(fish)
-	fish.global_position = fish.bowl_center
+	fish_maker(fish)
 	
 func spawn_phyl():
 	var fish = phyl_scene.instantiate()
-	fish.radius_x = radius_x
-	fish.radius_y = radius_y
-	fish.bowl_center = DisplayServer.screen_get_size() / 2
-	add_child(fish)
-	fish.global_position = fish.bowl_center
+	fish_maker(fish)
 	
 func _ready():
 	var polygon = Polygon2D.new()
@@ -67,3 +73,12 @@ func _on_hypselodoris_button_down() -> void:
 
 func _on_phyllidiella_button_down() -> void:
 	spawn_phyl()
+
+func _on_flabellina_button_down() -> void:
+	spawn_flab()
+
+func _on_marindica_button_down() -> void:
+	spawn_mari()
+
+func _on_gonio_button_down() -> void:
+	spawn_gonio()

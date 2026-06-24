@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://de52221helqiu"]
 
 [ext_resource type="Script" uid="uid://dmv10nfby3yhw" path="res://fish.gd" id="1_6qich"]
-[ext_resource type="Texture2D" uid="uid://r6eipayrvqou" path="res://hyps.png" id="1_8vjmk"]
+[ext_resource type="Texture2D" uid="uid://r6eipayrvqou" path="res://slugimages/hyps.png" id="1_8vjmk"]
 
 [sub_resource type="Animation" id="Animation_6qich"]
 length = 0.001

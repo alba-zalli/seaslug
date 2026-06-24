@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ch13d35ifj5fs"
-path="res://.godot/imported/phyl.png-5aab2d99f8ca3a9cca1aa1dd4b27674c.ctex"
+uid="uid://b0lj2qo8po0vo"
+path="res://.godot/imported/mari.png-267cc2d6ebfd3d32e8fdb5b6dafcb0f1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://phyl.png"
-dest_files=["res://.godot/imported/phyl.png-5aab2d99f8ca3a9cca1aa1dd4b27674c.ctex"]
+source_file="res://slugimages/mari.png"
+dest_files=["res://.godot/imported/mari.png-267cc2d6ebfd3d32e8fdb5b6dafcb0f1.ctex"]
 
 [params]
 

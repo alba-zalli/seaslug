@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://8ivt2kh5xj51"]
 
-[ext_resource type="Texture2D" uid="uid://8k2dq7iq5c4k" path="res://sapsucker.png" id="1_yuvae"]
+[ext_resource type="Texture2D" uid="uid://8k2dq7iq5c4k" path="res://slugimages/sapsucker.png" id="1_yuvae"]
 [ext_resource type="Script" uid="uid://dmv10nfby3yhw" path="res://fish.gd" id="2_w32kg"]
 
 [sub_resource type="Animation" id="Animation_aqvet"]
