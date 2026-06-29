@@ -139,6 +139,14 @@ offset_top = 23.0
 offset_right = 77.0
 offset_bottom = 62.0
 
+[node name="Label3" type="Label" parent="." unique_id=1662539849]
+offset_left = 60.0
+offset_top = 648.0
+offset_right = 188.0
+offset_bottom = 697.0
+text = "Magnifying glass
+"
+
 [node name="Bowl" type="Polygon2D" parent="." unique_id=1672481246]
 script = ExtResource("1_evrla")
 
@@ -167,6 +175,10 @@ layout_mode = 2
 text = "Back"
 icon_alignment = 1
 script = ExtResource("3_f4wr4")
+
+[node name="Label2" type="Label" parent="." unique_id=82134145]
+offset_right = 40.0
+offset_bottom = 23.0
 
 [connection signal="button_down" from="ScrollContainer/VBoxContainer/Sapsucker" to="Bowl" method="_on_sapsucker_button_down"]
 [connection signal="button_down" from="ScrollContainer/VBoxContainer/Cal Dorid" to="Bowl" method="_on_cal_dorid_button_down"]

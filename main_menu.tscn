@@ -2,41 +2,53 @@
 
 [ext_resource type="Script" uid="uid://uusxfhw2epny" path="res://button.gd" id="1_06t4h"]
 [ext_resource type="Script" uid="uid://dqb7xp775y7bg" path="res://quit.gd" id="1_7vrkn"]
+[ext_resource type="PackedScene" uid="uid://d4d15qo7ijphj" path="res://slugscreen.tscn" id="1_glbon"]
 [ext_resource type="Theme" uid="uid://ew0ljd640imm" path="res://base_theme.tres" id="2_jix8l"]
 [ext_resource type="Script" uid="uid://egrovh1ytx4n" path="res://settings.gd" id="3_fu7sn"]
+[ext_resource type="FontFile" uid="uid://cey3rdjxw6l7b" path="res://rainyhearts.ttf" id="3_nlkkf"]
 
 [sub_resource type="Theme" id="Theme_rhts7"]
+
+[sub_resource type="Theme" id="Theme_qe12f"]
 
 [node name="MainMenu" type="Node2D" unique_id=1530463089]
 
 [node name="SlugContainer" type="Node2D" parent="." unique_id=1565993215]
 
+[node name="Node2D" parent="SlugContainer" unique_id=969373638 instance=ExtResource("1_glbon")]
+
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=144022082]
 
 [node name="CenterContainer" type="CenterContainer" parent="CanvasLayer" unique_id=2071457234]
-offset_top = 500.0
-offset_right = 1920.0
-offset_bottom = 1080.0
+offset_left = -46.0
+offset_top = 348.0
+offset_right = 1874.0
+offset_bottom = 928.0
 theme = SubResource("Theme_rhts7")
 
 [node name="MainButtons" type="VBoxContainer" parent="CanvasLayer/CenterContainer" unique_id=928664067]
 layout_mode = 2
+theme = ExtResource("2_jix8l")
 theme_override_constants/separation = 27
 
 [node name="Play" type="Button" parent="CanvasLayer/CenterContainer/MainButtons" unique_id=2083941540]
 layout_mode = 2
+theme = SubResource("Theme_qe12f")
+theme_override_fonts/font = ExtResource("3_nlkkf")
 theme_override_font_sizes/font_size = 50
 text = "Play"
 script = ExtResource("1_06t4h")
 
 [node name="Settings" type="Button" parent="CanvasLayer/CenterContainer/MainButtons" unique_id=1925321198]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_nlkkf")
 theme_override_font_sizes/font_size = 50
 text = "Settings"
 script = ExtResource("3_fu7sn")
 
 [node name="Credits" type="Button" parent="CanvasLayer/CenterContainer/MainButtons" unique_id=1535633199]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_nlkkf")
 theme_override_font_sizes/font_size = 50
 text = "Credits"
 
