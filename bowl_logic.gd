@@ -4,6 +4,20 @@ var scaler = DisplayServer.screen_get_size().y / 175
 var radius_x = 90 * scaler
 var radius_y = 60 * scaler
 
+@onready var bowl = $BowlLogic
+@onready var container = $SlugContainer
+
+var spawn_functions := [
+	Callable(self, "spawn_sapsucker"),
+	Callable(self, "spawn_caldorid"),
+	Callable(self, "spawn_hyps"),
+	Callable(self, "spawn_phyl"),
+	Callable(self, "spawn_mari"),
+	Callable(self, "spawn_flab"),
+	Callable(self, "spawn_gonio"),
+	Callable(self, "spawn_paradisa")
+]
+
 var sapsucker_scene = preload("res://sapsucker.tscn")
 var caldorid_scene = preload("res://caldorid.tscn")
 var hyps_scene = preload("res://hyps.tscn")
@@ -11,6 +25,7 @@ var phyl_scene = preload("res://phyl.tscn")
 var mari_scene = preload("res://mari.tscn")
 var flab_scene = preload("res://flab.tscn")
 var gonio_scene = preload("res://gonio.tscn")
+var paradisa_scene = preload("res://paradisa.tscn")
 
 func fish_maker(fish):
 	fish.radius_x = radius_x
@@ -46,20 +61,29 @@ func spawn_hyps():
 func spawn_phyl():
 	var fish = phyl_scene.instantiate()
 	fish_maker(fish)
+
+func spawn_paradisa():
+	var fish = paradisa_scene.instantiate()
+	fish_maker(fish)
 	
 func _ready():
+	randomize()
 	var polygon = Polygon2D.new()
 	var points = PackedVector2Array()
 	var num_points = 64
 	var center = DisplayServer.screen_get_size() / 2
 	
-	for i in range(num_points):
-		var angle = (2.0 * PI * i) / num_points
-		points.append(Vector2(cos(angle) * radius_x, sin(angle) * radius_y))
-		
-	polygon.polygon = points
-	polygon.position = center
-	add_child(polygon)
+	if is_main_menu():
+		for i in range(5):
+			var random_spawn = spawn_functions[randi() % spawn_functions.size()]
+			random_spawn.call()
+	else:
+		for i in range(num_points):
+			var angle = (2.0 * PI * i) / num_points
+			points.append(Vector2(cos(angle) * radius_x, sin(angle) * radius_y))
+			polygon.polygon = points
+			polygon.position = center
+			add_child(polygon)
 
 
 func _on_sapsucker_button_down() -> void:
@@ -82,3 +106,10 @@ func _on_marindica_button_down() -> void:
 
 func _on_gonio_button_down() -> void:
 	spawn_gonio()
+
+func _on_paradisa_button_down() -> void:
+	spawn_paradisa()
+
+# is main menu 
+func is_main_menu() -> bool:
+	return get_tree().current_scene.scene_file_path.ends_with("main_menu.tscn")

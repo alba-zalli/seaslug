@@ -243,6 +243,7 @@ scale = Vector2(0.9999999, 0.9999999)
 rest = Transform2D(1, 0, 0, 1, 10, 829)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=334365851]
+position = Vector2(18, -83)
 polygon = PackedVector2Array(1241, -77, 1626, 152, 1782, 604, 1804, 1270, 1870, 1906, 1782, 2513, 1641, 2809, 1249, 3060, 590, 2890, 427, 2306, 464, 1728, 494, 1173, 531, 633, 583, 270, 879, -40)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1431215308]

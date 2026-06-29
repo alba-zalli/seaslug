@@ -60,38 +60,31 @@ func _physics_process(delta):
 		velocity = Vector2.ZERO
 		return
 
-	# advance the orbit angle — this drives the circular path
-	var orbit_speed : float = swim_speed / (0.75 * min(radius_x, radius_y))
-	orbit_angle += orbit_speed * delta
+	var screen_size = get_viewport_rect().size
+	var margin = 40.0
 
-	# wobble: slowly drifts the fish inward/outward around 75% of the bowl radius
-	wobble_timer += delta
-	orbit_wobble = sin(wobble_timer * 0.4) * 0.15   # ±15% radius drift, very slow
+	# Turn away from screen edges
+	if global_position.x < margin:
+		swim_direction = Vector2.RIGHT.rotated(randf_range(-0.5, 0.5))
+	elif global_position.x > screen_size.x - margin:
+		swim_direction = Vector2.LEFT.rotated(randf_range(-0.5, 0.5))
 
-	var orbit_radius_x = radius_x * (0.75 + orbit_wobble)
-	var orbit_radius_y = radius_y * (0.75 + orbit_wobble)
+	if global_position.y < margin:
+		swim_direction = Vector2.DOWN.rotated(randf_range(-0.5, 0.5))
+	elif global_position.y > screen_size.y - margin:
+		swim_direction = Vector2.UP.rotated(randf_range(-0.5, 0.5))
 
-	# target position on the elliptical orbit
-	var target_pos = bowl_center + Vector2(
-		cos(orbit_angle) * orbit_radius_x,
-		sin(orbit_angle) * orbit_radius_y
-	)
-
-	# steer smoothly toward the orbit point rather than teleporting
-	var to_target = (target_pos - global_position)
-	swim_direction = swim_direction.lerp(to_target.normalized(), 6.0 * delta).normalized()
+	# Occasionally wander a little
+	if randf() < delta * 0.4:
+		swim_direction = swim_direction.rotated(randf_range(-0.4, 0.4)).normalized()
 
 	velocity = swim_direction * swim_speed
 	move_and_slide()
 
-	# hard clamp after move_and_slide so physics never pushes outside
-	var rel = global_position - bowl_center 
-	if radius_x > 0 and radius_y > 0:
-		var ellipse_value = (rel.x * rel.x) / (radius_x * radius_x) + (rel.y * rel.y) / (radius_y * radius_y)
-		if ellipse_value > 1.0:
-			global_position = bowl_center + rel * (1.0 / sqrt(ellipse_value)) * 0.99
-			swim_direction = (bowl_center - global_position).normalized()
+	# Keep fish fully inside the screen
+	global_position.x = clamp(global_position.x, margin, screen_size.x - margin)
+	global_position.y = clamp(global_position.y, margin, screen_size.y - margin)
 
-	# face direction of travel
+	# Face the direction of travel
 	var target_angle = swim_direction.angle() + PI / 2
 	rotation = lerp_angle(rotation, target_angle, 0.08)
