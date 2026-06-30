@@ -11,7 +11,6 @@
 [ext_resource type="Texture2D" uid="uid://b0lj2qo8po0vo" path="res://slugimages/mari.png" id="5_cdvkh"]
 [ext_resource type="Texture2D" uid="uid://lwb6qo0oxs7l" path="res://slugimages/gonio.png" id="6_ls73u"]
 [ext_resource type="Texture2D" uid="uid://idjmf5fm1gq8" path="res://slugimages/paradisa.png" id="7_ge20t"]
-[ext_resource type="Texture2D" uid="uid://dw34yak8aigj4" path="res://magglass.png" id="12_ixq47"]
 [ext_resource type="Script" uid="uid://dxmejtdw71xrj" path="res://magglass.gd" id="13_mjfet"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_evrla"]
@@ -182,21 +181,28 @@ script = ExtResource("3_f4wr4")
 offset_right = 40.0
 offset_bottom = 23.0
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1834057581]
-position = Vector2(162.00006, 818.00006)
+[node name="Magglass" type="Control" parent="." unique_id=1253614066]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 162.00006
+offset_top = 818.00006
+offset_right = 162.00006
+offset_bottom = 818.00006
 scale = Vector2(0.1, 0.1)
-texture = ExtResource("12_ixq47")
 script = ExtResource("13_mjfet")
 
-[node name="SubViewport" type="SubViewport" parent="Sprite2D" unique_id=737778284]
-transparent_bg = true
-
-[node name="Camera2D" type="Camera2D" parent="Sprite2D/SubViewport" unique_id=1764708371]
-zoom = Vector2(0.5, 0.5)
-
-[node name="TextureRect" type="TextureRect" parent="Sprite2D" unique_id=587383761]
+[node name="SubViewportContainer" type="SubViewportContainer" parent="Magglass" unique_id=314802264]
+layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="SubViewport" type="SubViewport" parent="Magglass/SubViewportContainer" unique_id=737778284]
+transparent_bg = true
+handle_input_locally = false
+render_target_update_mode = 4
+
+[node name="Camera2D" type="Camera2D" parent="Magglass/SubViewportContainer/SubViewport" unique_id=1764708371]
+zoom = Vector2(0.5, 0.5)
 
 [connection signal="button_down" from="ScrollContainer/VBoxContainer/Sapsucker" to="Bowl" method="_on_sapsucker_button_down"]
 [connection signal="button_down" from="ScrollContainer/VBoxContainer/Cal Dorid" to="Bowl" method="_on_cal_dorid_button_down"]

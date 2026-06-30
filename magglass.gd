@@ -1,29 +1,26 @@
-extends Node2D
+extends Control
 
-var dragging := false
-var drag_offset := Vector2.ZERO
+@onready var sub_viewport: SubViewport = $SubViewportContainer/SubViewport
+@onready var zoom_camera: Camera2D = $SubViewportContainer/SubViewport/Camera2D
+@onready var container: SubViewportContainer = $SubViewportContainer
 
-@onready var viewport = $SubViewport
-@onready var lens = $TextureRect
-@onready var cam = $SubViewport/Camera2D
+var zoom_level := 2.0
+var min_zoom := 1.5
+var max_zoom := 6.0
+var zoom_step := 0.25
 
-func _process(delta):
-	cam.global_position = global_position
+func _process(_delta):
+	# Keep the lens centered on the mouse cursor
+	global_position = get_global_mouse_position() - container.size / 2
 
-func _ready():
-	lens.texture = viewport.get_texture()
+	# Point the zoom camera at the same world position the mouse is over,
+	# but make sure it's reading from the SAME world, not the lens's own UI layer
+	zoom_camera.global_position = get_global_mouse_position()
+	zoom_camera.zoom = Vector2.ONE / zoom_level
 
-func _input(event):
+func _unhandled_input(event):
 	if event is InputEventMouseButton:
-		if event.button_index == MOUSE_BUTTON_LEFT:
-			if event.pressed:
-				# Check if the mouse clicked on this object.
-				# Replace 32 with your object's click radius.
-				if global_position.distance_to(event.position) < 32:
-					dragging = true
-					drag_offset = global_position - event.position
-			else:
-				dragging = false
-
-	elif event is InputEventMouseMotion and dragging:
-		global_position = event.position + drag_offset
+		if event.button_index == MOUSE_BUTTON_WHEEL_UP and event.pressed:
+			zoom_level = clamp(zoom_level + zoom_step, min_zoom, max_zoom)
+		elif event.button_index == MOUSE_BUTTON_WHEEL_DOWN and event.pressed:
+			zoom_level = clamp(zoom_level - zoom_step, min_zoom, max_zoom)
