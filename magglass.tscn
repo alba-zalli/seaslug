@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dw34yak8aigj4" path="res://magglass.png" id="1_whq5j"]
 [ext_resource type="Script" uid="uid://dxmejtdw71xrj" path="res://magglass.gd" id="2_f8ftu"]
 
-[node name="Node2D" type="Polygon2D" unique_id=1564781403]
+[node name="Node2D" type="Sprite2D" unique_id=65793374]
+position = Vector2(421, 162)
 texture = ExtResource("1_whq5j")
 script = ExtResource("2_f8ftu")
