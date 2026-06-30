@@ -1,3 +1,4 @@
+# controls the swimming logic of fish
 extends CharacterBody2D
 
 var radius_x := 0.0
@@ -12,6 +13,7 @@ var orbit_wobble := 0.0
 var wobble_timer := 0.0
 
 @onready var swim_animation = $AnimationPlayer
+@export var main_menu_mode := false
 
 func _ready():
 	if scene_file_path.ends_with("caldorid.tscn"):
@@ -45,13 +47,21 @@ func _is_clicking_on_fish(mouse_pos: Vector2) -> bool:
 	return false
 
 func _input(event):
+	if main_menu_mode:
+		return
+
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		if event.pressed:
 			if _is_clicking_on_fish(event.position):
+				if event.double_click:
+					queue_free()
+					return
+
 				dragging = true
 				drag_offset = global_position - event.position
 		else:
 			dragging = false
+
 	elif event is InputEventMouseMotion and dragging:
 		global_position = event.position + drag_offset
 

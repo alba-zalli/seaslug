@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://b0lj2qo8po0vo" path="res://slugimages/mari.png" id="5_cdvkh"]
 [ext_resource type="Texture2D" uid="uid://lwb6qo0oxs7l" path="res://slugimages/gonio.png" id="6_ls73u"]
 [ext_resource type="Texture2D" uid="uid://idjmf5fm1gq8" path="res://slugimages/paradisa.png" id="7_ge20t"]
+[ext_resource type="PackedScene" uid="uid://cock6q303rlwi" path="res://magglass.tscn" id="12_k6rs3"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_evrla"]
 load_path = "res://.godot/imported/sapsucker.png-de6e083bf0f1b8bae9e336ecdb58a0fe.ctex"
@@ -179,6 +180,8 @@ script = ExtResource("3_f4wr4")
 [node name="Label2" type="Label" parent="." unique_id=82134145]
 offset_right = 40.0
 offset_bottom = 23.0
+
+[node name="magglass" parent="." unique_id=1564781403 instance=ExtResource("12_k6rs3")]
 
 [connection signal="button_down" from="ScrollContainer/VBoxContainer/Sapsucker" to="Bowl" method="_on_sapsucker_button_down"]
 [connection signal="button_down" from="ScrollContainer/VBoxContainer/Cal Dorid" to="Bowl" method="_on_cal_dorid_button_down"]

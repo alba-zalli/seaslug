@@ -41,6 +41,7 @@ func fish_maker(fish):
 	)
 	
 	fish.global_position = center + random_offset
+	fish.main_menu_mode = true
 	
 func spawn_gonio():
 	var fish = gonio_scene.instantiate()

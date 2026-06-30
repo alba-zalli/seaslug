@@ -33,6 +33,7 @@ func fish_maker(fish):
 	fish.bowl_center = DisplayServer.screen_get_size() / 2
 	add_child(fish)
 	fish.global_position = fish.bowl_center
+	fish.main_menu_mode = false
 	
 func spawn_gonio():
 	var fish = gonio_scene.instantiate()

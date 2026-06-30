@@ -2,6 +2,9 @@
 
 [ext_resource type="Script" uid="uid://dqb7xp775y7bg" path="res://quit.gd" id="1_c1t8d"]
 [ext_resource type="Script" uid="uid://uusxfhw2epny" path="res://button.gd" id="2_g4wvt"]
+[ext_resource type="Theme" uid="uid://ew0ljd640imm" path="res://base_theme.tres" id="3_g4wvt"]
+
+[sub_resource type="Theme" id="Theme_pjc1l"]
 
 [node name="Node2D" type="Node2D" unique_id=1360076914]
 
@@ -22,14 +25,40 @@ icon_alignment = 1
 script = ExtResource("2_g4wvt")
 
 [node name="CenterContainer" type="CenterContainer" parent="." unique_id=959750198]
-offset_left = 924.0
-offset_top = 101.0
-offset_right = 986.0
-offset_bottom = 124.0
+offset_top = 53.0
+offset_right = 1916.0
+offset_bottom = 160.0
+theme = SubResource("Theme_pjc1l")
 
 [node name="Label" type="Label" parent="CenterContainer" unique_id=1793033858]
 layout_mode = 2
+theme = ExtResource("3_g4wvt")
+theme_override_font_sizes/font_size = 100
 text = "Credits"
+
+[node name="Label" type="Label" parent="." unique_id=803779576]
+offset_left = 112.0
+offset_top = 201.0
+offset_right = 437.0
+offset_bottom = 265.0
+theme_override_font_sizes/font_size = 40
+text = "Alba Zalli - Programming, Asset art, Research"
+
+[node name="Label2" type="Label" parent="." unique_id=767294085]
+offset_left = 115.0
+offset_top = 310.0
+offset_right = 1009.0
+offset_bottom = 374.0
+theme_override_font_sizes/font_size = 40
+text = "Arlind Zalli - OST composer"
+
+[node name="Label3" type="Label" parent="." unique_id=1810939009]
+offset_left = 114.0
+offset_top = 408.0
+offset_right = 1008.0
+offset_bottom = 472.0
+theme_override_font_sizes/font_size = 40
+text = "Alison Wright- Research and background art"
 
 [connection signal="button_down" from="HBoxContainer/Quit" to="HBoxContainer/Quit" method="_on_button_down"]
 [connection signal="button_down" from="HBoxContainer/Back" to="HBoxContainer/Back" method="_on_button_down"]
