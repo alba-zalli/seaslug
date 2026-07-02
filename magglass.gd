@@ -1,26 +1,36 @@
-extends Control
+extends Node2D
 
-@onready var sub_viewport: SubViewport = $SubViewportContainer/SubViewport
-@onready var zoom_camera: Camera2D = $SubViewportContainer/SubViewport/Camera2D
-@onready var container: SubViewportContainer = $SubViewportContainer
+@export var drag_area_path: NodePath = "Area2D"
+@export var smooth_drag: bool = true
+@export var drag_speed: float = 20.0  # only used if smooth_drag is true
 
-var zoom_level := 2.0
-var min_zoom := 1.5
-var max_zoom := 6.0
-var zoom_step := 0.25
+var dragging := false
+var drag_offset := Vector2.ZERO
+var target_position := Vector2.ZERO
 
-func _process(_delta):
-	# Keep the lens centered on the mouse cursor
-	global_position = get_global_mouse_position() - container.size / 2
+@onready var drag_area: Area2D = get_node(drag_area_path)
 
-	# Point the zoom camera at the same world position the mouse is over,
-	# but make sure it's reading from the SAME world, not the lens's own UI layer
-	zoom_camera.global_position = get_global_mouse_position()
-	zoom_camera.zoom = Vector2.ONE / zoom_level
+func _ready():
+	drag_area.input_event.connect(_on_drag_area_input_event)
+	target_position = global_position
+
+func _on_drag_area_input_event(_viewport, event, _shape_idx):
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
+		if event.pressed:
+			dragging = true
+			drag_offset = global_position - get_global_mouse_position()
+		else:
+			dragging = false
 
 func _unhandled_input(event):
-	if event is InputEventMouseButton:
-		if event.button_index == MOUSE_BUTTON_WHEEL_UP and event.pressed:
-			zoom_level = clamp(zoom_level + zoom_step, min_zoom, max_zoom)
-		elif event.button_index == MOUSE_BUTTON_WHEEL_DOWN and event.pressed:
-			zoom_level = clamp(zoom_level - zoom_step, min_zoom, max_zoom)
+	# Catches mouse release even if it happens outside the Area2D
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and not event.pressed:
+		dragging = false
+
+func _process(delta):
+	if dragging:
+		target_position = get_global_mouse_position() + drag_offset
+		if smooth_drag:
+			global_position = global_position.lerp(target_position, drag_speed * delta)
+		else:
+			global_position = target_position

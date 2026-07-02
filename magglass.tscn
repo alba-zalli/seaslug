@@ -1,9 +1,41 @@
 [gd_scene format=3 uid="uid://cock6q303rlwi"]
 
 [ext_resource type="Texture2D" uid="uid://dw34yak8aigj4" path="res://magglass.png" id="1_whq5j"]
-[ext_resource type="Script" uid="uid://dxmejtdw71xrj" path="res://magglass.gd" id="2_f8ftu"]
+[ext_resource type="Script" uid="uid://cp7232lmqelww" path="res://magglass.gd" id="2_f8ftu"]
+[ext_resource type="Shader" uid="uid://ck2cngem5uv3x" path="res://magglass.gdshader" id="2_kcwwt"]
+[ext_resource type="Texture2D" uid="uid://dirlb5tvwoip2" path="res://circle.png" id="3_aed4u"]
 
-[node name="Node2D" type="Sprite2D" unique_id=65793374]
-position = Vector2(421, 162)
-texture = ExtResource("1_whq5j")
+[sub_resource type="CircleShape2D" id="CircleShape2D_d5ty1"]
+radius = 110.01818
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ixq47"]
+shader = ExtResource("2_kcwwt")
+shader_parameter/radius = 5.0
+shader_parameter/power = 0.2
+shader_parameter/transparent_texture = true
+shader_parameter/mask_radius = 0.5
+shader_parameter/mask_feather = 0.02
+
+[node name="Node2D" type="Node2D" unique_id=1828750686]
 script = ExtResource("2_f8ftu")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1692867260]
+position = Vector2(156, 828)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1926722800]
+shape = SubResource("CircleShape2D_d5ty1")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D" unique_id=200974272]
+position = Vector2(-156, -828)
+polygon = PackedVector2Array(182, 917, 205, 921, 223, 921, 228, 927, 237, 935, 243, 948, 249, 960, 268, 983, 298, 1017, 324, 1044, 346, 1066, 361, 1080, 373, 1083, 381, 1080, 384, 1075, 385, 1068, 383, 1061, 375, 1052, 361, 1036, 351, 1024, 342, 1014, 325, 993, 311, 977, 300, 964, 287, 950, 279, 941, 272, 933, 263, 929, 252, 919, 250, 911, 245, 907, 245, 900, 253, 886, 258, 875, 248, 865, 239, 878, 231, 892, 211, 906, 199, 914)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1858421265]
+material = SubResource("ShaderMaterial_ixq47")
+position = Vector2(156.75, 826.99994)
+scale = Vector2(0.69499993, 0.66666615)
+texture = ExtResource("3_aed4u")
+
+[node name="Frame" type="Sprite2D" parent="." unique_id=1386022475]
+position = Vector2(206.99998, 897)
+scale = Vector2(0.153, 0.14880002)
+texture = ExtResource("1_whq5j")

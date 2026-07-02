@@ -11,7 +11,10 @@
 [ext_resource type="Texture2D" uid="uid://b0lj2qo8po0vo" path="res://slugimages/mari.png" id="5_cdvkh"]
 [ext_resource type="Texture2D" uid="uid://lwb6qo0oxs7l" path="res://slugimages/gonio.png" id="6_ls73u"]
 [ext_resource type="Texture2D" uid="uid://idjmf5fm1gq8" path="res://slugimages/paradisa.png" id="7_ge20t"]
-[ext_resource type="Script" uid="uid://dxmejtdw71xrj" path="res://magglass.gd" id="13_mjfet"]
+[ext_resource type="Texture2D" uid="uid://bg5sl0ipmrp3" path="res://fisheggs.png" id="9_mjfet"]
+[ext_resource type="Texture2D" uid="uid://co81xieitxihr" path="res://algea.png" id="10_7wurr"]
+[ext_resource type="Texture2D" uid="uid://cqxijc1hir02x" path="res://sea sponge.png" id="10_d5ty1"]
+[ext_resource type="PackedScene" uid="uid://cock6q303rlwi" path="res://magglass.tscn" id="12_k6rs3"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_evrla"]
 load_path = "res://.godot/imported/sapsucker.png-de6e083bf0f1b8bae9e336ecdb58a0fe.ctex"
@@ -103,24 +106,24 @@ layout_mode = 2
 text = "Food Options"
 horizontal_alignment = 1
 
-[node name="Sapsucker" type="Button" parent="ScrollContainer2/VBoxContainer2" unique_id=668461962]
+[node name="Fish eggs" type="Button" parent="ScrollContainer2/VBoxContainer2" unique_id=668461962]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/icon_max_width = 24
 text = "Fish eggs"
-icon = SubResource("CompressedTexture2D_evrla")
+icon = ExtResource("9_mjfet")
 
-[node name="Cal Dorid" type="Button" parent="ScrollContainer2/VBoxContainer2" unique_id=1957107073]
+[node name="Algae" type="Button" parent="ScrollContainer2/VBoxContainer2" unique_id=1957107073]
 layout_mode = 2
 theme_override_constants/icon_max_width = 24
-text = "Algea"
-icon = ExtResource("1_6yfex")
+text = "Algae"
+icon = ExtResource("10_7wurr")
 
-[node name="Hypselodoris" type="Button" parent="ScrollContainer2/VBoxContainer2" unique_id=1048649379]
+[node name="Sea sponge" type="Button" parent="ScrollContainer2/VBoxContainer2" unique_id=1048649379]
 layout_mode = 2
 theme_override_constants/icon_max_width = 24
 text = "Sponges"
-icon = ExtResource("2_f4wr4")
+icon = ExtResource("10_d5ty1")
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="." unique_id=1624829508]
 offset_left = 60.0
@@ -181,28 +184,7 @@ script = ExtResource("3_f4wr4")
 offset_right = 40.0
 offset_bottom = 23.0
 
-[node name="Magglass" type="Control" parent="." unique_id=1253614066]
-layout_mode = 3
-anchors_preset = 0
-offset_left = 162.00006
-offset_top = 818.00006
-offset_right = 162.00006
-offset_bottom = 818.00006
-scale = Vector2(0.1, 0.1)
-script = ExtResource("13_mjfet")
-
-[node name="SubViewportContainer" type="SubViewportContainer" parent="Magglass" unique_id=314802264]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="SubViewport" type="SubViewport" parent="Magglass/SubViewportContainer" unique_id=737778284]
-transparent_bg = true
-handle_input_locally = false
-render_target_update_mode = 4
-
-[node name="Camera2D" type="Camera2D" parent="Magglass/SubViewportContainer/SubViewport" unique_id=1764708371]
-zoom = Vector2(0.5, 0.5)
+[node name="Node2D" parent="." unique_id=1828750686 instance=ExtResource("12_k6rs3")]
 
 [connection signal="button_down" from="ScrollContainer/VBoxContainer/Sapsucker" to="Bowl" method="_on_sapsucker_button_down"]
 [connection signal="button_down" from="ScrollContainer/VBoxContainer/Cal Dorid" to="Bowl" method="_on_cal_dorid_button_down"]
