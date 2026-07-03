@@ -15,7 +15,10 @@ var spawn_functions := [
 	Callable(self, "spawn_mari"),
 	Callable(self, "spawn_flab"),
 	Callable(self, "spawn_gonio"),
-	Callable(self, "spawn_paradisa")
+	Callable(self, "spawn_paradisa"),
+	Callable(self, "spawn_sponge"),
+	Callable(self, "spawn_algae"),
+	Callable(self, "spawn_fish")
 ]
 
 var sapsucker_scene = preload("res://sapsucker.tscn")
@@ -26,6 +29,22 @@ var mari_scene = preload("res://mari.tscn")
 var flab_scene = preload("res://flab.tscn")
 var gonio_scene = preload("res://gonio.tscn")
 var paradisa_scene = preload("res://paradisa.tscn")
+var sponge_scene = preload("res://sponge.tscn")
+var alg_scene = preload("res://algae.tscn")
+var fish_scene = preload("res://fisheggs.tscn")
+	
+
+func spawn_sponge():
+	var sponge = sponge_scene.instantiate()
+	fish_maker(sponge)
+
+func spawn_algae():
+	var algea = alg_scene.instantiate()
+	fish_maker(algea)
+
+func spawn_fish():
+	var fish = fish_scene.instantiate()
+	fish_maker(fish)
 
 func fish_maker(fish):
 	fish.radius_x = radius_x
@@ -114,3 +133,13 @@ func _on_paradisa_button_down() -> void:
 # is main menu 
 func is_main_menu() -> bool:
 	return get_tree().current_scene.scene_file_path.ends_with("main_menu.tscn")
+
+
+func _on_sea_sponge_button_down() -> void:
+	spawn_sponge()
+
+func _on_algae_button_down() -> void:
+	spawn_algae()
+
+func _on_fish_eggs_button_down() -> void:
+	spawn_fish()

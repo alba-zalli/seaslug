@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://co81xieitxihr" path="res://algea.png" id="10_7wurr"]
 [ext_resource type="Texture2D" uid="uid://cqxijc1hir02x" path="res://sea sponge.png" id="10_d5ty1"]
 [ext_resource type="PackedScene" uid="uid://cock6q303rlwi" path="res://magglass.tscn" id="12_k6rs3"]
+[ext_resource type="Texture2D" uid="uid://15qfb8bvi135" path="res://magnifying-glass-solid-full.svg" id="16_7wurr"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_evrla"]
 load_path = "res://.godot/imported/sapsucker.png-de6e083bf0f1b8bae9e336ecdb58a0fe.ctex"
@@ -186,6 +187,17 @@ offset_bottom = 23.0
 
 [node name="Node2D" parent="." unique_id=1828750686 instance=ExtResource("12_k6rs3")]
 
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=299719098]
+offset_left = 1255.0
+offset_top = 1.0
+offset_right = 1307.0
+offset_bottom = 42.0
+
+[node name="Button" type="Button" parent="VBoxContainer" unique_id=519179365]
+layout_mode = 2
+theme_override_constants/icon_max_width = 24
+icon = ExtResource("16_7wurr")
+
 [connection signal="button_down" from="ScrollContainer/VBoxContainer/Sapsucker" to="Bowl" method="_on_sapsucker_button_down"]
 [connection signal="button_down" from="ScrollContainer/VBoxContainer/Cal Dorid" to="Bowl" method="_on_cal_dorid_button_down"]
 [connection signal="button_down" from="ScrollContainer/VBoxContainer/Hypselodoris" to="Bowl" method="_on_hypselodoris_button_down"]
@@ -194,5 +206,8 @@ offset_bottom = 23.0
 [connection signal="button_down" from="ScrollContainer/VBoxContainer/Marindica" to="Bowl" method="_on_marindica_button_down"]
 [connection signal="button_down" from="ScrollContainer/VBoxContainer/Gonio" to="Bowl" method="_on_gonio_button_down"]
 [connection signal="button_down" from="ScrollContainer/VBoxContainer/Paradisa" to="Bowl" method="_on_paradisa_button_down"]
+[connection signal="button_down" from="ScrollContainer2/VBoxContainer2/Fish eggs" to="Bowl" method="_on_fish_eggs_button_down"]
+[connection signal="button_down" from="ScrollContainer2/VBoxContainer2/Algae" to="Bowl" method="_on_algae_button_down"]
+[connection signal="button_down" from="ScrollContainer2/VBoxContainer2/Sea sponge" to="Bowl" method="_on_sea_sponge_button_down"]
 [connection signal="button_down" from="HBoxContainer/Quit" to="HBoxContainer/Quit" method="_on_button_down"]
 [connection signal="button_down" from="HBoxContainer/Back" to="HBoxContainer/Back" method="_on_button_down"]
