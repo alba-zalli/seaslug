@@ -1,0 +1,118 @@
+[gd_scene format=3 uid="uid://l0nwb61asbiq"]
+
+[ext_resource type="Script" uid="uid://cj5yh34g2qlio" path="res://book.gd" id="1_y0hms"]
+[ext_resource type="PackedScene" uid="uid://1bgoho004xev" path="res://page_spread.tscn" id="2_fijbg"]
+[ext_resource type="Texture2D" uid="uid://87n8i1xoyekp" path="res://f1.png" id="3_gw1ob"]
+[ext_resource type="Texture2D" uid="uid://bm3vhe513ut1l" path="res://f2 (2).png" id="5_tt8fr"]
+[ext_resource type="Texture2D" uid="uid://c5o3jyvc3ko1s" path="res://f2.png" id="6_37pi6"]
+[ext_resource type="Texture2D" uid="uid://cpqlvotu6dski" path="res://f3.png" id="7_cdt36"]
+[ext_resource type="Texture2D" uid="uid://nohulp1sfpdb" path="res://f4.png" id="8_0461q"]
+[ext_resource type="Texture2D" uid="uid://cyf1xnp7j56cl" path="res://f5.png" id="9_w08bg"]
+[ext_resource type="Script" uid="uid://djf2or5v3g3w8" path="res://slug_data.gd" id="10_37pi6"]
+[ext_resource type="Resource" uid="uid://bbnftwrs5t07p" path="res://data/sapsucker_data.tres" id="11_cdt36"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xecwa"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_w08bg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_0461q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_cdt36")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_37pi6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_tt8fr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_gw1ob")
+}],
+"loop": false,
+"name": &"close",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_gw1ob")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_tt8fr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_37pi6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_cdt36")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_0461q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_w08bg")
+}],
+"loop": false,
+"name": &"open",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7wrkw"]
+size = Vector2(144, 200)
+
+[node name="Book" type="Control" unique_id=1072664842]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="PageSpread" parent="." unique_id=953647098 instance=ExtResource("2_fijbg")]
+z_index = 2
+position = Vector2(4, 61)
+
+[node name="VBoxContainer" type="HBoxContainer" parent="." unique_id=198593339]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 273.0
+offset_right = 211.0
+offset_bottom = 304.0
+
+[node name="Prev" type="Button" parent="VBoxContainer" unique_id=1620696356]
+layout_mode = 2
+text = "←"
+
+[node name="CloseButton" type="Button" parent="VBoxContainer" unique_id=2146558374]
+layout_mode = 2
+text = "Expand"
+
+[node name="Next" type="Button" parent="VBoxContainer" unique_id=1500939325]
+layout_mode = 2
+text = "→"
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=3935383]
+
+[node name="BookAnim" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=192788458]
+position = Vector2(141.6443, 141)
+scale = Vector2(0.2448898, 0.20323741)
+sprite_frames = SubResource("SpriteFrames_xecwa")
+animation = &"close"
+
+[node name="ClickArea" type="Area2D" parent="CharacterBody2D" unique_id=1638951339]
+script = ExtResource("1_y0hms")
+slug_pages = Array[ExtResource("10_37pi6")]([ExtResource("11_cdt36")])
+my_data = ExtResource("11_cdt36")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/ClickArea" unique_id=154901103]
+position = Vector2(128, 146)
+shape = SubResource("RectangleShape2D_7wrkw")
+
+[node name="CloseButton" type="Button" parent="CharacterBody2D/ClickArea" unique_id=1465287434]
+offset_left = -189.0
+offset_top = -406.0
+offset_right = -171.0
+offset_bottom = -375.0
+text = "X"
+
+[connection signal="input_event" from="CharacterBody2D/ClickArea" to="CharacterBody2D/ClickArea" method="_on_input_event"]
+[connection signal="pressed" from="CharacterBody2D/ClickArea/CloseButton" to="CharacterBody2D/ClickArea" method="_on_close_button_pressed"]

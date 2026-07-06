@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="SlugData" format=3 uid="uid://bbnftwrs5t07p"]
+
+[ext_resource type="Texture2D" uid="uid://8k2dq7iq5c4k" path="res://slugimages/sapsucker.png" id="1_ewlxf"]
+[ext_resource type="Script" uid="uid://djf2or5v3g3w8" path="res://slug_data.gd" id="1_gq1h3"]
+
+[resource]
+resource_name = "sapsucker"
+script = ExtResource("1_gq1h3")
+slug_name = "Hedgpeth’s sapsucker"
+scientific_name = "Elysia hedgpethi"
+description = "tide pools/shallow water on southern BC coast to northern Mexico, eats green algae, fun fact! it can photosynthesize using the chloroplasts from the algae. "
+image = ExtResource("1_ewlxf")
+metadata/_custom_type_script = "uid://djf2or5v3g3w8"

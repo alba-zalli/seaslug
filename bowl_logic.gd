@@ -134,7 +134,6 @@ func _on_paradisa_button_down() -> void:
 func is_main_menu() -> bool:
 	return get_tree().current_scene.scene_file_path.ends_with("main_menu.tscn")
 
-
 func _on_sea_sponge_button_down() -> void:
 	spawn_sponge()
 
@@ -143,3 +142,6 @@ func _on_algae_button_down() -> void:
 
 func _on_fish_eggs_button_down() -> void:
 	spawn_fish()
+
+func _on_glass_toggled(toggled_on: bool) -> void:
+	get_tree().call_group("magglass", "toggle_visible", toggled_on)

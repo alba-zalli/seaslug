@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dcuoj1e5lxf20"]
+
+[node name="PageSpread" type="Node2D" unique_id=2068038161]
+
+[node name="NameLabel" type="Label" parent="." unique_id=659908609]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="SciNameLabel" type="Label" parent="." unique_id=1302886759]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=695013667]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="SlugImage" type="TextureRect" parent="." unique_id=1174276324]
+offset_right = 40.0
+offset_bottom = 40.0

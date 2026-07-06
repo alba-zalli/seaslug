@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://cqxijc1hir02x" path="res://sea sponge.png" id="10_d5ty1"]
 [ext_resource type="PackedScene" uid="uid://cock6q303rlwi" path="res://magglass.tscn" id="12_k6rs3"]
 [ext_resource type="Texture2D" uid="uid://15qfb8bvi135" path="res://magnifying-glass-solid-full.svg" id="16_7wurr"]
+[ext_resource type="PackedScene" uid="uid://l0nwb61asbiq" path="res://book.tscn" id="17_2qxto"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_evrla"]
 load_path = "res://.godot/imported/sapsucker.png-de6e083bf0f1b8bae9e336ecdb58a0fe.ctex"
@@ -27,7 +28,7 @@ offset_left = 56.0
 offset_top = 82.0
 offset_right = 214.0
 offset_bottom = 105.0
-text = "Sea Slugs"
+text = "Spawn Sea Slugs"
 horizontal_alignment = 1
 
 [node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=810999004]
@@ -144,14 +145,6 @@ offset_top = 23.0
 offset_right = 77.0
 offset_bottom = 62.0
 
-[node name="Label3" type="Label" parent="." unique_id=1662539849]
-offset_left = 60.0
-offset_top = 648.0
-offset_right = 188.0
-offset_bottom = 697.0
-text = "Magnifying glass
-"
-
 [node name="Bowl" type="Polygon2D" parent="." unique_id=1672481246]
 script = ExtResource("1_evrla")
 
@@ -159,6 +152,12 @@ script = ExtResource("1_evrla")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Bowl/StaticBody2D" unique_id=997705127]
 polygon = PackedVector2Array(0, 0, 0, 0, 0, 0)
+
+[node name="Book" parent="." unique_id=1072664842 instance=ExtResource("17_2qxto")]
+offset_left = 1569.0
+offset_top = 92.0
+offset_right = 1569.0
+offset_bottom = 92.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=2038805613]
 offset_right = 71.0
@@ -185,7 +184,8 @@ script = ExtResource("3_f4wr4")
 offset_right = 40.0
 offset_bottom = 23.0
 
-[node name="Node2D" parent="." unique_id=1828750686 instance=ExtResource("12_k6rs3")]
+[node name="MagGlass" parent="." unique_id=1828750686 instance=ExtResource("12_k6rs3")]
+position = Vector2(830, -347)
 
 [node name="VBoxContainer" type="HBoxContainer" parent="." unique_id=540976844]
 offset_left = 1255.0
@@ -193,9 +193,10 @@ offset_top = 1.0
 offset_right = 1307.0
 offset_bottom = 45.0
 
-[node name="Button" type="Button" parent="VBoxContainer" unique_id=519179365]
+[node name="Glass" type="Button" parent="VBoxContainer" unique_id=519179365]
 layout_mode = 2
 theme_override_constants/icon_max_width = 24
+toggle_mode = true
 icon = ExtResource("16_7wurr")
 
 [node name="Button2" type="Button" parent="VBoxContainer" unique_id=168131564]
@@ -215,3 +216,6 @@ text = "Tutorial"
 [connection signal="button_down" from="ScrollContainer2/VBoxContainer2/Sea sponge" to="Bowl" method="_on_sea_sponge_button_down"]
 [connection signal="button_down" from="HBoxContainer/Quit" to="HBoxContainer/Quit" method="_on_button_down"]
 [connection signal="button_down" from="HBoxContainer/Back" to="HBoxContainer/Back" method="_on_button_down"]
+[connection signal="toggled" from="VBoxContainer/Glass" to="Bowl" method="_on_glass_toggled"]
+
+[editable path="MagGlass"]

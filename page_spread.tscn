@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://1bgoho004xev"]
+
+[ext_resource type="Script" uid="uid://dqx4do3lawcq1" path="res://page_spread.gd" id="1_x3dqq"]
+
+[node name="PageSpread" type="Node2D" unique_id=953647098]
+script = ExtResource("1_x3dqq")
+
+[node name="Container" type="VBoxContainer" parent="." unique_id=464423382]
+offset_right = 121.0
+offset_bottom = 296.0
+rotation = -0.034906585
+
+[node name="NameLabel" type="Label" parent="Container" unique_id=960901191]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Actual name"
+
+[node name="SciNameLabel" type="Label" parent="Container" unique_id=1514881867]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 14
+text = "Scientific Name"
+
+[node name="DescriptionLabel" type="RichTextLabel" parent="Container" unique_id=249836958]
+custom_minimum_size = Vector2(10, 150)
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 11
+text = "Tide pools/shallow water on southern BC coast to northern Mexico, eats green algae, fun fact! it can photosynthesize using the chloroplasts from the algae. 
+"
+
+[node name="SlugImage" type="TextureRect" parent="." unique_id=209589114]
+offset_left = 183.0
+offset_top = 8.0
+offset_right = 223.0
+offset_bottom = 48.0
+metadata/_edit_use_anchors_ = true
