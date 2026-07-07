@@ -12,6 +12,7 @@
 [sub_resource type="Theme" id="Theme_qe12f"]
 
 [node name="MainMenu" type="Node2D" unique_id=1530463089]
+z_index = 2
 
 [node name="SlugContainer" type="Node2D" parent="." unique_id=1565993215]
 

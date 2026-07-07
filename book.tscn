@@ -61,15 +61,11 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7wrkw"]
-size = Vector2(144, 200)
+size = Vector2(317, 222)
 
 [node name="Book" type="Control" unique_id=1072664842]
 layout_mode = 3
 anchors_preset = 0
-
-[node name="PageSpread" parent="." unique_id=953647098 instance=ExtResource("2_fijbg")]
-z_index = 2
-position = Vector2(4, 61)
 
 [node name="VBoxContainer" type="HBoxContainer" parent="." unique_id=198593339]
 layout_mode = 0
@@ -99,12 +95,13 @@ sprite_frames = SubResource("SpriteFrames_xecwa")
 animation = &"close"
 
 [node name="ClickArea" type="Area2D" parent="CharacterBody2D" unique_id=1638951339]
+position = Vector2(4, -5)
 script = ExtResource("1_y0hms")
 slug_pages = Array[ExtResource("10_37pi6")]([ExtResource("11_cdt36")])
 my_data = ExtResource("11_cdt36")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/ClickArea" unique_id=154901103]
-position = Vector2(128, 146)
+position = Vector2(134.5, 157)
 shape = SubResource("RectangleShape2D_7wrkw")
 
 [node name="CloseButton" type="Button" parent="CharacterBody2D/ClickArea" unique_id=1465287434]
@@ -114,5 +111,11 @@ offset_right = -171.0
 offset_bottom = -375.0
 text = "X"
 
+[node name="PageSpread" parent="." unique_id=953647098 instance=ExtResource("2_fijbg")]
+z_index = 2
+position = Vector2(4, 61)
+
 [connection signal="input_event" from="CharacterBody2D/ClickArea" to="CharacterBody2D/ClickArea" method="_on_input_event"]
 [connection signal="pressed" from="CharacterBody2D/ClickArea/CloseButton" to="CharacterBody2D/ClickArea" method="_on_close_button_pressed"]
+
+[editable path="PageSpread"]
