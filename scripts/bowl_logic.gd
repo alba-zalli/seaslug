@@ -110,23 +110,12 @@ func spawn_paradisa():
 func _ready():
 	print("BOWL SPAWNER")
 	randomize()
-	var polygon = Polygon2D.new()
-	var points = PackedVector2Array()
-	var num_points = 64
 	var center = DisplayServer.screen_get_size() / 2
 	
 	if is_main_menu():
 		for i in range(5):
 			var random_spawn = spawn_functions[randi() % spawn_functions.size()]
 			random_spawn.call()
-	else:
-		for i in range(num_points):
-			var angle = (2.0 * PI * i) / num_points
-			points.append(Vector2(cos(angle) * radius_x, sin(angle) * radius_y))
-			polygon.polygon = points
-			polygon.position = center
-			add_child(polygon)
-
 
 func _on_sapsucker_button_down() -> void:
 	spawn_sapsucker()
