@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="SlugData" format=3 uid="uid://u7asoi6ab04l"]
+
+[ext_resource type="Texture2D" uid="uid://cqxijc1hir02x" path="res://sea sponge.png" id="1_n4xbj"]
+[ext_resource type="Texture2D" uid="uid://b0lj2qo8po0vo" path="res://slugimages/mari.png" id="2_q4p2x"]
+[ext_resource type="Script" uid="uid://djf2or5v3g3w8" path="res://slug_data.gd" id="3_d0gwl"]
+
+[resource]
+resource_name = "caldorid"
+script = ExtResource("3_d0gwl")
+slug_name = "Phyllidia marindica"
+scientific_name = "Phyllidia marindica"
+description = "Eats sponges"
+image_rect = ExtResource("2_q4p2x")
+food_rect = ExtResource("1_n4xbj")
+metadata/_custom_type_script = "uid://djf2or5v3g3w8"

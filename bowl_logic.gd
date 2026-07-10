@@ -10,6 +10,13 @@ var radius_y = 60 * scaler
 
 var caldorid_data: SlugData = preload("res://data/caldorid_data.tres")
 var sapsucker_data: SlugData = preload("res://data/sapsucker_data.tres")
+var hyps_data: SlugData = preload("res://data/hyps_data.tres")
+var phyl_data: SlugData = preload("res://data/phyl_data.tres")
+var flab_data: SlugData = preload("res://data/flab_data.tres")
+var mari_data: SlugData = preload("res://data/mari_data.tres")
+var paradisa_data: SlugData = preload("res://data/paradisa_data.tres")
+var gonio_data: SlugData = preload("res://data/gonio_data.tres")
+
 
 var spawn_functions := [
 	Callable(self, "spawn_sapsucker"),
@@ -40,21 +47,29 @@ var fish_scene = preload("res://fisheggs.tscn")
 
 func spawn_sponge():
 	var sponge = sponge_scene.instantiate()
-	fish_maker(sponge)
+	food_maker(sponge)
 
 func spawn_algae():
 	var algea = alg_scene.instantiate()
-	fish_maker(algea)
+	food_maker(algea)
 
 func spawn_fish():
 	var fish = fish_scene.instantiate()
-	fish_maker(fish)
+	food_maker(fish)
+
+# function overloading for fish maker
+func food_maker(fish):
+	fish.radius_x = radius_x
+	fish.radius_y = radius_y
+	fish.bowl_center = DisplayServer.screen_get_size() / 2
+	add_child(fish)
+	fish.global_position = fish.bowl_center
 
 func fish_maker(fish, data: SlugData = null):
 	fish.radius_x = radius_x
 	fish.radius_y = radius_y
 	fish.bowl_center = DisplayServer.screen_get_size() / 2
-	fish.slug_data = data          # ← add this
+	fish.slug_data = data
 	add_child(fish)
 	fish.global_position = fish.bowl_center
 	fish.main_menu_mode = false
@@ -63,15 +78,15 @@ func fish_maker(fish, data: SlugData = null):
 	
 func spawn_gonio():
 	var fish = gonio_scene.instantiate()
-	fish_maker(fish)
+	fish_maker(fish, gonio_data)
 	
 func spawn_flab():
 	var fish = flab_scene.instantiate()
-	fish_maker(fish)
+	fish_maker(fish, flab_data)
 
 func spawn_mari():
 	var fish = mari_scene.instantiate()
-	fish_maker(fish)
+	fish_maker(fish, mari_data)
 
 func spawn_sapsucker():
 	var fish = sapsucker_scene.instantiate()
@@ -83,15 +98,15 @@ func spawn_caldorid():
 	
 func spawn_hyps():
 	var fish = hyps_scene.instantiate()
-	fish_maker(fish)
+	fish_maker(fish, hyps_data)
 	
 func spawn_phyl():
 	var fish = phyl_scene.instantiate()
-	fish_maker(fish)
+	fish_maker(fish, phyl_data)
 
 func spawn_paradisa():
 	var fish = paradisa_scene.instantiate()
-	fish_maker(fish)
+	fish_maker(fish, paradisa_data)
 	
 func _ready():
 	print("BOWL SPAWNER")

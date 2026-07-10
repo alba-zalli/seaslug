@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="SlugData" format=3 uid="uid://dssclwq18pn4m"]
+
+[ext_resource type="Texture2D" uid="uid://bg5sl0ipmrp3" path="res://fisheggs.png" id="1_6gcgf"]
+[ext_resource type="Texture2D" uid="uid://cc6bnpdg57ulj" path="res://slugimages/flab.png" id="2_ye1tq"]
+[ext_resource type="Script" uid="uid://djf2or5v3g3w8" path="res://slug_data.gd" id="3_t0hnq"]
+
+[resource]
+resource_name = "caldorid"
+script = ExtResource("3_t0hnq")
+slug_name = "Flabellina rubrolineata"
+scientific_name = "Flabellina rubrolineata"
+description = "From: This species was described from the Red Sea"
+image_rect = ExtResource("2_ye1tq")
+food_rect = ExtResource("1_6gcgf")
+metadata/_custom_type_script = "uid://djf2or5v3g3w8"

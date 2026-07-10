@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="SlugData" format=3 uid="uid://b04kjrcta86al"]
+
+[ext_resource type="Texture2D" uid="uid://cqxijc1hir02x" path="res://sea sponge.png" id="1_oawdo"]
+[ext_resource type="Texture2D" uid="uid://ch13d35ifj5fs" path="res://slugimages/phyl.png" id="2_oawdo"]
+[ext_resource type="Script" uid="uid://djf2or5v3g3w8" path="res://slug_data.gd" id="3_m2agg"]
+
+[resource]
+resource_name = "caldorid"
+script = ExtResource("3_m2agg")
+slug_name = "Phyllidiella meandrina"
+scientific_name = "Phyllidiella meandrina"
+description = "From: It is a frequent species in Mauritius and Réunion"
+image_rect = ExtResource("2_oawdo")
+food_rect = ExtResource("1_oawdo")
+metadata/_custom_type_script = "uid://djf2or5v3g3w8"

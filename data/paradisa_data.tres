@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="SlugData" format=3 uid="uid://ce5hl23cylwaj"]
+
+[ext_resource type="Texture2D" uid="uid://cqxijc1hir02x" path="res://sea sponge.png" id="1_viktr"]
+[ext_resource type="Texture2D" uid="uid://idjmf5fm1gq8" path="res://slugimages/paradisa.png" id="2_sl2xv"]
+[ext_resource type="Script" uid="uid://djf2or5v3g3w8" path="res://slug_data.gd" id="3_ixhhr"]
+
+[resource]
+resource_name = "sapsucker"
+script = ExtResource("3_ixhhr")
+slug_name = "Hypselodoris paradisa"
+scientific_name = "Hypselodoris paradisa"
+description = "spog"
+image_rect = ExtResource("2_sl2xv")
+food_rect = ExtResource("1_viktr")
+metadata/_custom_type_script = "uid://djf2or5v3g3w8"

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://nohulp1sfpdb"
-path="res://.godot/imported/f4.png-1fb216a6726fd90776935345a9443ce7.ctex"
+uid="uid://87n8i1xoyekp"
+path="res://.godot/imported/f1.png-90362481cdd58c7a5797ab851d35e702.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://f4.png"
-dest_files=["res://.godot/imported/f4.png-1fb216a6726fd90776935345a9443ce7.ctex"]
+source_file="res://book_frames/f1.png"
+dest_files=["res://.godot/imported/f1.png-90362481cdd58c7a5797ab851d35e702.ctex"]
 
 [params]
 
