@@ -1,0 +1,226 @@
+[gd_scene format=3 uid="uid://c8b86nufkthgs"]
+
+[ext_resource type="Texture2D" uid="uid://ch2fi2csdtu5s" path="res://images/slugimages/dorid.png" id="1_6yfex"]
+[ext_resource type="Theme" uid="uid://ew0ljd640imm" path="res://themes/base_theme.tres" id="1_pg7up"]
+[ext_resource type="Texture2D" uid="uid://r6eipayrvqou" path="res://images/slugimages/hyps.png" id="2_f4wr4"]
+[ext_resource type="Texture2D" uid="uid://ch13d35ifj5fs" path="res://images/slugimages/phyl.png" id="3_mamk5"]
+[ext_resource type="Texture2D" uid="uid://cc6bnpdg57ulj" path="res://images/slugimages/flab.png" id="4_vw461"]
+[ext_resource type="Texture2D" uid="uid://b0lj2qo8po0vo" path="res://images/slugimages/mari.png" id="5_cdvkh"]
+[ext_resource type="Texture2D" uid="uid://lwb6qo0oxs7l" path="res://images/slugimages/gonio.png" id="6_ls73u"]
+[ext_resource type="Texture2D" uid="uid://idjmf5fm1gq8" path="res://images/slugimages/paradisa.png" id="7_ge20t"]
+[ext_resource type="Texture2D" uid="uid://bg5sl0ipmrp3" path="res://images/foodimages/fisheggs.png" id="9_mjfet"]
+[ext_resource type="Texture2D" uid="uid://co81xieitxihr" path="res://images/foodimages/algea.png" id="10_7wurr"]
+[ext_resource type="Texture2D" uid="uid://cqxijc1hir02x" path="res://images/foodimages/sea sponge.png" id="10_d5ty1"]
+[ext_resource type="Script" uid="uid://cemp8kuaynvje" path="res://scripts/bowl_logic.gd" id="12_2qxto"]
+[ext_resource type="PackedScene" uid="uid://cock6q303rlwi" path="res://assetscenes/magglass.tscn" id="12_k6rs3"]
+[ext_resource type="Script" uid="uid://uusxfhw2epny" path="res://scripts/button.gd" id="14_q1cec"]
+[ext_resource type="Texture2D" uid="uid://15qfb8bvi135" path="res://images/icons/magnifying-glass-solid-full.svg" id="16_7wurr"]
+[ext_resource type="PackedScene" uid="uid://l0nwb61asbiq" path="res://assetscenes/book.tscn" id="17_2qxto"]
+[ext_resource type="PackedScene" uid="uid://daiyw5jx8vy84" path="res://assetscenes/worldmap.tscn" id="18_q1cec"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_evrla"]
+load_path = "res://.godot/imported/sapsucker.png-de6e083bf0f1b8bae9e336ecdb58a0fe.ctex"
+
+[node name="Swimming" type="Node2D" unique_id=1151149152]
+
+[node name="Label" type="Label" parent="." unique_id=111319718]
+offset_left = 56.0
+offset_top = 82.0
+offset_right = 214.0
+offset_bottom = 105.0
+text = "Spawn Sea Slugs"
+horizontal_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=810999004]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 57.0
+offset_top = 117.0
+offset_right = 271.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_pg7up")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer" unique_id=1714242740]
+layout_mode = 2
+
+[node name="Sapsucker" type="Button" parent="ScrollContainer/VBoxContainer" unique_id=767077272]
+layout_mode = 2
+theme_override_constants/icon_max_width = 24
+text = "Sapsucker"
+icon = SubResource("CompressedTexture2D_evrla")
+
+[node name="Cal Dorid" type="Button" parent="ScrollContainer/VBoxContainer" unique_id=1875796786]
+layout_mode = 2
+theme_override_constants/icon_max_width = 24
+text = "California Dorid"
+icon = ExtResource("1_6yfex")
+
+[node name="Hypselodoris" type="Button" parent="ScrollContainer/VBoxContainer" unique_id=1889667325]
+layout_mode = 2
+theme_override_constants/icon_max_width = 24
+text = "Hypselodoris"
+icon = ExtResource("2_f4wr4")
+
+[node name="Phyllidiella" type="Button" parent="ScrollContainer/VBoxContainer" unique_id=1785172312]
+layout_mode = 2
+theme_override_constants/icon_max_width = 24
+text = "Phyllidiella"
+icon = ExtResource("3_mamk5")
+
+[node name="Flabellina" type="Button" parent="ScrollContainer/VBoxContainer" unique_id=1940239109]
+layout_mode = 2
+theme_override_constants/icon_max_width = 24
+text = "Flabellina"
+icon = ExtResource("4_vw461")
+
+[node name="Marindica" type="Button" parent="ScrollContainer/VBoxContainer" unique_id=1538349091]
+layout_mode = 2
+theme_override_constants/icon_max_width = 24
+text = "Marindica"
+icon = ExtResource("5_cdvkh")
+
+[node name="Gonio" type="Button" parent="ScrollContainer/VBoxContainer" unique_id=220533175]
+layout_mode = 2
+theme_override_constants/icon_max_width = 24
+text = "Gonio"
+icon = ExtResource("6_ls73u")
+
+[node name="Paradisa" type="Button" parent="ScrollContainer/VBoxContainer" unique_id=1633262766]
+layout_mode = 2
+theme_override_constants/icon_max_width = 24
+text = "Paradisa"
+icon = ExtResource("7_ge20t")
+
+[node name="ScrollContainer2" type="ScrollContainer" parent="." unique_id=631290024]
+offset_left = 59.0
+offset_top = 402.0
+offset_right = 277.0
+offset_bottom = 534.0
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="ScrollContainer2" unique_id=425249478]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ScrollContainer2/VBoxContainer2" unique_id=160548516]
+layout_mode = 2
+text = "Food Options"
+horizontal_alignment = 1
+
+[node name="Fish eggs" type="Button" parent="ScrollContainer2/VBoxContainer2" unique_id=668461962]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/icon_max_width = 24
+text = "Hydrozoa"
+icon = ExtResource("9_mjfet")
+
+[node name="Algae" type="Button" parent="ScrollContainer2/VBoxContainer2" unique_id=1957107073]
+layout_mode = 2
+theme_override_constants/icon_max_width = 24
+text = "Algae"
+icon = ExtResource("10_7wurr")
+
+[node name="Sea sponge" type="Button" parent="ScrollContainer2/VBoxContainer2" unique_id=1048649379]
+layout_mode = 2
+theme_override_constants/icon_max_width = 24
+text = "Sponges"
+icon = ExtResource("10_d5ty1")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="." unique_id=1624829508]
+offset_left = 60.0
+offset_top = 566.0
+offset_right = 176.0
+offset_bottom = 697.0
+
+[node name="Label" type="Label" parent="VBoxContainer2" unique_id=1550029272]
+layout_mode = 2
+text = "Border options"
+horizontal_alignment = 1
+
+[node name="CheckButton" type="CheckButton" parent="VBoxContainer2/Label" unique_id=34631343]
+layout_mode = 0
+offset_left = 33.0
+offset_top = 23.0
+offset_right = 77.0
+offset_bottom = 62.0
+
+[node name="Bowl" type="Polygon2D" parent="." unique_id=1672481246]
+script = ExtResource("12_2qxto")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Bowl" unique_id=848718846]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Bowl/StaticBody2D" unique_id=997705127]
+polygon = PackedVector2Array(0, 0, 0, 0, 0, 0)
+
+[node name="Book" parent="." unique_id=1072664842 instance=ExtResource("17_2qxto")]
+offset_left = 1541.0
+offset_top = 114.0
+offset_right = 1541.0
+offset_bottom = 114.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=2038805613]
+offset_right = 71.0
+offset_bottom = 31.0
+size_flags_stretch_ratio = 0.0
+
+[node name="Quit" type="Button" parent="HBoxContainer" unique_id=1660233466]
+layout_mode = 2
+text = "X"
+script = ExtResource("14_q1cec")
+
+[node name="Control" type="Control" parent="HBoxContainer" unique_id=1835694574]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Back" type="Button" parent="HBoxContainer" unique_id=391075290]
+layout_direction = 2
+layout_mode = 2
+text = "Back"
+icon_alignment = 1
+script = ExtResource("14_q1cec")
+
+[node name="Label2" type="Label" parent="." unique_id=82134145]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="MagGlass" parent="." unique_id=1828750686 instance=ExtResource("12_k6rs3")]
+position = Vector2(830, -347)
+
+[node name="VBoxContainer" type="HBoxContainer" parent="." unique_id=540976844]
+offset_left = 1255.0
+offset_top = 1.0
+offset_right = 1307.0
+offset_bottom = 45.0
+
+[node name="Glass" type="Button" parent="VBoxContainer" unique_id=519179365]
+layout_mode = 2
+theme_override_constants/icon_max_width = 24
+toggle_mode = true
+icon = ExtResource("16_7wurr")
+
+[node name="Button2" type="Button" parent="VBoxContainer" unique_id=168131564]
+layout_mode = 2
+text = "Tutorial"
+
+[node name="Node2D" type="Node2D" parent="." unique_id=57434592]
+
+[node name="Node2D" parent="Node2D" unique_id=232880064 instance=ExtResource("18_q1cec")]
+position = Vector2(1592, 506)
+
+[connection signal="button_down" from="ScrollContainer/VBoxContainer/Sapsucker" to="Bowl" method="_on_sapsucker_button_down"]
+[connection signal="button_down" from="ScrollContainer/VBoxContainer/Cal Dorid" to="Bowl" method="_on_cal_dorid_button_down"]
+[connection signal="button_down" from="ScrollContainer/VBoxContainer/Hypselodoris" to="Bowl" method="_on_hypselodoris_button_down"]
+[connection signal="button_down" from="ScrollContainer/VBoxContainer/Phyllidiella" to="Bowl" method="_on_phyllidiella_button_down"]
+[connection signal="button_down" from="ScrollContainer/VBoxContainer/Flabellina" to="Bowl" method="_on_flabellina_button_down"]
+[connection signal="button_down" from="ScrollContainer/VBoxContainer/Marindica" to="Bowl" method="_on_marindica_button_down"]
+[connection signal="button_down" from="ScrollContainer/VBoxContainer/Gonio" to="Bowl" method="_on_gonio_button_down"]
+[connection signal="button_down" from="ScrollContainer/VBoxContainer/Paradisa" to="Bowl" method="_on_paradisa_button_down"]
+[connection signal="button_down" from="ScrollContainer2/VBoxContainer2/Fish eggs" to="Bowl" method="_on_fish_eggs_button_down"]
+[connection signal="button_down" from="ScrollContainer2/VBoxContainer2/Algae" to="Bowl" method="_on_algae_button_down"]
+[connection signal="button_down" from="ScrollContainer2/VBoxContainer2/Sea sponge" to="Bowl" method="_on_sea_sponge_button_down"]
+[connection signal="button_down" from="HBoxContainer/Quit" to="HBoxContainer/Quit" method="_on_quit_button_down"]
+[connection signal="button_down" from="HBoxContainer/Back" to="HBoxContainer/Back" method="_on_back_button_down"]
+[connection signal="toggled" from="VBoxContainer/Glass" to="Bowl" method="_on_glass_toggled"]
+
+[editable path="MagGlass"]

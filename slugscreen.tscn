@@ -1,8 +1,0 @@
-[gd_scene format=3 uid="uid://d4d15qo7ijphj"]
-
-[ext_resource type="Script" uid="uid://cb5sd8h2r25ks" path="res://slugscreen.gd" id="1_pu2gk"]
-
-[node name="Node2D" type="Node2D" unique_id=969373638]
-
-[node name="Bowl" type="Polygon2D" parent="." unique_id=1007534614]
-script = ExtResource("1_pu2gk")

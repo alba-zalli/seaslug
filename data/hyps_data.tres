@@ -1,8 +1,8 @@
 [gd_resource type="Resource" script_class="SlugData" format=3 uid="uid://bfegjv1gnr4e1"]
 
-[ext_resource type="Texture2D" uid="uid://cqxijc1hir02x" path="res://sea sponge.png" id="1_bmodt"]
-[ext_resource type="Texture2D" uid="uid://r6eipayrvqou" path="res://slugimages/hyps.png" id="2_bmodt"]
-[ext_resource type="Script" uid="uid://djf2or5v3g3w8" path="res://slug_data.gd" id="3_mswcu"]
+[ext_resource type="Texture2D" uid="uid://cqxijc1hir02x" path="res://images/foodimages/sea sponge.png" id="1_bmodt"]
+[ext_resource type="Texture2D" uid="uid://r6eipayrvqou" path="res://images/slugimages/hyps.png" id="2_bmodt"]
+[ext_resource type="Script" uid="uid://djf2or5v3g3w8" path="res://scripts/slug_data.gd" id="3_mswcu"]
 
 [resource]
 resource_name = "caldorid"

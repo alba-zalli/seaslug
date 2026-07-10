@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="SlugData" format=3 uid="uid://bbnftwrs5t07p"]
 
-[ext_resource type="Texture2D" uid="uid://co81xieitxihr" path="res://algea.png" id="1_7nr41"]
-[ext_resource type="Script" uid="uid://djf2or5v3g3w8" path="res://slug_data.gd" id="1_gq1h3"]
+[ext_resource type="Texture2D" uid="uid://co81xieitxihr" path="res://images/foodimages/algea.png" id="1_7nr41"]
+[ext_resource type="Script" uid="uid://djf2or5v3g3w8" path="res://scripts/slug_data.gd" id="1_gq1h3"]
 [ext_resource type="Texture2D" uid="uid://2ccvp3o27ihg" path="res://data/hedgpeths-sea-hare-1.jpg" id="2_7nr41"]
 
 [resource]

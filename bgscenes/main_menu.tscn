@@ -1,0 +1,80 @@
+[gd_scene format=3 uid="uid://crev2inf1u6xe"]
+
+[ext_resource type="PackedScene" uid="uid://d4d15qo7ijphj" path="res://bgscenes/slugscreen.tscn" id="1_txvb6"]
+[ext_resource type="Theme" uid="uid://ew0ljd640imm" path="res://themes/base_theme.tres" id="2_cbsqi"]
+[ext_resource type="FontFile" uid="uid://cey3rdjxw6l7b" path="res://themes/fonts/rainyhearts.ttf" id="3_jmcdc"]
+[ext_resource type="Script" uid="uid://uusxfhw2epny" path="res://scripts/button.gd" id="4_grsqf"]
+
+[sub_resource type="Theme" id="Theme_rhts7"]
+
+[sub_resource type="Theme" id="Theme_qe12f"]
+
+[node name="MainMenu" type="Node2D" unique_id=1530463089]
+z_index = 2
+
+[node name="SlugContainer" type="Node2D" parent="." unique_id=1565993215]
+
+[node name="Node2D" parent="SlugContainer" unique_id=969373638 instance=ExtResource("1_txvb6")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=144022082]
+
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer" unique_id=2071457234]
+offset_left = -46.0
+offset_top = 348.0
+offset_right = 1874.0
+offset_bottom = 928.0
+theme = SubResource("Theme_rhts7")
+
+[node name="MainButtons" type="VBoxContainer" parent="CanvasLayer/CenterContainer" unique_id=928664067]
+layout_mode = 2
+theme = ExtResource("2_cbsqi")
+theme_override_constants/separation = 27
+
+[node name="Play" type="Button" parent="CanvasLayer/CenterContainer/MainButtons" unique_id=2083941540]
+layout_mode = 2
+theme = SubResource("Theme_qe12f")
+theme_override_fonts/font = ExtResource("3_jmcdc")
+theme_override_font_sizes/font_size = 50
+text = "Play"
+script = ExtResource("4_grsqf")
+
+[node name="Settings" type="Button" parent="CanvasLayer/CenterContainer/MainButtons" unique_id=1925321198]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_jmcdc")
+theme_override_font_sizes/font_size = 50
+text = "Settings"
+script = ExtResource("4_grsqf")
+
+[node name="Credits" type="Button" parent="CanvasLayer/CenterContainer/MainButtons" unique_id=1535633199]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_jmcdc")
+theme_override_font_sizes/font_size = 50
+text = "Credits"
+script = ExtResource("4_grsqf")
+
+[node name="Quit" type="Button" parent="CanvasLayer/CenterContainer/MainButtons" unique_id=2110066894]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Quit"
+script = ExtResource("4_grsqf")
+
+[node name="Quit" type="Button" parent="CanvasLayer" unique_id=761972361]
+offset_right = 18.0
+offset_bottom = 31.0
+text = "X"
+script = ExtResource("4_grsqf")
+
+[node name="Title" type="Label" parent="CanvasLayer" unique_id=752815357]
+offset_right = 1920.0
+offset_bottom = 500.0
+theme = ExtResource("2_cbsqi")
+theme_override_font_sizes/font_size = 150
+text = "Sea Slug Microaquarium"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="button_down" from="CanvasLayer/CenterContainer/MainButtons/Play" to="CanvasLayer/CenterContainer/MainButtons/Play" method="_on_play_button_down"]
+[connection signal="button_down" from="CanvasLayer/CenterContainer/MainButtons/Settings" to="CanvasLayer/CenterContainer/MainButtons/Settings" method="_on_settings_button_down"]
+[connection signal="button_down" from="CanvasLayer/CenterContainer/MainButtons/Credits" to="CanvasLayer/CenterContainer/MainButtons/Credits" method="_on_credits_button_down"]
+[connection signal="button_down" from="CanvasLayer/CenterContainer/MainButtons/Quit" to="CanvasLayer/CenterContainer/MainButtons/Play" method="_on_quit_button_down"]
+[connection signal="button_down" from="CanvasLayer/Quit" to="CanvasLayer/Quit" method="_on_quit_button_down"]

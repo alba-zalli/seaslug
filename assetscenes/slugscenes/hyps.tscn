@@ -1,0 +1,203 @@
+[gd_scene format=3 uid="uid://de52221helqiu"]
+
+[ext_resource type="Script" uid="uid://xb8o6and7qd3" path="res://scripts/fish_logic.tscn.gd" id="1_1c4vv"]
+[ext_resource type="Texture2D" uid="uid://r6eipayrvqou" path="res://images/slugimages/hyps.png" id="2_03vv8"]
+
+[sub_resource type="Animation" id="Animation_6qich"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fish/Skeleton2D/Head:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(4, -1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Fish/Skeleton2D/Head:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Fish/Skeleton2D/Head/Mid:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(9, 307)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Fish/Skeleton2D/Head/Mid:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Fish/Skeleton2D/Head/Mid/Back:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(30, 428)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Fish/Skeleton2D/Head/Mid/Back:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_mqyiv"]
+resource_name = "swim_animation"
+length = 4.0666666
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fish/Skeleton2D/Head:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2, 2.9666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(4, -1), Vector2(4, -1), Vector2(4, -1), Vector2(4, -1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Fish/Skeleton2D/Head:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 2, 2.9666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, 0.0, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Fish/Skeleton2D/Head/Mid:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1, 2, 2.9666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(9, 307), Vector2(-9, 307), Vector2(0, 307), Vector2(40, 307)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Fish/Skeleton2D/Head/Mid:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1, 2, 2.9666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.16580628, 0.0, -0.33161256]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Fish/Skeleton2D/Head/Mid/Back:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1, 2, 2.9666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(30, 428), Vector2(-20, 428), Vector2(20, 428), Vector2(40, 428)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Fish/Skeleton2D/Head/Mid/Back:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1, 2, 2.9666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.16580628, 0.0, -0.17278759]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1rnu5"]
+_data = {
+&"RESET": SubResource("Animation_6qich"),
+&"swim_animation": SubResource("Animation_mqyiv")
+}
+
+[node name="Node2D" type="CharacterBody2D" unique_id=200212555]
+position = Vector2(9, -9)
+script = ExtResource("1_1c4vv")
+
+[node name="Fish" type="Polygon2D" parent="." unique_id=1055823034]
+position = Vector2(-37, 41)
+texture = ExtResource("2_03vv8")
+skeleton = NodePath("Skeleton2D")
+polygon = PackedVector2Array(361.52417, 213.73935, 362.70007, 152.0043, 363.73358, 97.740746, 368, 62, 365.0426, 29.020424, 394.0318, 0.96630096, 419.57867, -23.756409, 445.523, -24.477081, 482.9109, -25.515636, 506.2649, -8.771271, 542.3541, 17.104004, 549, 59, 566, 95, 566, 142, 567.3539, 204.9432, 561.06726, 263.61853, 556.79846, 303.45996, 561.641, 331.77014, 563, 370, 567, 410, 579.66846, 437.16125, 581.833, 481.17682, 577, 521, 584.94604, 544.4741, 588.29224, 613.6298, 590.22375, 653.54626, 588.7149, 699.5186, 586.7053, 760.7443, 574.6347, 805.3124, 563.8353, 845.18726, 518, 869, 477, 860, 450.123, 832.36444, 428.37482, 810.00275, 415.0456, 767.96436, 405.50488, 737.8744, 386.72308, 690.4258, 372.07953, 653.43146, 364, 606, 358.00574, 547.87775, 361.32617, 501.3908, 365.0426, 449.36102, 365.94788, 402.28665, 366.80188, 357.88116, 366, 300, 369, 271, 365.1773, 241.72046)
+uv = PackedVector2Array(361.52417, 213.73935, 365.0426, 29.020424, 419.57867, -23.756409, 482.9109, -25.515636, 576.15, 41.335022, 567.3539, 204.9432, 556.79846, 303.45996, 579.66846, 437.16125, 584.94604, 544.4741, 590.22375, 653.54626, 586.7053, 760.7443, 563.8353, 845.18726, 526.8916, 894.4457, 472.35547, 876.8534, 428.37482, 810.00275, 405.50488, 737.8744, 372.07953, 653.43146, 358.00574, 547.87775, 365.0426, 449.36102, 366.80188, 357.88116, 365.0426, 282.23438)
+polygons = [[3, 4, 5], [5, 6, 7], [7, 8, 9], [3, 5, 9], [5, 7, 9], [3, 9, 11], [9, 10, 11], [2, 3, 11], [2, 11, 13], [11, 12, 13], [1, 2, 13], [0, 1, 14], [1, 13, 14], [19, 20, 21], [28, 29, 30], [28, 30, 31], [28, 31, 32], [26, 27, 34], [28, 32, 34], [32, 33, 34], [27, 28, 34], [26, 34, 35], [24, 25, 36], [25, 26, 36], [26, 35, 36], [24, 36, 37], [23, 24, 38], [24, 37, 38], [22, 23, 38], [22, 38, 39], [21, 22, 40], [22, 39, 40], [19, 21, 41], [21, 40, 41], [18, 19, 42], [19, 41, 42], [17, 18, 43], [18, 42, 43], [16, 17, 43], [16, 43, 44], [15, 16, 45], [16, 44, 45], [15, 45, 46], [0, 14, 46], [14, 15, 46]]
+bones = ["Head", PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1), "Head/Mid", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0), "Head/Mid/Back", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0)]
+
+[node name="Skeleton2D" type="Skeleton2D" parent="Fish" unique_id=229118173]
+position = Vector2(466, 95)
+
+[node name="Head" type="Bone2D" parent="Fish/Skeleton2D" unique_id=1261950470]
+position = Vector2(4, -1)
+rest = Transform2D(1, 0, 0, 1, 4, -1)
+
+[node name="Mid" type="Bone2D" parent="Fish/Skeleton2D/Head" unique_id=1100533305]
+position = Vector2(9, 307)
+scale = Vector2(0.99999994, 0.99999994)
+rest = Transform2D(1, 0, 0, 1, 6, 301)
+
+[node name="Back" type="Bone2D" parent="Fish/Skeleton2D/Head/Mid" unique_id=1984564726]
+position = Vector2(30, 428)
+rest = Transform2D(1, 0, 0, 1, 30, 402)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1953793628]
+position = Vector2(-4, 2)
+polygon = PackedVector2Array(442, 27, 511, 68, 543, 201, 557, 398, 656, 535, 716, 672, 728, 870, 586, 962, 274, 935, 264, 722, 278, 506, 309, 360, 302, 188, 316, 84, 442, 27)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1758336900]
+libraries/ = SubResource("AnimationLibrary_1rnu5")
+
+[node name="EatArea" type="Area2D" parent="." unique_id=989155854]
+
+[node name="Polygon2D" type="CollisionPolygon2D" parent="EatArea" unique_id=435144761]
+polygon = PackedVector2Array(339, 138, 352, 105, 342, 79, 384, 47, 448, 35, 498, 66, 489, 84, 514, 139, 512, 189, 526, 238, 505, 258, 468, 249, 381, 265, 348, 261, 342, 205, 335, 167)
