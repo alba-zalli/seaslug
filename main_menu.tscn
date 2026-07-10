@@ -1,10 +1,8 @@
 [gd_scene format=3 uid="uid://crev2inf1u6xe"]
 
 [ext_resource type="Script" uid="uid://uusxfhw2epny" path="res://button.gd" id="1_06t4h"]
-[ext_resource type="Script" uid="uid://dqb7xp775y7bg" path="res://quit.gd" id="1_7vrkn"]
 [ext_resource type="PackedScene" uid="uid://d4d15qo7ijphj" path="res://slugscreen.tscn" id="1_glbon"]
 [ext_resource type="Theme" uid="uid://ew0ljd640imm" path="res://base_theme.tres" id="2_jix8l"]
-[ext_resource type="Script" uid="uid://egrovh1ytx4n" path="res://settings.gd" id="3_fu7sn"]
 [ext_resource type="FontFile" uid="uid://cey3rdjxw6l7b" path="res://rainyhearts.ttf" id="3_nlkkf"]
 
 [sub_resource type="Theme" id="Theme_rhts7"]
@@ -45,25 +43,26 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("3_nlkkf")
 theme_override_font_sizes/font_size = 50
 text = "Settings"
-script = ExtResource("3_fu7sn")
+script = ExtResource("1_06t4h")
 
 [node name="Credits" type="Button" parent="CanvasLayer/CenterContainer/MainButtons" unique_id=1535633199]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_nlkkf")
 theme_override_font_sizes/font_size = 50
 text = "Credits"
+script = ExtResource("1_06t4h")
 
 [node name="Quit" type="Button" parent="CanvasLayer/CenterContainer/MainButtons" unique_id=2110066894]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "Quit"
-script = ExtResource("1_7vrkn")
+script = ExtResource("1_06t4h")
 
-[node name="Button" type="Button" parent="CanvasLayer" unique_id=761972361]
+[node name="Quit" type="Button" parent="CanvasLayer" unique_id=761972361]
 offset_right = 18.0
 offset_bottom = 31.0
 text = "X"
-script = ExtResource("1_7vrkn")
+script = ExtResource("1_06t4h")
 
 [node name="Title" type="Label" parent="CanvasLayer" unique_id=752815357]
 offset_right = 1920.0
@@ -74,8 +73,8 @@ text = "Sea Slug Microaquarium"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[connection signal="pressed" from="CanvasLayer/CenterContainer/MainButtons/Play" to="CanvasLayer/Button" method="_on_play_pressed"]
-[connection signal="button_down" from="CanvasLayer/CenterContainer/MainButtons/Settings" to="CanvasLayer/Button" method="_on_settings_button_down"]
-[connection signal="button_down" from="CanvasLayer/CenterContainer/MainButtons/Credits" to="CanvasLayer/Button" method="_on_credits_button_down"]
-[connection signal="button_down" from="CanvasLayer/CenterContainer/MainButtons/Quit" to="CanvasLayer/Button" method="_on_quit_button_down"]
-[connection signal="button_down" from="CanvasLayer/Button" to="CanvasLayer/Button" method="_on_button_down"]
+[connection signal="button_down" from="CanvasLayer/CenterContainer/MainButtons/Play" to="CanvasLayer/CenterContainer/MainButtons/Play" method="_on_play_button_down"]
+[connection signal="button_down" from="CanvasLayer/CenterContainer/MainButtons/Settings" to="CanvasLayer/CenterContainer/MainButtons/Settings" method="_on_settings_button_down"]
+[connection signal="button_down" from="CanvasLayer/CenterContainer/MainButtons/Credits" to="CanvasLayer/CenterContainer/MainButtons/Credits" method="_on_credits_button_down"]
+[connection signal="button_down" from="CanvasLayer/CenterContainer/MainButtons/Quit" to="CanvasLayer/CenterContainer/MainButtons/Play" method="_on_quit_button_down"]
+[connection signal="button_down" from="CanvasLayer/Quit" to="CanvasLayer/Quit" method="_on_quit_button_down"]

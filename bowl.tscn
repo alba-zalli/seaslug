@@ -3,7 +3,6 @@
 [ext_resource type="Texture2D" uid="uid://ch2fi2csdtu5s" path="res://slugimages/dorid.png" id="1_6yfex"]
 [ext_resource type="Script" uid="uid://cemp8kuaynvje" path="res://bowl_logic.gd" id="1_evrla"]
 [ext_resource type="Theme" uid="uid://ew0ljd640imm" path="res://base_theme.tres" id="1_pg7up"]
-[ext_resource type="Script" uid="uid://dqb7xp775y7bg" path="res://quit.gd" id="2_6yfex"]
 [ext_resource type="Texture2D" uid="uid://r6eipayrvqou" path="res://slugimages/hyps.png" id="2_f4wr4"]
 [ext_resource type="Script" uid="uid://uusxfhw2epny" path="res://button.gd" id="3_f4wr4"]
 [ext_resource type="Texture2D" uid="uid://ch13d35ifj5fs" path="res://slugimages/phyl.png" id="3_mamk5"]
@@ -17,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://cock6q303rlwi" path="res://magglass.tscn" id="12_k6rs3"]
 [ext_resource type="Texture2D" uid="uid://15qfb8bvi135" path="res://magnifying-glass-solid-full.svg" id="16_7wurr"]
 [ext_resource type="PackedScene" uid="uid://l0nwb61asbiq" path="res://book.tscn" id="17_2qxto"]
+[ext_resource type="PackedScene" uid="uid://daiyw5jx8vy84" path="res://worldmap.tscn" id="18_q1cec"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_evrla"]
 load_path = "res://.godot/imported/sapsucker.png-de6e083bf0f1b8bae9e336ecdb58a0fe.ctex"
@@ -154,10 +154,10 @@ script = ExtResource("1_evrla")
 polygon = PackedVector2Array(0, 0, 0, 0, 0, 0)
 
 [node name="Book" parent="." unique_id=1072664842 instance=ExtResource("17_2qxto")]
-offset_left = 1569.0
-offset_top = 92.0
-offset_right = 1569.0
-offset_bottom = 92.0
+offset_left = 1541.0
+offset_top = 114.0
+offset_right = 1541.0
+offset_bottom = 114.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=2038805613]
 offset_right = 71.0
@@ -167,7 +167,7 @@ size_flags_stretch_ratio = 0.0
 [node name="Quit" type="Button" parent="HBoxContainer" unique_id=1660233466]
 layout_mode = 2
 text = "X"
-script = ExtResource("2_6yfex")
+script = ExtResource("3_f4wr4")
 
 [node name="Control" type="Control" parent="HBoxContainer" unique_id=1835694574]
 layout_mode = 2
@@ -203,6 +203,11 @@ icon = ExtResource("16_7wurr")
 layout_mode = 2
 text = "Tutorial"
 
+[node name="Node2D" type="Node2D" parent="." unique_id=57434592]
+
+[node name="Node2D" parent="Node2D" unique_id=232880064 instance=ExtResource("18_q1cec")]
+position = Vector2(1592, 506)
+
 [connection signal="button_down" from="ScrollContainer/VBoxContainer/Sapsucker" to="Bowl" method="_on_sapsucker_button_down"]
 [connection signal="button_down" from="ScrollContainer/VBoxContainer/Cal Dorid" to="Bowl" method="_on_cal_dorid_button_down"]
 [connection signal="button_down" from="ScrollContainer/VBoxContainer/Hypselodoris" to="Bowl" method="_on_hypselodoris_button_down"]
@@ -214,8 +219,8 @@ text = "Tutorial"
 [connection signal="button_down" from="ScrollContainer2/VBoxContainer2/Fish eggs" to="Bowl" method="_on_fish_eggs_button_down"]
 [connection signal="button_down" from="ScrollContainer2/VBoxContainer2/Algae" to="Bowl" method="_on_algae_button_down"]
 [connection signal="button_down" from="ScrollContainer2/VBoxContainer2/Sea sponge" to="Bowl" method="_on_sea_sponge_button_down"]
-[connection signal="button_down" from="HBoxContainer/Quit" to="HBoxContainer/Quit" method="_on_button_down"]
-[connection signal="button_down" from="HBoxContainer/Back" to="HBoxContainer/Back" method="_on_button_down"]
+[connection signal="button_down" from="HBoxContainer/Quit" to="HBoxContainer/Quit" method="_on_quit_button_down"]
+[connection signal="button_down" from="HBoxContainer/Back" to="HBoxContainer/Back" method="_on_back_button_down"]
 [connection signal="toggled" from="VBoxContainer/Glass" to="Bowl" method="_on_glass_toggled"]
 
 [editable path="MagGlass"]

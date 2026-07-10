@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="SlugData" format=3 uid="uid://d0hk5unceyhka"]
+
+[ext_resource type="Texture2D" uid="uid://cqxijc1hir02x" path="res://sea sponge.png" id="1_1br1h"]
+[ext_resource type="Texture2D" uid="uid://ch2fi2csdtu5s" path="res://slugimages/dorid.png" id="2_u6buf"]
+[ext_resource type="Script" uid="uid://djf2or5v3g3w8" path="res://slug_data.gd" id="3_50gfn"]
+
+[resource]
+resource_name = "caldorid"
+script = ExtResource("3_50gfn")
+slug_name = "California blue dorid"
+scientific_name = "Felimare californiensis"
+description = "Lives in tidepools/shallow water on Californian to north Mexican cost, eats sea sponges."
+image_rect = ExtResource("2_u6buf")
+food_rect = ExtResource("1_1br1h")
+metadata/_custom_type_script = "uid://djf2or5v3g3w8"

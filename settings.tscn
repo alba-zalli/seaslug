@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://bvyujljyfjq5h"]
 
-[ext_resource type="Script" uid="uid://dqb7xp775y7bg" path="res://quit.gd" id="1_nkug2"]
 [ext_resource type="Script" uid="uid://uusxfhw2epny" path="res://button.gd" id="2_3ykye"]
 
 [node name="Node2D" type="Node2D" unique_id=1747660189]
@@ -12,7 +11,7 @@ offset_bottom = 40.0
 [node name="Quit" type="Button" parent="HBoxContainer" unique_id=373800270]
 layout_mode = 2
 text = "X"
-script = ExtResource("1_nkug2")
+script = ExtResource("2_3ykye")
 
 [node name="Back" type="Button" parent="HBoxContainer" unique_id=1864484417]
 layout_direction = 2
@@ -31,5 +30,5 @@ offset_bottom = 124.0
 layout_mode = 2
 text = "Settings"
 
-[connection signal="button_down" from="HBoxContainer/Quit" to="HBoxContainer/Quit" method="_on_button_down"]
-[connection signal="button_down" from="HBoxContainer/Back" to="HBoxContainer/Back" method="_on_button_down"]
+[connection signal="button_down" from="HBoxContainer/Quit" to="HBoxContainer/Quit" method="_on_quit_button_down"]
+[connection signal="button_down" from="HBoxContainer/Back" to="HBoxContainer/Back" method="_on_back_button_down"]

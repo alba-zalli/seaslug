@@ -7,26 +7,6 @@
 [node name="PageSpread" type="Node2D" unique_id=953647098]
 script = ExtResource("1_x3dqq")
 
-[node name="SlugImage" type="TextureRect" parent="." unique_id=209589114]
-offset_left = 148.0
-offset_top = 1.0
-offset_right = 268.0
-offset_bottom = 130.0
-scale = Vector2(0.8, 0.8)
-mouse_filter = 2
-texture = ExtResource("2_wyrap")
-expand_mode = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="FoodImage" type="TextureRect" parent="." unique_id=1618065680]
-offset_left = 175.0
-offset_top = 106.0
-offset_right = 225.0
-offset_bottom = 156.0
-texture = ExtResource("3_rvokt")
-expand_mode = 1
-stretch_mode = 4
-
 [node name="Container" type="VBoxContainer" parent="." unique_id=464423382]
 custom_minimum_size = Vector2(100, 20)
 offset_right = 129.91125
@@ -58,6 +38,45 @@ text = "Lives in tide pools/shallow water on southern BC coast to northern Mexic
 fit_content = true
 scroll_active = false
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=1682110274]
+[node name="RightPageImages" type="Control" parent="." unique_id=475525632]
+layout_mode = 3
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 150.0
+offset_right = 235.0
+offset_bottom = 174.0
+grow_horizontal = 0
+size_flags_horizontal = 8
+
+[node name="SlugImage" type="TextureRect" parent="RightPageImages" unique_id=209589114]
+custom_minimum_size = Vector2(85, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.08235292
+anchor_top = 0.011494253
+anchor_right = 0.047058824
+anchor_bottom = 0.10344828
+offset_right = 85.0
+offset_bottom = 85.0
+mouse_filter = 2
+texture = ExtResource("2_wyrap")
+expand_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="FoodImage" type="TextureRect" parent="RightPageImages" unique_id=1618065680]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 0
+offset_left = 19.0
+offset_top = 111.0
+offset_right = 59.0
+offset_bottom = 151.0
+texture = ExtResource("3_rvokt")
+expand_mode = 5
+stretch_mode = 4
+
+[node name="ZoomLayer" type="Control" parent="." unique_id=177389476]
+layout_mode = 3
+anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
