@@ -1,10 +1,6 @@
 extends Area2D
 
-@export var slug_pages: Array[SlugData] = [
-	preload("res://data/sapsucker_data.tres"),
-	preload("res://data/caldorid_data.tres"),
-	]
-@onready var page_spread: PageSpread = $"/root/Swimming/Book/PageSpread"
+@onready var page_spread: PageSpread = $"/root/SandboxScreen/Book/PageSpread"
 @onready var book_anim: AnimatedSprite2D = $"../BookAnim"
 @onready var click_area: Area2D = self
 @onready var close_button: Button = $"./CloseButton"

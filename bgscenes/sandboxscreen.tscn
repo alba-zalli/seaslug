@@ -22,7 +22,7 @@
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_evrla"]
 load_path = "res://.godot/imported/sapsucker.png-de6e083bf0f1b8bae9e336ecdb58a0fe.ctex"
 
-[node name="Swimming" type="Node2D" unique_id=1151149152]
+[node name="SandboxScreen" type="Node2D" unique_id=1151149152]
 
 [node name="Label" type="Label" parent="." unique_id=111319718]
 offset_left = 56.0
