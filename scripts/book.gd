@@ -70,7 +70,7 @@ func _ready():
 	close_button.visible = false
 	close_button.pressed.connect(_on_close_button_pressed)
 
-func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if not (event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT):
 		return
 	print("INPUT EVENT FIRED. is_open=", is_open, " is_zoomed=", is_zoomed)
@@ -150,7 +150,7 @@ func _toggle_zoom() -> void:
 		var offset := page_original_position - original_position
 		var target_book_pos := screen_center
 		var target_page_pos := screen_center + offset * zoom_scale
-		var base_width := container.custom_minimum_size.x
+		#var base_width := container.custom_minimum_size.x
 
 		tween.tween_property(book_anim, "global_position", target_book_pos, zoom_duration)
 		tween.tween_property(book_anim, "scale", original_scale * zoom_scale, zoom_duration)

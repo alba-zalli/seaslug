@@ -15,8 +15,8 @@ func _ready():
 	drag_area.input_event.connect(_on_drag_area_input_event)
 	target_position = global_position
 
-func toggle_visible(is_visible: bool) -> void:
-	visible = is_visible
+func toggle_visible(glass_is_visible: bool) -> void:
+	visible = glass_is_visible
 
 func _on_drag_area_input_event(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:

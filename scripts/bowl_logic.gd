@@ -1,8 +1,8 @@
 extends Node2D
 
-var scaler = DisplayServer.screen_get_size().y / 175
-var radius_x = 90 * scaler
-var radius_y = 60 * scaler
+var scaler = DisplayServer.screen_get_size().y / 175.
+var radius_x = 90. * scaler
+var radius_y = 60. * scaler
 
 @onready var bowl = $BowlLogic
 @onready var container = $SlugContainer
@@ -60,14 +60,14 @@ func spawn_fish():
 func food_maker(fish):
 	fish.radius_x = radius_x
 	fish.radius_y = radius_y
-	fish.bowl_center = DisplayServer.screen_get_size() / 2
+	fish.bowl_center = DisplayServer.screen_get_size() / 2.
 	add_child(fish)
 	fish.global_position = fish.bowl_center
 
 func fish_maker(fish, data: SlugData = null):
 	fish.radius_x = radius_x
 	fish.radius_y = radius_y
-	fish.bowl_center = DisplayServer.screen_get_size() / 2
+	fish.bowl_center = DisplayServer.screen_get_size() / 2.
 	fish.slug_data = data
 	add_child(fish)
 	fish.global_position = fish.bowl_center
@@ -110,7 +110,7 @@ func spawn_paradisa():
 func _ready():
 	print("BOWL SPAWNER")
 	randomize()
-	var center = DisplayServer.screen_get_size() / 2
+	#var center = DisplayServer.screen_get_size() / 2.
 	
 	if is_main_menu():
 		for i in range(5):
