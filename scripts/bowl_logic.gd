@@ -4,8 +4,8 @@ var scaler = DisplayServer.screen_get_size().y / 175.
 var radius_x = 90. * scaler
 var radius_y = 60. * scaler
 
-@onready var bowl = $BowlLogic
-@onready var container = $SlugContainer
+#@onready var bowl = $BowlLogic
+#@onready var container = $SlugContainer
 @onready var book = get_tree().get_first_node_in_group("book")
 
 var caldorid_data: SlugData = preload("res://data/caldorid_data.tres")

@@ -68,7 +68,7 @@ func _ready():
 	page_original_position = page_spread.global_position
 	page_original_scale = page_spread.scale
 	close_button.visible = false
-	close_button.pressed.connect(_on_close_button_pressed)
+	#close_button.pressed.connect(_on_close_button_pressed)
 
 func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if not (event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT):
