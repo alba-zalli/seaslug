@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b36hohk12smpk"]
 
 [ext_resource type="Texture2D" uid="uid://cc6bnpdg57ulj" path="res://images/slugimages/flab.png" id="1_icgbk"]
-[ext_resource type="Script" uid="uid://dmv10nfby3yhw" path="res://scripts/fish.gd" id="1_uccyv"]
+[ext_resource type="Script" uid="uid://xb8o6and7qd3" path="res://scripts/fish_logic.tscn.gd" id="1_kqx1o"]
 
 [sub_resource type="Animation" id="Animation_uccyv"]
 length = 0.001
@@ -306,7 +306,7 @@ _data = {
 }
 
 [node name="Node2D" type="CharacterBody2D" unique_id=997396]
-script = ExtResource("1_uccyv")
+script = ExtResource("1_kqx1o")
 
 [node name="Fish" type="Polygon2D" parent="." unique_id=884850428]
 texture = ExtResource("1_icgbk")

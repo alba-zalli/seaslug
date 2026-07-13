@@ -2,7 +2,6 @@
 
 [ext_resource type="PackedScene" uid="uid://d4d15qo7ijphj" path="res://bgscenes/slugscreen.tscn" id="1_txvb6"]
 [ext_resource type="Theme" uid="uid://ew0ljd640imm" path="res://themes/base_theme.tres" id="2_cbsqi"]
-[ext_resource type="FontFile" uid="uid://cey3rdjxw6l7b" path="res://themes/fonts/rainyhearts.ttf" id="3_jmcdc"]
 [ext_resource type="Script" uid="uid://uusxfhw2epny" path="res://scripts/button.gd" id="4_grsqf"]
 
 [sub_resource type="Theme" id="Theme_rhts7"]
@@ -33,21 +32,18 @@ theme_override_constants/separation = 27
 [node name="Play" type="Button" parent="CanvasLayer/CenterContainer/MainButtons" unique_id=2083941540]
 layout_mode = 2
 theme = SubResource("Theme_qe12f")
-theme_override_fonts/font = ExtResource("3_jmcdc")
 theme_override_font_sizes/font_size = 50
 text = "Play"
 script = ExtResource("4_grsqf")
 
 [node name="Settings" type="Button" parent="CanvasLayer/CenterContainer/MainButtons" unique_id=1925321198]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_jmcdc")
 theme_override_font_sizes/font_size = 50
 text = "Settings"
 script = ExtResource("4_grsqf")
 
 [node name="Credits" type="Button" parent="CanvasLayer/CenterContainer/MainButtons" unique_id=1535633199]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_jmcdc")
 theme_override_font_sizes/font_size = 50
 text = "Credits"
 script = ExtResource("4_grsqf")
@@ -68,6 +64,11 @@ script = ExtResource("4_grsqf")
 offset_right = 1920.0
 offset_bottom = 500.0
 theme = ExtResource("2_cbsqi")
+theme_override_colors/font_color = Color(0.08852378, 0.17205524, 0.5275407, 1)
+theme_override_colors/font_shadow_color = Color(0.08796177, 0.106558256, 0.6169599, 0.70980394)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 5
 theme_override_font_sizes/font_size = 150
 text = "Sea Slug Microaquarium"
 horizontal_alignment = 1

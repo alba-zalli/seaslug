@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b6tsary0qh1r6"]
 
-[ext_resource type="Script" uid="uid://dmv10nfby3yhw" path="res://scripts/fish.gd" id="1_kluji"]
+[ext_resource type="Script" uid="uid://xb8o6and7qd3" path="res://scripts/fish_logic.tscn.gd" id="1_waeg7"]
 [ext_resource type="Texture2D" uid="uid://b0lj2qo8po0vo" path="res://images/slugimages/mari.png" id="2_ixjca"]
 
 [sub_resource type="Animation" id="Animation_kluji"]
@@ -210,7 +210,7 @@ _data = {
 }
 
 [node name="Node2D" type="CharacterBody2D" unique_id=30062973]
-script = ExtResource("1_kluji")
+script = ExtResource("1_waeg7")
 
 [node name="Fish" type="Polygon2D" parent="." unique_id=146550305]
 position = Vector2(1143, 1251)

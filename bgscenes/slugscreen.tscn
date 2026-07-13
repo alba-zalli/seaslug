@@ -1,8 +1,27 @@
 [gd_scene format=3 uid="uid://d4d15qo7ijphj"]
 
+[ext_resource type="Shader" uid="uid://1nqwqwsjwac8" path="res://water.gdshader" id="1_5ofex"]
 [ext_resource type="Script" uid="uid://cb5sd8h2r25ks" path="res://scripts/slugscreen.gd" id="1_pu2gk"]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_by2yp"]
+shader = ExtResource("1_5ofex")
+shader_parameter/OCTAVE = 2
+shader_parameter/mulscale = 9.0
+shader_parameter/height = 0.6
+shader_parameter/tide = 0.2
+shader_parameter/foamthickness = 0.1
+shader_parameter/timescale = 0.2
+shader_parameter/waterdeep = 0.4
+shader_parameter/WATER_COL = Color(0.039215688, 0.6666667, 0.8784314, 1)
+shader_parameter/WATER2_COL = Color(0.039215688, 0.4117647, 0.78039217, 1)
+shader_parameter/FOAM_COL = Color(0.53333336, 0.9607843, 0.9647059, 1)
+
 [node name="Node2D" type="Node2D" unique_id=969373638]
+
+[node name="WaterBackground" type="ColorRect" parent="." unique_id=140055726]
+material = SubResource("ShaderMaterial_by2yp")
+offset_right = 1912.0
+offset_bottom = 1081.0
 
 [node name="Bowl" type="Polygon2D" parent="." unique_id=1007534614]
 script = ExtResource("1_pu2gk")

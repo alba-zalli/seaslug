@@ -2,6 +2,7 @@ extends Node2D
 
 var radius_x = DisplayServer.screen_get_size().x / 2 
 var radius_y = DisplayServer.screen_get_size().y /2 
+var size = 2.3
 
 var spawn_functions := [
 	Callable(self, "spawn_sapsucker"),
@@ -24,9 +25,11 @@ var gonio_scene = preload("res://assetscenes/slugscenes/gonio.tscn")
 var paradisa_scene = preload("res://assetscenes/slugscenes/paradisa.tscn")
 
 func fish_maker(fish):
+	print("Spawning: ", fish.scene_file_path)
 	fish.radius_x = radius_x
 	fish.radius_y = radius_y
 	fish.bowl_center = DisplayServer.screen_get_size() / 2
+	fish.size = size
 	
 	add_child(fish)
 
@@ -73,10 +76,9 @@ func spawn_paradisa():
 	fish_maker(fish)
 	
 func _ready():
-	print("SPAWNER READY on scene: ", get_tree().current_scene.scene_file_path)
 	randomize()
 	
-	for i in range(6):
+	for i in range(7):
 		var random_spawn = spawn_functions[randi() % spawn_functions.size()]
 		random_spawn.call()
 

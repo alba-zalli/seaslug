@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://crclcsxu2jbcb"]
 
-[ext_resource type="Script" uid="uid://dmv10nfby3yhw" path="res://scripts/fish.gd" id="1_el0kf"]
+[ext_resource type="Script" uid="uid://xb8o6and7qd3" path="res://scripts/fish_logic.tscn.gd" id="1_evqem"]
 [ext_resource type="Texture2D" uid="uid://idjmf5fm1gq8" path="res://images/slugimages/paradisa.png" id="1_np1i1"]
 
 [sub_resource type="Animation" id="Animation_el0kf"]
@@ -210,7 +210,7 @@ _data = {
 }
 
 [node name="Node2D" type="CharacterBody2D" unique_id=833701563]
-script = ExtResource("1_el0kf")
+script = ExtResource("1_evqem")
 
 [node name="Fish" type="Polygon2D" parent="." unique_id=1876127608]
 position = Vector2(1272, 1245)

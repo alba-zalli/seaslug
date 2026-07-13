@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://8ivt2kh5xj51"]
 
+[ext_resource type="Script" uid="uid://xb8o6and7qd3" path="res://scripts/fish_logic.tscn.gd" id="1_23fjl"]
 [ext_resource type="Texture2D" uid="uid://8k2dq7iq5c4k" path="res://images/slugimages/sapsucker.png" id="1_yuvae"]
-[ext_resource type="Script" uid="uid://dmv10nfby3yhw" path="res://scripts/fish.gd" id="2_w32kg"]
 
 [sub_resource type="Animation" id="Animation_aqvet"]
 length = 0.001
@@ -334,7 +334,7 @@ _data = {
 }
 
 [node name="Node2D" type="CharacterBody2D" unique_id=165468048]
-script = ExtResource("2_w32kg")
+script = ExtResource("1_23fjl")
 
 [node name="Fish" type="Polygon2D" parent="." unique_id=1221879821]
 position = Vector2(262, 62)
