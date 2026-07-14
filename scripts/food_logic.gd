@@ -1,3 +1,5 @@
+# handles fish swimming logic
+
 extends CharacterBody2D
 
 var radius_x := 0.0

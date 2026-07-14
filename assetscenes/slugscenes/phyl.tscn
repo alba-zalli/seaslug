@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ca6606ltv5usx"]
 
-[ext_resource type="Script" uid="uid://xb8o6and7qd3" path="res://scripts/fish_logic.tscn.gd" id="1_b5ar5"]
+[ext_resource type="Script" uid="uid://xb8o6and7qd3" path="res://scripts/fish_logic.gd" id="1_b5ar5"]
 [ext_resource type="Texture2D" uid="uid://ch13d35ifj5fs" path="res://images/slugimages/phyl.png" id="2_ykqar"]
 
 [sub_resource type="Animation" id="Animation_sg4rn"]

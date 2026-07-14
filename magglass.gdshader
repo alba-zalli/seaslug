@@ -7,7 +7,7 @@ uniform float power : hint_range(0.01, 3.0, 0.01) = 0.2;
 // If true, color will be set directly, if false, color will be multiplied (for colored lenses)
 uniform bool transparent_texture = true;
 // This gives us access to the screen texture so we can warp it
-uniform sampler2D SCREEN_TEXTURE : hint_screen_texture;
+uniform sampler2D SCREEN_TEXTURE : hint_screen_texture, filter_linear_mipmap;
 
 // --- mask controls ---
 uniform float mask_radius : hint_range(0.0, 1.0, 0.01) = 0.5;

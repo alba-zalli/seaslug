@@ -37,11 +37,6 @@ var original_scale: Vector2
 # seaslug book page info
 @export var my_data: SlugData
 
-var slug_data := {
-	"sapsucker": preload("res://data/sapsucker_data.tres"),
-	"caldorid": preload("res://data/caldorid_data.tres"),
-}
-
 var click_token := 0
 
 var page_original_position: Vector2
@@ -57,6 +52,7 @@ var image_rel_offset: Vector2
 var food_rel_offset: Vector2
 
 func _ready():
+	book_anim.play("closed")
 	base_name_size = name_label.get_theme_font_size("font_size")
 	base_sci_size = sci_label.get_theme_font_size("font_size")
 	base_desc_size = desc_label.get_theme_font_size("normal_font_size")
@@ -71,10 +67,11 @@ func _ready():
 	#close_button.pressed.connect(_on_close_button_pressed)
 
 func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
-	if not (event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT):
+	if not (event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT 
+	and my_data != null):
 		return
 	print("INPUT EVENT FIRED. is_open=", is_open, " is_zoomed=", is_zoomed)
-	if not is_open:
+	if not is_open and my_data != null:
 		book_anim.play("open")
 		is_open = true
 		page_spread.visible = false

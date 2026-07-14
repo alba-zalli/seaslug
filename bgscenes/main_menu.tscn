@@ -8,22 +8,32 @@
 
 [sub_resource type="Theme" id="Theme_rhts7"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_txvb6"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ynh8l"]
 bg_color = Color(0.81960785, 0.9372549, 0.9764706, 0.8784314)
 corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
-corner_detail = 7
+expand_margin_left = 8.0
+expand_margin_right = 8.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cbsqi"]
+bg_color = Color(0.138928, 0.4643576, 0.7480107, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 8.0
+expand_margin_right = 8.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jmcdc"]
-bg_color = Color(0.81960785, 0.9372549, 0.9764706, 0.8784314)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_grsqf"]
-bg_color = Color(0.81960785, 0.9372549, 0.9764706, 0.8784314)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ynh8l"]
-bg_color = Color(0.81960785, 0.9372549, 0.9764706, 0.8784314)
+bg_color = Color(0.13725491, 0.4627451, 0.7490196, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 8.0
+expand_margin_right = 8.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_cbsqi"]
 shader = ExtResource("4_txvb6")
@@ -59,27 +69,30 @@ layout_mode = 2
 theme = ExtResource("2_cbsqi")
 theme_override_constants/separation = 27
 
-[node name="Play" type="Button" parent="CanvasLayer/CenterContainer/MainButtons" unique_id=2083941540]
+[node name="Play" type="Button" parent="CanvasLayer/CenterContainer/MainButtons" unique_id=180974311]
 layout_mode = 2
 theme = ExtResource("3_cbsqi")
 theme_override_font_sizes/font_size = 50
-theme_override_styles/normal = SubResource("StyleBoxFlat_txvb6")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ynh8l")
+theme_override_styles/hover = SubResource("StyleBoxFlat_cbsqi")
 text = "Play"
 script = ExtResource("4_grsqf")
 
-[node name="Settings" type="Button" parent="CanvasLayer/CenterContainer/MainButtons" unique_id=1925321198]
+[node name="Settings" type="Button" parent="CanvasLayer/CenterContainer/MainButtons" unique_id=1583548091]
 layout_mode = 2
 theme = ExtResource("3_cbsqi")
 theme_override_font_sizes/font_size = 50
-theme_override_styles/normal = SubResource("StyleBoxFlat_jmcdc")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ynh8l")
+theme_override_styles/hover = SubResource("StyleBoxFlat_cbsqi")
 text = "Settings"
 script = ExtResource("4_grsqf")
 
-[node name="Credits" type="Button" parent="CanvasLayer/CenterContainer/MainButtons" unique_id=1535633199]
+[node name="Credits" type="Button" parent="CanvasLayer/CenterContainer/MainButtons" unique_id=927377356]
 layout_mode = 2
 theme = ExtResource("3_cbsqi")
 theme_override_font_sizes/font_size = 50
-theme_override_styles/normal = SubResource("StyleBoxFlat_grsqf")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ynh8l")
+theme_override_styles/hover = SubResource("StyleBoxFlat_cbsqi")
 text = "Credits"
 script = ExtResource("4_grsqf")
 
@@ -88,6 +101,8 @@ layout_mode = 2
 theme = ExtResource("3_cbsqi")
 theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxFlat_ynh8l")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_jmcdc")
+theme_override_styles/hover = SubResource("StyleBoxFlat_cbsqi")
 text = "Quit"
 script = ExtResource("4_grsqf")
 
@@ -118,7 +133,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [connection signal="button_down" from="CanvasLayer/CenterContainer/MainButtons/Play" to="CanvasLayer/CenterContainer/MainButtons/Play" method="_on_play_button_down"]
-[connection signal="button_down" from="CanvasLayer/CenterContainer/MainButtons/Settings" to="CanvasLayer/CenterContainer/MainButtons/Settings" method="_on_settings_button_down"]
+[connection signal="button_down" from="CanvasLayer/CenterContainer/MainButtons/Settings" to="CanvasLayer/CenterContainer/MainButtons/Play" method="_on_settings_button_down"]
 [connection signal="button_down" from="CanvasLayer/CenterContainer/MainButtons/Credits" to="CanvasLayer/CenterContainer/MainButtons/Credits" method="_on_credits_button_down"]
 [connection signal="button_down" from="CanvasLayer/CenterContainer/MainButtons/Quit" to="CanvasLayer/CenterContainer/MainButtons/Play" method="_on_quit_button_down"]
 [connection signal="button_down" from="CanvasLayer/Quit" to="CanvasLayer/Quit" method="_on_quit_button_down"]
