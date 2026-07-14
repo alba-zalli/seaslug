@@ -1,0 +1,80 @@
+[gd_scene format=3 uid="uid://dvvbe1m1veaco"]
+
+[ext_resource type="Theme" uid="uid://ew0ljd640imm" path="res://themes/base_theme.tres" id="1_mganx"]
+[ext_resource type="Theme" uid="uid://chlounns205s" path="res://bgscenes/main_buttons_theme.tres" id="2_chfyp"]
+[ext_resource type="Script" uid="uid://uusxfhw2epny" path="res://scripts/button.gd" id="3_t0hw8"]
+[ext_resource type="Shader" uid="uid://1nqwqwsjwac8" path="res://water.gdshader" id="4_42eo2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5pwma"]
+bg_color = Color(0.81960785, 0.9372549, 0.9764706, 0.8784314)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 8.0
+expand_margin_right = 8.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lya73"]
+bg_color = Color(0.138928, 0.4643576, 0.7480107, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 8.0
+expand_margin_right = 8.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_on803"]
+shader = ExtResource("4_42eo2")
+shader_parameter/OCTAVE = 2
+shader_parameter/mulscale = 9.0
+shader_parameter/height = 0.6
+shader_parameter/tide = 0.2
+shader_parameter/foamthickness = 0.1
+shader_parameter/timescale = 0.2
+shader_parameter/waterdeep = 0.4
+shader_parameter/WATER_COL = Color(0.039215688, 0.6666667, 0.8784314, 1)
+shader_parameter/WATER2_COL = Color(0.039215688, 0.4117647, 0.78039217, 1)
+shader_parameter/FOAM_COL = Color(0.53333336, 0.9607843, 0.9647059, 1)
+
+[node name="Node2D" type="Node2D" unique_id=826583938]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1744456578]
+
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer" unique_id=694393966]
+offset_left = 640.0
+offset_top = 395.0
+offset_right = 1286.0
+offset_bottom = 736.0
+
+[node name="MainButtons" type="HBoxContainer" parent="CanvasLayer/CenterContainer" unique_id=1011136736]
+layout_mode = 2
+theme = ExtResource("1_mganx")
+theme_override_constants/separation = 27
+
+[node name="Sandbox" type="Button" parent="CanvasLayer/CenterContainer/MainButtons" unique_id=1568505048]
+layout_mode = 2
+theme = ExtResource("2_chfyp")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_5pwma")
+theme_override_styles/hover = SubResource("StyleBoxFlat_lya73")
+text = "Sandbox"
+script = ExtResource("3_t0hw8")
+
+[node name="World" type="Button" parent="CanvasLayer/CenterContainer/MainButtons" unique_id=1871960741]
+layout_mode = 2
+theme = ExtResource("2_chfyp")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_5pwma")
+theme_override_styles/hover = SubResource("StyleBoxFlat_lya73")
+text = "World"
+script = ExtResource("3_t0hw8")
+
+[node name="WaterBackground" type="ColorRect" parent="." unique_id=885281079]
+material = SubResource("ShaderMaterial_on803")
+offset_left = -4.0
+offset_top = 4.0
+offset_right = 1931.0
+offset_bottom = 1085.0
+
+[connection signal="button_down" from="CanvasLayer/CenterContainer/MainButtons/Sandbox" to="CanvasLayer/CenterContainer/MainButtons/Sandbox" method="_on_play_button_down"]
+[connection signal="button_down" from="CanvasLayer/CenterContainer/MainButtons/World" to="CanvasLayer/CenterContainer/MainButtons/Sandbox" method="_on_settings_button_down"]

@@ -14,7 +14,7 @@ func _process(_delta: float) -> void:
 
 # switch from main menu to bowl scene
 func _on_play_button_down() -> void:
-	get_tree().change_scene_to_file("res://bgscenes/sandboxscreen.tscn")
+	get_tree().change_scene_to_file("res://bgscenes/choice_screen.tscn")
 
 func _on_credits_button_down() -> void:
 	get_tree().change_scene_to_file("res://bgscenes/credits.tscn")
