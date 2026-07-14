@@ -20,7 +20,8 @@ shader_parameter/FOAM_COL = Color(0.53333336, 0.9607843, 0.9647059, 1)
 
 [node name="WaterBackground" type="ColorRect" parent="." unique_id=140055726]
 material = SubResource("ShaderMaterial_by2yp")
-offset_right = 1912.0
+offset_left = -9.0
+offset_right = 1926.0
 offset_bottom = 1081.0
 
 [node name="Bowl" type="Polygon2D" parent="." unique_id=1007534614]

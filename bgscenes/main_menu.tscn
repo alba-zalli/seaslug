@@ -2,11 +2,41 @@
 
 [ext_resource type="PackedScene" uid="uid://d4d15qo7ijphj" path="res://bgscenes/slugscreen.tscn" id="1_txvb6"]
 [ext_resource type="Theme" uid="uid://ew0ljd640imm" path="res://themes/base_theme.tres" id="2_cbsqi"]
+[ext_resource type="Theme" uid="uid://chlounns205s" path="res://bgscenes/main_buttons_theme.tres" id="3_cbsqi"]
 [ext_resource type="Script" uid="uid://uusxfhw2epny" path="res://scripts/button.gd" id="4_grsqf"]
+[ext_resource type="Shader" uid="uid://1nqwqwsjwac8" path="res://water.gdshader" id="4_txvb6"]
 
 [sub_resource type="Theme" id="Theme_rhts7"]
 
-[sub_resource type="Theme" id="Theme_qe12f"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_txvb6"]
+bg_color = Color(0.81960785, 0.9372549, 0.9764706, 0.8784314)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+corner_detail = 7
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jmcdc"]
+bg_color = Color(0.81960785, 0.9372549, 0.9764706, 0.8784314)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_grsqf"]
+bg_color = Color(0.81960785, 0.9372549, 0.9764706, 0.8784314)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ynh8l"]
+bg_color = Color(0.81960785, 0.9372549, 0.9764706, 0.8784314)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cbsqi"]
+shader = ExtResource("4_txvb6")
+shader_parameter/OCTAVE = 1
+shader_parameter/mulscale = 2.0
+shader_parameter/height = 0.3
+shader_parameter/tide = 0.1
+shader_parameter/foamthickness = 9.0
+shader_parameter/timescale = 0.1
+shader_parameter/waterdeep = 0.1
+shader_parameter/WATER_COL = Color(0.6363233, 0.8667663, 0.9991372, 0.93333334)
+shader_parameter/WATER2_COL = Color(0.8117647, 0.9607843, 0.9647059, 1)
+shader_parameter/FOAM_COL = Color(0.8125, 0.9609, 0.9648, 1)
 
 [node name="MainMenu" type="Node2D" unique_id=1530463089]
 z_index = 2
@@ -31,26 +61,33 @@ theme_override_constants/separation = 27
 
 [node name="Play" type="Button" parent="CanvasLayer/CenterContainer/MainButtons" unique_id=2083941540]
 layout_mode = 2
-theme = SubResource("Theme_qe12f")
+theme = ExtResource("3_cbsqi")
 theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_txvb6")
 text = "Play"
 script = ExtResource("4_grsqf")
 
 [node name="Settings" type="Button" parent="CanvasLayer/CenterContainer/MainButtons" unique_id=1925321198]
 layout_mode = 2
+theme = ExtResource("3_cbsqi")
 theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_jmcdc")
 text = "Settings"
 script = ExtResource("4_grsqf")
 
 [node name="Credits" type="Button" parent="CanvasLayer/CenterContainer/MainButtons" unique_id=1535633199]
 layout_mode = 2
+theme = ExtResource("3_cbsqi")
 theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_grsqf")
 text = "Credits"
 script = ExtResource("4_grsqf")
 
 [node name="Quit" type="Button" parent="CanvasLayer/CenterContainer/MainButtons" unique_id=2110066894]
 layout_mode = 2
+theme = ExtResource("3_cbsqi")
 theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_ynh8l")
 text = "Quit"
 script = ExtResource("4_grsqf")
 
@@ -60,15 +97,21 @@ offset_bottom = 31.0
 text = "X"
 script = ExtResource("4_grsqf")
 
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1091199534]
+material = SubResource("ShaderMaterial_cbsqi")
+offset_left = -98.0
+offset_top = 122.0
+offset_right = 1962.0
+offset_bottom = 343.0
+
 [node name="Title" type="Label" parent="CanvasLayer" unique_id=752815357]
+offset_top = -21.0
 offset_right = 1920.0
-offset_bottom = 500.0
+offset_bottom = 479.0
 theme = ExtResource("2_cbsqi")
 theme_override_colors/font_color = Color(0.08852378, 0.17205524, 0.5275407, 1)
 theme_override_colors/font_shadow_color = Color(0.08796177, 0.106558256, 0.6169599, 0.70980394)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_offset_x = 3
-theme_override_constants/shadow_offset_y = 5
 theme_override_font_sizes/font_size = 150
 text = "Sea Slug Microaquarium"
 horizontal_alignment = 1

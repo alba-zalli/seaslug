@@ -1,7 +1,8 @@
 [gd_resource type="Theme" format=3 uid="uid://ew0ljd640imm"]
 
-[ext_resource type="FontFile" uid="uid://bkqk0kyxmfpcn" path="res://themes/fonts/Helvetica.ttf" id="1_rxnwj"]
+[ext_resource type="FontFile" uid="uid://ywkdexsut2wb" path="res://ElmsSans-Medium.ttf" id="1_rxnwj"]
 
 [resource]
 default_font = ExtResource("1_rxnwj")
 default_font_size = 19
+Button/colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
