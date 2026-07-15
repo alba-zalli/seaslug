@@ -17,7 +17,6 @@
 [ext_resource type="Script" uid="uid://uusxfhw2epny" path="res://scripts/button.gd" id="14_1vqfj"]
 [ext_resource type="PackedScene" uid="uid://cock6q303rlwi" path="res://assetscenes/magglass.tscn" id="15_vox1v"]
 [ext_resource type="Texture2D" uid="uid://15qfb8bvi135" path="res://images/icons/magnifying-glass-solid-full.svg" id="16_63bsy"]
-[ext_resource type="PackedScene" uid="uid://daiyw5jx8vy84" path="res://assetscenes/worldmap.tscn" id="17_dc6ol"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_evrla"]
 
@@ -199,11 +198,6 @@ icon = ExtResource("16_63bsy")
 [node name="Button2" type="Button" parent="VBoxContainer" unique_id=168131564]
 layout_mode = 2
 text = "Tutorial"
-
-[node name="Node2D" type="Node2D" parent="." unique_id=57434592]
-
-[node name="Node2D" parent="Node2D" unique_id=232880064 instance=ExtResource("17_dc6ol")]
-position = Vector2(1592, 506)
 
 [connection signal="button_down" from="ScrollContainer/VBoxContainer/Sapsucker" to="Bowl" method="_on_sapsucker_button_down"]
 [connection signal="button_down" from="ScrollContainer/VBoxContainer/Cal Dorid" to="Bowl" method="_on_cal_dorid_button_down"]

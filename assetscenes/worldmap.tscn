@@ -1,10 +1,63 @@
 [gd_scene format=3 uid="uid://daiyw5jx8vy84"]
 
+[ext_resource type="Texture2D" uid="uid://bkg5h81nklytq" path="res://images/oceans/ind.png" id="1_ft2nu"]
 [ext_resource type="Texture2D" uid="uid://c3tqf67oeswj7" path="res://images/worldmap.png" id="1_pqyf4"]
+[ext_resource type="Texture2D" uid="uid://dabitl1j8hoju" path="res://images/oceans/redsea.png" id="2_oy4l6"]
+[ext_resource type="Texture2D" uid="uid://csuhil476j2h4" path="res://images/oceans/west.png" id="3_xvh7g"]
+[ext_resource type="Texture2D" uid="uid://dmbdqsyrh2qg6" path="res://images/icons/3rrtf.png" id="4_x618o"]
+[ext_resource type="Script" uid="uid://d3dh5obdpybg2" path="res://assetscenes/seascript.gd" id="6_o7rek"]
 
 [node name="Node2D" type="Node2D" unique_id=232880064]
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2030900722]
-position = Vector2(79.999985, 43.500015)
-scale = Vector2(0.029346222, 0.035686865)
+[node name="IndianHighlight" type="Sprite2D" parent="." unique_id=1521283251]
+position = Vector2(593, 327.5)
+scale = Vector2(0.21991085, 0.25364545)
+texture = ExtResource("1_ft2nu")
+
+[node name="RedSeaHighlight" type="Sprite2D" parent="." unique_id=560719647]
+position = Vector2(593, 327.5)
+scale = Vector2(0.21991085, 0.25364545)
+texture = ExtResource("2_oy4l6")
+
+[node name="WPHighlight" type="Sprite2D" parent="." unique_id=184774087]
+position = Vector2(593, 327.5)
+scale = Vector2(0.21991085, 0.25364545)
+texture = ExtResource("3_xvh7g")
+
+[node name="EPHighlight" type="Sprite2D" parent="." unique_id=2058892388]
+position = Vector2(593, 327.5)
+scale = Vector2(0.21991085, 0.25364545)
+texture = ExtResource("4_x618o")
+
+[node name="MapSprite" type="Sprite2D" parent="." unique_id=2030900722]
+position = Vector2(593, 327.5)
+scale = Vector2(0.21991085, 0.25364545)
 texture = ExtResource("1_pqyf4")
+
+[node name="west pac" type="Area2D" parent="." unique_id=724587050 node_paths=PackedStringArray("highlight")]
+script = ExtResource("6_o7rek")
+highlight = NodePath("../WPHighlight")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="west pac" unique_id=783834245]
+polygon = PackedVector2Array(5, 654, 368, 657, 364, 401, 243, 248, 132, 108, 1, 95)
+
+[node name="indian" type="Area2D" parent="." unique_id=2012040630 node_paths=PackedStringArray("highlight")]
+script = ExtResource("6_o7rek")
+highlight = NodePath("../IndianHighlight")
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="indian" unique_id=639452333]
+polygon = PackedVector2Array(683, 654, 625, 509, 716, 373, 732, 338, 721, 302, 736, 286, 821, 327, 877, 310, 895, 344, 895, 386, 908, 412, 928, 422, 988, 437, 997, 457, 1030, 544, 1039, 595, 1022, 653)
+
+[node name="east pac" type="Area2D" parent="." unique_id=1531773898 node_paths=PackedStringArray("highlight")]
+script = ExtResource("6_o7rek")
+highlight = NodePath("../EPHighlight")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="east pac" unique_id=824564511]
+polygon = PackedVector2Array(914, 375, 909, 327, 948, 317, 956, 290, 939, 255, 956, 239, 975, 250, 1008, 222, 990, 198, 1006, 164, 1035, 147, 1073, 147, 1101, 129, 1123, 143, 1145, 124, 1182, 120, 1185, 659, 1081, 656, 1070, 634, 1041, 598, 1031, 539, 987, 434, 925, 423)
+
+[node name="red sea" type="Area2D" parent="." unique_id=839431497 node_paths=PackedStringArray("highlight")]
+script = ExtResource("6_o7rek")
+highlight = NodePath("../RedSeaHighlight")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="red sea" unique_id=2055110140]
+polygon = PackedVector2Array(672, 306, 679, 350, 715, 372, 720, 322, 690, 292)

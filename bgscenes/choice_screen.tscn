@@ -83,4 +83,5 @@ text = "X"
 script = ExtResource("3_t0hw8")
 
 [connection signal="button_down" from="CanvasLayer/CenterContainer/MainButtons/Sandbox" to="CanvasLayer/CenterContainer/MainButtons/Sandbox" method="_on_sandbox_button_down"]
+[connection signal="button_down" from="CanvasLayer/CenterContainer/MainButtons/World" to="CanvasLayer/CenterContainer/MainButtons/Sandbox" method="_on_world_button_down"]
 [connection signal="button_down" from="Quit" to="Quit" method="_on_quit_button_down"]

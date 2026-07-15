@@ -32,3 +32,6 @@ func _on_quit_button_down() -> void:
 
 func _on_sandbox_button_down() -> void:
 	get_tree().change_scene_to_file("res://bgscenes/sandboxscreen.tscn")
+
+func _on_world_button_down() -> void:
+	get_tree().change_scene_to_file("res://bgscenes/worldmode.tscn")
