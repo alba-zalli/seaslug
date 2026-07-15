@@ -29,6 +29,7 @@ func fish_maker(fish):
 	fish.radius_x = radius_x
 	fish.radius_y = radius_y
 	fish.bowl_center = DisplayServer.screen_get_size() / 2
+	fish.modulate.a = 1 #change opacity of fish sprite
 	fish.size = size
 	
 	add_child(fish)

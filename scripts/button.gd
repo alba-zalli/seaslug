@@ -29,3 +29,6 @@ func _on_back_button_down() -> void:
 # quit game
 func _on_quit_button_down() -> void:
 	get_tree().quit()
+
+func _on_sandbox_button_down() -> void:
+	get_tree().change_scene_to_file("res://bgscenes/sandboxscreen.tscn")

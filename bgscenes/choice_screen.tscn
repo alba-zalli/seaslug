@@ -72,9 +72,15 @@ script = ExtResource("3_t0hw8")
 [node name="WaterBackground" type="ColorRect" parent="." unique_id=885281079]
 material = SubResource("ShaderMaterial_on803")
 offset_left = -4.0
-offset_top = 4.0
+offset_top = -10.0
 offset_right = 1931.0
 offset_bottom = 1085.0
 
-[connection signal="button_down" from="CanvasLayer/CenterContainer/MainButtons/Sandbox" to="CanvasLayer/CenterContainer/MainButtons/Sandbox" method="_on_play_button_down"]
-[connection signal="button_down" from="CanvasLayer/CenterContainer/MainButtons/World" to="CanvasLayer/CenterContainer/MainButtons/Sandbox" method="_on_settings_button_down"]
+[node name="Quit" type="Button" parent="." unique_id=1167810923]
+offset_right = 18.0
+offset_bottom = 31.0
+text = "X"
+script = ExtResource("3_t0hw8")
+
+[connection signal="button_down" from="CanvasLayer/CenterContainer/MainButtons/Sandbox" to="CanvasLayer/CenterContainer/MainButtons/Sandbox" method="_on_sandbox_button_down"]
+[connection signal="button_down" from="Quit" to="Quit" method="_on_quit_button_down"]
