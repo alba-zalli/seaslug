@@ -348,3 +348,9 @@ polygon = PackedVector2Array(-460, -416, -397, -232, -510, 27, -581, 370, -447, 
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=645408121]
 libraries/ = SubResource("AnimationLibrary_ltlvq")
+
+[node name="EatArea" type="Area2D" parent="." unique_id=1606146878]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="EatArea" unique_id=686066038]
+position = Vector2(-2463, -1629)
+polygon = PackedVector2Array(1919, 550, 1831, 356, 1979, 277, 2199, 334, 2334, 453, 2477, 518, 2593, 438, 2695, 349, 2837, 204, 3102, 323, 3055, 521, 3135, 572, 3193, 772, 3001, 881, 2969, 1151, 2482, 1198, 2002, 1164, 1961, 905, 1805, 716)

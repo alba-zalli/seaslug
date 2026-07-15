@@ -381,3 +381,9 @@ libraries/ = SubResource("AnimationLibrary_eiagp")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=797260769]
 position = Vector2(77, -19)
 polygon = PackedVector2Array(-216, 1413, 1281, 780, 1627, 12, 2702, -468, 3892, 12, 4026, 895, 5293, 1797, 3796, 6289, 1627, 6231)
+
+[node name="EatArea" type="Area2D" parent="." unique_id=244505622]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="EatArea" unique_id=933430914]
+position = Vector2(331, -465)
+polygon = PackedVector2Array(1801, 205, 2146, 54, 2517, 7, 2834, 95, 3621, 431, 3799, 979, 4035, 1497, 3340, 1978, 1801, 2030, 491, 1430, 1275, 528)

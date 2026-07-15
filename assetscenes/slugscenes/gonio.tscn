@@ -247,3 +247,9 @@ libraries/ = SubResource("AnimationLibrary_gc7li")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1613849552]
 polygon = PackedVector2Array(-407, -276, -457, -635, -437, -1069, -149, -1358, 296, -1373, 503, -1171, 624, -791, 539, -463, 564, -13, 528, 290, 498, 492, 549, 730, 387, 978, 266, 1246, 18, 1291, -169, 1144, -285, 957, -326, 583, -260, 477, -311, 290, -366, 68)
+
+[node name="EatArea" type="Area2D" parent="." unique_id=221371650]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="EatArea" unique_id=1819686072]
+position = Vector2(-2421, -1511)
+polygon = PackedVector2Array(1990, 444, 2264, 140, 2727, 133, 2925, 334, 3057, 721, 2981, 1048, 2981, 1166, 2635, 1243, 2139, 1230, 1983, 1063, 1945, 786)

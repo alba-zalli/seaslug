@@ -248,3 +248,9 @@ polygon = PackedVector2Array(1241, -77, 1626, 152, 1782, 604, 1804, 1270, 1870, 
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1431215308]
 libraries/ = SubResource("AnimationLibrary_d25g8")
+
+[node name="EatArea" type="Area2D" parent="." unique_id=1875542596]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="EatArea" unique_id=469330966]
+position = Vector2(-1400, -257)
+polygon = PackedVector2Array(1990, 444, 2264, 140, 2666, 85, 3063, 305, 3216, 770, 3222, 1124, 3106, 1314, 2605, 1290, 2048, 1271, 1920, 1039, 1945, 786)
