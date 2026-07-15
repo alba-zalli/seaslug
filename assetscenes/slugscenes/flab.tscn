@@ -334,14 +334,23 @@ rest = Transform2D(1, 0, 0, 1, 16, 517)
 [node name="left" type="Bone2D" parent="Fish/Skeleton2D/head/mid/back" unique_id=1753273974]
 position = Vector2(-372, 15)
 rest = Transform2D(1, 0, 0, 1, -372, 15)
+auto_calculate_length_and_angle = false
+length = 16.0
+bone_angle = 0.0
 
 [node name="right" type="Bone2D" parent="Fish/Skeleton2D/head/mid/back" unique_id=289904214]
 position = Vector2(300, 53)
 rest = Transform2D(1, 0, 0, 1, 300, 53)
+auto_calculate_length_and_angle = false
+length = 16.0
+bone_angle = 0.0
 
 [node name="tail" type="Bone2D" parent="Fish/Skeleton2D/head/mid/back" unique_id=715922494]
 position = Vector2(-42, 691)
 rest = Transform2D(1, 0, 0, 1, -42, 691)
+auto_calculate_length_and_angle = false
+length = 16.0
+bone_angle = 0.0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1695027365]
 polygon = PackedVector2Array(-460, -416, -397, -232, -510, 27, -581, 370, -447, 725, -318, 1109, -101, 1247, 192, 1255, 359, 854, 534, 650, 630, 249, 672, -86, 513, -357, 488, -583, 530, -746, 727, -858, 676, -1050, 589, -1111, 647, -1307, 376, -1424, 229, -1282, 129, -1198, 16, -1106, -151, -1182, -272, -1299, -493, -1361, -652, -1278, -623, -1127, -627, -1040, -677, -918, -564, -772, -493, -718, -456, -568)

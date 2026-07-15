@@ -241,6 +241,9 @@ rest = Transform2D(1, 0, 0, 1, 13, 539)
 position = Vector2(8, 827)
 scale = Vector2(0.99999994, 0.99999994)
 rest = Transform2D(1, 0, 0, 1, 8, 827)
+auto_calculate_length_and_angle = false
+length = 16.0
+bone_angle = 0.0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=2108572200]
 polygon = PackedVector2Array(1871, 1236, 1800, 1473, 1825, 1706, 1724, 2070, 1663, 2588, 1517, 3306, 1739, 3811, 2285, 3953, 3109, 3932, 3529, 3756, 3584, 2952, 3367, 2644, 3316, 2287, 3251, 1827, 3215, 1577, 3134, 1317, 2887, 1115, 2563, 1049, 2199, 1099)
