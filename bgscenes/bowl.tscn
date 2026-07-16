@@ -1,10 +1,15 @@
 [gd_scene format=3 uid="uid://c8b86nufkthgs"]
 
-[ext_resource type="Texture2D" uid="uid://cjyk66p5b36pl" path="res://images/bowl.png" id="1_h1h7m"]
+[ext_resource type="Texture2D" uid="uid://c876hv0kams1r" path="res://1000000369.png" id="1_h1h7m"]
 
 [node name="Node2D" type="Node2D" unique_id=1174612762]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=807647921]
-position = Vector2(1132, 537)
-scale = Vector2(0.3104, 0.3)
+position = Vector2(869.00006, 555.5)
+scale = Vector2(0.36040002, 0.30859998)
 texture = ExtResource("1_h1h7m")
+
+[node name="BowlArea" type="Area2D" parent="." unique_id=368533824]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BowlArea" unique_id=961173525]
+polygon = PackedVector2Array(128, 144, 260, 49, 408, 0, 843, 4, 1238, -4, 1418, 31, 1577, 148, 1673, 275, 1727, 444, 1725, 678, 1683, 836, 1568, 951, 1384, 1052, 1158, 1072, 845, 1078, 486, 1070, 305, 1033, 149, 932, 48, 782, 13, 559, 38, 333, 73, 226)

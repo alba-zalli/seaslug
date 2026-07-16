@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://bey6cio1j6uis"]
+
+[ext_resource type="Texture2D" uid="uid://brllw1ne2p084" path="res://assetscenes/slugscenes/1000_F_412778376_KdXjNXGZEmaSec6B8yIn6yvDcZVdJamU.webp" id="1_kp44a"]
+[ext_resource type="Shader" uid="uid://cs5j7dclmhexj" path="res://lines.gdshader" id="1_oh0vi"]
+[ext_resource type="Texture2D" uid="uid://dirwg48ow42eu" path="res://assetscenes/slugscenes/stones_specular (1).png" id="2_4vmk7"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8mwxq"]
+shader = ExtResource("1_oh0vi")
+shader_parameter/desaturate = 0.6
+shader_parameter/contrast_reduce = 0.4
+shader_parameter/darken = 0.2
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_oh0vi"]
+diffuse_texture = ExtResource("1_kp44a")
+normal_texture = ExtResource("1_kp44a")
+specular_texture = ExtResource("2_4vmk7")
+
+[node name="Node2D" type="Node2D" unique_id=2088293752]
+
+[node name="TextureRect" type="Sprite2D" parent="." unique_id=688546015]
+z_index = -6
+material = SubResource("ShaderMaterial_8mwxq")
+position = Vector2(966.5, 535)
+scale = Vector2(1.9410001, 1.6431786)
+texture = SubResource("CanvasTexture_oh0vi")

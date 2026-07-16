@@ -13,7 +13,6 @@
 [ext_resource type="Texture2D" uid="uid://co81xieitxihr" path="res://images/foodimages/algea.png" id="10_c3mqk"]
 [ext_resource type="Texture2D" uid="uid://cqxijc1hir02x" path="res://images/foodimages/sea sponge.png" id="11_k85lr"]
 [ext_resource type="Script" uid="uid://cemp8kuaynvje" path="res://scripts/bowl_logic.gd" id="12_ofjh6"]
-[ext_resource type="PackedScene" uid="uid://c8b86nufkthgs" path="res://bgscenes/bowl.tscn" id="13_8pf3a"]
 [ext_resource type="PackedScene" uid="uid://l0nwb61asbiq" path="res://assetscenes/book.tscn" id="13_qewr8"]
 [ext_resource type="Script" uid="uid://uusxfhw2epny" path="res://scripts/button.gd" id="14_1vqfj"]
 [ext_resource type="PackedScene" uid="uid://cock6q303rlwi" path="res://assetscenes/magglass.tscn" id="15_vox1v"]
@@ -21,12 +20,16 @@
 
 [node name="SandboxScreen" type="Node2D" unique_id=1151149152]
 
-[node name="Side Menu" type="VBoxContainer" parent="." unique_id=1579138767]
-custom_minimum_size = Vector2(150, 0)
-offset_left = 86.0
-offset_top = 95.0
-offset_right = 287.0
-offset_bottom = 636.0
+[node name="Bowl" type="Node2D" parent="." unique_id=1365031602]
+position = Vector2(0, 405)
+script = ExtResource("12_ofjh6")
+
+[node name="Side Menu" type="VBoxContainer" parent="." unique_id=468719485]
+custom_minimum_size = Vector2(90, 0)
+offset_left = 41.0
+offset_top = 106.0
+offset_right = 253.0
+offset_bottom = 591.0
 
 [node name="Label" type="Label" parent="Side Menu" unique_id=111319718]
 layout_mode = 2
@@ -138,22 +141,16 @@ layout_mode = 2
 text = "Border options"
 horizontal_alignment = 1
 
-[node name="Bowl" type="CharacterBody2D" parent="Side Menu" unique_id=723117236]
-position = Vector2(-86, -95)
-script = ExtResource("12_ofjh6")
-
-[node name="Node2D" parent="Side Menu/Bowl" unique_id=1174612762 instance=ExtResource("13_8pf3a")]
-
 [node name="CheckButton" type="CheckButton" parent="Side Menu" unique_id=34631343]
 layout_mode = 2
 size_flags_stretch_ratio = 2.8
 button_mask = 4
 
 [node name="Book" parent="." unique_id=1072664842 instance=ExtResource("13_qewr8")]
-offset_left = 1509.0001
-offset_top = 51.000015
-offset_right = 1509.0001
-offset_bottom = 51.000015
+offset_left = 1526.0
+offset_top = 46.000008
+offset_right = 1526.0
+offset_bottom = 46.000008
 
 [node name="Top Menu" type="HBoxContainer" parent="." unique_id=2038805613]
 offset_right = 71.0
@@ -189,18 +186,18 @@ offset_bottom = 45.0
 layout_mode = 2
 text = "Tutorial"
 
-[connection signal="button_down" from="Side Menu/ScrollContainer/VBoxContainer/Sapsucker" to="Side Menu/Bowl" method="_on_sapsucker_button_down"]
-[connection signal="button_down" from="Side Menu/ScrollContainer/VBoxContainer/Cal Dorid" to="Side Menu/Bowl" method="_on_cal_dorid_button_down"]
-[connection signal="button_down" from="Side Menu/ScrollContainer/VBoxContainer/Hypselodoris" to="Side Menu/Bowl" method="_on_hypselodoris_button_down"]
-[connection signal="button_down" from="Side Menu/ScrollContainer/VBoxContainer/Phyllidiella" to="Side Menu/Bowl" method="_on_phyllidiella_button_down"]
-[connection signal="button_down" from="Side Menu/ScrollContainer/VBoxContainer/Marindica" to="Side Menu/Bowl" method="_on_marindica_button_down"]
-[connection signal="button_down" from="Side Menu/ScrollContainer/VBoxContainer/Gonio" to="Side Menu/Bowl" method="_on_gonio_button_down"]
-[connection signal="button_down" from="Side Menu/ScrollContainer/VBoxContainer/Paradisa" to="Side Menu/Bowl" method="_on_paradisa_button_down"]
-[connection signal="button_down" from="Side Menu/ScrollContainer/VBoxContainer/Flabellina" to="Side Menu/Bowl" method="_on_flabellina_button_down"]
-[connection signal="button_down" from="Side Menu/VBoxContainer4/Hydrozoa" to="Side Menu/Bowl" method="_on_fish_eggs_button_down"]
-[connection signal="button_down" from="Side Menu/VBoxContainer4/Algae" to="Side Menu/Bowl" method="_on_algae_button_down"]
-[connection signal="button_down" from="Side Menu/VBoxContainer4/Sea sponge" to="Side Menu/Bowl" method="_on_sea_sponge_button_down"]
-[connection signal="toggled" from="Side Menu/Glass" to="Side Menu/Bowl" method="_on_glass_toggled"]
+[connection signal="button_down" from="Side Menu/ScrollContainer/VBoxContainer/Sapsucker" to="Bowl" method="_on_sapsucker_button_down"]
+[connection signal="button_down" from="Side Menu/ScrollContainer/VBoxContainer/Cal Dorid" to="Bowl" method="_on_cal_dorid_button_down"]
+[connection signal="button_down" from="Side Menu/ScrollContainer/VBoxContainer/Hypselodoris" to="Bowl" method="_on_hypselodoris_button_down"]
+[connection signal="button_down" from="Side Menu/ScrollContainer/VBoxContainer/Phyllidiella" to="Bowl" method="_on_phyllidiella_button_down"]
+[connection signal="button_down" from="Side Menu/ScrollContainer/VBoxContainer/Marindica" to="Bowl" method="_on_marindica_button_down"]
+[connection signal="button_down" from="Side Menu/ScrollContainer/VBoxContainer/Gonio" to="Bowl" method="_on_gonio_button_down"]
+[connection signal="button_down" from="Side Menu/ScrollContainer/VBoxContainer/Paradisa" to="Bowl" method="_on_paradisa_button_down"]
+[connection signal="button_down" from="Side Menu/ScrollContainer/VBoxContainer/Flabellina" to="Bowl" method="_on_flabellina_button_down"]
+[connection signal="button_down" from="Side Menu/VBoxContainer4/Hydrozoa" to="Bowl" method="_on_fish_eggs_button_down"]
+[connection signal="button_down" from="Side Menu/VBoxContainer4/Algae" to="Bowl" method="_on_algae_button_down"]
+[connection signal="button_down" from="Side Menu/VBoxContainer4/Sea sponge" to="Bowl" method="_on_sea_sponge_button_down"]
+[connection signal="toggled" from="Side Menu/Glass" to="Bowl" method="_on_glass_toggled"]
 [connection signal="button_down" from="Top Menu/Quit" to="Top Menu/Quit" method="_on_quit_button_down"]
 [connection signal="button_down" from="Top Menu/Back" to="Top Menu/Back" method="_on_back_button_down"]
 
