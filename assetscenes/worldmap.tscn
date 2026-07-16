@@ -52,12 +52,12 @@ polygon = PackedVector2Array(683, 654, 625, 509, 716, 373, 732, 338, 721, 302, 7
 script = ExtResource("6_o7rek")
 highlight = NodePath("../EPHighlight")
 
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="east pac" unique_id=824564511]
+polygon = PackedVector2Array(914, 375, 909, 327, 948, 317, 956, 290, 939, 255, 956, 239, 975, 250, 1008, 222, 990, 198, 1006, 164, 1035, 147, 1073, 147, 1101, 129, 1123, 143, 1145, 124, 1182, 120, 1185, 659, 1081, 656, 1070, 634, 1041, 598, 1031, 539, 987, 434, 925, 423)
+
 [node name="red sea" type="Area2D" parent="." unique_id=839431497 node_paths=PackedStringArray("highlight")]
 script = ExtResource("6_o7rek")
 highlight = NodePath("../RedSeaHighlight")
-
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="red sea" unique_id=824564511]
-polygon = PackedVector2Array(914, 375, 909, 327, 948, 317, 956, 290, 939, 255, 956, 239, 975, 250, 1008, 222, 990, 198, 1006, 164, 1035, 147, 1073, 147, 1101, 129, 1123, 143, 1145, 124, 1182, 120, 1185, 659, 1081, 656, 1070, 634, 1041, 598, 1031, 539, 987, 434, 925, 423)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="red sea" unique_id=2055110140]
 polygon = PackedVector2Array(672, 306, 679, 350, 715, 372, 720, 322, 690, 292)

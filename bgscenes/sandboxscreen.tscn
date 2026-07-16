@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bn82xia3pbqgy"]
 
 [ext_resource type="Theme" uid="uid://ew0ljd640imm" path="res://themes/base_theme.tres" id="1_d1yhd"]
+[ext_resource type="Texture2D" uid="uid://8k2dq7iq5c4k" path="res://images/slugimages/sapsucker.png" id="2_1wed3"]
 [ext_resource type="Texture2D" uid="uid://ch2fi2csdtu5s" path="res://images/slugimages/dorid.png" id="2_8pf3a"]
 [ext_resource type="Texture2D" uid="uid://r6eipayrvqou" path="res://images/slugimages/hyps.png" id="3_1wed3"]
 [ext_resource type="Texture2D" uid="uid://ch13d35ifj5fs" path="res://images/slugimages/phyl.png" id="4_08sdj"]
@@ -18,167 +19,162 @@
 [ext_resource type="PackedScene" uid="uid://cock6q303rlwi" path="res://assetscenes/magglass.tscn" id="15_vox1v"]
 [ext_resource type="Texture2D" uid="uid://15qfb8bvi135" path="res://images/icons/magnifying-glass-solid-full.svg" id="16_63bsy"]
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_evrla"]
-
 [node name="SandboxScreen" type="Node2D" unique_id=1151149152]
 
-[node name="Label" type="Label" parent="." unique_id=111319718]
-offset_left = 56.0
-offset_top = 82.0
-offset_right = 214.0
-offset_bottom = 105.0
-text = "Spawn Sea Slugs"
+[node name="Side Menu" type="VBoxContainer" parent="." unique_id=1579138767]
+custom_minimum_size = Vector2(150, 0)
+offset_left = 86.0
+offset_top = 95.0
+offset_right = 287.0
+offset_bottom = 636.0
+
+[node name="Label" type="Label" parent="Side Menu" unique_id=111319718]
+layout_mode = 2
+text = "Spawn Slugs"
 horizontal_alignment = 1
 
-[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=810999004]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 57.0
-offset_top = 117.0
-offset_right = 271.0
-offset_bottom = 360.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Spacer2" type="ScrollContainer" parent="Side Menu" unique_id=290339705]
+custom_minimum_size = Vector2(0, 4)
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Side Menu" unique_id=810999004]
+custom_minimum_size = Vector2(0, 180)
+layout_mode = 2
 theme = ExtResource("1_d1yhd")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer" unique_id=1714242740]
+[node name="VBoxContainer" type="GridContainer" parent="Side Menu/ScrollContainer" unique_id=1765250183]
 layout_mode = 2
+columns = 2
 
-[node name="Sapsucker" type="Button" parent="ScrollContainer/VBoxContainer" unique_id=767077272]
+[node name="Sapsucker" type="Button" parent="Side Menu/ScrollContainer/VBoxContainer" unique_id=767077272]
 layout_mode = 2
-theme_override_constants/icon_max_width = 24
-text = "Sapsucker"
-icon = SubResource("CompressedTexture2D_evrla")
+theme_override_constants/icon_max_width = 80
+icon = ExtResource("2_1wed3")
 
-[node name="Cal Dorid" type="Button" parent="ScrollContainer/VBoxContainer" unique_id=1875796786]
+[node name="Cal Dorid" type="Button" parent="Side Menu/ScrollContainer/VBoxContainer" unique_id=1875796786]
 layout_mode = 2
-theme_override_constants/icon_max_width = 24
-text = "California Dorid"
+theme_override_constants/icon_max_width = 80
 icon = ExtResource("2_8pf3a")
 
-[node name="Hypselodoris" type="Button" parent="ScrollContainer/VBoxContainer" unique_id=1889667325]
+[node name="Hypselodoris" type="Button" parent="Side Menu/ScrollContainer/VBoxContainer" unique_id=1889667325]
 layout_mode = 2
-theme_override_constants/icon_max_width = 24
-text = "Hypselodoris"
+theme_override_constants/icon_max_width = 80
 icon = ExtResource("3_1wed3")
 
-[node name="Phyllidiella" type="Button" parent="ScrollContainer/VBoxContainer" unique_id=1785172312]
+[node name="Phyllidiella" type="Button" parent="Side Menu/ScrollContainer/VBoxContainer" unique_id=1785172312]
 layout_mode = 2
-theme_override_constants/icon_max_width = 24
-text = "Phyllidiella"
+theme_override_constants/icon_max_width = 80
 icon = ExtResource("4_08sdj")
 
-[node name="Flabellina" type="Button" parent="ScrollContainer/VBoxContainer" unique_id=1940239109]
+[node name="Marindica" type="Button" parent="Side Menu/ScrollContainer/VBoxContainer" unique_id=1538349091]
 layout_mode = 2
-theme_override_constants/icon_max_width = 24
-text = "Flabellina"
-icon = ExtResource("5_53siv")
-
-[node name="Marindica" type="Button" parent="ScrollContainer/VBoxContainer" unique_id=1538349091]
-layout_mode = 2
-theme_override_constants/icon_max_width = 24
-text = "Marindica"
+theme_override_constants/icon_max_width = 80
 icon = ExtResource("6_ffexd")
 
-[node name="Gonio" type="Button" parent="ScrollContainer/VBoxContainer" unique_id=220533175]
+[node name="Gonio" type="Button" parent="Side Menu/ScrollContainer/VBoxContainer" unique_id=220533175]
 layout_mode = 2
-theme_override_constants/icon_max_width = 24
-text = "Gonio"
+theme_override_constants/icon_max_width = 80
 icon = ExtResource("7_v7bf4")
 
-[node name="Paradisa" type="Button" parent="ScrollContainer/VBoxContainer" unique_id=1633262766]
+[node name="Paradisa" type="Button" parent="Side Menu/ScrollContainer/VBoxContainer" unique_id=1633262766]
 layout_mode = 2
-theme_override_constants/icon_max_width = 24
-text = "Paradisa"
+theme_override_constants/icon_max_width = 80
 icon = ExtResource("8_fewft")
 
-[node name="ScrollContainer2" type="ScrollContainer" parent="." unique_id=631290024]
-offset_left = 59.0
-offset_top = 402.0
-offset_right = 277.0
-offset_bottom = 534.0
+[node name="Flabellina" type="Button" parent="Side Menu/ScrollContainer/VBoxContainer" unique_id=1940239109]
+layout_mode = 2
+theme_override_constants/icon_max_width = 80
+icon = ExtResource("5_53siv")
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="ScrollContainer2" unique_id=425249478]
+[node name="Spacer" type="ScrollContainer" parent="Side Menu" unique_id=631290024]
+custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 
-[node name="Label" type="Label" parent="ScrollContainer2/VBoxContainer2" unique_id=160548516]
+[node name="Label2" type="Label" parent="Side Menu" unique_id=160548516]
 layout_mode = 2
-text = "Food Options"
+text = "Spawn Food"
 horizontal_alignment = 1
 
-[node name="Fish eggs" type="Button" parent="ScrollContainer2/VBoxContainer2" unique_id=668461962]
+[node name="Spacer3" type="ScrollContainer" parent="Side Menu" unique_id=964889293]
+custom_minimum_size = Vector2(0, 4)
+layout_mode = 2
+
+[node name="VBoxContainer4" type="HBoxContainer" parent="Side Menu" unique_id=1347184214]
+layout_mode = 2
+
+[node name="Hydrozoa" type="Button" parent="Side Menu/VBoxContainer4" unique_id=668461962]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_constants/icon_max_width = 24
-text = "Hydrozoa"
+theme_override_constants/icon_max_width = 60
 icon = ExtResource("9_qssuf")
 
-[node name="Algae" type="Button" parent="ScrollContainer2/VBoxContainer2" unique_id=1957107073]
+[node name="Algae" type="Button" parent="Side Menu/VBoxContainer4" unique_id=1957107073]
 layout_mode = 2
-theme_override_constants/icon_max_width = 24
-text = "Algae"
+theme_override_constants/icon_max_width = 60
 icon = ExtResource("10_c3mqk")
 
-[node name="Sea sponge" type="Button" parent="ScrollContainer2/VBoxContainer2" unique_id=1048649379]
+[node name="Sea sponge" type="Button" parent="Side Menu/VBoxContainer4" unique_id=1048649379]
 layout_mode = 2
-theme_override_constants/icon_max_width = 24
-text = "Sponges"
+theme_override_constants/icon_max_width = 60
 icon = ExtResource("11_k85lr")
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="." unique_id=1624829508]
-offset_left = 60.0
-offset_top = 566.0
-offset_right = 176.0
-offset_bottom = 697.0
+[node name="Spacer4" type="ScrollContainer" parent="Side Menu" unique_id=1454620576]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
 
-[node name="Label" type="Label" parent="VBoxContainer2" unique_id=1550029272]
+[node name="Glass" type="Button" parent="Side Menu" unique_id=519179365]
+layout_mode = 2
+theme_override_constants/icon_max_width = 24
+toggle_mode = true
+text = "Magnifying glass"
+icon = ExtResource("16_63bsy")
+
+[node name="Spacer5" type="ScrollContainer" parent="Side Menu" unique_id=1895081831]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="Side Menu" unique_id=1550029272]
 layout_mode = 2
 text = "Border options"
 horizontal_alignment = 1
 
-[node name="CheckButton" type="CheckButton" parent="VBoxContainer2/Label" unique_id=34631343]
-layout_mode = 0
-offset_left = 33.0
-offset_top = 23.0
-offset_right = 77.0
-offset_bottom = 62.0
-
-[node name="Bowl" type="CharacterBody2D" parent="." unique_id=723117236]
+[node name="Bowl" type="CharacterBody2D" parent="Side Menu" unique_id=723117236]
+position = Vector2(-86, -95)
 script = ExtResource("12_ofjh6")
 
-[node name="Node2D" parent="Bowl" unique_id=1174612762 instance=ExtResource("13_8pf3a")]
+[node name="Node2D" parent="Side Menu/Bowl" unique_id=1174612762 instance=ExtResource("13_8pf3a")]
+
+[node name="CheckButton" type="CheckButton" parent="Side Menu" unique_id=34631343]
+layout_mode = 2
+size_flags_stretch_ratio = 2.8
+button_mask = 4
 
 [node name="Book" parent="." unique_id=1072664842 instance=ExtResource("13_qewr8")]
-offset_left = 1541.0
-offset_top = 114.0
-offset_right = 1541.0
-offset_bottom = 114.0
+offset_left = 1509.0001
+offset_top = 51.000015
+offset_right = 1509.0001
+offset_bottom = 51.000015
 
-[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=2038805613]
+[node name="Top Menu" type="HBoxContainer" parent="." unique_id=2038805613]
 offset_right = 71.0
 offset_bottom = 31.0
 size_flags_stretch_ratio = 0.0
 
-[node name="Quit" type="Button" parent="HBoxContainer" unique_id=1660233466]
+[node name="Quit" type="Button" parent="Top Menu" unique_id=1660233466]
 layout_mode = 2
 text = "X"
 script = ExtResource("14_1vqfj")
 
-[node name="Control" type="Control" parent="HBoxContainer" unique_id=1835694574]
+[node name="Control" type="Control" parent="Top Menu" unique_id=1835694574]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Back" type="Button" parent="HBoxContainer" unique_id=391075290]
+[node name="Back" type="Button" parent="Top Menu" unique_id=391075290]
 layout_direction = 2
 layout_mode = 2
 text = "Back"
 icon_alignment = 1
 script = ExtResource("14_1vqfj")
-
-[node name="Label2" type="Label" parent="." unique_id=82134145]
-offset_right = 40.0
-offset_bottom = 23.0
 
 [node name="MagGlass" parent="." unique_id=1828750686 instance=ExtResource("15_vox1v")]
 position = Vector2(830, -347)
@@ -189,29 +185,23 @@ offset_top = 1.0
 offset_right = 1307.0
 offset_bottom = 45.0
 
-[node name="Glass" type="Button" parent="VBoxContainer" unique_id=519179365]
-layout_mode = 2
-theme_override_constants/icon_max_width = 24
-toggle_mode = true
-icon = ExtResource("16_63bsy")
-
 [node name="Button2" type="Button" parent="VBoxContainer" unique_id=168131564]
 layout_mode = 2
 text = "Tutorial"
 
-[connection signal="button_down" from="ScrollContainer/VBoxContainer/Sapsucker" to="Bowl" method="_on_sapsucker_button_down"]
-[connection signal="button_down" from="ScrollContainer/VBoxContainer/Cal Dorid" to="Bowl" method="_on_cal_dorid_button_down"]
-[connection signal="button_down" from="ScrollContainer/VBoxContainer/Hypselodoris" to="Bowl" method="_on_hypselodoris_button_down"]
-[connection signal="button_down" from="ScrollContainer/VBoxContainer/Phyllidiella" to="Bowl" method="_on_phyllidiella_button_down"]
-[connection signal="button_down" from="ScrollContainer/VBoxContainer/Flabellina" to="Bowl" method="_on_flabellina_button_down"]
-[connection signal="button_down" from="ScrollContainer/VBoxContainer/Marindica" to="Bowl" method="_on_marindica_button_down"]
-[connection signal="button_down" from="ScrollContainer/VBoxContainer/Gonio" to="Bowl" method="_on_gonio_button_down"]
-[connection signal="button_down" from="ScrollContainer/VBoxContainer/Paradisa" to="Bowl" method="_on_paradisa_button_down"]
-[connection signal="button_down" from="ScrollContainer2/VBoxContainer2/Fish eggs" to="Bowl" method="_on_fish_eggs_button_down"]
-[connection signal="button_down" from="ScrollContainer2/VBoxContainer2/Algae" to="Bowl" method="_on_algae_button_down"]
-[connection signal="button_down" from="ScrollContainer2/VBoxContainer2/Sea sponge" to="Bowl" method="_on_sea_sponge_button_down"]
-[connection signal="button_down" from="HBoxContainer/Quit" to="HBoxContainer/Quit" method="_on_quit_button_down"]
-[connection signal="button_down" from="HBoxContainer/Back" to="HBoxContainer/Back" method="_on_back_button_down"]
-[connection signal="toggled" from="VBoxContainer/Glass" to="Bowl" method="_on_glass_toggled"]
+[connection signal="button_down" from="Side Menu/ScrollContainer/VBoxContainer/Sapsucker" to="Side Menu/Bowl" method="_on_sapsucker_button_down"]
+[connection signal="button_down" from="Side Menu/ScrollContainer/VBoxContainer/Cal Dorid" to="Side Menu/Bowl" method="_on_cal_dorid_button_down"]
+[connection signal="button_down" from="Side Menu/ScrollContainer/VBoxContainer/Hypselodoris" to="Side Menu/Bowl" method="_on_hypselodoris_button_down"]
+[connection signal="button_down" from="Side Menu/ScrollContainer/VBoxContainer/Phyllidiella" to="Side Menu/Bowl" method="_on_phyllidiella_button_down"]
+[connection signal="button_down" from="Side Menu/ScrollContainer/VBoxContainer/Marindica" to="Side Menu/Bowl" method="_on_marindica_button_down"]
+[connection signal="button_down" from="Side Menu/ScrollContainer/VBoxContainer/Gonio" to="Side Menu/Bowl" method="_on_gonio_button_down"]
+[connection signal="button_down" from="Side Menu/ScrollContainer/VBoxContainer/Paradisa" to="Side Menu/Bowl" method="_on_paradisa_button_down"]
+[connection signal="button_down" from="Side Menu/ScrollContainer/VBoxContainer/Flabellina" to="Side Menu/Bowl" method="_on_flabellina_button_down"]
+[connection signal="button_down" from="Side Menu/VBoxContainer4/Hydrozoa" to="Side Menu/Bowl" method="_on_fish_eggs_button_down"]
+[connection signal="button_down" from="Side Menu/VBoxContainer4/Algae" to="Side Menu/Bowl" method="_on_algae_button_down"]
+[connection signal="button_down" from="Side Menu/VBoxContainer4/Sea sponge" to="Side Menu/Bowl" method="_on_sea_sponge_button_down"]
+[connection signal="toggled" from="Side Menu/Glass" to="Side Menu/Bowl" method="_on_glass_toggled"]
+[connection signal="button_down" from="Top Menu/Quit" to="Top Menu/Quit" method="_on_quit_button_down"]
+[connection signal="button_down" from="Top Menu/Back" to="Top Menu/Back" method="_on_back_button_down"]
 
 [editable path="MagGlass"]

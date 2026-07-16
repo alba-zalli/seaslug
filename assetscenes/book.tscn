@@ -72,6 +72,11 @@ size = Vector2(317, 222)
 [node name="Book" type="Control" unique_id=1072664842]
 layout_mode = 3
 anchors_preset = 0
+offset_left = 45.0
+offset_top = -56.0
+offset_right = 45.0
+offset_bottom = -56.0
+scale = Vector2(1.2874871, 1.3517112)
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=3935383]
 
@@ -101,9 +106,11 @@ z_index = 2
 position = Vector2(4, 61)
 
 [node name="NameLabel" parent="PageSpread/Container" parent_id_path=PackedInt32Array(953647098, 464423382) index="0" unique_id=960901191]
+theme_override_font_sizes/font_size = 17
 text = ""
 
 [node name="SciNameLabel" parent="PageSpread/Container" parent_id_path=PackedInt32Array(953647098, 464423382) index="1" unique_id=1514881867]
+theme_override_font_sizes/font_size = 14
 text = ""
 
 [node name="DescriptionLabel" parent="PageSpread/Container" parent_id_path=PackedInt32Array(953647098, 464423382) index="2" unique_id=249836958]
