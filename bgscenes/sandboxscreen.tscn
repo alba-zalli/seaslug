@@ -3,6 +3,7 @@
 [ext_resource type="Theme" uid="uid://ew0ljd640imm" path="res://themes/base_theme.tres" id="1_d1yhd"]
 [ext_resource type="Texture2D" uid="uid://8k2dq7iq5c4k" path="res://images/slugimages/sapsucker.png" id="2_1wed3"]
 [ext_resource type="Texture2D" uid="uid://ch2fi2csdtu5s" path="res://images/slugimages/dorid.png" id="2_8pf3a"]
+[ext_resource type="Texture2D" uid="uid://c876hv0kams1r" path="res://1000000369.png" id="2_08sdj"]
 [ext_resource type="Texture2D" uid="uid://r6eipayrvqou" path="res://images/slugimages/hyps.png" id="3_1wed3"]
 [ext_resource type="Texture2D" uid="uid://ch13d35ifj5fs" path="res://images/slugimages/phyl.png" id="4_08sdj"]
 [ext_resource type="Texture2D" uid="uid://cc6bnpdg57ulj" path="res://images/slugimages/flab.png" id="5_53siv"]
@@ -20,9 +21,23 @@
 
 [node name="SandboxScreen" type="Node2D" unique_id=1151149152]
 
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1476575955]
+visibility_layer = 512
+z_index = -6
+position = Vector2(911, 519)
+scale = Vector2(0.2308, 0.18245003)
+texture = ExtResource("2_08sdj")
+
 [node name="Bowl" type="Node2D" parent="." unique_id=1365031602]
 position = Vector2(0, 405)
 script = ExtResource("12_ofjh6")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Bowl" unique_id=2082252086]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Bowl/StaticBody2D" unique_id=1832883841]
+z_index = 3
+position = Vector2(2, 3)
+polygon = PackedVector2Array(1145, 415, 1121, 383, 708, 374, 600, 338, 487, 281, 420, 200, 399, 74, 410, -59, 459, -112, 524, -147, 618, -185, 745, -191, 1024, -189, 1220, -172, 1335, -82, 1369, -12, 1408, 92, 1398, 226, 1355, 286, 1294, 335, 1128, 382, 1145, 418, 1333, 373, 1423, 295, 1447, 212, 1464, 96, 1445, -6, 1387, -101, 1278, -178, 1126, -220, 946, -227, 754, -230, 568, -211, 504, -202, 416, -138, 360, -74, 353, 134, 398, 273, 505, 360, 663, 409)
 
 [node name="Side Menu" type="VBoxContainer" parent="." unique_id=468719485]
 custom_minimum_size = Vector2(90, 0)

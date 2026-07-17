@@ -18,6 +18,7 @@ var fish_food = null
 
 @onready var swim_animation = $AnimationPlayer
 @onready var eat_area: Area2D = $EatArea
+@onready var look_ahead: RayCast2D = $LookAhead
 @export var main_menu_mode := false
 var slug_data: SlugData
 var base_swim_speed := 60.0
@@ -110,9 +111,9 @@ func _physics_process(delta):
 	else:
 		_physics_process_orbit(delta)
 
-	# face direction of travel
-	var target_angle = swim_direction.angle() + PI / 2
-	rotation = lerp_angle(rotation, target_angle, 0.08)
+	if not is_turning:
+		var target_angle = swim_direction.angle() + PI / 2
+		rotation = lerp_angle(rotation, target_angle, 0.08)
 
 func _physics_process_main_menu(delta):
 	var screen_size = get_viewport_rect().size
@@ -143,40 +144,40 @@ func _physics_process_main_menu(delta):
 	velocity = swim_direction * swim_speed
 	move_and_slide()
 
-	# hard safety clamp so fish never actually leaves the screen
-	global_position.x = clamp(global_position.x, margin * 0.5, screen_size.x - margin * 0.5)
-	global_position.y = clamp(global_position.y, margin * 0.5, screen_size.y - margin * 0.5)
-
+var is_turning := false
+var turn_target_angle := 0.0
+var turn_speed := 4.0
+var speed_multiplier := 1.0
+var target_speed_multiplier := 1.0
+var bounce_direction := Vector2.RIGHT
 
 func _physics_process_orbit(delta):
-	# advance the orbit angle — this drives the circular path
-	var orbit_speed : float = swim_speed / (0.75 * min(radius_x, radius_y))
-	orbit_angle += orbit_speed * delta
-
-	# wobble: slowly drifts the fish inward/outward around 75% of the bowl radius
 	wobble_timer += delta
-	orbit_wobble = sin(wobble_timer * 0.4) * 0.15   # ±15% radius drift, very slow
 
-	var orbit_radius_x = radius_x * (0.75 + orbit_wobble)
-	var orbit_radius_y = radius_y * (0.75 + orbit_wobble)
+	# always ease speed multiplier toward its target, whether turning or not
+	speed_multiplier = lerp(speed_multiplier, target_speed_multiplier, 3.0 * delta)
 
-	# target position on the elliptical orbit
-	var target_pos = bowl_center + Vector2(
-		cos(orbit_angle) * orbit_radius_x,
-		sin(orbit_angle) * orbit_radius_y
-	)
+	if is_turning:
+		rotation = lerp_angle(rotation, turn_target_angle, turn_speed * delta)
+		swim_direction = swim_direction.lerp(bounce_direction, 3.0 * delta).normalized()
+		velocity = swim_direction * swim_speed * speed_multiplier
+		move_and_slide()
 
-	# steer smoothly toward the orbit point rather than teleporting
-	var to_target = (target_pos - global_position)
-	swim_direction = swim_direction.lerp(to_target.normalized(), 6.0 * delta).normalized()
+		if abs(angle_difference(rotation, turn_target_angle)) < 0.05:
+			is_turning = false
+			target_speed_multiplier = 1.0  # ease back up to full speed
+		return
 
-	velocity = swim_direction * swim_speed
+	if randf() < delta * 0.4:
+		swim_direction = swim_direction.rotated(randf_range(-0.3, 0.3)).normalized()
+
+	velocity = swim_direction * swim_speed * speed_multiplier
 	move_and_slide()
 
-	# hard clamp after move_and_slide so physics never pushes outside
-	var rel = global_position - bowl_center
-	if radius_x > 0 and radius_y > 0:
-		var ellipse_value = (rel.x * rel.x) / (radius_x * radius_x) + (rel.y * rel.y) / (radius_y * radius_y)
-		if ellipse_value > 1.0:
-			global_position = bowl_center + rel * (1.0 / sqrt(ellipse_value)) * 0.99
-			swim_direction = (bowl_center - global_position).normalized()
+	for i in get_slide_collision_count():
+		var collision := get_slide_collision(i)
+		bounce_direction = swim_direction.bounce(collision.get_normal()).normalized()
+		turn_target_angle = bounce_direction.angle() + PI / 2
+		target_speed_multiplier = 0.4  # ease down, not an instant jump
+		is_turning = true
+		break
