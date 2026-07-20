@@ -4,8 +4,12 @@ extends CharacterBody2D
 var radius_x := 0.0
 var radius_y := 0.0
 var bowl_center := Vector2.ZERO
+
+#dragging vars 
 var dragging := false
 var drag_offset := Vector2.ZERO
+var drag_target_pos := Vector2.ZERO
+
 var swim_direction := Vector2.RIGHT
 var swim_speed := 60.0
 var orbit_angle := 0.0
@@ -18,7 +22,6 @@ var fish_food = null
 
 @onready var swim_animation = $AnimationPlayer
 @onready var eat_area: Area2D = $EatArea
-@onready var look_ahead: RayCast2D = $LookAhead
 @export var main_menu_mode := false
 var slug_data: SlugData
 var base_swim_speed := 60.0
@@ -99,11 +102,23 @@ func _input(event):
 		else:
 			dragging = false
 	elif event is InputEventMouseMotion and dragging:
-		global_position = event.position + drag_offset
+		drag_target_pos = event.position + drag_offset
+
+func _process_drag() -> void:
+	velocity = Vector2.ZERO
+	var motion = drag_target_pos - global_position
+	if motion.length() < 0.01:
+		return
+
+	var collision := move_and_collide(motion)
+	if collision:
+		# slide the leftover motion along the wall instead of stopping dead
+		var remaining = collision.get_remainder().slide(collision.get_normal())
+		move_and_collide(remaining)
 
 func _physics_process(delta):
 	if dragging:
-		velocity = Vector2.ZERO
+		_process_drag()
 		return
 
 	if main_menu_mode:

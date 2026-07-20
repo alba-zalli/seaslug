@@ -203,6 +203,3 @@ libraries/ = SubResource("AnimationLibrary_48yjo")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="EatArea" unique_id=64255899]
 position = Vector2(-1195, -202)
 polygon = PackedVector2Array(1801, 205, 2146, 54, 2517, 7, 2834, 95, 3075, 268, 3182, 604, 3217, 971, 2635, 1243, 2139, 1230, 1720, 852, 1704, 447)
-
-[node name="LookAhead" type="RayCast2D" parent="." unique_id=1763998742]
-collision_mask = 4
