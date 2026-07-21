@@ -99,6 +99,7 @@ func _input(event):
 						book_node.open_book_to(slug_data)
 				dragging = true
 				drag_offset = global_position - event.position
+				drag_target_pos = global_position   # <-- add this line
 		else:
 			dragging = false
 	elif event is InputEventMouseMotion and dragging:

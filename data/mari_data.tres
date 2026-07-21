@@ -7,7 +7,7 @@
 [resource]
 resource_name = "caldorid"
 script = ExtResource("3_d0gwl")
-slug_name = "Phyllidia marindica"
+slug_name = "Nautical Phyllidia"
 scientific_name = "Phyllidia marindica"
 description = "Eats sponges"
 image_rect = ExtResource("2_q4p2x")

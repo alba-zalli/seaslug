@@ -106,11 +106,11 @@ z_index = 2
 position = Vector2(4, 61)
 
 [node name="NameLabel" parent="PageSpread/Container" parent_id_path=PackedInt32Array(953647098, 464423382) index="0" unique_id=960901191]
-theme_override_font_sizes/font_size = 17
+theme_override_font_sizes/font_size = 15
 text = ""
 
 [node name="SciNameLabel" parent="PageSpread/Container" parent_id_path=PackedInt32Array(953647098, 464423382) index="1" unique_id=1514881867]
-theme_override_font_sizes/font_size = 14
+theme_override_font_sizes/font_size = 10
 text = ""
 
 [node name="DescriptionLabel" parent="PageSpread/Container" parent_id_path=PackedInt32Array(953647098, 464423382) index="2" unique_id=249836958]

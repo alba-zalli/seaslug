@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="SlugData" format=3 uid="uid://d0hk5unceyhka"]
 
 [ext_resource type="Texture2D" uid="uid://cqxijc1hir02x" path="res://images/foodimages/sea sponge.png" id="1_1br1h"]
-[ext_resource type="Texture2D" uid="uid://bqm0u6xoh4ckv" path="res://data/caldorid.jpg" id="2_1br1h"]
+[ext_resource type="Texture2D" uid="uid://ch2fi2csdtu5s" path="res://images/slugimages/dorid.png" id="2_1br1h"]
 [ext_resource type="Script" uid="uid://djf2or5v3g3w8" path="res://scripts/slug_data.gd" id="3_50gfn"]
 
 [resource]
@@ -9,7 +9,7 @@ resource_name = "caldorid"
 script = ExtResource("3_50gfn")
 slug_name = "California blue dorid"
 scientific_name = "Felimare californiensis"
-description = "Lives in tidepools/shallow water on Californian to north Mexican cost, eats sea sponges."
+description = "I live along the Californian and north Mexican coast, and I especially love shallow water and tidepools. Pollution has hurt my friends and I, but we’re making a comeback! My favourite things to eat are sea sponges. "
 image_rect = ExtResource("2_1br1h")
 food_rect = ExtResource("1_1br1h")
 metadata/_custom_type_script = "uid://djf2or5v3g3w8"

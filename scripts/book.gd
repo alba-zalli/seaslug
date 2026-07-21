@@ -13,6 +13,7 @@ extends Area2D
 @onready var food_rect: TextureRect = $"../../PageSpread/RightPageImages/FoodImage"
 @onready var zoom_layer: Control = $"../../PageSpread/ZoomLayer"
 @export var zoomed_image_offset := Vector2(-600, 200)  # negative x = left, positive y = down
+@export var zoom_width_multiplier := 4.5
 
 var base_separation: int
 
@@ -22,6 +23,7 @@ var base_desc_size: int
 var original_image_scale: Vector2
 var original_food_scale: Vector2
 var base_label: int
+var base_container_width: float
 
 var is_open := false
 var is_zoomed := false
@@ -29,7 +31,7 @@ var is_zoomed := false
 var original_position: Vector2
 var original_scale: Vector2
 
-@export var zoom_scale := 4.0
+@export var zoom_scale := 3.0
 @export var zoom_duration := 0.4
 @export var double_click_wait := 0.3
 @export var close_button_offset := Vector2(450, 450)
@@ -57,6 +59,7 @@ func _ready():
 	base_sci_size = sci_label.get_theme_font_size("font_size")
 	base_desc_size = desc_label.get_theme_font_size("normal_font_size")
 	base_separation = container.get_theme_constant("separation")
+	base_container_width = container.custom_minimum_size.x 
 	original_image_scale = image_rect.scale
 	original_food_scale = food_rect.scale
 	original_position = book_anim.global_position
@@ -156,7 +159,6 @@ func _toggle_zoom() -> void:
 		tween.tween_property(name_label, "theme_override_font_sizes/font_size", int(base_name_size * zoom_scale), zoom_duration)
 		tween.tween_property(sci_label, "theme_override_font_sizes/font_size", int(base_sci_size * zoom_scale), zoom_duration)
 		tween.tween_property(desc_label, "theme_override_font_sizes/normal_font_size", int(base_desc_size * zoom_scale), zoom_duration)
-		tween.tween_property(container, "theme_override_constants/separation", int(base_separation * zoom_scale), zoom_duration)
 
 		tween.tween_property(image_rect, "scale", original_image_scale * zoom_scale, zoom_duration)
 		tween.tween_property(food_rect, "scale", original_food_scale * zoom_scale, zoom_duration)
@@ -167,8 +169,7 @@ func _toggle_zoom() -> void:
 		var food_target_pos := images_pivot_global + food_rel_offset * zoom_scale + zoomed_image_offset
 		tween.tween_property(image_rect, "global_position", img_target_pos, zoom_duration)
 		tween.tween_property(food_rect, "global_position", food_target_pos, zoom_duration)
-
-		container.custom_minimum_size.x = 500
+		tween.tween_property(container, "custom_minimum_size:x", base_container_width * zoom_width_multiplier, zoom_duration)
 		is_zoomed = true
 		tween.finished.connect(func():
 			close_button.global_position = screen_center - close_button_offset
@@ -183,7 +184,7 @@ func _toggle_zoom() -> void:
 		tween.tween_property(sci_label, "theme_override_font_sizes/font_size", base_sci_size, zoom_duration)
 		tween.tween_property(desc_label, "theme_override_font_sizes/normal_font_size", base_desc_size, zoom_duration)
 		tween.tween_property(container, "theme_override_constants/separation", base_separation, zoom_duration)
-		container.custom_minimum_size.x = 100
+		tween.tween_property(container, "custom_minimum_size:x", base_container_width, zoom_duration)
 
 		tween.tween_property(image_rect, "scale", original_image_scale, zoom_duration)
 		tween.tween_property(food_rect, "scale", original_food_scale, zoom_duration)

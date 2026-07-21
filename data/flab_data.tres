@@ -7,9 +7,9 @@
 [resource]
 resource_name = "caldorid"
 script = ExtResource("3_t0hnq")
-slug_name = "Flabellina rubrolineata"
+slug_name = "Purple Flabellina"
 scientific_name = "Flabellina rubrolineata"
-description = "From: This species was described from the Red Sea"
+description = "I live in the Indian Ocean to the Red Sea. Sometimes I like to hang out in the Mediterranean Sea too! I live 10 to 20 metres under the surface. I spend time around hydrozoa, which is my favourite food."
 image_rect = ExtResource("2_ye1tq")
 food_rect = ExtResource("1_6gcgf")
 metadata/_custom_type_script = "uid://djf2or5v3g3w8"

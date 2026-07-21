@@ -1,7 +1,7 @@
 extends Node2D
 
-var radius_x = DisplayServer.screen_get_size().x / 2 
-var radius_y = DisplayServer.screen_get_size().y /2 
+var radius_x = DisplayServer.screen_get_size().x / 2.0 
+var radius_y = DisplayServer.screen_get_size().y /2.0 
 var size = 2.3
 
 var spawn_functions := [
@@ -28,7 +28,7 @@ func fish_maker(fish):
 	print("Spawning: ", fish.scene_file_path)
 	fish.radius_x = radius_x
 	fish.radius_y = radius_y
-	fish.bowl_center = DisplayServer.screen_get_size() / 2
+	fish.bowl_center = DisplayServer.screen_get_size() / 2.0
 	fish.modulate.a = 1 #change opacity of fish sprite
 	fish.size = size
 	

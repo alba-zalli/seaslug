@@ -18,6 +18,8 @@ shader_parameter/mask_feather = 0.02
 
 [node name="MagGlass" type="Node2D" unique_id=1828750686]
 z_index = 1
+position = Vector2(-34, -1197)
+scale = Vector2(1.7075276, 1.6838251)
 script = ExtResource("2_f8ftu")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1692867260]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bqm0u6xoh4ckv"
-path="res://.godot/imported/caldorid.jpg-168f8f307dcb2d3afb77815e64e84f39.ctex"
+uid="uid://dukqgm3x2saxg"
+path="res://.godot/imported/rockbck.png-1a49e382f0a6d6926c7e0824b022ec23.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://data/caldorid.jpg"
-dest_files=["res://.godot/imported/caldorid.jpg-168f8f307dcb2d3afb77815e64e84f39.ctex"]
+source_file="res://data/rockbck.png"
+dest_files=["res://.godot/imported/rockbck.png-1a49e382f0a6d6926c7e0824b022ec23.ctex"]
 
 [params]
 

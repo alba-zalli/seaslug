@@ -4,6 +4,7 @@
 [ext_resource type="Theme" uid="uid://chlounns205s" path="res://bgscenes/main_buttons_theme.tres" id="2_chfyp"]
 [ext_resource type="Script" uid="uid://uusxfhw2epny" path="res://scripts/button.gd" id="3_t0hw8"]
 [ext_resource type="Shader" uid="uid://1nqwqwsjwac8" path="res://water.gdshader" id="4_42eo2"]
+[ext_resource type="PackedScene" uid="uid://bey6cio1j6uis" path="res://assetscenes/rockbackground.tscn" id="5_chfyp"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5pwma"]
 bg_color = Color(0.81960785, 0.9372549, 0.9764706, 0.8784314)
@@ -81,6 +82,11 @@ offset_right = 18.0
 offset_bottom = 31.0
 text = "X"
 script = ExtResource("3_t0hw8")
+
+[node name="Node2D" parent="." unique_id=2088293752 instance=ExtResource("5_chfyp")]
+z_index = 6
+position = Vector2(-81.999985, 409)
+rotation = 0.35983562
 
 [connection signal="button_down" from="CanvasLayer/CenterContainer/MainButtons/Sandbox" to="CanvasLayer/CenterContainer/MainButtons/Sandbox" method="_on_sandbox_button_down"]
 [connection signal="button_down" from="CanvasLayer/CenterContainer/MainButtons/World" to="CanvasLayer/CenterContainer/MainButtons/Sandbox" method="_on_world_button_down"]
