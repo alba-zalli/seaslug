@@ -5,6 +5,12 @@ func _get_scaler() -> float:
 
 func _get_bowl_center() -> Vector2:
 	return get_viewport_rect().size / 2.
+
+func _get_radius_x() -> float:
+	return 90. * _get_scaler()
+
+func _get_radius_y() -> float:
+	return 60. * _get_scaler()
 	
 var radius_x = 90. * _get_scaler()
 var radius_y = 60. * _get_scaler()
@@ -60,15 +66,15 @@ func spawn_fish():
 
 # function overloading for fish maker
 func food_maker(fish):
-	fish.radius_x = radius_x
-	fish.radius_y = radius_y
+	fish.radius_x = _get_radius_x()
+	fish.radius_y = _get_radius_y()
 	fish.bowl_center = _get_bowl_center()
 	add_child(fish)
 	fish.global_position = _random_bowl_position()
 
 func fish_maker(fish, data: SlugData = null):
-	fish.radius_x = radius_x
-	fish.radius_y = radius_y
+	fish.radius_x = _get_radius_x()
+	fish.radius_y = _get_radius_y()
 	fish.bowl_center = _get_bowl_center()
 	fish.slug_data = data
 	add_child(fish)
@@ -79,9 +85,11 @@ func fish_maker(fish, data: SlugData = null):
 
 func _random_bowl_position() -> Vector2:
 	var center = _get_bowl_center()
+	var rx = _get_radius_x()
+	var ry = _get_radius_y()
 	var angle = randf() * TAU
-	var dist = sqrt(randf())  # uniform distribution over the ellipse's area, not clustered at center
-	var offset = Vector2(cos(angle) * radius_x, sin(angle) * radius_y) * dist * 0.85
+	var dist = sqrt(randf())
+	var offset = Vector2(cos(angle) * rx, sin(angle) * ry) * dist * 0.85
 	return center + offset
 	
 func spawn_gonio():
