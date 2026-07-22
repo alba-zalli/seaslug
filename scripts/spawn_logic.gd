@@ -1,5 +1,5 @@
 extends Node2D
-
+# SPAWNS FISH IN INTRO SCREEN
 var scaler = DisplayServer.screen_get_size().y / 175
 var radius_x = 90 * scaler
 var radius_y = 60 * scaler

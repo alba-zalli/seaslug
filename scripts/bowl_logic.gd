@@ -1,11 +1,14 @@
 extends Node2D
 
-var scaler = DisplayServer.screen_get_size().y / 175.
-var radius_x = 90. * scaler
-var radius_y = 60. * scaler
+func _get_scaler() -> float:
+	return get_viewport_rect().size.y / 175.
 
-#@onready var bowl = $BowlLogic
-#@onready var container = $SlugContainer
+func _get_bowl_center() -> Vector2:
+	return get_viewport_rect().size / 2.
+	
+var radius_x = 90. * _get_scaler()
+var radius_y = 60. * _get_scaler()
+
 @onready var book = get_tree().get_first_node_in_group("book")
 
 var caldorid_data: SlugData = preload("res://data/caldorid_data.tres")
@@ -42,7 +45,6 @@ var paradisa_scene = preload("res://assetscenes/slugscenes/paradisa.tscn")
 var sponge_scene = preload("res://assetscenes/foodscenes/sponge.tscn")
 var alg_scene = preload("res://assetscenes/foodscenes/algae.tscn")
 var fish_scene = preload("res://assetscenes/foodscenes/fisheggs.tscn")
-	
 
 func spawn_sponge():
 	var sponge = sponge_scene.instantiate()
@@ -60,20 +62,27 @@ func spawn_fish():
 func food_maker(fish):
 	fish.radius_x = radius_x
 	fish.radius_y = radius_y
-	fish.bowl_center = DisplayServer.screen_get_size() / 2.
+	fish.bowl_center = _get_bowl_center()
 	add_child(fish)
-	fish.global_position = fish.bowl_center
+	fish.global_position = _random_bowl_position()
 
 func fish_maker(fish, data: SlugData = null):
 	fish.radius_x = radius_x
 	fish.radius_y = radius_y
-	fish.bowl_center = DisplayServer.screen_get_size() / 2.
+	fish.bowl_center = _get_bowl_center()
 	fish.slug_data = data
 	add_child(fish)
-	fish.global_position = fish.bowl_center
+	fish.global_position = _random_bowl_position()
 	fish.main_menu_mode = false
 	if data != null:
 		book.open_book_to(data)
+
+func _random_bowl_position() -> Vector2:
+	var center = _get_bowl_center()
+	var angle = randf() * TAU
+	var dist = sqrt(randf())  # uniform distribution over the ellipse's area, not clustered at center
+	var offset = Vector2(cos(angle) * radius_x, sin(angle) * radius_y) * dist * 0.85
+	return center + offset
 	
 func spawn_gonio():
 	var fish = gonio_scene.instantiate()
@@ -110,7 +119,6 @@ func spawn_paradisa():
 func _ready():
 	print("BOWL SPAWNER")
 	randomize()
-	#var center = DisplayServer.screen_get_size() / 2.
 	
 	if is_main_menu():
 		for i in range(5):
