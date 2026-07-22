@@ -21,17 +21,17 @@ var spawn_functions := [
 ]
 
 #load fish scenes
-var sapsucker_scene = preload("res://sapsucker.tscn")
-var caldorid_scene = preload("res://caldorid.tscn")
-var hyps_scene = preload("res://hyps.tscn")
-var phyl_scene = preload("res://phyl.tscn")
-var mari_scene = preload("res://mari.tscn")
-var flab_scene = preload("res://flab.tscn")
-var gonio_scene = preload("res://gonio.tscn")
-var paradisa_scene = preload("res://paradisa.tscn")
-var sponge_scene = preload("res://sponge.tscn")
-var alg_scene = preload("res://algae.tscn")
-var fish_scene = preload("res://fisheggs.tscn")
+var sapsucker_scene = preload("res://assetscenes/slugscenes/sapsucker.tscn")
+var caldorid_scene = preload("res://assetscenes/slugscenes/caldorid.tscn")
+var hyps_scene = preload("res://assetscenes/slugscenes/hyps.tscn")
+var phyl_scene = preload("res://assetscenes/slugscenes/phyl.tscn")
+var mari_scene = preload("res://assetscenes/slugscenes/mari.tscn")
+var flab_scene = preload("res://assetscenes/slugscenes/flab.tscn")
+var gonio_scene = preload("res://assetscenes/slugscenes/gonio.tscn")
+var paradisa_scene = preload("res://assetscenes/slugscenes/paradisa.tscn")
+var sponge_scene = preload("res://assetscenes/foodscenes/sponge.tscn")
+var alg_scene = preload("res://assetscenes/foodscenes/algae.tscn")
+var fish_scene = preload("res://assetscenes/foodscenes/fisheggs.tscn")
 
 #load data resources
 var sapsucker_data: SlugData = preload("res://data/sapsucker_data.tres")
@@ -48,29 +48,34 @@ var fish_data: SlugData = preload("res://data/caldorid_data.tres")
 
 # helper function
 func fish_maker(fish, data: SlugData = null):
+	print("FISH_MAKER CALLED with ", fish)
 	fish.radius_x = radius_x
 	fish.radius_y = radius_y
-	fish.bowl_center = DisplayServer.screen_get_size() / 2
-	add_child(fish)
-	fish.global_position = fish.bowl_center
 	fish.main_menu_mode = false
+	add_child(fish)
 	if data != null:
 		var book_node = get_tree().get_first_node_in_group("book")
-		print("book_node found: ", book_node)
 		if book_node:
 			book_node.open_book_to(data)
 
+func food_maker(food):
+	print("FISH_MAKER CALLED with ", food)
+	food.radius_x = radius_x
+	food.radius_y = radius_y
+	add_child(food)
+	food.setup(food.bowl_center, radius_x, radius_y)
+
 func spawn_sponge():
 	var sponge = sponge_scene.instantiate()
-	fish_maker(sponge)
+	food_maker(sponge)
 
 func spawn_algae():
 	var algea = alg_scene.instantiate()
-	fish_maker(algea)
+	food_maker(algea)
 
 func spawn_fish():
 	var fish = fish_scene.instantiate()
-	fish_maker(fish)
+	food_maker(fish)
 	
 func spawn_gonio():
 	var fish = gonio_scene.instantiate()
@@ -90,7 +95,6 @@ func spawn_sapsucker():
 	
 func spawn_caldorid():
 	var fish = caldorid_scene.instantiate()
-	print("GRAHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH")
 	fish_maker(fish , caldorid_data)
 	
 func spawn_hyps():
@@ -108,23 +112,11 @@ func spawn_paradisa():
 func _ready():
 	print("SPAWNER READY on scene: ", get_tree().current_scene.scene_file_path)
 	randomize()
-	var polygon = Polygon2D.new()
-	var points = PackedVector2Array()
-	var num_points = 64
-	var center = DisplayServer.screen_get_size() / 2
 	
 	if is_main_menu():
 		for i in range(5):
 			var random_spawn = spawn_functions[randi() % spawn_functions.size()]
 			random_spawn.call()
-	else:
-		for i in range(num_points):
-			var angle = (2.0 * PI * i) / num_points
-			points.append(Vector2(cos(angle) * radius_x, sin(angle) * radius_y))
-			polygon.polygon = points
-			polygon.position = center
-			add_child(polygon)
-
 
 func _on_sapsucker_button_down() -> void:
 	spawn_sapsucker()

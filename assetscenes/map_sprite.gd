@@ -6,13 +6,13 @@ extends Node2D
 
 func _ready():
 	# Hide all highlights initially
-	pacific.visible = false
+	wpacific.visible = false
 	indian.visible = false
 	red_sea.visible = false
 
 	# Connect WPacific
-	$PacificArea.mouse_entered.connect(func(): pacific.visible = true)
-	$PacificArea.mouse_exited.connect(func(): pacific.visible = false)
+	$PacificArea.mouse_entered.connect(func(): wpacific.visible = true)
+	$PacificArea.mouse_exited.connect(func(): wpacific.visible = false)
 
 	# Connect Indian
 	$IndianArea.mouse_entered.connect(func(): indian.visible = true)

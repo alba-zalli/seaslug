@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://8ivt2kh5xj51"]
 
-[ext_resource type="Script" uid="uid://xb8o6and7qd3" path="res://scripts/fish_logic.gd" id="1_23fjl"]
+[ext_resource type="Script" uid="uid://xb8o6and7qd3" path="res://scripts/fish_swimming_logic.gd" id="1_23fjl"]
 [ext_resource type="Texture2D" uid="uid://8k2dq7iq5c4k" path="res://images/slugimages/sapsucker.png" id="1_yuvae"]
 
 [sub_resource type="Animation" id="Animation_aqvet"]

@@ -5,26 +5,10 @@
 [ext_resource type="Theme" uid="uid://chlounns205s" path="res://bgscenes/main_buttons_theme.tres" id="3_cbsqi"]
 [ext_resource type="Script" uid="uid://uusxfhw2epny" path="res://scripts/button.gd" id="4_grsqf"]
 [ext_resource type="Shader" uid="uid://1nqwqwsjwac8" path="res://water.gdshader" id="4_txvb6"]
+[ext_resource type="StyleBox" uid="uid://brdkljxyuwos4" path="res://bgscenes/whitebuttonnormal.tres" id="4_ynh8l"]
+[ext_resource type="StyleBox" uid="uid://c0cys5bm22016" path="res://bgscenes/whitebuttonhover.tres" id="5_rcjgf"]
 
 [sub_resource type="Theme" id="Theme_rhts7"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ynh8l"]
-bg_color = Color(0.81960785, 0.9372549, 0.9764706, 0.8784314)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
-expand_margin_left = 8.0
-expand_margin_right = 8.0
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cbsqi"]
-bg_color = Color(0.138928, 0.4643576, 0.7480107, 1)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
-expand_margin_left = 8.0
-expand_margin_right = 8.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jmcdc"]
 bg_color = Color(0.13725491, 0.4627451, 0.7490196, 1)
@@ -73,8 +57,8 @@ theme_override_constants/separation = 27
 layout_mode = 2
 theme = ExtResource("3_cbsqi")
 theme_override_font_sizes/font_size = 50
-theme_override_styles/normal = SubResource("StyleBoxFlat_ynh8l")
-theme_override_styles/hover = SubResource("StyleBoxFlat_cbsqi")
+theme_override_styles/normal = ExtResource("4_ynh8l")
+theme_override_styles/hover = ExtResource("5_rcjgf")
 text = "Play"
 script = ExtResource("4_grsqf")
 
@@ -82,8 +66,8 @@ script = ExtResource("4_grsqf")
 layout_mode = 2
 theme = ExtResource("3_cbsqi")
 theme_override_font_sizes/font_size = 50
-theme_override_styles/normal = SubResource("StyleBoxFlat_ynh8l")
-theme_override_styles/hover = SubResource("StyleBoxFlat_cbsqi")
+theme_override_styles/normal = ExtResource("4_ynh8l")
+theme_override_styles/hover = ExtResource("5_rcjgf")
 text = "Settings"
 script = ExtResource("4_grsqf")
 
@@ -91,8 +75,8 @@ script = ExtResource("4_grsqf")
 layout_mode = 2
 theme = ExtResource("3_cbsqi")
 theme_override_font_sizes/font_size = 50
-theme_override_styles/normal = SubResource("StyleBoxFlat_ynh8l")
-theme_override_styles/hover = SubResource("StyleBoxFlat_cbsqi")
+theme_override_styles/normal = ExtResource("4_ynh8l")
+theme_override_styles/hover = ExtResource("5_rcjgf")
 text = "Credits"
 script = ExtResource("4_grsqf")
 
@@ -100,9 +84,9 @@ script = ExtResource("4_grsqf")
 layout_mode = 2
 theme = ExtResource("3_cbsqi")
 theme_override_font_sizes/font_size = 50
-theme_override_styles/normal = SubResource("StyleBoxFlat_ynh8l")
+theme_override_styles/normal = ExtResource("4_ynh8l")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_jmcdc")
-theme_override_styles/hover = SubResource("StyleBoxFlat_cbsqi")
+theme_override_styles/hover = ExtResource("5_rcjgf")
 text = "Quit"
 script = ExtResource("4_grsqf")
 

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://5cxumw25jslq"]
 
-[ext_resource type="Script" uid="uid://xb8o6and7qd3" path="res://scripts/fish_logic.gd" id="1_43d44"]
+[ext_resource type="Script" uid="uid://xb8o6and7qd3" path="res://scripts/fish_swimming_logic.gd" id="1_43d44"]
 [ext_resource type="Texture2D" uid="uid://ch2fi2csdtu5s" path="res://images/slugimages/dorid.png" id="2_2t6mf"]
 
 [sub_resource type="Animation" id="Animation_1jg0s"]

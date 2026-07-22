@@ -21,6 +21,9 @@
 [ext_resource type="PackedScene" uid="uid://cock6q303rlwi" path="res://assetscenes/magglass.tscn" id="15_vox1v"]
 [ext_resource type="Texture2D" uid="uid://15qfb8bvi135" path="res://images/icons/magnifying-glass-solid-full.svg" id="16_63bsy"]
 [ext_resource type="PackedScene" uid="uid://bey6cio1j6uis" path="res://assetscenes/rockbackground.tscn" id="19_1wed3"]
+[ext_resource type="Theme" uid="uid://chlounns205s" path="res://bgscenes/main_buttons_theme.tres" id="19_fewft"]
+[ext_resource type="StyleBox" uid="uid://brdkljxyuwos4" path="res://bgscenes/whitebuttonnormal.tres" id="19_v7bf4"]
+[ext_resource type="StyleBox" uid="uid://c0cys5bm22016" path="res://bgscenes/whitebuttonhover.tres" id="20_fewft"]
 
 [node name="SandboxScreen" type="Node2D" unique_id=1151149152]
 
@@ -177,17 +180,26 @@ offset_right = 1532.0
 offset_bottom = 567.0
 theme_override_styles/panel = ExtResource("3_53siv")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=1963398252]
+[node name="MarginContainer" type="MarginContainer" parent="Panel" unique_id=2092034839]
+layout_mode = 2
+theme_override_constants/margin_left = 14
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer" unique_id=1963398252]
 layout_mode = 2
 theme = ExtResource("4_53siv")
 
-[node name="Label" type="Label" parent="Panel/VBoxContainer" unique_id=285430174]
+[node name="Label" type="Label" parent="Panel/MarginContainer/VBoxContainer" unique_id=285430174]
 layout_mode = 2
 text = "Information"
+autowrap_mode = 3
 
-[node name="Label2" type="Label" parent="Panel/VBoxContainer" unique_id=307011820]
+[node name="Label2" type="Label" parent="Panel/MarginContainer/VBoxContainer" unique_id=307011820]
+custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 text = "Welcome to the sandbox shoreline! "
+autowrap_mode = 3
 
 [node name="Book" parent="." unique_id=1072664842 instance=ExtResource("13_qewr8")]
 offset_left = 1517.0001
@@ -196,40 +208,53 @@ offset_right = 1517.0001
 offset_bottom = 142.99998
 
 [node name="Top Menu" type="HBoxContainer" parent="." unique_id=2038805613]
-offset_right = 71.0
-offset_bottom = 31.0
+offset_left = 27.0
+offset_top = 7.0
+offset_right = 290.0
+offset_bottom = 47.0
 size_flags_stretch_ratio = 0.0
+theme = ExtResource("4_53siv")
+theme_override_constants/separation = 31
 
 [node name="Quit" type="Button" parent="Top Menu" unique_id=1660233466]
 layout_mode = 2
+theme = ExtResource("19_fewft")
+theme_override_colors/font_color = Color(0.003921569, 0.015686275, 0.34509805, 1)
+theme_override_styles/normal = ExtResource("19_v7bf4")
+theme_override_styles/normal_mirrored = ExtResource("19_v7bf4")
+theme_override_styles/hover = ExtResource("20_fewft")
 text = "X"
 script = ExtResource("14_1vqfj")
 
 [node name="Windowed" type="Button" parent="Top Menu" unique_id=1793124048]
 layout_mode = 2
+theme = ExtResource("19_fewft")
 theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = ExtResource("19_v7bf4")
+theme_override_styles/hover = ExtResource("20_fewft")
 text = "⧉"
 script = ExtResource("14_1vqfj")
 
 [node name="Back" type="Button" parent="Top Menu" unique_id=391075290]
 layout_direction = 2
 layout_mode = 2
+theme = ExtResource("19_fewft")
+theme_override_styles/normal = ExtResource("19_v7bf4")
+theme_override_styles/pressed = ExtResource("19_v7bf4")
+theme_override_styles/hover = ExtResource("20_fewft")
 text = "Back"
 icon_alignment = 1
 script = ExtResource("14_1vqfj")
 
+[node name="Tutorial" type="Button" parent="Top Menu" unique_id=168131564]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.003921569, 0.015686275, 0.34509805, 1)
+theme_override_styles/normal = ExtResource("19_v7bf4")
+theme_override_styles/hover = ExtResource("20_fewft")
+text = "Tutorial"
+
 [node name="MagGlass" parent="." unique_id=1828750686 instance=ExtResource("15_vox1v")]
 position = Vector2(672.99994, -891)
-
-[node name="VBoxContainer" type="HBoxContainer" parent="." unique_id=540976844]
-offset_left = 1255.0
-offset_top = 1.0
-offset_right = 1307.0
-offset_bottom = 45.0
-
-[node name="Button2" type="Button" parent="VBoxContainer" unique_id=168131564]
-layout_mode = 2
-text = "Tutorial"
 
 [node name="Background" parent="." unique_id=2088293752 instance=ExtResource("19_1wed3")]
 z_index = -1

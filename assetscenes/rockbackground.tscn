@@ -7,6 +7,6 @@
 [node name="TextureRect" type="Sprite2D" parent="." unique_id=688546015]
 modulate = Color(1.066113, 1.1759251, 1.1759251, 1)
 z_index = -6
-position = Vector2(960.3478, 537.73157)
-scale = Vector2(1.1453327, 1.1455415)
+position = Vector2(960.3478, 539.2316)
+scale = Vector2(1.1453327, 1.1487162)
 texture = ExtResource("1_b4jnx")

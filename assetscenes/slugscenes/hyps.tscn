@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://de52221helqiu"]
 
-[ext_resource type="Script" uid="uid://xb8o6and7qd3" path="res://scripts/fish_logic.gd" id="1_1c4vv"]
+[ext_resource type="Script" uid="uid://xb8o6and7qd3" path="res://scripts/fish_swimming_logic.gd" id="1_1c4vv"]
 [ext_resource type="Texture2D" uid="uid://r6eipayrvqou" path="res://images/slugimages/hyps.png" id="2_03vv8"]
 
 [sub_resource type="Animation" id="Animation_6qich"]
