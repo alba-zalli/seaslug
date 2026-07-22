@@ -5,7 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://ch2fi2csdtu5s" path="res://images/slugimages/dorid.png" id="2_8pf3a"]
 [ext_resource type="Texture2D" uid="uid://c876hv0kams1r" path="res://1000000369.png" id="2_08sdj"]
 [ext_resource type="Texture2D" uid="uid://r6eipayrvqou" path="res://images/slugimages/hyps.png" id="3_1wed3"]
+[ext_resource type="StyleBox" uid="uid://dyorrnpbnbxum" path="res://containerstyle.tres" id="3_53siv"]
 [ext_resource type="Texture2D" uid="uid://ch13d35ifj5fs" path="res://images/slugimages/phyl.png" id="4_08sdj"]
+[ext_resource type="Theme" uid="uid://bxuek2tcx0gru" path="res://containertheme.tres" id="4_53siv"]
 [ext_resource type="Texture2D" uid="uid://cc6bnpdg57ulj" path="res://images/slugimages/flab.png" id="5_53siv"]
 [ext_resource type="Texture2D" uid="uid://b0lj2qo8po0vo" path="res://images/slugimages/mari.png" id="6_ffexd"]
 [ext_resource type="Texture2D" uid="uid://lwb6qo0oxs7l" path="res://images/slugimages/gonio.png" id="7_v7bf4"]
@@ -19,30 +21,6 @@
 [ext_resource type="PackedScene" uid="uid://cock6q303rlwi" path="res://assetscenes/magglass.tscn" id="15_vox1v"]
 [ext_resource type="Texture2D" uid="uid://15qfb8bvi135" path="res://images/icons/magnifying-glass-solid-full.svg" id="16_63bsy"]
 [ext_resource type="PackedScene" uid="uid://bey6cio1j6uis" path="res://assetscenes/rockbackground.tscn" id="19_1wed3"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1wed3"]
-content_margin_left = 0.0
-content_margin_top = 0.0
-content_margin_right = 0.0
-content_margin_bottom = 0.0
-bg_color = Color(0, 0.5794605, 0.57946026, 1)
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
-corner_detail = 5
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_08sdj"]
-content_margin_left = 0.0
-content_margin_top = 0.0
-content_margin_right = 0.0
-content_margin_bottom = 0.0
-bg_color = Color(0, 0.5803922, 0.5803922, 1)
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
-corner_detail = 5
 
 [node name="SandboxScreen" type="Node2D" unique_id=1151149152]
 
@@ -70,10 +48,15 @@ offset_left = 38.0
 offset_top = 212.0
 offset_right = 332.0
 offset_bottom = 679.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_1wed3")
+theme_override_styles/panel = ExtResource("3_53siv")
 
 [node name="Side Menu" type="VBoxContainer" parent="Container" unique_id=468719485]
 custom_minimum_size = Vector2(90, 0)
+layout_mode = 2
+theme = ExtResource("4_53siv")
+
+[node name="Spacer5" type="ScrollContainer" parent="Container/Side Menu" unique_id=1895081831]
+custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 
 [node name="Label" type="Label" parent="Container/Side Menu" unique_id=111319718]
@@ -182,7 +165,7 @@ toggle_mode = true
 text = "Magnifying glass"
 icon = ExtResource("16_63bsy")
 
-[node name="Spacer5" type="ScrollContainer" parent="Container/Side Menu" unique_id=1895081831]
+[node name="Spacer6" type="ScrollContainer" parent="Container/Side Menu" unique_id=669757243]
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 
@@ -192,10 +175,11 @@ offset_left = 1492.0
 offset_top = 527.0
 offset_right = 1532.0
 offset_bottom = 567.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_08sdj")
+theme_override_styles/panel = ExtResource("3_53siv")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=1963398252]
 layout_mode = 2
+theme = ExtResource("4_53siv")
 
 [node name="Label" type="Label" parent="Panel/VBoxContainer" unique_id=285430174]
 layout_mode = 2
