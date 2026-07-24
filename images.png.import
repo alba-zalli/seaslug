@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://day1fhwa3e6py"
-path="res://.godot/imported/stones_specular.png-c5213a16cddf989fa3a70b5e2cf05bb5.ctex"
+uid="uid://vano3ouuepw1"
+path="res://.godot/imported/images.png-b603883770f213c0c175102e3045df3b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assetscenes/slugscenes/stones_specular.png"
-dest_files=["res://.godot/imported/stones_specular.png-c5213a16cddf989fa3a70b5e2cf05bb5.ctex"]
+source_file="res://images.png"
+dest_files=["res://.godot/imported/images.png-b603883770f213c0c175102e3045df3b.ctex"]
 
 [params]
 

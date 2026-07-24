@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dirwg48ow42eu"
-path="res://.godot/imported/stones_specular (1).png-fa7e9e442de93139f4c346612ca4caf1.ctex"
+uid="uid://caxvwx8iwvpmb"
+path="res://.godot/imported/sand-beach-png-9.png-442b54b65809390ad4baf17249426dfe.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assetscenes/slugscenes/stones_specular (1).png"
-dest_files=["res://.godot/imported/stones_specular (1).png-fa7e9e442de93139f4c346612ca4caf1.ctex"]
+source_file="res://sand-beach-png-9.png"
+dest_files=["res://.godot/imported/sand-beach-png-9.png-442b54b65809390ad4baf17249426dfe.ctex"]
 
 [params]
 

@@ -26,6 +26,10 @@ window/stretch/mode="canvas_items"
 
 project/assembly_name="New Game Project"
 
+[editor]
+
+movie_writer/movie_file="C:/Users/Itmstec2/Documents/GitHub/seaslug/gamedemo.avi"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/auto_polygon2d_triangulation/plugin.cfg")

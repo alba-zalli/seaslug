@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://uusxfhw2epny" path="res://scripts/button.gd" id="3_t0hw8"]
 [ext_resource type="Shader" uid="uid://1nqwqwsjwac8" path="res://water.gdshader" id="4_42eo2"]
 [ext_resource type="PackedScene" uid="uid://bey6cio1j6uis" path="res://assetscenes/rockbackground.tscn" id="5_chfyp"]
+[ext_resource type="Texture2D" uid="uid://caxvwx8iwvpmb" path="res://sand-beach-png-9.png" id="6_t0hw8"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5pwma"]
 bg_color = Color(0.81960785, 0.9372549, 0.9764706, 0.8784314)
@@ -87,6 +88,19 @@ script = ExtResource("3_t0hw8")
 z_index = 6
 position = Vector2(-81.999985, 409)
 rotation = 0.35983562
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1854661882]
+position = Vector2(722.88336, 956.7499)
+rotation = 3.5682244
+scale = Vector2(1.8490375, 1.0018575)
+skew = -0.03856325
+texture = ExtResource("6_t0hw8")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1254931934]
+position = Vector2(842.00006, 667.37494)
+rotation = 0.41250178
+scale = Vector2(1.8863133, 1.3426319)
+texture = ExtResource("6_t0hw8")
 
 [connection signal="button_down" from="CanvasLayer/CenterContainer/MainButtons/Sandbox" to="CanvasLayer/CenterContainer/MainButtons/Sandbox" method="_on_sandbox_button_down"]
 [connection signal="button_down" from="CanvasLayer/CenterContainer/MainButtons/World" to="CanvasLayer/CenterContainer/MainButtons/Sandbox" method="_on_world_button_down"]

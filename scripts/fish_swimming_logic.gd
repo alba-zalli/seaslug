@@ -36,7 +36,7 @@ func _ready():
 		fish_food = "Sponge"
 	elif scene_file_path.ends_with("sapsucker.tscn"):
 		scale = Vector2(0.02 * size, 0.02 * size)
-		fish_food = "Algea"
+		fish_food = "Algae"
 	elif scene_file_path.ends_with("hyps.tscn"):
 		scale = Vector2(0.2 * size, 0.2 * size)
 		fish_food = "Sponge"
@@ -48,7 +48,7 @@ func _ready():
 		fish_food = "Sponge"
 	elif scene_file_path.ends_with("flab.tscn"):
 		scale = Vector2(0.07 * size, 0.07 * size)
-		fish_food = "Hydroza"
+		fish_food = "Fisheggs"
 	elif scene_file_path.ends_with("gonio.tscn"):
 		scale = Vector2(0.07 * size, 0.07 * size)
 		fish_food = "Sponge"

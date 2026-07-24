@@ -7,6 +7,7 @@
 [ext_resource type="Shader" uid="uid://1nqwqwsjwac8" path="res://water.gdshader" id="4_txvb6"]
 [ext_resource type="StyleBox" uid="uid://brdkljxyuwos4" path="res://bgscenes/whitebuttonnormal.tres" id="4_ynh8l"]
 [ext_resource type="StyleBox" uid="uid://c0cys5bm22016" path="res://bgscenes/whitebuttonhover.tres" id="5_rcjgf"]
+[ext_resource type="Shader" uid="uid://burj74mgtfyfp" path="res://clearwater.gdshader" id="8_ynh8l"]
 
 [sub_resource type="Theme" id="Theme_rhts7"]
 
@@ -31,6 +32,22 @@ shader_parameter/waterdeep = 0.1
 shader_parameter/WATER_COL = Color(0.6363233, 0.8667663, 0.9991372, 0.93333334)
 shader_parameter/WATER2_COL = Color(0.8117647, 0.9607843, 0.9647059, 1)
 shader_parameter/FOAM_COL = Color(0.8125, 0.9609, 0.9648, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_rcjgf"]
+frequency = 0.0007
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_cfwmo"]
+noise = SubResource("FastNoiseLite_rcjgf")
+seamless = true
+seamless_blend_skirt = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yy2k4"]
+shader = ExtResource("8_ynh8l")
+shader_parameter/refraction_map = SubResource("NoiseTexture2D_cfwmo")
+shader_parameter/refraction_stretch = Vector2(1, 1)
+shader_parameter/refraction_strength = 0.02
+shader_parameter/water_tint = Color(0.2, 0.6, 1, 0.1)
+shader_parameter/speed = 0.1
 
 [node name="MainMenu" type="Node2D" unique_id=1530463089]
 z_index = 2
@@ -102,6 +119,14 @@ offset_left = -98.0
 offset_top = 122.0
 offset_right = 1962.0
 offset_bottom = 343.0
+
+[node name="ColorRect2" type="ColorRect" parent="CanvasLayer" unique_id=481815726]
+material = SubResource("ShaderMaterial_yy2k4")
+offset_left = -98.0
+offset_top = -20.0
+offset_right = 1962.0
+offset_bottom = 1084.0
+mouse_filter = 2
 
 [node name="Title" type="Label" parent="CanvasLayer" unique_id=752815357]
 offset_top = -21.0
