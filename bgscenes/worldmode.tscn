@@ -6,9 +6,7 @@
 
 [node name="Worldmode" type="Node2D" unique_id=1440439524]
 
-[node name="Node2D" type="Node2D" parent="." unique_id=1439989195]
-
-[node name="Node2D" parent="Node2D" unique_id=232880064 instance=ExtResource("3_w3hxj")]
+[node name="Node2D2" parent="." unique_id=232880064 instance=ExtResource("3_w3hxj")]
 position = Vector2(756, 190)
 scale = Vector2(0.84825873, 0.8657806)
 
