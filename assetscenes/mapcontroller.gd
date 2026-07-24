@@ -10,8 +10,11 @@ func _ready():
 	print("Found regions: ", regions.size())
 	for region in regions:
 		region.region_hovered.connect(_on_region_hovered)
+	balloon_open = true
+	DialogueManager.show_dialogue_balloon(world_dialogue, "intro", [self])
 
 func _on_region_hovered(dialogue_title: String) -> void:
+	balloon_open = false
 	print("Hovered region: ", dialogue_title)
 	if balloon_open:
 		return

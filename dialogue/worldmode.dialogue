@@ -1,10 +1,19 @@
 ~ start
+
+~ intro
+Alba: Click on a region to decide where you want to take us first!
+=> END 
+
 ~ indian_ocean
-Alba: The Indian Ocean is full of amazing creatures!
+Alba: The [wave] Indian Ocean [/wave] has the most colourful sea slugs
+=> END
 
 ~ west_pacific
-Alba: The West Pacific has some incredible reefs!
+Alba: The [wave] West Pacific [/wave] is where the slug I'm based on lives
+=> END
 
 ~ east_pacific
-Alba: The East Pacific is home to some unique Sea Slugs!
+Alba: The [wave] East Pacific [/wave] is home to the cutest sea slugs
+=> END
+
 => END
