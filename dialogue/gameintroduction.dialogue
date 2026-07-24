@@ -1,0 +1,22 @@
+~ start
+Alba: [[Hi|Hello|Haii]]!! Thanks for meeting me here. I know it was very last minute, but I'm having an emergency!
+Alba: Could I ask you a favour?
+- Of course!
+	Alba: Thank you so much! You are such a good friend <3
+- This seems suspisious... 
+	Alba: Don't forget who helped you when you were having trouble!
+Alba: Okay, so basically...
+Alba: I have to make a voyage for my final university project. And my group members bailed on me. Classic group project situation.
+- A voyage..?
+	Alba: Yes. How can they leave me to sail the world on my own!
+- Okay. I'll help you no questions asked!
+	Alba: I'm a little concerned with how fast you're accepting this. Let me give you some more background info.
+Alba: I need to gather some info about [wave] Sea Slugs [/wave]. Did I tell you how much I love [wave] Sea Slugs [/wave] ? The only problem is I have to steer the boat while someone researches. So I can't do this on my own.
+Alba: All I need is for you to inspect some sea slugs and learn about them. Could you please help me?
+- Explore sandbox mode
+	Alba: Thanks friend, let's see some [wave] Sea Slugs [/wave]!
+	do change_to_sandbox()
+- Explore world mode
+	Alba: Thanks friend, let's see some [wave] Sea Slugs [/wave]!
+	do change_to_world()
+=> END

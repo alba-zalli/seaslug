@@ -3,11 +3,11 @@
 [ext_resource type="Theme" uid="uid://ew0ljd640imm" path="res://themes/base_theme.tres" id="1_d1yhd"]
 [ext_resource type="Texture2D" uid="uid://8k2dq7iq5c4k" path="res://images/slugimages/sapsucker.png" id="2_1wed3"]
 [ext_resource type="Texture2D" uid="uid://ch2fi2csdtu5s" path="res://images/slugimages/dorid.png" id="2_8pf3a"]
-[ext_resource type="Texture2D" uid="uid://c876hv0kams1r" path="res://1000000369.png" id="2_08sdj"]
+[ext_resource type="Texture2D" uid="uid://c876hv0kams1r" path="res://images/1000000369.png" id="2_08sdj"]
 [ext_resource type="Texture2D" uid="uid://r6eipayrvqou" path="res://images/slugimages/hyps.png" id="3_1wed3"]
-[ext_resource type="StyleBox" uid="uid://dyorrnpbnbxum" path="res://containerstyle.tres" id="3_53siv"]
+[ext_resource type="StyleBox" uid="uid://dyorrnpbnbxum" path="res://themes/containerstyle.tres" id="3_53siv"]
 [ext_resource type="Texture2D" uid="uid://ch13d35ifj5fs" path="res://images/slugimages/phyl.png" id="4_08sdj"]
-[ext_resource type="Theme" uid="uid://bxuek2tcx0gru" path="res://containertheme.tres" id="4_53siv"]
+[ext_resource type="Theme" uid="uid://bxuek2tcx0gru" path="res://themes/containertheme.tres" id="4_53siv"]
 [ext_resource type="Texture2D" uid="uid://cc6bnpdg57ulj" path="res://images/slugimages/flab.png" id="5_53siv"]
 [ext_resource type="Texture2D" uid="uid://b0lj2qo8po0vo" path="res://images/slugimages/mari.png" id="6_ffexd"]
 [ext_resource type="Texture2D" uid="uid://lwb6qo0oxs7l" path="res://images/slugimages/gonio.png" id="7_v7bf4"]
@@ -17,14 +17,14 @@
 [ext_resource type="Texture2D" uid="uid://cqxijc1hir02x" path="res://images/foodimages/sea sponge.png" id="11_k85lr"]
 [ext_resource type="Script" uid="uid://cemp8kuaynvje" path="res://scripts/bowl_logic.gd" id="12_ofjh6"]
 [ext_resource type="PackedScene" uid="uid://l0nwb61asbiq" path="res://assetscenes/book.tscn" id="13_qewr8"]
-[ext_resource type="Script" uid="uid://uusxfhw2epny" path="res://scripts/button.gd" id="14_1vqfj"]
+[ext_resource type="Script" uid="uid://uusxfhw2epny" path="res://scripts/buttons.gd" id="14_1vqfj"]
 [ext_resource type="PackedScene" uid="uid://cock6q303rlwi" path="res://assetscenes/magglass.tscn" id="15_vox1v"]
 [ext_resource type="Texture2D" uid="uid://15qfb8bvi135" path="res://images/icons/magnifying-glass-solid-full.svg" id="16_63bsy"]
 [ext_resource type="PackedScene" uid="uid://bey6cio1j6uis" path="res://assetscenes/rockbackground.tscn" id="19_1wed3"]
-[ext_resource type="Theme" uid="uid://chlounns205s" path="res://bgscenes/main_buttons_theme.tres" id="19_fewft"]
+[ext_resource type="Theme" uid="uid://chlounns205s" path="res://themes/main_buttons_theme.tres" id="19_fewft"]
 [ext_resource type="StyleBox" uid="uid://brdkljxyuwos4" path="res://bgscenes/whitebuttonnormal.tres" id="19_v7bf4"]
 [ext_resource type="StyleBox" uid="uid://c0cys5bm22016" path="res://bgscenes/whitebuttonhover.tres" id="20_fewft"]
-[ext_resource type="Shader" uid="uid://burj74mgtfyfp" path="res://clearwater.gdshader" id="25_qssuf"]
+[ext_resource type="Shader" uid="uid://burj74mgtfyfp" path="res://shaders/clearwater.gdshader" id="25_qssuf"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_qssuf"]
 noise_type = 3
@@ -46,7 +46,7 @@ shader_parameter/speed = 0.14000000665
 [node name="SandboxScreen" type="Node2D" unique_id=1151149152]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1476575955]
-visibility_layer = 512
+visibility_layer = 4
 z_index = -6
 position = Vector2(911, 519)
 scale = Vector2(0.2308, 0.18245003)

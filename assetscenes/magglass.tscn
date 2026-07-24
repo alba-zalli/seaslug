@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dw34yak8aigj4" path="res://images/magglass.png" id="1_whq5j"]
 [ext_resource type="Script" uid="uid://cp7232lmqelww" path="res://scripts/magglass.gd" id="2_f8ftu"]
-[ext_resource type="Shader" uid="uid://ck2cngem5uv3x" path="res://magglass.gdshader" id="2_kcwwt"]
+[ext_resource type="Shader" uid="uid://ck2cngem5uv3x" path="res://shaders/magglass.gdshader" id="2_kcwwt"]
 [ext_resource type="Texture2D" uid="uid://dirlb5tvwoip2" path="res://images/circle.png" id="3_aed4u"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_d5ty1"]
@@ -17,7 +17,7 @@ shader_parameter/mask_radius = 0.5
 shader_parameter/mask_feather = 0.02
 
 [node name="MagGlass" type="Node2D" unique_id=1828750686]
-z_index = 1
+z_index = 4
 position = Vector2(-34, -1197)
 scale = Vector2(1.7075276, 1.6838251)
 script = ExtResource("2_f8ftu")

@@ -2,12 +2,12 @@
 
 [ext_resource type="PackedScene" uid="uid://d4d15qo7ijphj" path="res://bgscenes/slugscreen.tscn" id="1_txvb6"]
 [ext_resource type="Theme" uid="uid://ew0ljd640imm" path="res://themes/base_theme.tres" id="2_cbsqi"]
-[ext_resource type="Theme" uid="uid://chlounns205s" path="res://bgscenes/main_buttons_theme.tres" id="3_cbsqi"]
-[ext_resource type="Script" uid="uid://uusxfhw2epny" path="res://scripts/button.gd" id="4_grsqf"]
-[ext_resource type="Shader" uid="uid://1nqwqwsjwac8" path="res://water.gdshader" id="4_txvb6"]
+[ext_resource type="Theme" uid="uid://chlounns205s" path="res://themes/main_buttons_theme.tres" id="3_cbsqi"]
+[ext_resource type="Script" uid="uid://uusxfhw2epny" path="res://scripts/buttons.gd" id="4_grsqf"]
+[ext_resource type="Shader" uid="uid://1nqwqwsjwac8" path="res://shaders/toonwater.gdshader" id="4_txvb6"]
 [ext_resource type="StyleBox" uid="uid://brdkljxyuwos4" path="res://bgscenes/whitebuttonnormal.tres" id="4_ynh8l"]
 [ext_resource type="StyleBox" uid="uid://c0cys5bm22016" path="res://bgscenes/whitebuttonhover.tres" id="5_rcjgf"]
-[ext_resource type="Shader" uid="uid://burj74mgtfyfp" path="res://clearwater.gdshader" id="8_ynh8l"]
+[ext_resource type="Shader" uid="uid://burj74mgtfyfp" path="res://shaders/clearwater.gdshader" id="8_ynh8l"]
 
 [sub_resource type="Theme" id="Theme_rhts7"]
 

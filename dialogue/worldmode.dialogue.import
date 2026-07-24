@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://ddj3x3hv5l37"
+path="res://.godot/imported/worldmode.dialogue-4e72f5ab61012e3bb4ca59c19dad6bc2.tres"
+
+[deps]
+
+source_file="res://dialogue/worldmode.dialogue"
+dest_files=["res://.godot/imported/worldmode.dialogue-4e72f5ab61012e3bb4ca59c19dad6bc2.tres"]
+
+[params]
+
+defaults=true

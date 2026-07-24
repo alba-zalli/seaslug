@@ -2,25 +2,18 @@
 
 [ext_resource type="Texture2D" uid="uid://b0wdctt0vclfu" path="res://images/unnamed.png" id="2_w3hxj"]
 [ext_resource type="PackedScene" uid="uid://daiyw5jx8vy84" path="res://assetscenes/worldmap.tscn" id="3_w3hxj"]
-[ext_resource type="Script" uid="uid://uusxfhw2epny" path="res://scripts/button.gd" id="4_u6sld"]
+[ext_resource type="Script" uid="uid://uusxfhw2epny" path="res://scripts/buttons.gd" id="4_u6sld"]
 
 [node name="Worldmode" type="Node2D" unique_id=1440439524]
 
 [node name="Node2D" type="Node2D" parent="." unique_id=1439989195]
 
 [node name="Node2D" parent="Node2D" unique_id=232880064 instance=ExtResource("3_w3hxj")]
-position = Vector2(684, 191)
-
-[node name="Label" type="Label" parent="." unique_id=701280007]
-offset_left = 900.0
-offset_top = 72.0
-offset_right = 1117.0
-offset_bottom = 95.0
-theme_override_font_sizes/font_size = 44
-text = "Where do you want to go?"
+position = Vector2(756, 190)
+scale = Vector2(0.84825873, 0.8657806)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1489375378]
-position = Vector2(335, 585)
+position = Vector2(302.99997, 486)
 scale = Vector2(0.158, 0.1498)
 texture = ExtResource("2_w3hxj")
 

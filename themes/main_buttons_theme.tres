@@ -1,0 +1,20 @@
+[gd_resource type="Theme" format=3 uid="uid://chlounns205s"]
+
+[ext_resource type="FontFile" uid="uid://ywkdexsut2wb" path="res://fonts/ElmsSans-Medium.ttf" id="1_g2meo"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g2meo"]
+bg_color = Color(0.328852, 0.76375186, 0.9519014, 0.89411765)
+corner_detail = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4ouc2"]
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[resource]
+default_font = ExtResource("1_g2meo")
+Button/colors/font_color = Color(0.005751276, 0.016430395, 0.3460728, 1)
+Button/colors/font_focus_color = Color(0.1882353, 0.3529412, 0.87058824, 0.84705883)
+Button/styles/hover = SubResource("StyleBoxFlat_g2meo")
+Button/styles/normal = SubResource("StyleBoxFlat_4ouc2")

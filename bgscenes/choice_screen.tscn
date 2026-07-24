@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://dvvbe1m1veaco"]
 
 [ext_resource type="Theme" uid="uid://ew0ljd640imm" path="res://themes/base_theme.tres" id="1_mganx"]
-[ext_resource type="Theme" uid="uid://chlounns205s" path="res://bgscenes/main_buttons_theme.tres" id="2_chfyp"]
-[ext_resource type="Script" uid="uid://uusxfhw2epny" path="res://scripts/button.gd" id="3_t0hw8"]
-[ext_resource type="Shader" uid="uid://1nqwqwsjwac8" path="res://water.gdshader" id="4_42eo2"]
+[ext_resource type="Theme" uid="uid://chlounns205s" path="res://themes/main_buttons_theme.tres" id="2_chfyp"]
+[ext_resource type="Script" uid="uid://uusxfhw2epny" path="res://scripts/buttons.gd" id="3_t0hw8"]
+[ext_resource type="Shader" uid="uid://1nqwqwsjwac8" path="res://shaders/toonwater.gdshader" id="4_42eo2"]
 [ext_resource type="PackedScene" uid="uid://bey6cio1j6uis" path="res://assetscenes/rockbackground.tscn" id="5_chfyp"]
-[ext_resource type="Texture2D" uid="uid://caxvwx8iwvpmb" path="res://sand-beach-png-9.png" id="6_t0hw8"]
+[ext_resource type="Texture2D" uid="uid://caxvwx8iwvpmb" path="res://images/sand-beach-png-9.png" id="6_t0hw8"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5pwma"]
 bg_color = Color(0.81960785, 0.9372549, 0.9764706, 0.8784314)

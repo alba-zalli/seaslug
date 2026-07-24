@@ -1,6 +1,6 @@
 [gd_resource type="Theme" format=3 uid="uid://ew0ljd640imm"]
 
-[ext_resource type="FontFile" uid="uid://ywkdexsut2wb" path="res://ElmsSans-Medium.ttf" id="1_rxnwj"]
+[ext_resource type="FontFile" uid="uid://ywkdexsut2wb" path="res://fonts/ElmsSans-Medium.ttf" id="1_rxnwj"]
 
 [resource]
 default_font = ExtResource("1_rxnwj")

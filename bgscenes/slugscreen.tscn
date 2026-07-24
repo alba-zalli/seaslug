@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://d4d15qo7ijphj"]
 
-[ext_resource type="Shader" uid="uid://1nqwqwsjwac8" path="res://water.gdshader" id="1_5ofex"]
+[ext_resource type="Shader" uid="uid://1nqwqwsjwac8" path="res://shaders/toonwater.gdshader" id="1_5ofex"]
 [ext_resource type="Script" uid="uid://cb5sd8h2r25ks" path="res://scripts/slugscreen.gd" id="1_pu2gk"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_by2yp"]
