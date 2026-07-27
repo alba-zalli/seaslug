@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://uy4cmrjiohbj"]
+
+[ext_resource type="Texture2D" uid="uid://0m0e5if3f33r" path="res://images/waveanimation/IMG_7867.png" id="1_3gdhu"]
+[ext_resource type="Script" uid="uid://bcws3frk63uot" path="res://wave.gd" id="1_b0o3h"]
+[ext_resource type="Texture2D" uid="uid://dsq8vptx1onc7" path="res://images/waveanimation/IMG_7868.png" id="2_b0o3h"]
+[ext_resource type="Texture2D" uid="uid://bl35cpynkau3g" path="res://images/waveanimation/IMG_7869.png" id="3_sf13h"]
+[ext_resource type="Texture2D" uid="uid://cxkf8dejn24ts" path="res://images/waveanimation/IMG_7870.png" id="4_8hdkf"]
+[ext_resource type="Texture2D" uid="uid://phgm6dd8jjx7" path="res://images/waveanimation/IMG_7871.png" id="5_4ntfj"]
+[ext_resource type="Texture2D" uid="uid://hn40lm6peh2x" path="res://images/waveanimation/IMG_7872.png" id="6_nxvxo"]
+[ext_resource type="Texture2D" uid="uid://cb0efvtnkfrpj" path="res://images/waveanimation/IMG_7873.png" id="7_vtu3v"]
+[ext_resource type="Texture2D" uid="uid://bjfb40egy0wcp" path="res://images/waveanimation/IMG_7874.png" id="8_53yc1"]
+[ext_resource type="Texture2D" uid="uid://cmty6nooyaibh" path="res://images/waveanimation/IMG_7875.png" id="9_sg16p"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lpyok"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_3gdhu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_b0o3h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_sf13h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_8hdkf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_4ntfj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_nxvxo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_vtu3v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_53yc1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_sg16p")
+}],
+"loop": true,
+"name": &"wave",
+"speed": 2.0
+}]
+
+[node name="Node2D" type="Control" unique_id=1243126604]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1195073784]
+script = ExtResource("1_b0o3h")
+
+[node name="AnimationPlayer" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=1520744097]
+position = Vector2(856, 346)
+rotation = -0.5235988
+scale = Vector2(0.9109753, 1.2794577)
+sprite_frames = SubResource("SpriteFrames_lpyok")
+animation = &"wave"
+frame_progress = 0.9121265
