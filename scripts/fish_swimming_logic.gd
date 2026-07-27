@@ -4,6 +4,7 @@ extends CharacterBody2D
 var radius_x := 0.0
 var radius_y := 0.0
 var bowl_center := Vector2.ZERO
+var swim_y := 0.0
 
 #dragging vars 
 var dragging := false
@@ -11,6 +12,7 @@ var drag_offset := Vector2.ZERO
 var drag_target_pos := Vector2.ZERO
 
 var swim_direction := Vector2.RIGHT
+var surface_margin := 40
 var swim_speed := 60.0
 var orbit_angle := 0.0
 var orbit_wobble := 0.0
@@ -67,6 +69,20 @@ func _ready():
 		eat_area.body_entered.connect(_on_eat_area_body_entered)
 	else:
 		push_warning("No EatArea node found on: " + scene_file_path)
+	
+	# swim depth
+	if main_menu_mode:
+		var screen_size = get_viewport_rect().size
+		var margin = 40.0 + (max(scale.x, scale.y) * 60.0)
+		var surface_y = WaveManager.get_surface_y_px(global_position.x)
+		var min_y = surface_y + surface_margin
+		var max_y = screen_size.y - margin
+		if max_y < min_y:
+			max_y = min_y
+		swim_y = randf_range(min_y, max_y)
+
+	# force purely horizontal starting direction
+	swim_direction = Vector2.RIGHT if randf() < 0.5 else Vector2.LEFT
 
 func _is_clicking_on_fish(mouse_pos: Vector2) -> bool:
 	for child in get_children():
@@ -122,76 +138,48 @@ func _physics_process(delta):
 		_process_drag()
 		return
 
-	if main_menu_mode and _is_better_main_menu():
-		_physics_process_wave_swim(delta)
-	elif main_menu_mode:
+	if main_menu_mode:
 		_physics_process_main_menu(delta)
 	else:
 		_physics_process_orbit(delta)
-
-	if not is_turning:
-		var target_angle = swim_direction.angle() + PI / 2
-		rotation = lerp_angle(rotation, target_angle, 0.08)
-
-func _physics_process_wave_swim(delta):
-	var screen_size = get_viewport_rect().size
-	var margin = 40.0 + (max(scale.x, scale.y) * 60.0)  # scale margin with fish size
-
-	var surface_y = WaveManager.get_surface_y_px(global_position.x)
-	var min_y = surface_y + margin
-	var max_y = screen_size.y - margin
-	if max_y < min_y:
-		max_y = min_y  # safety net if the wave is unusually low
-
-	# bounce off left/right screen edges
-	if global_position.x < margin:
-		swim_direction.x = abs(swim_direction.x)
-	elif global_position.x > screen_size.x - margin:
-		swim_direction.x = -abs(swim_direction.x)
-
-	# bounce off the wave surface / screen bottom instead of drifting through them
-	if global_position.y < min_y:
-		swim_direction.y = abs(swim_direction.y)
-	elif global_position.y > max_y:
-		swim_direction.y = -abs(swim_direction.y)
-	elif randf() < delta * 0.5:
-		# small wander while cruising along the bottom
-		swim_direction.y = clamp(swim_direction.y + randf_range(-0.2, 0.2), -0.4, 0.4)
-
-	swim_direction = swim_direction.normalized()
-	velocity = swim_direction * swim_speed
-	move_and_slide()
-
-	# hard clamp as a backstop in case move_and_slide overshoots in one frame
-	global_position.y = clamp(global_position.y, min_y, max_y)
+		if not is_turning:
+			var target_angle = swim_direction.angle() + PI / 2
+			rotation = lerp_angle(rotation, target_angle, 0.08)
+	
+	
 func _physics_process_main_menu(delta):
 	var screen_size = get_viewport_rect().size
-	var margin = 40.0 + (max(scale.x, scale.y) * 60.0)  # scale margin with fish size
+	var margin = 40.0 + (max(scale.x, scale.y) * 60.0)
 
-	# compute a "steer toward center" vector, stronger the closer we are to an edge
-	var steer := Vector2.ZERO
-	var edge_dist = margin * 2.5  # start steering before actually hitting margin
+	# bounce off left/right screen edges only
+	if global_position.x < margin:
+		swim_direction.x = 1.0
+	elif global_position.x > screen_size.x - margin:
+		swim_direction.x = -1.0
 
-	if global_position.x < edge_dist:
-		steer.x += (edge_dist - global_position.x) / edge_dist
-	elif global_position.x > screen_size.x - edge_dist:
-		steer.x -= (edge_dist - (screen_size.x - global_position.x)) / edge_dist
+	# move directly - no physics/collision needed for menu fish,
+	# avoids fighting with move_and_slide's internal state
+	global_position.x += swim_direction.x * swim_speed * delta
 
-	if global_position.y < edge_dist:
-		steer.y += (edge_dist - global_position.y) / edge_dist
-	elif global_position.y > screen_size.y - edge_dist:
-		steer.y -= (edge_dist - (screen_size.y - global_position.y)) / edge_dist
+	# pin to a fixed depth; only re-clamp if the wave rises above it
+	var surface_y = WaveManager.get_surface_y_px(global_position.x)
+	var min_y = surface_y + surface_margin
+	var max_y = screen_size.y - margin
+	if max_y < min_y:
+		max_y = min_y
+	global_position.y = clamp(swim_y, min_y, max_y)
 
-	if steer != Vector2.ZERO:
-		# blend current direction toward the steer vector smoothly
-		swim_direction = swim_direction.lerp(steer.normalized(), 3.0 * delta).normalized()
+	# horizontal-only facing: flip the sprite instead of rotating
+	if swim_direction.x < 0:
+		scale.x = -abs(scale.x)
 	else:
-		# occasionally wander a little when not near an edge
-		if randf() < delta * 0.3:
-			swim_direction = swim_direction.rotated(randf_range(-0.3, 0.3)).normalized()
+		scale.x = abs(scale.x)
 
-	velocity = swim_direction * swim_speed
-	move_and_slide()
+	# hard backstop: never let the fish actually end up above the surface,
+	# even if steering overshoots in one frame
+	if global_position.y < min_y:
+		global_position.y = min_y
+		swim_direction.y = abs(swim_direction.y)
 
 var is_turning := false
 var turn_target_angle := 0.0

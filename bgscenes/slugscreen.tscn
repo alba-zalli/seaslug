@@ -17,7 +17,7 @@ shader_parameter/WATER2_COL = Color(0.039215688, 0.4117647, 0.78039217, 1)
 shader_parameter/FOAM_COL = Color(0.53333336, 0.9607843, 0.9647059, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5ofex"]
-size = Vector2(1936, 597)
+size = Vector2(1936, 803)
 
 [node name="Node2D" type="Node2D" unique_id=969373638]
 
@@ -34,5 +34,6 @@ script = ExtResource("1_pu2gk")
 [node name="Area2D" type="Area2D" parent="." unique_id=128963192]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1525310182]
-position = Vector2(958, 288.5)
+position = Vector2(958, 391.5)
 shape = SubResource("RectangleShape2D_5ofex")
+one_way_collision = true

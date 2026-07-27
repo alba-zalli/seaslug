@@ -23,7 +23,7 @@ expand_margin_right = 8.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0326h"]
 shader = ExtResource("6_jdiqe")
-shader_parameter/liquid_level = 0.5730000272175
+shader_parameter/liquid_level = 0.382000018145
 shader_parameter/liquid_color = Color(0.20392157, 0.60784316, 0.8862745, 1)
 shader_parameter/foam_color = Color(0.38040954, 0.11551487, 0.18249068, 1)
 shader_parameter/shade_dark_color = Color(0.09474441, 0.30688363, 0.3957935, 1)
@@ -47,6 +47,7 @@ shader_parameter/bubble_speed = 1.250000059375
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1653330926]
 
 [node name="CenterContainer" type="CenterContainer" parent="CanvasLayer" unique_id=293426658]
+z_index = 1
 offset_left = -1.0
 offset_top = 554.0
 offset_right = 1919.0
