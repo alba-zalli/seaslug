@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://csuhil476j2h4" path="res://images/oceans/west.png" id="3_xvh7g"]
 [ext_resource type="Texture2D" uid="uid://dmbdqsyrh2qg6" path="res://images/icons/3rrtf.png" id="4_x618o"]
 [ext_resource type="Script" uid="uid://d3dh5obdpybg2" path="res://assetscenes/seascript.gd" id="6_o7rek"]
+[ext_resource type="FontFile" uid="uid://j5vqs4to8gli" path="res://data/PTSerif-Bold.ttf" id="7_oy4l6"]
 
 [node name="Node2D" type="Node2D" unique_id=232880064]
 script = ExtResource("1_oy4l6")
@@ -53,3 +54,42 @@ dialogue_title = "east_pacific"
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="east pac" unique_id=824564511]
 polygon = PackedVector2Array(914, 375, 909, 327, 948, 317, 956, 290, 939, 255, 956, 239, 975, 250, 1008, 222, 990, 198, 1006, 164, 1035, 147, 1073, 147, 1101, 129, 1123, 143, 1145, 124, 1182, 120, 1185, 659, 1081, 656, 1070, 634, 1041, 598, 1031, 539, 987, 434, 925, 423)
+
+[node name="Label2" type="RichTextLabel" parent="." unique_id=1352610802]
+custom_minimum_size = Vector2(400, 100)
+offset_left = 744.0
+offset_top = 525.0
+offset_right = 1144.0
+offset_bottom = 625.0
+mouse_filter = 1
+theme_override_fonts/normal_font = ExtResource("7_oy4l6")
+theme_override_font_sizes/normal_font_size = 25
+bbcode_enabled = true
+text = "[tornado radius=5.0 freq=0.8 connected=1] Indian Ocean [/tornado]"
+scroll_active = false
+
+[node name="Label" type="RichTextLabel" parent="." unique_id=622150507]
+custom_minimum_size = Vector2(400, 100)
+offset_left = 24.0
+offset_top = 361.0
+offset_right = 424.0
+offset_bottom = 461.0
+mouse_filter = 1
+theme_override_fonts/normal_font = ExtResource("7_oy4l6")
+theme_override_font_sizes/normal_font_size = 25
+bbcode_enabled = true
+text = "[tornado radius=5.0 freq=0.8 connected=1] West Pacific Ocean [/tornado]"
+scroll_active = false
+
+[node name="Label3" type="RichTextLabel" parent="." unique_id=1431623199]
+custom_minimum_size = Vector2(400, 100)
+offset_left = 980.0
+offset_top = 323.0
+offset_right = 1380.0
+offset_bottom = 423.0
+mouse_filter = 1
+theme_override_fonts/normal_font = ExtResource("7_oy4l6")
+theme_override_font_sizes/normal_font_size = 25
+bbcode_enabled = true
+text = "[wave radius=5.0 freq=0.8 connected=1] East Pacific Ocean [/wave]"
+scroll_active = false

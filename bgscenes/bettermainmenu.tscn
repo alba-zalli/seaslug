@@ -1,0 +1,157 @@
+[gd_scene format=3 uid="uid://boipylj8h1iu1"]
+
+[ext_resource type="PackedScene" uid="uid://d4d15qo7ijphj" path="res://bgscenes/slugscreen.tscn" id="1_4oy8p"]
+[ext_resource type="Theme" uid="uid://ew0ljd640imm" path="res://themes/base_theme.tres" id="1_jdiqe"]
+[ext_resource type="Theme" uid="uid://chlounns205s" path="res://themes/main_buttons_theme.tres" id="2_4oy8p"]
+[ext_resource type="StyleBox" uid="uid://brdkljxyuwos4" path="res://bgscenes/whitebuttonnormal.tres" id="3_awy0k"]
+[ext_resource type="StyleBox" uid="uid://c0cys5bm22016" path="res://bgscenes/whitebuttonhover.tres" id="4_uy23p"]
+[ext_resource type="Script" uid="uid://uusxfhw2epny" path="res://scripts/buttons.gd" id="5_sx3ea"]
+[ext_resource type="Shader" uid="uid://v0muvx3l5of6" path="res://shaders/wave.gdshader" id="6_jdiqe"]
+[ext_resource type="Theme" uid="uid://bxuek2tcx0gru" path="res://themes/containertheme.tres" id="7_i3x55"]
+[ext_resource type="Script" uid="uid://dxy1u3txbephe" path="res://bgscenes/wavemaker.gd" id="8_awy0k"]
+
+[sub_resource type="Theme" id="Theme_r0c0o"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_td8vo"]
+bg_color = Color(0.13725491, 0.4627451, 0.7490196, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 8.0
+expand_margin_right = 8.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0326h"]
+shader = ExtResource("6_jdiqe")
+shader_parameter/liquid_level = 0.5730000272175
+shader_parameter/liquid_color = Color(0.20392157, 0.60784316, 0.8862745, 1)
+shader_parameter/foam_color = Color(0.38040954, 0.11551487, 0.18249068, 1)
+shader_parameter/shade_dark_color = Color(0.09474441, 0.30688363, 0.3957935, 1)
+shader_parameter/shade_light_color = Color(0.05490196, 0.94509804, 0.93333334, 1)
+shader_parameter/shade_noise_scale = 3.0
+shader_parameter/shade_noise_speed = 0.15
+shader_parameter/shade_strength = 0.6
+shader_parameter/wave_amplitude = 0.094000004465
+shader_parameter/wave_frequency = 7.70800036613
+shader_parameter/wave_speed = 1.062000050445
+shader_parameter/gravity_angle = -0.06458997225070018
+shader_parameter/gravity_direction = Vector2(0, 1)
+shader_parameter/foam_thickness = 0.0
+shader_parameter/shine_intensity = 0.154000007315
+shader_parameter/add_bubble = false
+shader_parameter/bubble_scale = 11.3630005397425
+shader_parameter/bubble_speed = 1.250000059375
+
+[node name="Node2D" type="Node2D" unique_id=2121954997]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1653330926]
+
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer" unique_id=293426658]
+offset_left = -1.0
+offset_top = 554.0
+offset_right = 1919.0
+offset_bottom = 1134.0
+theme = SubResource("Theme_r0c0o")
+
+[node name="MainButtons" type="VBoxContainer" parent="CanvasLayer/CenterContainer" unique_id=561146767]
+layout_mode = 2
+theme = ExtResource("1_jdiqe")
+theme_override_constants/separation = 27
+
+[node name="Play" type="Button" parent="CanvasLayer/CenterContainer/MainButtons" unique_id=1409066892]
+layout_mode = 2
+theme = ExtResource("2_4oy8p")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = ExtResource("3_awy0k")
+theme_override_styles/hover = ExtResource("4_uy23p")
+text = "Play"
+script = ExtResource("5_sx3ea")
+
+[node name="Settings" type="Button" parent="CanvasLayer/CenterContainer/MainButtons" unique_id=1559610756]
+layout_mode = 2
+theme = ExtResource("2_4oy8p")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = ExtResource("3_awy0k")
+theme_override_styles/hover = ExtResource("4_uy23p")
+text = "Settings"
+script = ExtResource("5_sx3ea")
+
+[node name="Credits" type="Button" parent="CanvasLayer/CenterContainer/MainButtons" unique_id=1665455270]
+layout_mode = 2
+theme = ExtResource("2_4oy8p")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = ExtResource("3_awy0k")
+theme_override_styles/hover = ExtResource("4_uy23p")
+text = "Credits"
+script = ExtResource("5_sx3ea")
+
+[node name="Quit" type="Button" parent="CanvasLayer/CenterContainer/MainButtons" unique_id=83623115]
+layout_mode = 2
+theme = ExtResource("2_4oy8p")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = ExtResource("3_awy0k")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_td8vo")
+theme_override_styles/hover = ExtResource("4_uy23p")
+text = "Quit"
+script = ExtResource("5_sx3ea")
+
+[node name="Wave" type="ColorRect" parent="CanvasLayer" unique_id=171682638]
+z_index = -1
+material = SubResource("ShaderMaterial_0326h")
+offset_left = -98.0
+offset_top = -20.0
+offset_right = 1962.0
+offset_bottom = 1084.0
+mouse_filter = 2
+script = ExtResource("8_awy0k")
+
+[node name="Title" type="Label" parent="CanvasLayer" unique_id=2001820678]
+offset_left = -10.0
+offset_top = -111.0
+offset_right = 1910.0
+offset_bottom = 389.0
+theme = ExtResource("1_jdiqe")
+theme_override_colors/font_color = Color(0.08852378, 0.17205524, 0.5275407, 1)
+theme_override_colors/font_shadow_color = Color(0.08796177, 0.106558256, 0.6169599, 0.70980394)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 90
+text = "Sea Slug Microaquarium"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Top Menu" type="HBoxContainer" parent="CanvasLayer" unique_id=1950435899]
+offset_left = 27.0
+offset_top = 7.0
+offset_right = 290.0
+offset_bottom = 47.0
+size_flags_stretch_ratio = 0.0
+theme = ExtResource("7_i3x55")
+theme_override_constants/separation = 31
+
+[node name="Quit" type="Button" parent="CanvasLayer/Top Menu" unique_id=1521936479]
+layout_mode = 2
+theme = ExtResource("2_4oy8p")
+theme_override_colors/font_color = Color(0.003921569, 0.015686275, 0.34509805, 1)
+theme_override_styles/normal = ExtResource("3_awy0k")
+theme_override_styles/normal_mirrored = ExtResource("3_awy0k")
+theme_override_styles/hover = ExtResource("4_uy23p")
+text = "X"
+script = ExtResource("5_sx3ea")
+
+[node name="Windowed" type="Button" parent="CanvasLayer/Top Menu" unique_id=318076114]
+layout_mode = 2
+theme = ExtResource("2_4oy8p")
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = ExtResource("3_awy0k")
+theme_override_styles/hover = ExtResource("4_uy23p")
+text = "⧉"
+script = ExtResource("5_sx3ea")
+
+[node name="Node2D" parent="CanvasLayer" unique_id=969373638 instance=ExtResource("1_4oy8p")]
+
+[connection signal="button_down" from="CanvasLayer/CenterContainer/MainButtons/Play" to="CanvasLayer/CenterContainer/MainButtons/Play" method="_on_play_button_down"]
+[connection signal="button_down" from="CanvasLayer/CenterContainer/MainButtons/Settings" to="CanvasLayer/CenterContainer/MainButtons/Play" method="_on_settings_button_down"]
+[connection signal="button_down" from="CanvasLayer/CenterContainer/MainButtons/Credits" to="CanvasLayer/CenterContainer/MainButtons/Credits" method="_on_credits_button_down"]
+[connection signal="button_down" from="CanvasLayer/CenterContainer/MainButtons/Quit" to="CanvasLayer/CenterContainer/MainButtons/Play" method="_on_quit_button_down"]
+[connection signal="button_down" from="CanvasLayer/Top Menu/Quit" to="CanvasLayer/Top Menu/Quit" method="_on_quit_button_down"]
+[connection signal="button_down" from="CanvasLayer/Top Menu/Windowed" to="CanvasLayer/Top Menu/Quit" method="_on_windowed_button_down"]

@@ -17,6 +17,7 @@ config/features=PackedStringArray("4.6", "GL Compatibility")
 [autoload]
 
 DialogueManager="*uid://c3rodes2l3gxb"
+WaveManager="*uid://dhc6doj1gkoix"
 
 [display]
 
@@ -33,6 +34,7 @@ project/assembly_name="New Game Project"
 [editor]
 
 movie_writer/movie_file="C:/Users/Itmstec2/Documents/GitHub/seaslug/gamedemo.avi"
+version_control/autoload_on_startup=true
 
 [editor_plugins]
 

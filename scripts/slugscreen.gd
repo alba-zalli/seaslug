@@ -1,8 +1,11 @@
 extends Node2D
 
+@export var wave_node_path: NodePath   # drag your wave Sprite2D/ColorRect (the one with the shader) here
+
 var radius_x = DisplayServer.screen_get_size().x / 2.0 
-var radius_y = DisplayServer.screen_get_size().y /2.0 
+var radius_y = DisplayServer.screen_get_size().y / 2.0 
 var size = 2.3
+var surface_margin = 20.0 
 
 var spawn_functions := [
 	Callable(self, "spawn_sapsucker"),
@@ -29,19 +32,24 @@ func fish_maker(fish):
 	fish.radius_x = radius_x
 	fish.radius_y = radius_y
 	fish.bowl_center = DisplayServer.screen_get_size() / 2.0
-	fish.modulate.a = 1 #change opacity of fish sprite
+	fish.modulate.a = 1
 	fish.size = size
-	
-	add_child(fish)
 
+	add_child(fish)
 	var center = fish.bowl_center
-	
-	var random_offset = Vector2(
-		randf_range(-radius_x, radius_x),
-		randf_range(-radius_y, radius_y)
-	)
-	
-	fish.global_position = center + random_offset
+
+	# pick a random X first
+	var offset_x = randf_range(-radius_x, radius_x)
+	var spawn_x = center.x + offset_x
+
+	# find how far down the water surface is at that X
+	var surface_y = WaveManager.get_surface_y_px(spawn_x)
+	var min_y = max(surface_y + surface_margin, center.y - radius_y)
+	var max_y = center.y + radius_y
+
+	var spawn_y = randf_range(min_y, max_y)
+
+	fish.global_position = Vector2(spawn_x, spawn_y)
 	fish.main_menu_mode = true
 	
 func spawn_gonio():
@@ -79,7 +87,7 @@ func spawn_paradisa():
 func _ready():
 	randomize()
 	
-	for i in range(7):
+	for i in range(4):
 		var random_spawn = spawn_functions[randi() % spawn_functions.size()]
 		random_spawn.call()
 

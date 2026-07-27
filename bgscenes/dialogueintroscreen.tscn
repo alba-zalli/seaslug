@@ -10,7 +10,11 @@
 [node name="Node2D" type="Node2D" unique_id=1707050802]
 script = ExtResource("1_6a6pp")
 
-[node name="Top Menu" type="HBoxContainer" parent="." unique_id=533884385]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=318737459]
+layer = 101
+
+[node name="Top Menu" type="HBoxContainer" parent="CanvasLayer" unique_id=533884385]
+z_index = 101
 offset_left = 27.0
 offset_top = 7.0
 offset_right = 290.0
@@ -19,7 +23,7 @@ size_flags_stretch_ratio = 0.0
 theme = ExtResource("2_8y5tj")
 theme_override_constants/separation = 31
 
-[node name="Quit" type="Button" parent="Top Menu" unique_id=2012928]
+[node name="Quit" type="Button" parent="CanvasLayer/Top Menu" unique_id=2012928]
 layout_mode = 2
 theme = ExtResource("3_6m5cr")
 theme_override_colors/font_color = Color(0.003921569, 0.015686275, 0.34509805, 1)
@@ -29,7 +33,7 @@ theme_override_styles/hover = ExtResource("5_ylvm1")
 text = "X"
 script = ExtResource("6_6r1oo")
 
-[node name="Windowed" type="Button" parent="Top Menu" unique_id=329633315]
+[node name="Windowed" type="Button" parent="CanvasLayer/Top Menu" unique_id=329633315]
 layout_mode = 2
 theme = ExtResource("3_6m5cr")
 theme_override_font_sizes/font_size = 22
@@ -38,7 +42,7 @@ theme_override_styles/hover = ExtResource("5_ylvm1")
 text = "⧉"
 script = ExtResource("6_6r1oo")
 
-[node name="Back" type="Button" parent="Top Menu" unique_id=1722311912]
+[node name="Back" type="Button" parent="CanvasLayer/Top Menu" unique_id=1722311912]
 layout_direction = 2
 layout_mode = 2
 theme = ExtResource("3_6m5cr")
@@ -49,6 +53,6 @@ text = "Back"
 icon_alignment = 1
 script = ExtResource("6_6r1oo")
 
-[connection signal="button_down" from="Top Menu/Quit" to="Top Menu/Quit" method="_on_quit_button_down"]
-[connection signal="button_down" from="Top Menu/Windowed" to="Top Menu/Quit" method="_on_windowed_button_down"]
-[connection signal="button_down" from="Top Menu/Back" to="Top Menu/Back" method="_on_back_button_down"]
+[connection signal="button_down" from="CanvasLayer/Top Menu/Quit" to="CanvasLayer/Top Menu/Quit" method="_on_quit_button_down"]
+[connection signal="button_down" from="CanvasLayer/Top Menu/Windowed" to="CanvasLayer/Top Menu/Quit" method="_on_windowed_button_down"]
+[connection signal="button_down" from="CanvasLayer/Top Menu/Back" to="CanvasLayer/Top Menu/Back" method="_on_back_button_down"]

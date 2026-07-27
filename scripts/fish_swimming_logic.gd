@@ -122,7 +122,9 @@ func _physics_process(delta):
 		_process_drag()
 		return
 
-	if main_menu_mode:
+	if main_menu_mode and _is_better_main_menu():
+		_physics_process_wave_swim(delta)
+	elif main_menu_mode:
 		_physics_process_main_menu(delta)
 	else:
 		_physics_process_orbit(delta)
@@ -131,6 +133,37 @@ func _physics_process(delta):
 		var target_angle = swim_direction.angle() + PI / 2
 		rotation = lerp_angle(rotation, target_angle, 0.08)
 
+func _physics_process_wave_swim(delta):
+	var screen_size = get_viewport_rect().size
+	var margin = 40.0 + (max(scale.x, scale.y) * 60.0)  # scale margin with fish size
+
+	var surface_y = WaveManager.get_surface_y_px(global_position.x)
+	var min_y = surface_y + margin
+	var max_y = screen_size.y - margin
+	if max_y < min_y:
+		max_y = min_y  # safety net if the wave is unusually low
+
+	# bounce off left/right screen edges
+	if global_position.x < margin:
+		swim_direction.x = abs(swim_direction.x)
+	elif global_position.x > screen_size.x - margin:
+		swim_direction.x = -abs(swim_direction.x)
+
+	# bounce off the wave surface / screen bottom instead of drifting through them
+	if global_position.y < min_y:
+		swim_direction.y = abs(swim_direction.y)
+	elif global_position.y > max_y:
+		swim_direction.y = -abs(swim_direction.y)
+	elif randf() < delta * 0.5:
+		# small wander while cruising along the bottom
+		swim_direction.y = clamp(swim_direction.y + randf_range(-0.2, 0.2), -0.4, 0.4)
+
+	swim_direction = swim_direction.normalized()
+	velocity = swim_direction * swim_speed
+	move_and_slide()
+
+	# hard clamp as a backstop in case move_and_slide overshoots in one frame
+	global_position.y = clamp(global_position.y, min_y, max_y)
 func _physics_process_main_menu(delta):
 	var screen_size = get_viewport_rect().size
 	var margin = 40.0 + (max(scale.x, scale.y) * 60.0)  # scale margin with fish size
@@ -197,3 +230,10 @@ func _physics_process_orbit(delta):
 		target_speed_multiplier = 0.4  # ease down, not an instant jump
 		is_turning = true
 		break
+		
+# helper funct 
+func _is_better_main_menu() -> bool:
+	var current_scene = get_tree().current_scene
+	if current_scene == null:
+		return false
+	return current_scene.scene_file_path.begins_with("res://bettermainmenu")

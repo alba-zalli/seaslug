@@ -1,13 +1,17 @@
 [gd_scene format=3 uid="uid://ct450xp7utd8g"]
 
 [ext_resource type="Texture2D" uid="uid://b0wdctt0vclfu" path="res://images/unnamed.png" id="2_w3hxj"]
+[ext_resource type="Theme" uid="uid://bxuek2tcx0gru" path="res://themes/containertheme.tres" id="3_31dxc"]
 [ext_resource type="PackedScene" uid="uid://daiyw5jx8vy84" path="res://assetscenes/worldmap.tscn" id="3_w3hxj"]
 [ext_resource type="Script" uid="uid://uusxfhw2epny" path="res://scripts/buttons.gd" id="4_u6sld"]
+[ext_resource type="Theme" uid="uid://chlounns205s" path="res://themes/main_buttons_theme.tres" id="4_uk5vf"]
+[ext_resource type="StyleBox" uid="uid://brdkljxyuwos4" path="res://bgscenes/whitebuttonnormal.tres" id="5_qbap2"]
+[ext_resource type="StyleBox" uid="uid://c0cys5bm22016" path="res://bgscenes/whitebuttonhover.tres" id="6_5vvfr"]
 
 [node name="Worldmode" type="Node2D" unique_id=1440439524]
 
 [node name="Node2D2" parent="." unique_id=232880064 instance=ExtResource("3_w3hxj")]
-position = Vector2(756, 190)
+position = Vector2(773, 171)
 scale = Vector2(0.84825873, 0.8657806)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1489375378]
@@ -15,10 +19,45 @@ position = Vector2(302.99997, 486)
 scale = Vector2(0.158, 0.1498)
 texture = ExtResource("2_w3hxj")
 
-[node name="Quit" type="Button" parent="." unique_id=1894170185]
-offset_right = 18.0
-offset_bottom = 31.0
+[node name="Top Menu" type="HBoxContainer" parent="." unique_id=678431135]
+offset_left = 27.0
+offset_top = 7.0
+offset_right = 290.0
+offset_bottom = 47.0
+size_flags_stretch_ratio = 0.0
+theme = ExtResource("3_31dxc")
+theme_override_constants/separation = 31
+
+[node name="Quit" type="Button" parent="Top Menu" unique_id=613716065]
+layout_mode = 2
+theme = ExtResource("4_uk5vf")
+theme_override_colors/font_color = Color(0.003921569, 0.015686275, 0.34509805, 1)
+theme_override_styles/normal = ExtResource("5_qbap2")
+theme_override_styles/normal_mirrored = ExtResource("5_qbap2")
+theme_override_styles/hover = ExtResource("6_5vvfr")
 text = "X"
 script = ExtResource("4_u6sld")
 
-[connection signal="button_down" from="Quit" to="Quit" method="_on_quit_button_down"]
+[node name="Windowed" type="Button" parent="Top Menu" unique_id=2108007038]
+layout_mode = 2
+theme = ExtResource("4_uk5vf")
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = ExtResource("5_qbap2")
+theme_override_styles/hover = ExtResource("6_5vvfr")
+text = "⧉"
+script = ExtResource("4_u6sld")
+
+[node name="Back" type="Button" parent="Top Menu" unique_id=552205679]
+layout_direction = 2
+layout_mode = 2
+theme = ExtResource("4_uk5vf")
+theme_override_styles/normal = ExtResource("5_qbap2")
+theme_override_styles/pressed = ExtResource("5_qbap2")
+theme_override_styles/hover = ExtResource("6_5vvfr")
+text = "Back"
+icon_alignment = 1
+script = ExtResource("4_u6sld")
+
+[connection signal="button_down" from="Top Menu/Quit" to="Top Menu/Quit" method="_on_quit_button_down"]
+[connection signal="button_down" from="Top Menu/Windowed" to="Top Menu/Quit" method="_on_windowed_button_down"]
+[connection signal="button_down" from="Top Menu/Back" to="Top Menu/Back" method="_on_back_button_down"]
