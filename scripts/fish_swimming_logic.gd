@@ -61,13 +61,13 @@ func _ready():
 	print("main_menu_mode = ", main_menu_mode)
 	base_swim_speed = swim_speed
 	if scene_file_path.ends_with("caldorid.tscn"):
-		scale = Vector2(0.04 * size, 0.04 * size)
+		scale = Vector2(0.02 * size, 0.02 * size)
 		fish_food = "Sponge"
 	elif scene_file_path.ends_with("sapsucker.tscn"):
 		scale = Vector2(0.02 * size, 0.02 * size)
 		fish_food = "Algae"
 	elif scene_file_path.ends_with("hyps.tscn"):
-		scale = Vector2(0.07 * size, 0.07 * size)
+		scale = Vector2(0.2 * size, 0.2 * size)
 		fish_food = "Sponge"
 	elif scene_file_path.ends_with("phyl.tscn"):
 		scale = Vector2(0.07 * size, 0.07 * size)
@@ -79,10 +79,10 @@ func _ready():
 		scale = Vector2(0.07 * size, 0.07 * size)
 		fish_food = "Fisheggs"
 	elif scene_file_path.ends_with("gonio.tscn"):
-		scale = Vector2(0.07 * size, 0.07 * size)
+		scale = Vector2(0.05 * size, 0.05 * size)
 		fish_food = "Sponge"
 	elif scene_file_path.ends_with("paradisa.tscn"):
-		scale = Vector2(0.07 * size, 0.07 * size)
+		scale = Vector2(0.03 * size, 0.03 * size)
 		fish_food = "Sponge"
 
 	swim_animation.play("swim_animation")
@@ -103,16 +103,14 @@ func _ready():
 		global_position.x = spawn_x
 		_reset_wave_band(screen_size)
 		var surface = WaveManager.get_surface_y_px(global_position.x)
-		swim_y = randf_range(
-			surface + 80.0,
-			screen_size.y - 80.0
-		)
+		swim_y = screen_size.y - 80.0
+		
 
 		swim_time = randf() * TAU
 		orbit_wobble = randf() * TAU
 
-		sine_amplitude = randf_range(10.0, 28.0)
-		sine_frequency = randf_range(0.8, 1.8)
+		sine_amplitude = 100
+		sine_frequency = 0.3
 		global_position.y = swim_y
 		print("MAIN MENYY")
 	else:

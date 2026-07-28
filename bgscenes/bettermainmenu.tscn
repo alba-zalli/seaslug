@@ -70,10 +70,10 @@ shader_parameter/bubble_speed = 0.60400002869
 
 [node name="CenterContainer" type="CenterContainer" parent="CanvasLayer" unique_id=293426658]
 z_index = 1
-offset_left = -1.0
-offset_top = 554.0
-offset_right = 1919.0
-offset_bottom = 1134.0
+offset_left = -25.0
+offset_top = 174.0
+offset_right = 1895.0
+offset_bottom = 754.0
 theme = SubResource("Theme_r0c0o")
 
 [node name="MainButtons" type="VBoxContainer" parent="CanvasLayer/CenterContainer" unique_id=561146767]
