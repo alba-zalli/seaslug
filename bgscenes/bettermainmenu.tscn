@@ -6,8 +6,9 @@
 [ext_resource type="StyleBox" uid="uid://brdkljxyuwos4" path="res://bgscenes/whitebuttonnormal.tres" id="3_awy0k"]
 [ext_resource type="StyleBox" uid="uid://c0cys5bm22016" path="res://bgscenes/whitebuttonhover.tres" id="4_uy23p"]
 [ext_resource type="Script" uid="uid://uusxfhw2epny" path="res://scripts/buttons.gd" id="5_sx3ea"]
-[ext_resource type="Shader" uid="uid://v0muvx3l5of6" path="res://shaders/wave.gdshader" id="6_jdiqe"]
+[ext_resource type="Shader" uid="uid://b8s4yndsmmh7a" path="res://bgscenes/upperwave.gdshader" id="6_uy23p"]
 [ext_resource type="Theme" uid="uid://bxuek2tcx0gru" path="res://themes/containertheme.tres" id="7_i3x55"]
+[ext_resource type="Texture2D" uid="uid://dabitl1j8hoju" path="res://images/oceans/redsea.png" id="7_sx3ea"]
 [ext_resource type="Script" uid="uid://dxy1u3txbephe" path="res://bgscenes/wavemaker.gd" id="8_awy0k"]
 [ext_resource type="Script" uid="uid://cemp8kuaynvje" path="res://scripts/bowl_logic.gd" id="10_uy23p"]
 
@@ -22,30 +23,14 @@ corner_radius_bottom_left = 8
 expand_margin_left = 8.0
 expand_margin_right = 8.0
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_awy0k"]
-shader = ExtResource("6_jdiqe")
-shader_parameter/liquid_level = 0.2450000116375
-shader_parameter/liquid_color = Color(0.5137255, 0.7882353, 0.9529412, 1)
-shader_parameter/foam_color = Color(0.8, 0.9, 1, 0.6)
-shader_parameter/shade_dark_color = Color(0.05, 0.15, 0.4, 1)
-shader_parameter/shade_light_color = Color(0.6, 0.85, 1, 1)
-shader_parameter/shade_noise_scale = 8.18200038538512
-shader_parameter/shade_noise_speed = 0.290000013775
-shader_parameter/shade_strength = 0.6
-shader_parameter/wave_amplitude = 0.05600000266
-shader_parameter/wave_frequency = 5.0
-shader_parameter/wave_speed = 2.0
-shader_parameter/gravity_angle = 0.0
-shader_parameter/gravity_direction = Vector2(0, 1)
-shader_parameter/foam_thickness = 0.0
-shader_parameter/shine_intensity = 0.3
-shader_parameter/add_bubble = true
-shader_parameter/bubble_scale = 10.0
-shader_parameter/bubble_speed = 0.5
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0326h"]
-shader = ExtResource("6_jdiqe")
-shader_parameter/liquid_level = 0.3210000152475
+shader = ExtResource("6_uy23p")
+shader_parameter/boat_texture = ExtResource("7_sx3ea")
+shader_parameter/show_boat = true
+shader_parameter/boat_position = Vector2(0.5, 0.2)
+shader_parameter/boat_scale = 0.2
+shader_parameter/boat_float_offset = 0.0
+shader_parameter/liquid_level = 0.39600001881
 shader_parameter/liquid_color = Color(0.20392157, 0.60784316, 0.8862745, 1)
 shader_parameter/foam_color = Color(0.38040954, 0.11551487, 0.18249068, 1)
 shader_parameter/shade_dark_color = Color(0.09474441, 0.30688363, 0.3957935, 1)
@@ -118,17 +103,7 @@ theme_override_styles/hover = ExtResource("4_uy23p")
 text = "Quit"
 script = ExtResource("5_sx3ea")
 
-[node name="Wave" type="ColorRect" parent="CanvasLayer" unique_id=171682638]
-visible = false
-material = SubResource("ShaderMaterial_awy0k")
-offset_left = -4.0
-offset_top = -25.0
-offset_right = 2056.0
-offset_bottom = 1112.0
-mouse_filter = 2
-script = ExtResource("8_awy0k")
-
-[node name="Wave2" type="ColorRect" parent="CanvasLayer" unique_id=785568871]
+[node name="Wave" type="ColorRect" parent="CanvasLayer" unique_id=785568871]
 material = SubResource("ShaderMaterial_0326h")
 offset_left = -6.0
 offset_top = -6.0

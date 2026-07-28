@@ -10,9 +10,9 @@ var swim_max_y := 0.0
 
 var swim_time := 0.0
 
-@export var sine_amplitude := 18.0
-@export var sine_frequency := 1.2
-@export var surface_margin := 40.0
+@export var sine_amplitude := 8.0
+@export var sine_frequency := 7.7
+@export var surface_margin := 60.0
 
 var is_turning := false
 var turn_target_angle := 0.0
@@ -60,30 +60,57 @@ func _ready():
 	print("current_scene path: ", get_tree().current_scene.scene_file_path if get_tree().current_scene else "NULL")
 	print("main_menu_mode = ", main_menu_mode)
 	base_swim_speed = swim_speed
-	if scene_file_path.ends_with("caldorid.tscn"):
-		scale = Vector2(0.02 * size, 0.02 * size)
-		fish_food = "Sponge"
-	elif scene_file_path.ends_with("sapsucker.tscn"):
-		scale = Vector2(0.02 * size, 0.02 * size)
-		fish_food = "Algae"
-	elif scene_file_path.ends_with("hyps.tscn"):
-		scale = Vector2(0.2 * size, 0.2 * size)
-		fish_food = "Sponge"
-	elif scene_file_path.ends_with("phyl.tscn"):
-		scale = Vector2(0.07 * size, 0.07 * size)
-		fish_food = "Sponge"
-	elif scene_file_path.ends_with("mari.tscn"):
-		scale = Vector2(0.07 * size, 0.07 * size)
-		fish_food = "Sponge"
-	elif scene_file_path.ends_with("flab.tscn"):
-		scale = Vector2(0.07 * size, 0.07 * size)
-		fish_food = "Fisheggs"
-	elif scene_file_path.ends_with("gonio.tscn"):
-		scale = Vector2(0.05 * size, 0.05 * size)
-		fish_food = "Sponge"
-	elif scene_file_path.ends_with("paradisa.tscn"):
-		scale = Vector2(0.03 * size, 0.03 * size)
-		fish_food = "Sponge"
+	
+	if isbettermainmenu:
+		if scene_file_path.ends_with("caldorid.tscn"):
+			scale = Vector2(0.01 * size, 0.01 * size)
+			fish_food = "Sponge"
+		elif scene_file_path.ends_with("sapsucker.tscn"):
+			scale = Vector2(0.01 * size, 0.01 * size)
+			fish_food = "Algae"
+		elif scene_file_path.ends_with("hyps.tscn"):
+			scale = Vector2(0.1 * size, 0.1 * size)
+			fish_food = "Sponge"
+		elif scene_file_path.ends_with("phyl.tscn"):
+			scale = Vector2(0.04 * size, 0.04 * size)
+			fish_food = "Sponge"
+		elif scene_file_path.ends_with("mari.tscn"):
+			scale = Vector2(0.04 * size, 0.04 * size)
+			fish_food = "Sponge"
+		elif scene_file_path.ends_with("flab.tscn"):
+			scale = Vector2(0.04 * size, 0.04 * size)
+			fish_food = "Fisheggs"
+		elif scene_file_path.ends_with("gonio.tscn"):
+			scale = Vector2(0.025 * size, 0.025 * size)
+			fish_food = "Sponge"
+		elif scene_file_path.ends_with("paradisa.tscn"):
+			scale = Vector2(0.015 * size, 0.015 * size)
+			fish_food = "Sponge"
+	else:
+		if scene_file_path.ends_with("caldorid.tscn"):
+			scale = Vector2(0.02 * size, 0.02 * size)
+			fish_food = "Sponge"
+		elif scene_file_path.ends_with("sapsucker.tscn"):
+			scale = Vector2(0.02 * size, 0.02 * size)
+			fish_food = "Algae"
+		elif scene_file_path.ends_with("hyps.tscn"):
+			scale = Vector2(0.2 * size, 0.2 * size)
+			fish_food = "Sponge"
+		elif scene_file_path.ends_with("phyl.tscn"):
+			scale = Vector2(0.07 * size, 0.07 * size)
+			fish_food = "Sponge"
+		elif scene_file_path.ends_with("mari.tscn"):
+			scale = Vector2(0.07 * size, 0.07 * size)
+			fish_food = "Sponge"
+		elif scene_file_path.ends_with("flab.tscn"):
+			scale = Vector2(0.07 * size, 0.07 * size)
+			fish_food = "Fisheggs"
+		elif scene_file_path.ends_with("gonio.tscn"):
+			scale = Vector2(0.05 * size, 0.05 * size)
+			fish_food = "Sponge"
+		elif scene_file_path.ends_with("paradisa.tscn"):
+			scale = Vector2(0.03 * size, 0.03 * size)
+			fish_food = "Sponge"
 
 	swim_animation.play("swim_animation")
 	if eat_area:
@@ -99,20 +126,19 @@ func _ready():
 		rotation = swim_direction.angle() + PI / 2
 
 		# spawn somewhere on screen, not necessarily at an edge
-		var spawn_x = randf_range(0.0, screen_size.x)
+		var spawn_x = randf_range(0.0, screen_size.x) # TODO: fix ater fish being spawned so high up
 		global_position.x = spawn_x
 		_reset_wave_band(screen_size)
 		var surface = WaveManager.get_surface_y_px(global_position.x)
-		swim_y = screen_size.y - 80.0
+		swim_y = screen_size.y - 10.0
 		
 
 		swim_time = randf() * TAU
 		orbit_wobble = randf() * TAU
 
-		sine_amplitude = 100
-		sine_frequency = 0.3
+		sine_amplitude = 50
+		sine_frequency = 0.8
 		global_position.y = swim_y
-		print("MAIN MENYY")
 	else:
 		swim_direction = Vector2.RIGHT.rotated(randf_range(0.0, TAU))
 		rotation = swim_direction.angle() + PI / 2
@@ -184,8 +210,8 @@ func _physics_process(delta):
 # wave surface at its CURRENT x. Must be called every frame in main menu
 # mode since the wave scrolls and the surface height keeps changing. ---
 func _reset_wave_band(screen_size: Vector2) -> void:
-	var margin = 10.0 + (max(scale.x, scale.y) * 60.0)
-	var surface_y = WaveManager.get_surface_y_px(global_position.x)
+	var margin = (max(scale.x, scale.y) * 60.0) + 200
+	var surface_y = WaveManager.get_surface_y_px(global_position.x) + 100
 	# never let the band start above the hard ceiling, even if the wave
 	# surface itself is higher up (or WaveManager returns something odd)
 	var min_y = max(surface_y + surface_margin, ceiling_margin)
@@ -220,7 +246,7 @@ func _physics_process_main_menu(delta):
 		_respawn_main_menu_fish(screen_size.x + margin, screen_size)
 
 	# Current wave height
-	var surface = WaveManager.get_surface_y_px(global_position.x)
+	var surface = WaveManager.get_surface_y_px(global_position.x) -40
 
 	# Desired sine motion
 	var desired_y = swim_y + sin(swim_time * sine_frequency + orbit_wobble) * sine_amplitude
@@ -244,20 +270,13 @@ func _respawn_main_menu_fish(spawn_x: float, screen_size: Vector2):
 
 	global_position.x = spawn_x
 
-	var surface = WaveManager.get_surface_y_px(spawn_x)
-	
-	var size_offset = max(scale.x, scale.y) * 150.0
-
-	swim_y = randf_range(
-	surface + 20.0 + size_offset,
-	screen_size.y - 100.0
-	)
+	swim_y = screen_size.y - 10.0
 
 	swim_time = randf() * TAU
 	orbit_wobble = randf() * TAU
 
-	sine_amplitude = 5
-	sine_frequency = 2
+	sine_amplitude = 50
+	sine_frequency = 0.8
 
 	swim_speed = base_swim_speed + randf_range(-8.0, 8.0)
 

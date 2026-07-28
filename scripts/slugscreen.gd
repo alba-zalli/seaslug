@@ -87,7 +87,7 @@ func spawn_paradisa():
 func _ready():
 	randomize()
 	
-	for i in range(4):
+	for i in range(13):
 		var random_spawn = spawn_functions[randi() % spawn_functions.size()]
 		random_spawn.call()
 

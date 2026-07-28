@@ -6,6 +6,13 @@ uniform float liquid_level : hint_range(0.0, 1.0) = 0.5;
 uniform vec4 liquid_color : source_color = vec4(0.2, 0.5, 1.0, 0.8);
 uniform vec4 foam_color : source_color = vec4(0.8, 0.9, 1.0, 0.6);
 
+// Floating object
+uniform sampler2D boat_texture;
+uniform bool show_boat = true;
+uniform vec2 boat_position = vec2(0.5, 0.2);
+uniform float boat_scale : hint_range(0.01, 2.0) = 0.2;
+uniform float boat_float_offset : hint_range(-0.1, 0.1) = 0.0;
+
 // Shading Property (dark / light shading of the liquid body)
 uniform vec4 shade_dark_color : source_color = vec4(0.05, 0.15, 0.4, 1.0);
 uniform vec4 shade_light_color : source_color = vec4(0.6, 0.85, 1.0, 1.0);
@@ -76,6 +83,24 @@ void fragment() {
 	// Wave based on X in gravity coordinate
 	float wave = sin(rotated_uv.x * wave_frequency + TIME * wave_speed) * wave_amplitude;
 	float surface_y = (1.0 - liquid_level) + wave;
+	
+	// Draw floating boat
+	if (show_boat) {
+		vec2 boat_uv = (uv - boat_position) / boat_scale + 0.5;
+
+		// make boat follow wave
+		boat_uv.y += wave + boat_float_offset;
+
+		if (boat_uv.x >= 0.0 && boat_uv.x <= 1.0 &&
+			boat_uv.y >= 0.0 && boat_uv.y <= 1.0) {
+
+			vec4 boat = texture(boat_texture, boat_uv);
+
+			if (boat.a > 0.0) {
+				COLOR = boat;
+			}
+		}
+	}
 
 	if (rotated_uv.y > surface_y) {
 		vec4 base_color = liquid_color;
