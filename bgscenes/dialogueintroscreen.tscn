@@ -6,6 +6,7 @@
 [ext_resource type="StyleBox" uid="uid://brdkljxyuwos4" path="res://bgscenes/whitebuttonnormal.tres" id="4_qm2oe"]
 [ext_resource type="StyleBox" uid="uid://c0cys5bm22016" path="res://bgscenes/whitebuttonhover.tres" id="5_ylvm1"]
 [ext_resource type="Script" uid="uid://uusxfhw2epny" path="res://scripts/buttons.gd" id="6_6r1oo"]
+[ext_resource type="Texture2D" uid="uid://dypbs68itujmh" path="res://smiling.png" id="7_6m5cr"]
 
 [node name="Node2D" type="Node2D" unique_id=1707050802]
 script = ExtResource("1_6a6pp")
@@ -52,6 +53,11 @@ theme_override_styles/hover = ExtResource("5_ylvm1")
 text = "Back"
 icon_alignment = 1
 script = ExtResource("6_6r1oo")
+
+[node name="happy_alba" type="Sprite2D" parent="." unique_id=1420239197]
+position = Vector2(881, 477.00006)
+scale = Vector2(0.36598963, 0.35189524)
+texture = ExtResource("7_6m5cr")
 
 [connection signal="button_down" from="CanvasLayer/Top Menu/Quit" to="CanvasLayer/Top Menu/Quit" method="_on_quit_button_down"]
 [connection signal="button_down" from="CanvasLayer/Top Menu/Windowed" to="CanvasLayer/Top Menu/Quit" method="_on_windowed_button_down"]

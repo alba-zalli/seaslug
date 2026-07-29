@@ -15,8 +15,8 @@
 shader = ExtResource("7_q5mcn")
 shader_parameter/density = 113.0
 shader_parameter/layer_parascale = 2
-shader_parameter/speedx = 1.4901199918426755e-07
-shader_parameter/speedy = 0.0
+shader_parameter/speedx = 1.4901199918426758e-07
+shader_parameter/speedy = 0.10000015050212063
 shader_parameter/star_horizontal_wave = 0.3
 shader_parameter/star_size = 3.0000000447036
 shader_parameter/twinkle_effect = 0.20000000298024

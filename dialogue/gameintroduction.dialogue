@@ -1,11 +1,7 @@
 ~ start
+do change_to_happy("happy_alba")
 Alba: [[Hi|Hello|Haii]]!! Thanks for meeting me here. I know it was very last minute, but I'm having an emergency!
-- Skip dialogue
-	- Explore sandbox mode
-		do change_to_sandbox()
-	- Explore world mode
-		do change_to_world()
-=> END
+do hide_sprite("happy_alba")
 Alba: Could I ask you a favour?
 - Of course!
 	Alba: Thank you so much! You are such a good friend <3
