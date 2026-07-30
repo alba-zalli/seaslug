@@ -1,6 +1,6 @@
 extends Area2D
 
-@onready var page_spread: PageSpread = $"/root/SandboxScreen/Book/PageSpread"
+@onready var page_spread: PageSpread = $"SandboxScreen/Book/PageSpread"
 @onready var book_anim: AnimatedSprite2D = $"../BookAnim"
 @onready var click_area: Area2D = self
 @onready var close_button: Button = $"./CloseButton"

@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://dscn1nfybee5t" path="res://addons/maaacks_credits_scene/examples/scenes/credits/concernedalba.png" id="9_2tb2a"]
 [ext_resource type="Script" uid="uid://d2mhxqjd4fuig" path="res://assetscenes/slugscenes/circle_slug_swimming.gd" id="11_2tb2a"]
 [ext_resource type="Script" uid="uid://gkyr13sk2ups" path="res://bgscenes/halo_manager.gd" id="12_bdktm"]
+[ext_resource type="PackedScene" uid="uid://8ivt2kh5xj51" path="res://assetscenes/slugscenes/sapsucker.tscn" id="13_15nvs"]
 
 [node name="Node2D" type="Node2D" unique_id=1707050802]
 script = ExtResource("1_6a6pp")
@@ -75,9 +76,14 @@ scale = Vector2(0.2897904, 0.27833766)
 texture = ExtResource("9_2tb2a")
 
 [node name="HaloManager" type="Node2D" parent="." unique_id=379145261 node_paths=PackedStringArray("slug_nodes")]
+position = Vector2(-376, -170)
 script = ExtResource("12_bdktm")
 target_path = NodePath("../happy_alba")
-slug_nodes = [NodePath("Paradisa"), NodePath("Paradisa")]
+slug_nodes = [NodePath("Paradisa"), NodePath("Sapsucker")]
+radius_x = 400.0
+radius_y = 400.0
+orbit_speed = 0.4
+slug_scale = 1.0
 
 [node name="Paradisa" parent="HaloManager" unique_id=833701563 instance=ExtResource("2_2tb2a")]
 position = Vector2(1226, 350)
@@ -86,7 +92,7 @@ script = ExtResource("11_2tb2a")
 target_path = NodePath("")
 target_offset = Vector2(0, 0)
 radius_x = 60.0
-radius_y = 20.0
+radius_y = 60.0
 tilt = -0.15
 orbit_speed = 1.0
 clockwise = true
@@ -99,6 +105,29 @@ speed_variance = 0.25
 scale_multiplier = 1.0
 eat_speed_boost = 0.15
 max_meals = 3
+externally_managed = true
+
+[node name="Sapsucker" parent="HaloManager" unique_id=165468048 instance=ExtResource("13_15nvs")]
+position = Vector2(1604.9999, 427)
+scale = Vector2(0.01802047, 0.018255876)
+script = ExtResource("11_2tb2a")
+target_path = NodePath("")
+target_offset = Vector2(0, 0)
+radius_x = 60.0
+radius_y = 60.0
+tilt = -0.15
+orbit_speed = 1.0
+clockwise = true
+bob_amplitude = 4.0
+bob_frequency = 2.2
+radius_wobble = 6.0
+radius_wobble_frequency = 0.6
+phase_offset = -1.0
+speed_variance = 0.25
+scale_multiplier = 1.0
+eat_speed_boost = 0.15
+max_meals = 3
+externally_managed = true
 
 [connection signal="button_down" from="CanvasLayer/Top Menu/Quit" to="CanvasLayer/Top Menu/Quit" method="_on_quit_button_down"]
 [connection signal="button_down" from="CanvasLayer/Top Menu/Windowed" to="CanvasLayer/Top Menu/Quit" method="_on_windowed_button_down"]

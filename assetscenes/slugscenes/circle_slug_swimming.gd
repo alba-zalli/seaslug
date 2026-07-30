@@ -33,6 +33,15 @@ var fish_food = null
 var meals_eaten := 0
 var base_orbit_speed := 0.0
 
+# --- external management ---
+# If true, a manager (e.g. HaloManager) is responsible for configuring
+# target_path / phase_offset / etc. BEFORE calling setup() itself.
+# Children run _ready() before their parent does in Godot, so without this
+# flag this node would call setup() on its own first -- before the manager
+# ever gets a chance to set target_path -- locking in a null target_node
+# forever (setup() only runs once, guarded by _initialized).
+@export var externally_managed := false
+
 var orbit_angle := 0.0
 var t := 0.0
 var my_speed := 0.0
@@ -47,13 +56,16 @@ var _initialized := false
 
 func _ready() -> void:
 	# covers the case where this script is attached before the node
-	# enters the tree (normal instantiate-and-add_child flow)
-	if not _initialized:
+	# enters the tree (normal instantiate-and-add_child flow).
+	# Skipped when a manager will call setup() explicitly, since that
+	# manager needs to configure this node first (see externally_managed above).
+	if not externally_managed and not _initialized:
 		setup()
 
 
 # public entry point -- call this manually after set_script() on a node
-# that's already in the tree, since set_script does NOT re-run _ready()
+# that's already in the tree, since set_script does NOT re-run _ready(),
+# and also the entry point managers use for externally_managed nodes.
 func setup() -> void:
 	if _initialized:
 		return
