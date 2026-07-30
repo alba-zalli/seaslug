@@ -3,7 +3,7 @@
 extends Node2D
 
 @export var target_path: NodePath                     # the face/head node the halo circles
-@export var slug_nodes: Array[CharacterBody2D] = [$"../Paradisa"]    # drag existing slug nodes here in the Inspector
+@export var slug_nodes: Array[CharacterBody2D] = [$HaloManager/Paradisa]
 
 @export var radius_x := 60.0
 @export var radius_y := 20.0
@@ -13,6 +13,8 @@ extends Node2D
 
 
 func _ready() -> void:
+	print("slug_nodes: ", slug_nodes)
+	print("target_path: ", target_path, " resolves to: ", get_node_or_null(target_path)) 
 	if slug_nodes.is_empty():
 		push_warning("slug_halo_manager: no slug_nodes assigned")
 		return
@@ -21,7 +23,8 @@ func _ready() -> void:
 	if target_node == null:
 		push_warning("slug_halo_manager: target_path not found")
 		return
-
+	print("target global_position: ", target_node.global_position)
+	print("Paradisa global_position: ", slug_nodes[0].global_position)
 	var count := slug_nodes.size()
 	for i in range(count):
 		var slug := slug_nodes[i]
@@ -30,7 +33,7 @@ func _ready() -> void:
 
 		# swap in the halo orbit script (node is already in the tree, so
 		# this does NOT re-trigger _ready -- we call setup() ourselves below)
-		slug.set_script(load("res://slug_halo_swim.gd"))
+		slug.set_script(load("res://assetscenes/slugscenes/circle_slug_swimming.gd"))
 
 		slug.target_path = slug.get_path_to(target_node)
 		slug.radius_x = radius_x

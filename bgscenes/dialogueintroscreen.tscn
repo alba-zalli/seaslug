@@ -74,7 +74,12 @@ position = Vector2(881, 477.00006)
 scale = Vector2(0.2897904, 0.27833766)
 texture = ExtResource("9_2tb2a")
 
-[node name="Paradisa" parent="." unique_id=833701563 instance=ExtResource("2_2tb2a")]
+[node name="HaloManager" type="Node2D" parent="." unique_id=379145261 node_paths=PackedStringArray("slug_nodes")]
+script = ExtResource("12_bdktm")
+target_path = NodePath("../happy_alba")
+slug_nodes = [NodePath("Paradisa"), NodePath("Paradisa")]
+
+[node name="Paradisa" parent="HaloManager" unique_id=833701563 instance=ExtResource("2_2tb2a")]
 position = Vector2(1226, 350)
 scale = Vector2(0.040561598, 0.044678535)
 script = ExtResource("11_2tb2a")
@@ -95,13 +100,8 @@ scale_multiplier = 1.0
 eat_speed_boost = 0.15
 max_meals = 3
 
-[node name="HaloManager" type="Node2D" parent="." unique_id=379145261 node_paths=PackedStringArray("slug_nodes")]
-script = ExtResource("12_bdktm")
-target_path = NodePath(".")
-slug_nodes = [NodePath("../Paradisa")]
-
 [connection signal="button_down" from="CanvasLayer/Top Menu/Quit" to="CanvasLayer/Top Menu/Quit" method="_on_quit_button_down"]
 [connection signal="button_down" from="CanvasLayer/Top Menu/Windowed" to="CanvasLayer/Top Menu/Quit" method="_on_windowed_button_down"]
 [connection signal="button_down" from="CanvasLayer/Top Menu/Back" to="CanvasLayer/Top Menu/Back" method="_on_back_button_down"]
 
-[editable path="Paradisa"]
+[editable path="HaloManager/Paradisa"]
