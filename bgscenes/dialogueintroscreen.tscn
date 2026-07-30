@@ -56,7 +56,7 @@ script = ExtResource("6_6r1oo")
 
 [node name="happy_alba" type="Sprite2D" parent="." unique_id=1420239197]
 position = Vector2(881, 477.00006)
-scale = Vector2(0.36598963, 0.35189524)
+scale = Vector2(0.2897904, 0.27833766)
 texture = ExtResource("7_6m5cr")
 
 [connection signal="button_down" from="CanvasLayer/Top Menu/Quit" to="CanvasLayer/Top Menu/Quit" method="_on_quit_button_down"]

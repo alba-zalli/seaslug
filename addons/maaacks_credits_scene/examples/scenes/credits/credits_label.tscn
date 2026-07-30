@@ -1,8 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://b0o5hpukdt644"]
+[gd_scene format=3 uid="uid://b0o5hpukdt644"]
 
 [ext_resource type="Script" uid="uid://cc2wtqasev7le" path="res://addons/maaacks_credits_scene/base/nodes/labels/credits_label.gd" id="1_mkjgh"]
 
-[node name="CreditsLabel" type="RichTextLabel"]
+[node name="CreditsLabel" type="RichTextLabel" unique_id=59252318]
 custom_minimum_size = Vector2(1280, 0)
 anchors_preset = 15
 anchor_right = 1.0
@@ -46,7 +46,8 @@ Source: [url=https://git-scm.com/downloads]git-scm.com[/url]
 License: [url=https://opensource.org/licenses/GPL-2.0]GNU General Public License version 2[/url]
 "
 fit_content = true
-scroll_active = false
+scroll_following = true
+scroll_following_visible_characters = true
 horizontal_alignment = 1
 script = ExtResource("1_mkjgh")
 attribution_file_path = "res://addons/maaacks_credits_scene/examples/ATTRIBUTION.md"

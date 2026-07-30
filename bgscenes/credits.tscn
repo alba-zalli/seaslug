@@ -7,7 +7,7 @@
 [ext_resource type="StyleBox" uid="uid://brdkljxyuwos4" path="res://bgscenes/whitebuttonnormal.tres" id="4_tkucq"]
 [ext_resource type="StyleBox" uid="uid://c0cys5bm22016" path="res://bgscenes/whitebuttonhover.tres" id="5_yragn"]
 [ext_resource type="Shader" uid="uid://c5dtjqshoh1ms" path="res://bgscenes/stars.gdshader" id="7_q5mcn"]
-[ext_resource type="PackedScene" uid="uid://do7gek62mdc4e" path="res://addons/credits-template/prefabs/credits.tscn" id="8_6l4rv"]
+[ext_resource type="PackedScene" uid="uid://t2dui8ppm3a4" path="res://addons/maaacks_credits_scene/examples/scenes/credits/scrolling_credits.tscn" id="8_6l4rv"]
 
 [sub_resource type="Theme" id="Theme_pjc1l"]
 
@@ -15,8 +15,8 @@
 shader = ExtResource("7_q5mcn")
 shader_parameter/density = 113.0
 shader_parameter/layer_parascale = 2
-shader_parameter/speedx = 1.4901199918426758e-07
-shader_parameter/speedy = 0.10000015050212063
+shader_parameter/speedx = 1.490119991842676e-07
+shader_parameter/speedy = 0.10000015050212065
 shader_parameter/star_horizontal_wave = 0.3
 shader_parameter/star_size = 3.0000000447036
 shader_parameter/twinkle_effect = 0.20000000298024
@@ -100,25 +100,9 @@ offset_bottom = 34.0
 scale = Vector2(48.352295, 27.314573)
 mouse_filter = 2
 
-[node name="Control" type="Control" parent="." unique_id=1598957853]
-layout_mode = 3
-anchors_preset = 0
-offset_left = 1305.0
-offset_top = 331.0
-offset_right = 1345.0
-offset_bottom = 331.0
-
-[node name="CreditsRoll" parent="Control" unique_id=1395666911 instance=ExtResource("8_6l4rv")]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.5
-offset_top = -17801.938
-offset_bottom = -16891.926
-grow_horizontal = 2
-grow_vertical = 2
+[node name="ScrollingCredits" parent="." unique_id=1517983396 instance=ExtResource("8_6l4rv")]
+scroll_paused = true
 
 [connection signal="button_down" from="Top Menu/Quit" to="Top Menu/Quit" method="_on_quit_button_down"]
 [connection signal="button_down" from="Top Menu/Windowed" to="Top Menu/Quit" method="_on_windowed_button_down"]
 [connection signal="button_down" from="Top Menu/Back" to="Top Menu/Back" method="_on_back_button_down"]
-
-[editable path="Control/CreditsRoll"]
