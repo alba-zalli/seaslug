@@ -7,7 +7,7 @@
 [ext_resource type="StyleBox" uid="uid://brdkljxyuwos4" path="res://bgscenes/whitebuttonnormal.tres" id="4_tkucq"]
 [ext_resource type="StyleBox" uid="uid://c0cys5bm22016" path="res://bgscenes/whitebuttonhover.tres" id="5_yragn"]
 [ext_resource type="Shader" uid="uid://c5dtjqshoh1ms" path="res://bgscenes/stars.gdshader" id="7_q5mcn"]
-[ext_resource type="PackedScene" uid="uid://t2dui8ppm3a4" path="res://addons/maaacks_credits_scene/examples/scenes/credits/scrolling_credits.tscn" id="8_6l4rv"]
+[ext_resource type="PackedScene" uid="uid://osxulxw2oas3" path="res://addons/maaacks_credits_scene/examples/scenes/credits/scrollable_credits.tscn" id="8_6l4rv"]
 
 [sub_resource type="Theme" id="Theme_pjc1l"]
 
@@ -38,6 +38,48 @@ shader_parameter/cloud_color_shifty = 10.5
 shader_parameter/background_color = Color(0.76763624, 0.46242857, 0.6456987, 1)
 
 [node name="Node2D" type="Node2D" unique_id=1360076914]
+
+[node name="ScrollableCredits" parent="." unique_id=2118552706 instance=ExtResource("8_6l4rv")]
+custom_minimum_size = Vector2(1000, 800)
+offset_left = 483.0
+offset_top = 205.0
+offset_right = 1483.0
+offset_bottom = 1005.0
+
+[node name="CreditsLabel" parent="ScrollableCredits" index="0" unique_id=492156833]
+text = "[font_size=48]ALBA ZALLI[/font_size]
+
+[font_size=32]Role[/font_size]
+Person 1  
+Person 2  
+[url=]Person w/ Link[/url]  
+
+[font_size=48]Sourced[/font_size]
+[font_size=32]Asset Type[/font_size]
+[font_size=24]Use Case[/font_size]
+Author: [url=]Name[/url]  
+Source: [url=]Domain : webpage.html[/url]  
+License: [url=]License[/url]
+
+[font_size=48]Tools[/font_size]
+[font_size=24]ALBA ZALLI[/font_size]
+[img=80]res:///addons/maaacks_credits_scene/examples/assets/godot_engine_logo/logo_vertical_color_dark.png[/img]  
+Author: [url=https://godotengine.org/contact]Juan Linietsky, Ariel Manzur, and contributors[/url]  
+Source: [url=https://godotengine.org/]godotengine.org[/url]  
+License: [url=https://github.com/godotengine/godot/blob/master/LICENSE.txt]MIT License[/url] 
+
+[font_size=24]Godot Credits Scene[/font_size]
+[img=80]res:///addons/maaacks_credits_scene/examples/assets/plugin_logo/logo.png[/img]  
+Author: [url=https://github.com/Maaack/Godot-Credits-Scene/graphs/contributors]Marek Belski and contributors[/url]  
+Source: [url=https://github.com/Maaack/Godot-Credits-Scene]github: Godot-Credits-Scene[/url]  
+License: [url=LICENSE.txt]MIT License[/url]  
+
+[font_size=24]Git[/font_size]
+[img=80]res:///addons/maaacks_credits_scene/examples/assets/git_logo/Git-Logo-2Color.png[/img]  
+Author: [url=https://github.com/torvalds]Linus Torvalds[/url]  
+Source: [url=https://git-scm.com/downloads]git-scm.com[/url]  
+License: [url=https://opensource.org/licenses/GPL-2.0]GNU General Public License version 2[/url]
+"
 
 [node name="CenterContainer" type="CenterContainer" parent="." unique_id=959750198]
 offset_top = 53.0
@@ -100,9 +142,8 @@ offset_bottom = 34.0
 scale = Vector2(48.352295, 27.314573)
 mouse_filter = 2
 
-[node name="ScrollingCredits" parent="." unique_id=1517983396 instance=ExtResource("8_6l4rv")]
-scroll_paused = true
-
 [connection signal="button_down" from="Top Menu/Quit" to="Top Menu/Quit" method="_on_quit_button_down"]
 [connection signal="button_down" from="Top Menu/Windowed" to="Top Menu/Quit" method="_on_windowed_button_down"]
 [connection signal="button_down" from="Top Menu/Back" to="Top Menu/Back" method="_on_back_button_down"]
+
+[editable path="ScrollableCredits"]

@@ -26,7 +26,7 @@ func _on_resized() -> void:
 	_current_scroll_position = scroll_container.scroll_vertical
 
 func _end_reached() -> void:
-	scroll_paused = true
+	scroll_paused = false
 	end_reached.emit()
 
 func is_end_reached() -> bool:
