@@ -24,7 +24,7 @@ func _on_credits_button_down() -> void:
 	get_tree().change_scene_to_file("res://bgscenes/credits.tscn")
 		
 func _on_settings_button_down() -> void:
-	get_tree().change_scene_to_file("res://bgscenes/settings.tscn")
+	get_tree().change_scene_to_file("res://bgscenes/worldmode.tscn")
 
 # switch from bowl scene to main menu
 func _on_back_button_down() -> void:
@@ -34,11 +34,8 @@ func _on_back_button_down() -> void:
 func _on_quit_button_down() -> void:
 	get_tree().quit()
 
-func _on_sandbox_button_down() -> void:
-	get_tree().change_scene_to_file("res://bgscenes/sandboxscreen.tscn")
-
-func _on_world_button_down() -> void:
-	get_tree().change_scene_to_file("res://bgscenes/worldmode.tscn")
-
 func _on_windowed_button_down() -> void:
 	pass
+
+func _on_button_down() -> void:
+	get_tree().change_scene_to_file("res://bgscenes/sandboxscreen.tscn")

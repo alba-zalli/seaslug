@@ -108,14 +108,14 @@ max_meals = 3
 externally_managed = true
 
 [node name="Sapsucker" parent="HaloManager" unique_id=165468048 instance=ExtResource("13_15nvs")]
-position = Vector2(1604.9999, 427)
+position = Vector2(1240.9999, 409.00003)
 scale = Vector2(0.01802047, 0.018255876)
 script = ExtResource("11_2tb2a")
 target_path = NodePath("")
 target_offset = Vector2(0, 0)
 radius_x = 60.0
 radius_y = 60.0
-tilt = -0.15
+tilt = 0.15
 orbit_speed = 1.0
 clockwise = true
 bob_amplitude = 4.0

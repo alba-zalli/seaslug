@@ -4,13 +4,8 @@ extends Node
 @export var visit_button: Button
 var balloon_open := false
 
-# Remembers whichever region was hovered most recently (stays set even
-# after the mouse leaves), so the button knows what to open whether the
-# region is currently hovered or was only hovered previously.
 var last_hovered_region: String = ""
 
-# TODO: update these paths once the West/East Pacific scenes exist —
-# right now only IndianOceanScene.tscn is in the repo.
 const REGION_SCENES := {
 	"indian_ocean": "res://IndianOceanScene.tscn",
 	"west_pacific": "res://WestPacificScene.tscn",
@@ -43,11 +38,7 @@ func _on_dialogue_ended(_resource) -> void:
 	balloon_open = false
 
 func _on_button_pressed() -> void:
-	print("BUTTON PRESSED. last_hovered_region = '", last_hovered_region, "'")
 	if last_hovered_region == "" or not REGION_SCENES.has(last_hovered_region):
 		print("No valid region hovered yet — nothing to open")
 		return
-	print("Changing scene to: ", REGION_SCENES[last_hovered_region])
-	var err := get_tree().change_scene_to_file(REGION_SCENES[last_hovered_region])
-	if err != OK:
-		print("change_scene_to_file FAILED with error code: ", err)
+	get_tree().change_scene_to_file(REGION_SCENES[last_hovered_region])

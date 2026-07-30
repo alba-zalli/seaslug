@@ -10,9 +10,10 @@
 
 [node name="Worldmode" type="Node2D" unique_id=1440439524]
 
-[node name="Node2D2" parent="." unique_id=232880064 instance=ExtResource("3_w3hxj")]
+[node name="Node2D2" parent="." unique_id=232880064 node_paths=PackedStringArray("visit_button") instance=ExtResource("3_w3hxj")]
 position = Vector2(773, 171)
 scale = Vector2(0.84825873, 0.8657806)
+visit_button = NodePath("../Button")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1489375378]
 position = Vector2(302.99997, 486)
@@ -58,6 +59,14 @@ text = "Back"
 icon_alignment = 1
 script = ExtResource("4_u6sld")
 
+[node name="Button" type="Button" parent="." unique_id=692056412]
+offset_left = 1698.0
+offset_top = 809.0
+offset_right = 1766.0
+offset_bottom = 840.0
+text = "Lets go!"
+
 [connection signal="button_down" from="Top Menu/Quit" to="Top Menu/Quit" method="_on_quit_button_down"]
 [connection signal="button_down" from="Top Menu/Windowed" to="Top Menu/Quit" method="_on_windowed_button_down"]
 [connection signal="button_down" from="Top Menu/Back" to="Top Menu/Back" method="_on_back_button_down"]
+[connection signal="pressed" from="Button" to="Node2D2" method="_on_button_pressed"]

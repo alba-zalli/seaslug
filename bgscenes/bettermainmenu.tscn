@@ -130,22 +130,22 @@ theme_override_styles/normal = ExtResource("3_awy0k")
 text = "Play"
 script = ExtResource("5_sx3ea")
 
-[node name="Settings" type="Button" parent="CanvasLayer/CenterContainer/MainButtons" unique_id=1559610756]
+[node name="Open" type="Button" parent="CanvasLayer/CenterContainer/MainButtons" unique_id=1439565575]
+layout_mode = 2
+theme = ExtResource("2_4oy8p")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = ExtResource("3_awy0k")
+theme_override_styles/hover = ExtResource("4_uy23p")
+text = "Open"
+script = ExtResource("5_sx3ea")
+
+[node name="Worldmode" type="Button" parent="CanvasLayer/CenterContainer/MainButtons" unique_id=1559610756]
 layout_mode = 2
 theme = ExtResource("2_4oy8p")
 theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = ExtResource("3_awy0k")
 theme_override_styles/hover = ExtResource("4_uy23p")
 text = "World"
-script = ExtResource("5_sx3ea")
-
-[node name="Settings2" type="Button" parent="CanvasLayer/CenterContainer/MainButtons" unique_id=1439565575]
-layout_mode = 2
-theme = ExtResource("2_4oy8p")
-theme_override_font_sizes/font_size = 50
-theme_override_styles/normal = ExtResource("3_awy0k")
-theme_override_styles/hover = ExtResource("4_uy23p")
-text = "Sandbox"
 script = ExtResource("5_sx3ea")
 
 [node name="Credits" type="Button" parent="CanvasLayer/CenterContainer/MainButtons" unique_id=1665455270]
@@ -245,8 +245,8 @@ visible = false
 polygon = PackedVector2Array(-3, 504, 2043, 487, 2065, 711, 2145, 796, 2131, 322, 2159, -409, 1907.6294, -409.9752, -161, -418, -286, 858, 2145, 794, 2058, 728, -6, 726)
 
 [connection signal="button_down" from="CanvasLayer/CenterContainer/MainButtons/Play" to="CanvasLayer/CenterContainer/MainButtons/Play" method="_on_play_button_down"]
-[connection signal="button_down" from="CanvasLayer/CenterContainer/MainButtons/Settings" to="CanvasLayer/CenterContainer/MainButtons/Play" method="_on_settings_button_down"]
-[connection signal="button_down" from="CanvasLayer/CenterContainer/MainButtons/Settings2" to="CanvasLayer/CenterContainer/MainButtons/Play" method="_on_settings_button_down"]
+[connection signal="button_down" from="CanvasLayer/CenterContainer/MainButtons/Open" to="CanvasLayer/CenterContainer/MainButtons/Open" method="_on_button_down"]
+[connection signal="button_down" from="CanvasLayer/CenterContainer/MainButtons/Worldmode" to="CanvasLayer/CenterContainer/MainButtons/Play" method="_on_settings_button_down"]
 [connection signal="button_down" from="CanvasLayer/CenterContainer/MainButtons/Credits" to="CanvasLayer/CenterContainer/MainButtons/Credits" method="_on_credits_button_down"]
 [connection signal="button_down" from="CanvasLayer/CenterContainer/MainButtons/Quit" to="CanvasLayer/CenterContainer/MainButtons/Play" method="_on_quit_button_down"]
 [connection signal="button_down" from="CanvasLayer/Top Menu/Quit" to="CanvasLayer/Top Menu/Quit" method="_on_quit_button_down"]

@@ -5,13 +5,10 @@
 [ext_resource type="StyleBox" uid="uid://dyorrnpbnbxum" path="res://themes/containerstyle.tres" id="3_06ueq"]
 [ext_resource type="Theme" uid="uid://bxuek2tcx0gru" path="res://themes/containertheme.tres" id="4_8y2rs"]
 [ext_resource type="Theme" uid="uid://ew0ljd640imm" path="res://themes/base_theme.tres" id="5_e6fs5"]
-[ext_resource type="Texture2D" uid="uid://8k2dq7iq5c4k" path="res://images/slugimages/sapsucker.png" id="6_pre55"]
-[ext_resource type="Texture2D" uid="uid://ch2fi2csdtu5s" path="res://images/slugimages/dorid.png" id="7_plje0"]
 [ext_resource type="Texture2D" uid="uid://r6eipayrvqou" path="res://images/slugimages/hyps.png" id="8_pmcye"]
 [ext_resource type="Texture2D" uid="uid://ch13d35ifj5fs" path="res://images/slugimages/phyl.png" id="9_t8p4n"]
 [ext_resource type="Texture2D" uid="uid://b0lj2qo8po0vo" path="res://images/slugimages/mari.png" id="10_hgjg8"]
 [ext_resource type="Texture2D" uid="uid://lwb6qo0oxs7l" path="res://images/slugimages/gonio.png" id="11_1a2sr"]
-[ext_resource type="Texture2D" uid="uid://idjmf5fm1gq8" path="res://images/slugimages/paradisa.png" id="12_x7vpe"]
 [ext_resource type="Texture2D" uid="uid://cc6bnpdg57ulj" path="res://images/slugimages/flab.png" id="13_x3cbv"]
 [ext_resource type="Texture2D" uid="uid://bg5sl0ipmrp3" path="res://images/foodimages/fisheggs.png" id="14_cs4us"]
 [ext_resource type="Texture2D" uid="uid://co81xieitxihr" path="res://images/foodimages/algea.png" id="15_4mbb8"]
@@ -116,16 +113,6 @@ theme = ExtResource("5_e6fs5")
 layout_mode = 2
 columns = 2
 
-[node name="Sapsucker" type="Button" parent="SandboxScreen/Container/Side Menu/ScrollContainer/VBoxContainer" unique_id=767077272]
-layout_mode = 2
-theme_override_constants/icon_max_width = 80
-icon = ExtResource("6_pre55")
-
-[node name="Cal Dorid" type="Button" parent="SandboxScreen/Container/Side Menu/ScrollContainer/VBoxContainer" unique_id=1875796786]
-layout_mode = 2
-theme_override_constants/icon_max_width = 80
-icon = ExtResource("7_plje0")
-
 [node name="Hypselodoris" type="Button" parent="SandboxScreen/Container/Side Menu/ScrollContainer/VBoxContainer" unique_id=1889667325]
 layout_mode = 2
 theme_override_constants/icon_max_width = 80
@@ -136,6 +123,11 @@ layout_mode = 2
 theme_override_constants/icon_max_width = 80
 icon = ExtResource("9_t8p4n")
 
+[node name="Flabellina" type="Button" parent="SandboxScreen/Container/Side Menu/ScrollContainer/VBoxContainer" unique_id=1940239109]
+layout_mode = 2
+theme_override_constants/icon_max_width = 80
+icon = ExtResource("13_x3cbv")
+
 [node name="Marindica" type="Button" parent="SandboxScreen/Container/Side Menu/ScrollContainer/VBoxContainer" unique_id=1538349091]
 layout_mode = 2
 theme_override_constants/icon_max_width = 80
@@ -145,16 +137,6 @@ icon = ExtResource("10_hgjg8")
 layout_mode = 2
 theme_override_constants/icon_max_width = 80
 icon = ExtResource("11_1a2sr")
-
-[node name="Paradisa" type="Button" parent="SandboxScreen/Container/Side Menu/ScrollContainer/VBoxContainer" unique_id=1633262766]
-layout_mode = 2
-theme_override_constants/icon_max_width = 80
-icon = ExtResource("12_x7vpe")
-
-[node name="Flabellina" type="Button" parent="SandboxScreen/Container/Side Menu/ScrollContainer/VBoxContainer" unique_id=1940239109]
-layout_mode = 2
-theme_override_constants/icon_max_width = 80
-icon = ExtResource("13_x3cbv")
 
 [node name="Spacer" type="ScrollContainer" parent="SandboxScreen/Container/Side Menu" unique_id=631290024]
 custom_minimum_size = Vector2(0, 20)
@@ -325,14 +307,11 @@ position = Vector2(952, 540)
 scale = Vector2(1.9606884, 1.9574622)
 texture = ExtResource("27_gljpi")
 
-[connection signal="button_down" from="SandboxScreen/Container/Side Menu/ScrollContainer/VBoxContainer/Sapsucker" to="SandboxScreen/Bowl" method="_on_sapsucker_button_down"]
-[connection signal="button_down" from="SandboxScreen/Container/Side Menu/ScrollContainer/VBoxContainer/Cal Dorid" to="SandboxScreen/Bowl" method="_on_cal_dorid_button_down"]
 [connection signal="button_down" from="SandboxScreen/Container/Side Menu/ScrollContainer/VBoxContainer/Hypselodoris" to="SandboxScreen/Bowl" method="_on_hypselodoris_button_down"]
 [connection signal="button_down" from="SandboxScreen/Container/Side Menu/ScrollContainer/VBoxContainer/Phyllidiella" to="SandboxScreen/Bowl" method="_on_phyllidiella_button_down"]
+[connection signal="button_down" from="SandboxScreen/Container/Side Menu/ScrollContainer/VBoxContainer/Flabellina" to="SandboxScreen/Bowl" method="_on_flabellina_button_down"]
 [connection signal="button_down" from="SandboxScreen/Container/Side Menu/ScrollContainer/VBoxContainer/Marindica" to="SandboxScreen/Bowl" method="_on_marindica_button_down"]
 [connection signal="button_down" from="SandboxScreen/Container/Side Menu/ScrollContainer/VBoxContainer/Gonio" to="SandboxScreen/Bowl" method="_on_gonio_button_down"]
-[connection signal="button_down" from="SandboxScreen/Container/Side Menu/ScrollContainer/VBoxContainer/Paradisa" to="SandboxScreen/Bowl" method="_on_paradisa_button_down"]
-[connection signal="button_down" from="SandboxScreen/Container/Side Menu/ScrollContainer/VBoxContainer/Flabellina" to="SandboxScreen/Bowl" method="_on_flabellina_button_down"]
 [connection signal="button_down" from="SandboxScreen/Container/Side Menu/VBoxContainer4/Hydrozoa" to="SandboxScreen/Bowl" method="_on_fish_eggs_button_down"]
 [connection signal="button_down" from="SandboxScreen/Container/Side Menu/VBoxContainer4/Algae" to="SandboxScreen/Bowl" method="_on_algae_button_down"]
 [connection signal="button_down" from="SandboxScreen/Container/Side Menu/VBoxContainer4/Sea sponge" to="SandboxScreen/Bowl" method="_on_sea_sponge_button_down"]
