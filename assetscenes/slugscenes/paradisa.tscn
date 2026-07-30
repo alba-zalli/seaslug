@@ -210,6 +210,7 @@ _data = {
 }
 
 [node name="Node2D" type="CharacterBody2D" unique_id=833701563]
+position = Vector2(3, 0)
 script = ExtResource("1_evqem")
 
 [node name="Fish" type="Polygon2D" parent="." unique_id=1876127608]

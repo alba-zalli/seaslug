@@ -1,5 +1,18 @@
 shader_type canvas_item;
 
+// Sunset cycle
+uniform bool sunset_enabled = true;
+uniform float sunset_speed : hint_range(0.0, 0.2, 0.001) = 0.02; // cycles per second, slow = long day/night
+uniform vec3 sunset_color_day : source_color = vec3(0.05, 0.08, 0.18);     // daytime sky
+uniform vec3 sunset_color_dusk : source_color = vec3(0.9, 0.35, 0.15);     // orange sunset
+uniform vec3 sunset_color_night : source_color = vec3(0.04, 0.06, 0.15);   // deep night
+uniform vec3 sunset_color_dawn : source_color = vec3(0.6, 0.25, 0.45);     // pink/purple dawn
+
+// Horizon glow (brightens near the bottom of the screen during sunset/dawn)
+uniform float sunset_horizon_height : hint_range(0.0, 1.0, 0.01) = 0.35;
+uniform float sunset_glow_strength : hint_range(0.0, 2.0, 0.01) = 0.8;
+uniform vec3 sunset_glow_color : source_color = vec3(1.0, 0.5, 0.2);
+
 uniform float density : hint_range(0.0, 300.0, 1.) = 150.;
 uniform int layer_parascale : hint_range(0, 5, 1) = 2;
 uniform float speedx : hint_range(-10.0, 10.0, 0.1) = 0.2;
@@ -128,7 +141,28 @@ vec2 rotate(vec2 uv, float addtheta) {
 
 void fragment() {
 
-    vec3 color = background_color;
+    vec3 sky_color = background_color;
+
+    if (sunset_enabled) {
+        // 0..1 repeating cycle position
+        float cycle = fract(TIME * sunset_speed);
+
+        // Split the cycle into 4 quarters: day -> dusk -> night -> dawn -> (day)
+        float phase = cycle * 4.0;
+        int seg = int(floor(phase));
+        float local_t = smoothstep(0.0, 1.0, fract(phase)); // ease in/out of each transition
+
+        vec3 c0;
+        vec3 c1;
+        if (seg == 0) { c0 = sunset_color_day;   c1 = sunset_color_dusk;  }
+        else if (seg == 1) { c0 = sunset_color_dusk;  c1 = sunset_color_night; }
+        else if (seg == 2) { c0 = sunset_color_night; c1 = sunset_color_dawn;  }
+        else { c0 = sunset_color_dawn;  c1 = sunset_color_day;   }
+
+        sky_color = mix(c0, c1, local_t);
+    }
+
+    vec3 color = sky_color;
 
     vec2 screen_size = 1.0 / SCREEN_PIXEL_SIZE;
     vec2 st = SCREEN_UV;
@@ -188,6 +222,22 @@ void fragment() {
 
         // Accumulate star effect
         color = max(color + (snowflake * brightness) * colortype, color);
+		
+		if (sunset_enabled) {
+	        float cycle = fract(TIME * sunset_speed);
+	        float phase = cycle * 4.0;
+	        // Glow is strongest during dusk (seg 0->1 boundary) and dawn (seg 2->3 boundary),
+	        // near-zero during full day/night
+	        float dusk_glow = 1.0 - abs(fract(phase) - 0.5) * 2.0; // peaks mid-transition
+	        float glow_amount = 0.0;
+	        if (phase < 1.0 || (phase >= 3.0)) {
+	            glow_amount = dusk_glow;
+	        }
+
+	        float dist_from_horizon = max(0.0, sunset_horizon_height - st.y);
+	        float glow_falloff = exp(-dist_from_horizon * 8.0);
+	        color += sunset_glow_color * glow_amount * glow_falloff * sunset_glow_strength;
+	    }
     }
 
     vec2 centers[6];

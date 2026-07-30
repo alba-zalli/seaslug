@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://d4d15qo7ijphj" path="res://bgscenes/slugscreen.tscn" id="1_4oy8p"]
 [ext_resource type="Theme" uid="uid://ew0ljd640imm" path="res://themes/base_theme.tres" id="1_jdiqe"]
 [ext_resource type="Theme" uid="uid://chlounns205s" path="res://themes/main_buttons_theme.tres" id="2_4oy8p"]
+[ext_resource type="Script" uid="uid://dgcffl765xrfj" path="res://bgscenes/boat.gd" id="2_i3x55"]
 [ext_resource type="StyleBox" uid="uid://brdkljxyuwos4" path="res://bgscenes/whitebuttonnormal.tres" id="3_awy0k"]
 [ext_resource type="StyleBox" uid="uid://c0cys5bm22016" path="res://bgscenes/whitebuttonhover.tres" id="4_uy23p"]
 [ext_resource type="Script" uid="uid://uusxfhw2epny" path="res://scripts/buttons.gd" id="5_sx3ea"]
@@ -13,32 +14,20 @@
 [ext_resource type="Script" uid="uid://cemp8kuaynvje" path="res://scripts/bowl_logic.gd" id="10_uy23p"]
 [ext_resource type="Shader" uid="uid://c5dtjqshoh1ms" path="res://bgscenes/stars.gdshader" id="11_ok5lk"]
 
-[sub_resource type="Theme" id="Theme_r0c0o"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_td8vo"]
-bg_color = Color(0.13725491, 0.4627451, 0.7490196, 1)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
-expand_margin_left = 8.0
-expand_margin_right = 8.0
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0326h"]
 shader = ExtResource("6_uy23p")
 shader_parameter/liquid_level = 0.39600001881
 shader_parameter/liquid_color = Color(0.3782223, 0.5150456, 0.9313558, 1)
 shader_parameter/foam_color = Color(0.38040954, 0.11551487, 0.18249068, 1)
-shader_parameter/boat_texture = ExtResource("7_ok5lk")
-shader_parameter/show_boat = true
-shader_parameter/boat_position = Vector2(0.2, 0.5)
-shader_parameter/boat_scale = 0.36300001654397995
-shader_parameter/boat_float_offset = 0.10000000149012
+shader_parameter/show_boat = false
+shader_parameter/boat_position = Vector2(0.2, 0.1)
+shader_parameter/boat_scale = 0.26600001193648004
+shader_parameter/boat_float_offset = -0.01799999759512
 shader_parameter/boat_shadow_color = Color(0.14509805, 0.11764706, 0.4627451, 0.5294118)
-shader_parameter/boat_shadow_scale = 0.7330000110675
-shader_parameter/boat_shadow_flatten = 0.45300002035296005
-shader_parameter/boat_shadow_softness = 0.746000035435
-shader_parameter/boat_shadow_y_offset = 0.14400001335977
+shader_parameter/boat_shadow_scale = 1.0330000253175
+shader_parameter/boat_shadow_flatten = 1.0
+shader_parameter/boat_shadow_softness = 0.7170000340575
+shader_parameter/boat_shadow_y_offset = 0.13800001307477003
 shader_parameter/rect_size = Vector2(1, 1)
 shader_parameter/shade_dark_color = Color(0.53829294, 0.11415919, 0.49136716, 1)
 shader_parameter/shade_light_color = Color(0.97392315, 0.33095428, 0.6049817, 1)
@@ -61,14 +50,34 @@ shader_parameter/shine_sparkle_threshold = 0.7910000138225
 shader_parameter/shine_sparkle_softness = 0.30000001192093
 shader_parameter/shine_band_strength = 0.598000028405
 
+[sub_resource type="Theme" id="Theme_r0c0o"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_td8vo"]
+bg_color = Color(0.13725491, 0.4627451, 0.7490196, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 8.0
+expand_margin_right = 8.0
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_i3x55"]
 shader = ExtResource("11_ok5lk")
-shader_parameter/density = 122.0
+shader_parameter/sunset_enabled = true
+shader_parameter/sunset_speed = 0.0610000028975
+shader_parameter/sunset_color_day = Color(0.429549, 0.02711879, 0.3853514, 1)
+shader_parameter/sunset_color_dusk = Color(0.5993661, 0.059448637, 0.59976685, 1)
+shader_parameter/sunset_color_night = Color(0.5007858, 0.11925734, 0.44887096, 1)
+shader_parameter/sunset_color_dawn = Color(0.46449643, 0.2847046, 0.5963446, 1)
+shader_parameter/sunset_horizon_height = 0.8999999798832
+shader_parameter/sunset_glow_strength = 0.999999977648
+shader_parameter/sunset_glow_color = Color(0.91389924, 0.24975955, 0.66466874, 1)
+shader_parameter/density = 84.0
 shader_parameter/layer_parascale = 2
-shader_parameter/speedx = 1.4901199918426758e-07
+shader_parameter/speedx = 1.490119991842676e-07
 shader_parameter/speedy = 0.0
 shader_parameter/star_horizontal_wave = 0.3
-shader_parameter/star_size = 3.0000000447036
+shader_parameter/star_size = 1.90000002831228
 shader_parameter/twinkle_effect = 0.20000000298024
 shader_parameter/twinkle_speed = 0.0
 shader_parameter/fbm_strength = 0.0
@@ -85,11 +94,20 @@ shader_parameter/cloud_color_ci2 = 0.80999998189488
 shader_parameter/cloud_color_ci3 = 0.6999999843536
 shader_parameter/cloud_color_shiftx = -14.5
 shader_parameter/cloud_color_shifty = 11.0
-shader_parameter/background_color = Color(0.76763624, 0.46242857, 0.6456987, 1)
+shader_parameter/background_color = Color(0.22484428, 0.121747725, 0.322315, 1)
 
 [node name="Node2D" type="Node2D" unique_id=2121954997]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1653330926]
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer" unique_id=1059919382 node_paths=PackedStringArray("water_rect")]
+z_index = 1
+position = Vector2(411, 853)
+scale = Vector2(0.08726055, 0.092125274)
+texture = ExtResource("7_ok5lk")
+script = ExtResource("2_i3x55")
+water_rect = NodePath("../Wave")
+water_material = SubResource("ShaderMaterial_0326h")
 
 [node name="CenterContainer" type="CenterContainer" parent="CanvasLayer" unique_id=293426658]
 z_index = 1
@@ -109,7 +127,6 @@ layout_mode = 2
 theme = ExtResource("2_4oy8p")
 theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = ExtResource("3_awy0k")
-theme_override_styles/hover = ExtResource("4_uy23p")
 text = "Play"
 script = ExtResource("5_sx3ea")
 

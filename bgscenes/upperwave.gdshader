@@ -189,33 +189,4 @@ void fragment() {
 	} else {
 		COLOR = vec4(0.0, 0.0, 0.0, 0.0);
 	}
-
-	// Draw floating boat last, on top of whatever liquid/foam/transparent
-	// color was just written, so it can never get overwritten regardless
-	// of where it sits relative to the surface.
-	if (show_boat) {
-		// Correct for the node's aspect ratio so the boat isn't stretched
-		// horizontally on non-square canvases. rect_size must be set from
-		// a script (see uniform declaration above).
-		//
-		// Use boat_screen_pos (already includes the wave + float offset,
-		// shifted in plain screen space) instead of offsetting boat_uv.y
-		// directly - offsetting boat_uv.y after the divide by boat_scale
-		// silently flips the sign and rescales the motion, which is why
-		// the boat and its shadow were drifting out of phase.
-		vec2 uv_offset = uv - boat_screen_pos;
-		uv_offset.x *= aspect;
-
-		vec2 boat_uv = uv_offset / boat_scale + 0.5;
-
-		if (boat_uv.x >= 0.0 && boat_uv.x <= 1.0 &&
-			boat_uv.y >= 0.0 && boat_uv.y <= 1.0) {
-
-			vec4 boat = texture(boat_texture, boat_uv);
-
-			// Alpha-blend instead of a hard overwrite, so soft/antialiased
-			// edges on the boat sprite blend cleanly into the water.
-			COLOR = mix(COLOR, boat, boat.a);
-		}
-	}
 }
