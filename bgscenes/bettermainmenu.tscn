@@ -220,7 +220,7 @@ text = "⧉"
 script = ExtResource("5_sx3ea")
 
 [node name="Node2D" parent="CanvasLayer" unique_id=969373638 instance=ExtResource("1_4oy8p")]
-position = Vector2(968, 1480)
+position = Vector2(-320, 76)
 
 [node name="Stars" type="ColorRect" parent="CanvasLayer" unique_id=523135697]
 z_index = -3

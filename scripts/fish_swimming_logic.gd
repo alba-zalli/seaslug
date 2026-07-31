@@ -81,6 +81,7 @@ func _ready():
 	base_swim_speed = swim_speed
 	
 	if isbettermainmenu:
+		size = size * 2.0
 		if scene_file_path.ends_with("caldorid.tscn"):
 			scale = Vector2(0.01 * size, 0.01 * size)
 			fish_food = "Sponge"
