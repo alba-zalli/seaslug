@@ -7,9 +7,9 @@
 [resource]
 resource_name = "sapsucker"
 script = ExtResource("3_ixhhr")
-slug_name = "Hypselodoris paradisa"
-scientific_name = "Hypselodoris paradisa"
-description = "spog"
+slug_name = "Hypselodoris Paradisa"
+scientific_name = "Hypselodoris paradisal"
+description = "I live about 20 metres underwater only around Papua New Guinea. I love to eat sponges. I’m pretty tiny, but I’m still an important member of the ecosystem!"
 image_rect = ExtResource("2_sl2xv")
 food_rect = ExtResource("1_viktr")
 metadata/_custom_type_script = "uid://djf2or5v3g3w8"

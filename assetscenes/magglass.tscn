@@ -37,6 +37,7 @@ material = SubResource("ShaderMaterial_ixq47")
 position = Vector2(156.75, 826.99994)
 scale = Vector2(0.69499993, 0.66666615)
 texture = ExtResource("3_aed4u")
+region_filter_clip_enabled = true
 
 [node name="Frame" type="Sprite2D" parent="." unique_id=1386022475]
 position = Vector2(206.99998, 897)

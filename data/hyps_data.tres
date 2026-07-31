@@ -7,8 +7,8 @@
 [resource]
 resource_name = "caldorid"
 script = ExtResource("3_mswcu")
-slug_name = "Colourful sea slug"
-scientific_name = "Hypselodoris maridadilus"
+slug_name = "Hypselodoris maridadilus"
+scientific_name = "Hypselodoris Maridadilus"
 description = "I live in the Western Indian Ocean, all along Africa to the Red Sea. I’m often found 10 to 20 metres deep in the water! My favourite food is sea sponges."
 image_rect = ExtResource("2_bmodt")
 food_rect = ExtResource("1_bmodt")

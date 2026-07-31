@@ -41,15 +41,6 @@ var alg_scene = preload("res://assetscenes/foodscenes/algae.tscn")
 var fish_scene = preload("res://assetscenes/foodscenes/fisheggs.tscn")
 
 
-# Data
-var sapsucker_data: SlugData = preload("res://data/sapsucker_data.tres")
-var caldorid_data: SlugData = preload("res://data/caldorid_data.tres")
-var hyps_data: SlugData = preload("res://data/caldorid_data.tres")
-var phyl_data: SlugData = preload("res://data/caldorid_data.tres")
-var mari_data: SlugData = preload("res://data/caldorid_data.tres")
-var flab_data: SlugData = preload("res://data/caldorid_data.tres")
-var gonio_data: SlugData = preload("res://data/caldorid_data.tres")
-var paradisa_data: SlugData = preload("res://data/caldorid_data.tres")
 
 
 
@@ -178,8 +169,7 @@ func spawn_fish():
 func spawn_gonio():
 
 	var fish = gonio_scene.instantiate()
-
-	fish_maker(fish, gonio_data)
+	fish_maker(fish)
 
 
 
@@ -187,7 +177,7 @@ func spawn_flab():
 
 	var fish = flab_scene.instantiate()
 
-	fish_maker(fish, flab_data)
+	fish_maker(fish)
 
 
 
@@ -195,7 +185,7 @@ func spawn_mari():
 
 	var fish = mari_scene.instantiate()
 
-	fish_maker(fish, mari_data)
+	fish_maker(fish)
 
 
 
@@ -203,7 +193,7 @@ func spawn_sapsucker():
 
 	var fish = sapsucker_scene.instantiate()
 
-	fish_maker(fish, sapsucker_data)
+	fish_maker(fish)
 
 
 
@@ -211,7 +201,7 @@ func spawn_caldorid():
 
 	var fish = caldorid_scene.instantiate()
 
-	fish_maker(fish, caldorid_data)
+	fish_maker(fish)
 
 
 
@@ -219,7 +209,7 @@ func spawn_hyps():
 
 	var fish = hyps_scene.instantiate()
 
-	fish_maker(fish, hyps_data)
+	fish_maker(fish)
 
 
 
@@ -227,7 +217,7 @@ func spawn_phyl():
 
 	var fish = phyl_scene.instantiate()
 
-	fish_maker(fish, phyl_data)
+	fish_maker(fish)
 
 
 
@@ -235,7 +225,7 @@ func spawn_paradisa():
 
 	var fish = paradisa_scene.instantiate()
 
-	fish_maker(fish, paradisa_data)
+	fish_maker(fish)
 
 
 

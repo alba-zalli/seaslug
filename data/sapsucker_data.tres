@@ -7,9 +7,9 @@
 [resource]
 resource_name = "sapsucker"
 script = ExtResource("1_gq1h3")
-slug_name = "Hedgpeth’s sapsucker"
+slug_name = "Hagpeth’s Sapsucker"
 scientific_name = "Elysia hedgpethi"
-description = "I live along the Pacific coast, from southern British Columbia to northern Mexico. Shallow water and tide pools are best for me. I love to eat green algae, and I get extra energy by photosynthesizing using the algae’s chloroplasts!"
+description = "I live along the Pacific coast, from southern British Columbia to northern Mexico. Shallow water and tide pools are best for me. I love to eat green algae, and I get extra energy by photosynthesizing using the algae’s chloroplasts."
 image_rect = ExtResource("2_7nr41")
 food_rect = ExtResource("1_7nr41")
 metadata/_custom_type_script = "uid://djf2or5v3g3w8"

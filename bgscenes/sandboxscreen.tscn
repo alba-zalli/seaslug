@@ -28,6 +28,21 @@
 [ext_resource type="Shader" uid="uid://burj74mgtfyfp" path="res://shaders/clearwater.gdshader" id="25_qssuf"]
 [ext_resource type="PackedScene" uid="uid://uy4cmrjiohbj" path="res://wave.tscn" id="26_c3mqk"]
 
+[sub_resource type="Theme" id="Theme_k85lr"]
+Button/colors/font_color = Color(0.875, 0.875, 0.875, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ofjh6"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_qssuf"]
 noise_type = 3
 seed = 1
@@ -102,12 +117,14 @@ columns = 2
 
 [node name="Sapsucker" type="Button" parent="Container/Side Menu/ScrollContainer/VBoxContainer" unique_id=767077272]
 layout_mode = 2
+theme = SubResource("Theme_k85lr")
 theme_override_constants/icon_max_width = 80
 icon = ExtResource("2_1wed3")
 
 [node name="Cal Dorid" type="Button" parent="Container/Side Menu/ScrollContainer/VBoxContainer" unique_id=1875796786]
 layout_mode = 2
 theme_override_constants/icon_max_width = 80
+theme_override_styles/normal = SubResource("StyleBoxFlat_ofjh6")
 icon = ExtResource("2_8pf3a")
 
 [node name="Hypselodoris" type="Button" parent="Container/Side Menu/ScrollContainer/VBoxContainer" unique_id=1889667325]
@@ -178,7 +195,11 @@ icon = ExtResource("11_k85lr")
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 
-[node name="Mag glass" type="Button" parent="Container/Side Menu" unique_id=519179365]
+[node name="VBoxContainer" type="VBoxContainer" parent="Container/Side Menu" unique_id=160916914]
+layout_mode = 2
+size_flags_stretch_ratio = 0.4
+
+[node name="Mag glass" type="Button" parent="Container/Side Menu/VBoxContainer" unique_id=519179365]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -187,11 +208,11 @@ toggle_mode = true
 text = "Magnifying glass"
 icon = ExtResource("16_63bsy")
 
-[node name="Spacer7" type="ScrollContainer" parent="Container/Side Menu" unique_id=1956593869]
+[node name="Spacer7" type="ScrollContainer" parent="Container/Side Menu/VBoxContainer" unique_id=1956593869]
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 
-[node name="Clear bowl" type="Button" parent="Container/Side Menu" unique_id=2028602430]
+[node name="Clear bowl" type="Button" parent="Container/Side Menu/VBoxContainer" unique_id=2028602430]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -200,7 +221,7 @@ toggle_mode = true
 text = "Clear bowl"
 icon = ExtResource("18_k85lr")
 
-[node name="Spacer6" type="ScrollContainer" parent="Container/Side Menu" unique_id=669757243]
+[node name="Spacer6" type="ScrollContainer" parent="Container/Side Menu/VBoxContainer" unique_id=669757243]
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 
@@ -302,10 +323,10 @@ polygons = [[2, 3, 4], [8, 9, 10], [10, 11, 12], [13, 14, 15], [15, 16, 17], [12
 
 [node name="Node2D" parent="." unique_id=887465529 instance=ExtResource("26_c3mqk")]
 z_index = 2
-offset_left = 2070.9998
-offset_top = 1594.0
-offset_right = 2070.9998
-offset_bottom = 1594.0
+offset_left = 2040.9998
+offset_top = 1594.0001
+offset_right = 2040.9998
+offset_bottom = 1594.0001
 rotation = -3.1478488
 scale = Vector2(1.1054909, 1.0212824)
 
@@ -320,8 +341,8 @@ scale = Vector2(1.1054909, 1.0212824)
 [connection signal="button_down" from="Container/Side Menu/VBoxContainer4/Hydrozoa" to="Bowl" method="_on_fish_eggs_button_down"]
 [connection signal="button_down" from="Container/Side Menu/VBoxContainer4/Algae" to="Bowl" method="_on_algae_button_down"]
 [connection signal="button_down" from="Container/Side Menu/VBoxContainer4/Sea sponge" to="Bowl" method="_on_sea_sponge_button_down"]
-[connection signal="toggled" from="Container/Side Menu/Mag glass" to="Bowl" method="_on_glass_toggled"]
-[connection signal="button_down" from="Container/Side Menu/Clear bowl" to="Bowl" method="_on_clear_bowl_button_down"]
+[connection signal="toggled" from="Container/Side Menu/VBoxContainer/Mag glass" to="Bowl" method="_on_glass_toggled"]
+[connection signal="button_down" from="Container/Side Menu/VBoxContainer/Clear bowl" to="Bowl" method="_on_clear_bowl_button_down"]
 [connection signal="button_down" from="Top Menu/Quit" to="Top Menu/Quit" method="_on_quit_button_down"]
 [connection signal="button_down" from="Top Menu/Windowed" to="Top Menu/Quit" method="_on_windowed_button_down"]
 [connection signal="button_down" from="Top Menu/Back" to="Top Menu/Back" method="_on_back_button_down"]

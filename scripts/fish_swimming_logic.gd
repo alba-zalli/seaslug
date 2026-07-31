@@ -14,6 +14,17 @@ var swim_time := 0.0
 @export var sine_frequency := 7.7
 @export var surface_margin := 60.0
 
+var min_size := 0.8
+var max_size := 1.0
+
+# Random individual slug appearance
+@export var enable_random_tint := true
+@export var tint_min := 0.7
+@export var tint_max := 1.2
+@export_range(0.0, 1.0) var tint_strength := 0.25
+
+var slug_tint := Color.WHITE
+
 var is_turning := false
 var turn_target_angle := 0.0
 var turn_speed := 4.0
@@ -55,7 +66,15 @@ var meals_eaten := 0
 @export var spawn_ceiling_offset := 60.0
 
 func _ready():
+	# randomize each spawned slug size
+	size = randf_range(min_size, max_size)
+
+	# randomize each spawned slug colour
+	randomize_slug_tint()
+
 	main_menu_mode = _is_better_main_menu()
+	
+	
 	isbettermainmenu = main_menu_mode
 	print("current_scene path: ", get_tree().current_scene.scene_file_path if get_tree().current_scene else "NULL")
 	print("main_menu_mode = ", main_menu_mode)
@@ -88,7 +107,7 @@ func _ready():
 			fish_food = "Sponge"
 	else:
 		if scene_file_path.ends_with("caldorid.tscn"):
-			scale = Vector2(0.02 * size, 0.02 * size)
+			scale = Vector2(0.04 * size, 0.04 * size)
 			fish_food = "Sponge"
 		elif scene_file_path.ends_with("sapsucker.tscn"):
 			scale = Vector2(0.02 * size, 0.02 * size)
@@ -97,7 +116,7 @@ func _ready():
 			scale = Vector2(0.2 * size, 0.2 * size)
 			fish_food = "Sponge"
 		elif scene_file_path.ends_with("phyl.tscn"):
-			scale = Vector2(0.07 * size, 0.07 * size)
+			scale = Vector2(0.05 * size, 0.05 * size)
 			fish_food = "Sponge"
 		elif scene_file_path.ends_with("mari.tscn"):
 			scale = Vector2(0.07 * size, 0.07 * size)
@@ -109,7 +128,7 @@ func _ready():
 			scale = Vector2(0.05 * size, 0.05 * size)
 			fish_food = "Sponge"
 		elif scene_file_path.ends_with("paradisa.tscn"):
-			scale = Vector2(0.03 * size, 0.03 * size)
+			scale = Vector2(0.07 * size, 0.07 * size)
 			fish_food = "Sponge"
 
 	swim_animation.play("swim_animation")
@@ -143,6 +162,26 @@ func _ready():
 		swim_direction = Vector2.RIGHT.rotated(randf_range(0.0, TAU))
 		rotation = swim_direction.angle() + PI / 2
 
+func randomize_slug_tint():
+	if not enable_random_tint:
+		return
+
+	var tint := Color(
+		randf_range(tint_min, tint_max),
+		randf_range(tint_min, tint_max),
+		randf_range(tint_min, tint_max),
+		1.0
+	)
+
+	# Blend the tint into the original sprite colours instead of multiplying
+	modulate = Color(
+		lerp(1.0, tint.r, tint_strength),
+		lerp(1.0, tint.g, tint_strength),
+		lerp(1.0, tint.b, tint_strength),
+		1.0
+	)
+
+	slug_tint = modulate
 
 func _is_clicking_on_fish(mouse_pos: Vector2) -> bool:
 	for child in get_children():
@@ -201,9 +240,13 @@ func _physics_process(delta):
 		_physics_process_main_menu(delta)
 	else:
 		_physics_process_orbit(delta)
+
 		if not is_turning:
 			var target_angle = swim_direction.angle() + PI / 2
 			rotation = lerp_angle(rotation, target_angle, 0.08)
+
+	# keep fish inside bowl ellipse
+	_keep_inside_ellipse()
 
 
 # --- helper: recompute the fish's allowed vertical band from the CURRENT
@@ -228,6 +271,27 @@ func _pick_spawn_y() -> float:
 		spawn_min_y = swim_max_y
 	return randf_range(spawn_min_y, swim_max_y)
 
+func _keep_inside_ellipse():
+	if radius_x <= 0 or radius_y <= 0:
+		return
+
+	var offset = global_position - bowl_center
+
+	var ellipse_check = (
+		(offset.x * offset.x) / (radius_x * radius_x) +
+		(offset.y * offset.y) / (radius_y * radius_y)
+	)
+
+	if ellipse_check > 1.0:
+		var angle = atan2(
+			offset.y / radius_y,
+			offset.x / radius_x
+		)
+
+		global_position = bowl_center + Vector2(
+			cos(angle) * radius_x,
+			sin(angle) * radius_y
+		)
 
 func _physics_process_main_menu(delta):
 	var screen_size = get_viewport_rect().size

@@ -7,9 +7,9 @@
 [resource]
 resource_name = "caldorid"
 script = ExtResource("3_5fstu")
-slug_name = "Goniobranchus reticulatus"
+slug_name = "Reticulated Goniobranchus"
 scientific_name = "Goniobranchus reticulatus"
-description = "Eats sponges"
+description = "I live in the Indian Ocean and western Pacific Ocean in shallow waters. I can be tricky to identify because there are a few species that look very similar to me. Sea sponges are my favourite thing to eat."
 image_rect = ExtResource("2_awhmp")
 food_rect = ExtResource("1_awhmp")
 metadata/_custom_type_script = "uid://djf2or5v3g3w8"
