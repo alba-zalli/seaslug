@@ -14,11 +14,13 @@ shader = ExtResource("2_oy4l6")
 shader_parameter/OCTAVE = 3
 shader_parameter/mulscale = 1.9
 shader_parameter/timescale = 0.4
-shader_parameter/blob_size = 0.21
+shader_parameter/blob_size = 0.25
 shader_parameter/distortion = 0.5
-shader_parameter/smoothness = 0.1730000082175
+shader_parameter/smoothness = 0.41200001957
 shader_parameter/edge_softness = 0.001
-shader_parameter/BLOB_COL = Color(0.04, 0.38, 0.88, 1)
+shader_parameter/persistence = 0.38700001186273003
+shader_parameter/edge_blur = 0.018000000855
+shader_parameter/BLOB_COL = Color(0.015686275, 0.23921569, 0.5568628, 1)
 
 [node name="Node2D" type="Node2D" unique_id=232880064]
 script = ExtResource("1_oy4l6")
@@ -39,7 +41,7 @@ texture = ExtResource("3_xvh7g")
 [node name="EPHighlight" type="Sprite2D" parent="." unique_id=2058892388]
 material = SubResource("ShaderMaterial_xvh7g")
 position = Vector2(1098, 300)
-scale = Vector2(0.14490013, 0.40461987)
+scale = Vector2(0.14289221, 0.4071966)
 texture = ExtResource("4_x618o")
 
 [node name="MapSprite" type="Sprite2D" parent="." unique_id=2030900722]
@@ -47,22 +49,25 @@ position = Vector2(593, 327.5)
 scale = Vector2(0.21991085, 0.25364545)
 texture = ExtResource("1_pqyf4")
 
-[node name="west pac" type="Area2D" parent="." unique_id=724587050 groups=["map_regions"]]
+[node name="west pac" type="Area2D" parent="." unique_id=724587050 node_paths=PackedStringArray("highlight") groups=["map_regions"]]
 script = ExtResource("6_o7rek")
+highlight = NodePath("../WPHighlight")
 dialogue_title = "west_pacific"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="west pac" unique_id=783834245]
 polygon = PackedVector2Array(5, 654, 368, 657, 364, 401, 243, 248, 132, 108, 1, 95)
 
-[node name="indian" type="Area2D" parent="." unique_id=2012040630 groups=["map_regions"]]
+[node name="indian" type="Area2D" parent="." unique_id=2012040630 node_paths=PackedStringArray("highlight") groups=["map_regions"]]
 script = ExtResource("6_o7rek")
+highlight = NodePath("../IndianHighlight")
 dialogue_title = "indian_ocean"
 
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="indian" unique_id=639452333]
 polygon = PackedVector2Array(683, 654, 625, 509, 716, 373, 732, 338, 721, 302, 736, 286, 821, 327, 877, 310, 895, 344, 895, 386, 908, 412, 928, 422, 988, 437, 997, 457, 1030, 544, 1039, 595, 1022, 653)
 
-[node name="east pac" type="Area2D" parent="." unique_id=1531773898 groups=["map_regions"]]
+[node name="east pac" type="Area2D" parent="." unique_id=1531773898 node_paths=PackedStringArray("highlight") groups=["map_regions"]]
 script = ExtResource("6_o7rek")
+highlight = NodePath("../EPHighlight")
 dialogue_title = "east_pacific"
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="east pac" unique_id=824564511]
