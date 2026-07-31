@@ -5,11 +5,15 @@ signal region_hovered(dialogue_title: String)
 @export var highlight: Sprite2D
 @export var dialogue_title: String = ""
 
+
 static var current_highlight: Sprite2D = null
 
 func _ready():
+	print("Highlight =", highlight)
+	if highlight == null:
+		push_error("Highlight has not been assigned!")
+		return
 	highlight.visible = false
-	
 	mouse_entered.connect(_on_enter)
 	mouse_exited.connect(_on_exit)
 

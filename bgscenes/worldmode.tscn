@@ -7,6 +7,31 @@
 [ext_resource type="Theme" uid="uid://chlounns205s" path="res://themes/main_buttons_theme.tres" id="4_uk5vf"]
 [ext_resource type="StyleBox" uid="uid://brdkljxyuwos4" path="res://bgscenes/whitebuttonnormal.tres" id="5_qbap2"]
 [ext_resource type="StyleBox" uid="uid://c0cys5bm22016" path="res://bgscenes/whitebuttonhover.tres" id="6_5vvfr"]
+[ext_resource type="Shader" uid="uid://1nqwqwsjwac8" path="res://shaders/toonwater.gdshader" id="8_uk5vf"]
+[ext_resource type="Shader" uid="uid://88fwlernnjwe" path="res://bgscenes/blob.gdshader" id="9_qbap2"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qbap2"]
+shader = ExtResource("8_uk5vf")
+shader_parameter/OCTAVE = 5
+shader_parameter/mulscale = 4.0
+shader_parameter/height = 0.5
+shader_parameter/tide = 0.1
+shader_parameter/foamthickness = 0.1
+shader_parameter/timescale = 0.2
+shader_parameter/waterdeep = 0.3
+shader_parameter/WATER_COL = Color(0.21967232, 0.67608565, 0.8525532, 1)
+shader_parameter/WATER2_COL = Color(0.015838, 0.24056801, 0.558784, 1)
+shader_parameter/FOAM_COL = Color(0.8125, 0.9609, 0.9648, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5vvfr"]
+shader = ExtResource("9_qbap2")
+shader_parameter/OCTAVE = 2
+shader_parameter/mulscale = 3.0
+shader_parameter/timescale = 0.4
+shader_parameter/blob_size = 0.4
+shader_parameter/distortion = 0.2
+shader_parameter/edge_softness = 0.001
+shader_parameter/BLOB_COL = Color(0.21960784, 0.6745098, 0.8509804, 1)
 
 [node name="Worldmode" type="Node2D" unique_id=1440439524]
 
@@ -65,6 +90,27 @@ offset_top = 809.0
 offset_right = 1766.0
 offset_bottom = 840.0
 text = "Lets go!"
+
+[node name="Background" type="ColorRect" parent="." unique_id=859486634]
+z_index = -1
+material = SubResource("ShaderMaterial_qbap2")
+offset_left = 1.0
+offset_top = -10.0
+offset_right = 41.0
+offset_bottom = 30.0
+rotation = -0.0003602826
+scale = Vector2(48.348816, 27.83694)
+mouse_filter = 2
+
+[node name="ProtectiveBlob" type="ColorRect" parent="Background" unique_id=260149653]
+material = SubResource("ShaderMaterial_5vvfr")
+layout_mode = 0
+offset_left = 10.920939
+offset_top = -1.4301056
+offset_right = 50.92094
+offset_bottom = 38.569893
+rotation = -0.06481327
+scale = Vector2(0.75620323, 0.89663285)
 
 [connection signal="button_down" from="Top Menu/Quit" to="Top Menu/Quit" method="_on_quit_button_down"]
 [connection signal="button_down" from="Top Menu/Windowed" to="Top Menu/Quit" method="_on_windowed_button_down"]

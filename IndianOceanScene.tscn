@@ -215,7 +215,7 @@ autowrap_mode = 3
 [node name="Label2" type="Label" parent="SandboxScreen/Panel/MarginContainer/VBoxContainer" unique_id=307011820]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
-text = "Welcome to the sandbox shoreline! "
+text = "Indian ocean shoreline"
 autowrap_mode = 3
 
 [node name="Book" parent="SandboxScreen" unique_id=1072664842 instance=ExtResource("18_5748s")]
