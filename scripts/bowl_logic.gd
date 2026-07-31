@@ -191,6 +191,37 @@ func fish_maker(fish, data: SlugData = null):
 
 
 # ===================================
+# CLEAR BOWL
+# ===================================
+
+func clear_bowl():
+
+	print("CLEARING BOWL")
+
+
+	var food_items = get_tree().get_nodes_in_group("food")
+
+	for food in food_items:
+
+		food.queue_free()
+
+
+
+	var slugs = get_tree().get_nodes_in_group("slug")
+
+	for slug in slugs:
+
+		slug.queue_free()
+
+
+
+	print("BOWL CLEARED")
+
+
+
+
+
+# ===================================
 # RANDOM POSITION
 # ===================================
 
@@ -249,49 +280,34 @@ func spawn_fish():
 # ===================================
 
 func spawn_gonio():
-
 	fish_maker(gonio_scene.instantiate(), gonio_data)
 
 
-
 func spawn_flab():
-
 	fish_maker(flab_scene.instantiate(), flab_data)
 
 
-
 func spawn_mari():
-
 	fish_maker(mari_scene.instantiate(), mari_data)
 
 
-
 func spawn_sapsucker():
-
 	fish_maker(sapsucker_scene.instantiate(), sapsucker_data)
 
 
-
 func spawn_caldorid():
-
 	fish_maker(caldorid_scene.instantiate(), caldorid_data)
 
 
-
 func spawn_hyps():
-
 	fish_maker(hyps_scene.instantiate(), hyps_data)
 
 
-
 func spawn_phyl():
-
 	fish_maker(phyl_scene.instantiate(), phyl_data)
 
 
-
 func spawn_paradisa():
-
 	fish_maker(paradisa_scene.instantiate(), paradisa_data)
 
 
@@ -394,3 +410,9 @@ func _on_fish_eggs_button_down():
 func _on_glass_toggled(toggled_on: bool):
 
 	get_tree().call_group("magglass", "toggle_visible", toggled_on)
+
+
+
+func _on_clear_bowl_button_down() -> void:
+
+	clear_bowl()

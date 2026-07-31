@@ -115,7 +115,30 @@ func food_maker(food):
 	food.setup(food.bowl_center, radius_x, radius_y)
 
 
+# =====================================
+# CLEAR BOWL
+# =====================================
 
+func clear_bowl():
+
+	print("CLEARING BOWL")
+
+
+	# Remove all food
+	var food_items = get_tree().get_nodes_in_group("food")
+
+	for item in food_items:
+		item.queue_free()
+
+
+	# Remove all creatures/slugs
+	var creatures = get_tree().get_nodes_in_group("slug")
+
+	for creature in creatures:
+		creature.queue_free()
+
+
+	print("BOWL CLEARED")
 
 
 # =====================================
@@ -291,17 +314,14 @@ func _on_sea_sponge_button_down():
 
 
 func _on_algae_button_down():
-
 	spawn_algae()
 
 
 
 func _on_fish_eggs_button_down():
-
 	spawn_fish()
 
 
 
 func _on_glass_toggled(toggled_on: bool):
-
 	get_tree().call_group("magglass", "toggle_visible", toggled_on)
