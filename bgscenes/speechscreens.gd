@@ -132,3 +132,7 @@ func hide_sprite() -> void:
 
 	if confused_alba != null:
 		confused_alba.hide()
+
+
+func _on_mute_button_down() -> void:
+	pass # Replace with function body.

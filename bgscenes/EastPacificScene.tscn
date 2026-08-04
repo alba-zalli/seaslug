@@ -17,12 +17,14 @@
 [ext_resource type="Theme" uid="uid://chlounns205s" path="res://themes/main_buttons_theme.tres" id="17_dikdq"]
 [ext_resource type="StyleBox" uid="uid://brdkljxyuwos4" path="res://bgscenes/whitebuttonnormal.tres" id="18_eo88p"]
 [ext_resource type="StyleBox" uid="uid://c0cys5bm22016" path="res://bgscenes/whitebuttonhover.tres" id="19_enynm"]
+[ext_resource type="Script" uid="uid://mfnjcag8tgo7" path="res://bgscenes/mute.gd" id="19_k455k"]
+[ext_resource type="Texture2D" uid="uid://d1wxjlv2ajwfe" path="res://scripts/volume-solid-full.svg" id="20_0osx2"]
 [ext_resource type="Script" uid="uid://uusxfhw2epny" path="res://scripts/buttons.gd" id="20_wiw3c"]
+[ext_resource type="Texture2D" uid="uid://csvr443c41fdi" path="res://scripts/volume-xmark-solid-full.svg" id="21_2bcqo"]
 [ext_resource type="PackedScene" uid="uid://cock6q303rlwi" path="res://assetscenes/magglass.tscn" id="21_sclr0"]
 [ext_resource type="Shader" uid="uid://burj74mgtfyfp" path="res://shaders/clearwater.gdshader" id="22_jxvg4"]
 [ext_resource type="PackedScene" uid="uid://uy4cmrjiohbj" path="res://wave.tscn" id="23_05sjl"]
 [ext_resource type="Texture2D" uid="uid://dgob8bfkctvek" path="res://addons/maaacks_credits_scene/examples/scenes/credits/smilingalba.png" id="23_h7vn0"]
-[ext_resource type="Shader" uid="uid://1nqwqwsjwac8" path="res://shaders/toonwater.gdshader" id="24_iwgqo"]
 [ext_resource type="Texture2D" uid="uid://bpoobmtys5l8j" path="res://addons/maaacks_credits_scene/examples/scenes/credits/shockedalba.png" id="24_q3d05"]
 [ext_resource type="Texture2D" uid="uid://dscn1nfybee5t" path="res://addons/maaacks_credits_scene/examples/scenes/credits/concernedalba.png" id="25_eyyw1"]
 [ext_resource type="Texture2D" uid="uid://cb4rd21fmm7ux" path="res://addons/dialogue_manager/example_balloon/sand.png" id="25_ukiih"]
@@ -58,19 +60,6 @@ shader_parameter/refraction_stretch = Vector2(0.1, 0.1)
 shader_parameter/refraction_strength = 0.00800000038
 shader_parameter/water_tint = Color(0.2, 0.6, 1, 0.1)
 shader_parameter/speed = 0.14000000665
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_m7xfa"]
-shader = ExtResource("24_iwgqo")
-shader_parameter/OCTAVE = 2
-shader_parameter/mulscale = 5.0
-shader_parameter/height = 0.6
-shader_parameter/tide = 0.5
-shader_parameter/foamthickness = 0.5
-shader_parameter/timescale = 0.05
-shader_parameter/waterdeep = 0.3
-shader_parameter/WATER_COL = Color(0.039215688, 0.6666667, 0.8784314, 1)
-shader_parameter/WATER2_COL = Color(0.20784314, 0.7137255, 0.85882354, 1)
-shader_parameter/FOAM_COL = Color(0.49411035, 0.97952753, 0.9266137, 1)
 
 [node name="Node2D" type="Node2D" unique_id=1898907116]
 
@@ -269,14 +258,13 @@ theme_override_styles/hover = ExtResource("19_enynm")
 text = "X"
 script = ExtResource("20_wiw3c")
 
-[node name="Windowed" type="Button" parent="SandboxScreen/Top Menu" unique_id=159945417]
+[node name="Mute" type="TextureButton" parent="SandboxScreen/Top Menu" unique_id=1570067401]
+custom_minimum_size = Vector2(10, 10)
 layout_mode = 2
 theme = ExtResource("17_dikdq")
-theme_override_font_sizes/font_size = 22
-theme_override_styles/normal = ExtResource("18_eo88p")
-theme_override_styles/hover = ExtResource("19_enynm")
-text = "⧉"
-script = ExtResource("20_wiw3c")
+script = ExtResource("19_k455k")
+music_on_icon = ExtResource("20_0osx2")
+music_off_icon = ExtResource("21_2bcqo")
 
 [node name="Back" type="Button" parent="SandboxScreen/Top Menu" unique_id=1340627916]
 layout_direction = 2
@@ -307,6 +295,24 @@ color = Color(0.18039216, 1, 1, 0.7137255)
 polygon = PackedVector2Array(385, 641, 439, 714, 495, 758, 571, 802, 661, 810, 759, 814, 863, 814, 973, 814, 1059, 814, 1112, 818, 1181, 806, 1252, 790, 1298, 767, 1345, 744, 1390, 707, 1414, 672, 1430, 644, 1437, 600, 1443, 568, 1450, 515, 1454, 467, 1449, 439, 1442, 411, 1429, 386, 1394, 316, 1331, 260, 1233, 204, 1128, 196, 999, 193, 783, 190, 610, 193, 509, 226, 421, 301, 386, 383, 368, 503, 374, 591)
 polygons = [[2, 3, 4], [8, 9, 10], [10, 11, 12], [13, 14, 15], [15, 16, 17], [12, 13, 17], [13, 15, 17], [10, 12, 18], [12, 17, 18], [19, 20, 21], [19, 21, 23], [21, 22, 23], [22, 23, 24], [23, 24, 25], [19, 23, 25], [10, 18, 25], [18, 19, 25], [10, 25, 27], [25, 26, 27], [8, 10, 27], [7, 8, 28], [8, 27, 28], [6, 7, 28], [4, 5, 29], [5, 6, 29], [6, 28, 29], [4, 29, 30], [30, 31, 33], [31, 32, 33], [4, 30, 34], [30, 33, 34], [2, 4, 34], [0, 1, 35], [1, 2, 35], [2, 34, 35]]
 
+[node name="shocked_alba" type="Sprite2D" parent="SandboxScreen" unique_id=627747775]
+z_index = 100
+position = Vector2(451.98, 618.48346)
+scale = Vector2(0.24817812, 0.23386836)
+texture = ExtResource("24_q3d05")
+
+[node name="happy_alba" type="Sprite2D" parent="SandboxScreen" unique_id=2019878597]
+z_index = 100
+position = Vector2(451.98, 617.4834)
+scale = Vector2(0.24817812, 0.23386836)
+texture = ExtResource("23_h7vn0")
+
+[node name="confused_alba" type="Sprite2D" parent="SandboxScreen" unique_id=2100337282]
+z_index = 100
+position = Vector2(451.98, 618.48346)
+scale = Vector2(0.24817812, 0.23386836)
+texture = ExtResource("25_eyyw1")
+
 [node name="Node2D" parent="SandboxScreen" unique_id=1243126604 instance=ExtResource("23_05sjl")]
 z_index = 2
 offset_left = 2070.9998
@@ -315,38 +321,6 @@ offset_right = 2070.9998
 offset_bottom = 1594.0
 rotation = -3.1478488
 scale = Vector2(1.1054909, 1.0212824)
-
-[node name="WaterBackground" type="ColorRect" parent="SandboxScreen" unique_id=1054960610]
-visible = false
-z_index = 1
-material = SubResource("ShaderMaterial_m7xfa")
-offset_left = -12.0
-offset_top = 937.0
-offset_right = 1923.0
-offset_bottom = 2018.0
-scale = Vector2(1.0072612, 0.14789249)
-pivot_offset = Vector2(6, -3)
-
-[node name="happy_alba" type="Sprite2D" parent="." unique_id=2019878597]
-visible = false
-z_index = 100
-position = Vector2(451.98, 618.48346)
-scale = Vector2(0.24817812, 0.23386836)
-texture = ExtResource("23_h7vn0")
-
-[node name="shocked_alba" type="Sprite2D" parent="." unique_id=627747775]
-visible = false
-z_index = 100
-position = Vector2(451.98, 618.48346)
-scale = Vector2(0.24817812, 0.23386836)
-texture = ExtResource("24_q3d05")
-
-[node name="confused_alba" type="Sprite2D" parent="." unique_id=2100337282]
-visible = false
-z_index = 100
-position = Vector2(451.98, 618.48346)
-scale = Vector2(0.24817812, 0.23386836)
-texture = ExtResource("25_eyyw1")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=785786904]
 z_index = -7
@@ -362,7 +336,7 @@ texture = ExtResource("25_ukiih")
 [connection signal="toggled" from="SandboxScreen/Container/Side Menu/VBoxContainer/Mag glass" to="SandboxScreen/Bowl" method="_on_glass_toggled"]
 [connection signal="button_down" from="SandboxScreen/Container/Side Menu/VBoxContainer/Clear bowl" to="SandboxScreen/Bowl" method="_on_clear_bowl_button_down"]
 [connection signal="button_down" from="SandboxScreen/Top Menu/Quit" to="SandboxScreen/Top Menu/Quit" method="_on_quit_button_down"]
-[connection signal="button_down" from="SandboxScreen/Top Menu/Windowed" to="SandboxScreen/Top Menu/Quit" method="_on_windowed_button_down"]
+[connection signal="toggled" from="SandboxScreen/Top Menu/Mute" to="SandboxScreen/Top Menu/Mute" method="_on_toggled"]
 [connection signal="button_down" from="SandboxScreen/Top Menu/Back" to="SandboxScreen/Top Menu/Back" method="_on_back_button_down"]
 
 [editable path="SandboxScreen/Book"]

@@ -1,0 +1,374 @@
+[gd_scene format=3 uid="uid://bfoh2krn3h8xa"]
+
+[ext_resource type="Script" uid="uid://btenpdpi75v5c" path="res://bgscenes/speechscreens.gd" id="1_06ueq"]
+[ext_resource type="Texture2D" uid="uid://c876hv0kams1r" path="res://images/1000000369.png" id="1_gljpi"]
+[ext_resource type="Script" uid="uid://cemp8kuaynvje" path="res://scripts/bowl_logic.gd" id="2_gqr6b"]
+[ext_resource type="StyleBox" uid="uid://dyorrnpbnbxum" path="res://themes/containerstyle.tres" id="3_06ueq"]
+[ext_resource type="Theme" uid="uid://bxuek2tcx0gru" path="res://themes/containertheme.tres" id="4_8y2rs"]
+[ext_resource type="Theme" uid="uid://ew0ljd640imm" path="res://themes/base_theme.tres" id="5_e6fs5"]
+[ext_resource type="Texture2D" uid="uid://r6eipayrvqou" path="res://images/slugimages/hyps.png" id="8_pmcye"]
+[ext_resource type="Texture2D" uid="uid://ch13d35ifj5fs" path="res://images/slugimages/phyl.png" id="9_t8p4n"]
+[ext_resource type="Texture2D" uid="uid://b0lj2qo8po0vo" path="res://images/slugimages/mari.png" id="10_hgjg8"]
+[ext_resource type="Texture2D" uid="uid://lwb6qo0oxs7l" path="res://images/slugimages/gonio.png" id="11_1a2sr"]
+[ext_resource type="Texture2D" uid="uid://cc6bnpdg57ulj" path="res://images/slugimages/flab.png" id="13_x3cbv"]
+[ext_resource type="Texture2D" uid="uid://bg5sl0ipmrp3" path="res://images/foodimages/fisheggs.png" id="14_cs4us"]
+[ext_resource type="Texture2D" uid="uid://co81xieitxihr" path="res://images/foodimages/algea.png" id="15_4mbb8"]
+[ext_resource type="Texture2D" uid="uid://xbyu4xwfmfq4" path="res://sparkles-svgrepo-com.svg" id="15_jbon3"]
+[ext_resource type="Texture2D" uid="uid://cqxijc1hir02x" path="res://images/foodimages/sea sponge.png" id="16_0n2gf"]
+[ext_resource type="Texture2D" uid="uid://15qfb8bvi135" path="res://images/icons/magnifying-glass-solid-full.svg" id="17_mwuy2"]
+[ext_resource type="PackedScene" uid="uid://l0nwb61asbiq" path="res://assetscenes/book.tscn" id="18_5748s"]
+[ext_resource type="Theme" uid="uid://chlounns205s" path="res://themes/main_buttons_theme.tres" id="19_v8npx"]
+[ext_resource type="StyleBox" uid="uid://brdkljxyuwos4" path="res://bgscenes/whitebuttonnormal.tres" id="20_5nr3y"]
+[ext_resource type="StyleBox" uid="uid://c0cys5bm22016" path="res://bgscenes/whitebuttonhover.tres" id="21_ddxma"]
+[ext_resource type="Script" uid="uid://uusxfhw2epny" path="res://scripts/buttons.gd" id="22_8b2pm"]
+[ext_resource type="PackedScene" uid="uid://cock6q303rlwi" path="res://assetscenes/magglass.tscn" id="23_sds1m"]
+[ext_resource type="Shader" uid="uid://burj74mgtfyfp" path="res://shaders/clearwater.gdshader" id="25_fcceh"]
+[ext_resource type="Texture2D" uid="uid://dgob8bfkctvek" path="res://addons/maaacks_credits_scene/examples/scenes/credits/smilingalba.png" id="26_gqr6b"]
+[ext_resource type="PackedScene" uid="uid://uy4cmrjiohbj" path="res://wave.tscn" id="26_nel3j"]
+[ext_resource type="Texture2D" uid="uid://bpoobmtys5l8j" path="res://addons/maaacks_credits_scene/examples/scenes/credits/shockedalba.png" id="27_06ueq"]
+[ext_resource type="Shader" uid="uid://1nqwqwsjwac8" path="res://shaders/toonwater.gdshader" id="27_d664i"]
+[ext_resource type="Texture2D" uid="uid://cb4rd21fmm7ux" path="res://addons/dialogue_manager/example_balloon/sand.png" id="27_gljpi"]
+[ext_resource type="Texture2D" uid="uid://dscn1nfybee5t" path="res://addons/maaacks_credits_scene/examples/scenes/credits/concernedalba.png" id="28_8y2rs"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_qssuf"]
+noise_type = 3
+seed = 1
+frequency = 0.0037
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_1eat1"]
+noise = SubResource("FastNoiseLite_qssuf")
+seamless = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qssuf"]
+shader = ExtResource("25_fcceh")
+shader_parameter/refraction_map = SubResource("NoiseTexture2D_1eat1")
+shader_parameter/refraction_stretch = Vector2(0.1, 0.1)
+shader_parameter/refraction_strength = 0.00800000038
+shader_parameter/water_tint = Color(0.2, 0.6, 1, 0.1)
+shader_parameter/speed = 0.14000000665
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ofjh6"]
+shader = ExtResource("27_d664i")
+shader_parameter/OCTAVE = 2
+shader_parameter/mulscale = 5.0
+shader_parameter/height = 0.6
+shader_parameter/tide = 0.5
+shader_parameter/foamthickness = 0.5
+shader_parameter/timescale = 0.05
+shader_parameter/waterdeep = 0.3
+shader_parameter/WATER_COL = Color(0.039215688, 0.6666667, 0.8784314, 1)
+shader_parameter/WATER2_COL = Color(0.20784314, 0.7137255, 0.85882354, 1)
+shader_parameter/FOAM_COL = Color(0.49411035, 0.97952753, 0.9266137, 1)
+
+[node name="Node2D" type="Node2D" unique_id=1654988370]
+
+[node name="SandboxScreen" type="Node2D" parent="." unique_id=1151149152]
+script = ExtResource("1_06ueq")
+
+[node name="Sprite2D" type="Sprite2D" parent="SandboxScreen" unique_id=1476575955]
+visibility_layer = 4
+z_index = -6
+position = Vector2(911, 519)
+scale = Vector2(0.2308, 0.18245003)
+texture = ExtResource("1_gljpi")
+
+[node name="Bowl" type="Node2D" parent="SandboxScreen" unique_id=1365031602]
+position = Vector2(0, 405)
+script = ExtResource("2_gqr6b")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="SandboxScreen/Bowl" unique_id=2082252086]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="SandboxScreen/Bowl/StaticBody2D" unique_id=1832883841]
+visible = false
+z_index = 3
+position = Vector2(2, 3)
+polygon = PackedVector2Array(1122, 386, 971.7607, 379.1718, 708, 374, 600, 338, 487, 281, 420, 200, 399, 74, 427, -38, 459, -112, 524, -147, 618, -185, 745, -191, 1024, -189, 1220, -172, 1335, -82, 1369, -12, 1408, 92, 1398, 226, 1355, 286, 1294, 335, 1128, 382, 1044, 668, 1379, 674, 1917, 670, 1919, 52, 1915, -174, 1915, -404, 1397, -430, 1138, -447, 969, -443, 797, -453, 678, -445, 587, -445, 468, -453, -12, -461, -2, -204, -3, 103, -5, 372, -7, 666, 578, 674, 1044, 666)
+
+[node name="Container" type="PanelContainer" parent="SandboxScreen" unique_id=1958336940]
+offset_left = 38.0
+offset_top = 212.0
+offset_right = 332.0
+offset_bottom = 679.0
+theme_override_styles/panel = ExtResource("3_06ueq")
+
+[node name="Side Menu" type="VBoxContainer" parent="SandboxScreen/Container" unique_id=468719485]
+custom_minimum_size = Vector2(90, 0)
+layout_mode = 2
+theme = ExtResource("4_8y2rs")
+
+[node name="Spacer5" type="ScrollContainer" parent="SandboxScreen/Container/Side Menu" unique_id=1895081831]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="SandboxScreen/Container/Side Menu" unique_id=111319718]
+layout_mode = 2
+text = "Observe Slugs"
+horizontal_alignment = 1
+
+[node name="Spacer2" type="ScrollContainer" parent="SandboxScreen/Container/Side Menu" unique_id=290339705]
+custom_minimum_size = Vector2(0, 4)
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="SandboxScreen/Container/Side Menu" unique_id=810999004]
+custom_minimum_size = Vector2(200, 180)
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("5_e6fs5")
+
+[node name="VBoxContainer" type="GridContainer" parent="SandboxScreen/Container/Side Menu/ScrollContainer" unique_id=1765250183]
+layout_mode = 2
+columns = 2
+
+[node name="Hypselodoris" type="Button" parent="SandboxScreen/Container/Side Menu/ScrollContainer/VBoxContainer" unique_id=1889667325]
+layout_mode = 2
+theme_override_constants/icon_max_width = 80
+icon = ExtResource("8_pmcye")
+
+[node name="Phyllidiella" type="Button" parent="SandboxScreen/Container/Side Menu/ScrollContainer/VBoxContainer" unique_id=1785172312]
+layout_mode = 2
+theme_override_constants/icon_max_width = 80
+icon = ExtResource("9_t8p4n")
+
+[node name="Flabellina" type="Button" parent="SandboxScreen/Container/Side Menu/ScrollContainer/VBoxContainer" unique_id=1940239109]
+layout_mode = 2
+theme_override_constants/icon_max_width = 80
+icon = ExtResource("13_x3cbv")
+
+[node name="Marindica" type="Button" parent="SandboxScreen/Container/Side Menu/ScrollContainer/VBoxContainer" unique_id=1538349091]
+layout_mode = 2
+theme_override_constants/icon_max_width = 80
+icon = ExtResource("10_hgjg8")
+
+[node name="Gonio" type="Button" parent="SandboxScreen/Container/Side Menu/ScrollContainer/VBoxContainer" unique_id=220533175]
+layout_mode = 2
+theme_override_constants/icon_max_width = 80
+icon = ExtResource("11_1a2sr")
+
+[node name="Spacer" type="ScrollContainer" parent="SandboxScreen/Container/Side Menu" unique_id=631290024]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="SandboxScreen/Container/Side Menu" unique_id=160548516]
+layout_mode = 2
+text = "Spawn Food"
+horizontal_alignment = 1
+
+[node name="Spacer3" type="ScrollContainer" parent="SandboxScreen/Container/Side Menu" unique_id=964889293]
+custom_minimum_size = Vector2(0, 4)
+layout_mode = 2
+
+[node name="VBoxContainer4" type="HBoxContainer" parent="SandboxScreen/Container/Side Menu" unique_id=1347184214]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Hydrozoa" type="Button" parent="SandboxScreen/Container/Side Menu/VBoxContainer4" unique_id=668461962]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/icon_max_width = 60
+icon = ExtResource("14_cs4us")
+
+[node name="Algae" type="Button" parent="SandboxScreen/Container/Side Menu/VBoxContainer4" unique_id=1957107073]
+layout_mode = 2
+theme_override_constants/icon_max_width = 60
+icon = ExtResource("15_4mbb8")
+
+[node name="Sea sponge" type="Button" parent="SandboxScreen/Container/Side Menu/VBoxContainer4" unique_id=1048649379]
+layout_mode = 2
+theme_override_constants/icon_max_width = 60
+icon = ExtResource("16_0n2gf")
+
+[node name="Spacer4" type="ScrollContainer" parent="SandboxScreen/Container/Side Menu" unique_id=1454620576]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SandboxScreen/Container/Side Menu" unique_id=431072869]
+layout_mode = 2
+size_flags_stretch_ratio = 0.4
+
+[node name="Mag glass" type="Button" parent="SandboxScreen/Container/Side Menu/VBoxContainer" unique_id=1141901981]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/icon_max_width = 24
+toggle_mode = true
+text = "Magnifying glass"
+icon = ExtResource("17_mwuy2")
+
+[node name="Spacer7" type="ScrollContainer" parent="SandboxScreen/Container/Side Menu/VBoxContainer" unique_id=2011600355]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="Clear bowl" type="Button" parent="SandboxScreen/Container/Side Menu/VBoxContainer" unique_id=896443125]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/icon_max_width = 24
+toggle_mode = true
+text = "Clear bowl"
+icon = ExtResource("15_jbon3")
+
+[node name="Spacer6" type="ScrollContainer" parent="SandboxScreen/Container/Side Menu/VBoxContainer" unique_id=1799351257]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="Spacer6" type="ScrollContainer" parent="SandboxScreen/Container/Side Menu" unique_id=669757243]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="Panel" type="PanelContainer" parent="SandboxScreen" unique_id=1400437952]
+custom_minimum_size = Vector2(400, 100)
+offset_left = 1492.0
+offset_top = 527.0
+offset_right = 1532.0
+offset_bottom = 567.0
+theme_override_styles/panel = ExtResource("3_06ueq")
+
+[node name="MarginContainer" type="MarginContainer" parent="SandboxScreen/Panel" unique_id=2092034839]
+layout_mode = 2
+theme_override_constants/margin_left = 14
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SandboxScreen/Panel/MarginContainer" unique_id=1963398252]
+layout_mode = 2
+theme = ExtResource("4_8y2rs")
+
+[node name="Label" type="Label" parent="SandboxScreen/Panel/MarginContainer/VBoxContainer" unique_id=285430174]
+layout_mode = 2
+text = "Information"
+autowrap_mode = 3
+
+[node name="Label2" type="Label" parent="SandboxScreen/Panel/MarginContainer/VBoxContainer" unique_id=307011820]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "Indian ocean shoreline"
+autowrap_mode = 3
+
+[node name="Book" parent="SandboxScreen" unique_id=1072664842 instance=ExtResource("18_5748s")]
+offset_left = 1517.0001
+offset_top = 142.99998
+offset_right = 1517.0001
+offset_bottom = 142.99998
+
+[node name="Top Menu" type="HBoxContainer" parent="SandboxScreen" unique_id=2038805613]
+offset_left = 27.0
+offset_top = 7.0
+offset_right = 290.0
+offset_bottom = 47.0
+size_flags_stretch_ratio = 0.0
+theme = ExtResource("4_8y2rs")
+theme_override_constants/separation = 31
+
+[node name="Quit" type="Button" parent="SandboxScreen/Top Menu" unique_id=1660233466]
+layout_mode = 2
+theme = ExtResource("19_v8npx")
+theme_override_colors/font_color = Color(0.003921569, 0.015686275, 0.34509805, 1)
+theme_override_styles/normal = ExtResource("20_5nr3y")
+theme_override_styles/normal_mirrored = ExtResource("20_5nr3y")
+theme_override_styles/hover = ExtResource("21_ddxma")
+text = "X"
+script = ExtResource("22_8b2pm")
+
+[node name="Windowed" type="Button" parent="SandboxScreen/Top Menu" unique_id=1793124048]
+layout_mode = 2
+theme = ExtResource("19_v8npx")
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = ExtResource("20_5nr3y")
+theme_override_styles/hover = ExtResource("21_ddxma")
+text = "⧉"
+script = ExtResource("22_8b2pm")
+
+[node name="Back" type="Button" parent="SandboxScreen/Top Menu" unique_id=391075290]
+layout_direction = 2
+layout_mode = 2
+theme = ExtResource("19_v8npx")
+theme_override_styles/normal = ExtResource("20_5nr3y")
+theme_override_styles/pressed = ExtResource("20_5nr3y")
+theme_override_styles/hover = ExtResource("21_ddxma")
+text = "Back"
+icon_alignment = 1
+script = ExtResource("22_8b2pm")
+
+[node name="Tutorial" type="Button" parent="SandboxScreen/Top Menu" unique_id=168131564]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.003921569, 0.015686275, 0.34509805, 1)
+theme_override_styles/normal = ExtResource("20_5nr3y")
+theme_override_styles/hover = ExtResource("21_ddxma")
+text = "Tutorial"
+
+[node name="MagGlass" parent="SandboxScreen" unique_id=1828750686 instance=ExtResource("23_sds1m")]
+position = Vector2(672.99994, -891)
+
+[node name="Bowl Water" type="Polygon2D" parent="SandboxScreen" unique_id=403073048]
+material = SubResource("ShaderMaterial_qssuf")
+position = Vector2(41.620716, 28.404434)
+scale = Vector2(0.95211774, 0.93471336)
+color = Color(0.18039216, 1, 1, 0.7137255)
+polygon = PackedVector2Array(385, 641, 439, 714, 495, 758, 571, 802, 661, 810, 759, 814, 863, 814, 973, 814, 1059, 814, 1112, 818, 1181, 806, 1252, 790, 1298, 767, 1345, 744, 1390, 707, 1414, 672, 1430, 644, 1437, 600, 1443, 568, 1450, 515, 1454, 467, 1449, 439, 1442, 411, 1429, 386, 1394, 316, 1331, 260, 1233, 204, 1128, 196, 999, 193, 783, 190, 610, 193, 509, 226, 421, 301, 386, 383, 368, 503, 374, 591)
+polygons = [[2, 3, 4], [8, 9, 10], [10, 11, 12], [13, 14, 15], [15, 16, 17], [12, 13, 17], [13, 15, 17], [10, 12, 18], [12, 17, 18], [19, 20, 21], [19, 21, 23], [21, 22, 23], [22, 23, 24], [23, 24, 25], [19, 23, 25], [10, 18, 25], [18, 19, 25], [10, 25, 27], [25, 26, 27], [8, 10, 27], [7, 8, 28], [8, 27, 28], [6, 7, 28], [4, 5, 29], [5, 6, 29], [6, 28, 29], [4, 29, 30], [30, 31, 33], [31, 32, 33], [4, 30, 34], [30, 33, 34], [2, 4, 34], [0, 1, 35], [1, 2, 35], [2, 34, 35]]
+
+[node name="Node2D" parent="SandboxScreen" unique_id=887465529 instance=ExtResource("26_nel3j")]
+z_index = 2
+offset_left = 2070.9998
+offset_top = 1594.0
+offset_right = 2070.9998
+offset_bottom = 1594.0
+rotation = -3.1478488
+scale = Vector2(1.1054909, 1.0212824)
+
+[node name="WaterBackground" type="ColorRect" parent="SandboxScreen" unique_id=654210907]
+visible = false
+z_index = 1
+material = SubResource("ShaderMaterial_ofjh6")
+offset_left = -12.0
+offset_top = 937.0
+offset_right = 1923.0
+offset_bottom = 2018.0
+scale = Vector2(1.0072612, 0.14789249)
+pivot_offset = Vector2(6, -3)
+
+[node name="happy_alba" type="Sprite2D" parent="SandboxScreen" unique_id=1515433859]
+visible = false
+z_index = 100
+position = Vector2(451.98, 618.48346)
+scale = Vector2(0.24817812, 0.23386836)
+texture = ExtResource("26_gqr6b")
+
+[node name="shocked_alba" type="Sprite2D" parent="SandboxScreen" unique_id=1963773666]
+visible = false
+z_index = 100
+position = Vector2(451.98, 618.48346)
+scale = Vector2(0.24817812, 0.23386836)
+texture = ExtResource("27_06ueq")
+
+[node name="confused_alba" type="Sprite2D" parent="SandboxScreen" unique_id=1268268826]
+visible = false
+z_index = 100
+position = Vector2(451.98, 618.48346)
+scale = Vector2(0.24817812, 0.23386836)
+texture = ExtResource("28_8y2rs")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=943455015]
+z_index = -7
+position = Vector2(952, 540)
+scale = Vector2(1.9606884, 1.9574622)
+texture = ExtResource("27_gljpi")
+
+[connection signal="button_down" from="SandboxScreen/Container/Side Menu/ScrollContainer/VBoxContainer/Hypselodoris" to="SandboxScreen/Bowl" method="_on_hypselodoris_button_down"]
+[connection signal="button_down" from="SandboxScreen/Container/Side Menu/ScrollContainer/VBoxContainer/Phyllidiella" to="SandboxScreen/Bowl" method="_on_phyllidiella_button_down"]
+[connection signal="button_down" from="SandboxScreen/Container/Side Menu/ScrollContainer/VBoxContainer/Flabellina" to="SandboxScreen/Bowl" method="_on_flabellina_button_down"]
+[connection signal="button_down" from="SandboxScreen/Container/Side Menu/ScrollContainer/VBoxContainer/Marindica" to="SandboxScreen/Bowl" method="_on_marindica_button_down"]
+[connection signal="button_down" from="SandboxScreen/Container/Side Menu/ScrollContainer/VBoxContainer/Gonio" to="SandboxScreen/Bowl" method="_on_gonio_button_down"]
+[connection signal="button_down" from="SandboxScreen/Container/Side Menu/VBoxContainer4/Hydrozoa" to="SandboxScreen/Bowl" method="_on_fish_eggs_button_down"]
+[connection signal="button_down" from="SandboxScreen/Container/Side Menu/VBoxContainer4/Algae" to="SandboxScreen/Bowl" method="_on_algae_button_down"]
+[connection signal="button_down" from="SandboxScreen/Container/Side Menu/VBoxContainer4/Sea sponge" to="SandboxScreen/Bowl" method="_on_sea_sponge_button_down"]
+[connection signal="toggled" from="SandboxScreen/Container/Side Menu/VBoxContainer/Mag glass" to="SandboxScreen/Bowl" method="_on_glass_toggled"]
+[connection signal="button_down" from="SandboxScreen/Container/Side Menu/VBoxContainer/Clear bowl" to="SandboxScreen/Bowl" method="_on_clear_bowl_button_down"]
+[connection signal="button_down" from="SandboxScreen/Top Menu/Quit" to="SandboxScreen/Top Menu/Quit" method="_on_quit_button_down"]
+[connection signal="button_down" from="SandboxScreen/Top Menu/Windowed" to="SandboxScreen/Top Menu/Quit" method="_on_windowed_button_down"]
+[connection signal="button_down" from="SandboxScreen/Top Menu/Back" to="SandboxScreen/Top Menu/Back" method="_on_back_button_down"]
+
+[editable path="SandboxScreen/Book"]
+[editable path="SandboxScreen/Book/PageSpread"]
+[editable path="SandboxScreen/MagGlass"]

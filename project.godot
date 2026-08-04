@@ -14,10 +14,15 @@ config/name="Sea Slugs"
 run/main_scene="uid://ct450xp7utd8g"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 
+[audio]
+
+buses/default_bus_layout="uid://biawuav5u7vcp"
+
 [autoload]
 
 DialogueManager="*uid://c3rodes2l3gxb"
 WaveManager="*uid://dhc6doj1gkoix"
+MusicManager="*uid://grenalkv4sir"
 
 [display]
 

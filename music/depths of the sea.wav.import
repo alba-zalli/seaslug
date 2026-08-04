@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dfmk0lm2huqko"
+path="res://.godot/imported/depths of the sea.wav-cff430953d857f738793de39d8abc921.sample"
+
+[deps]
+
+source_file="res://music/depths of the sea.wav"
+dest_files=["res://.godot/imported/depths of the sea.wav-cff430953d857f738793de39d8abc921.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
