@@ -259,15 +259,6 @@ theme_override_styles/hover = ExtResource("19_enynm")
 text = "X"
 script = ExtResource("20_wiw3c")
 
-[node name="Mute" type="TextureButton" parent="SandboxScreen/Top Menu" unique_id=1570067401]
-custom_minimum_size = Vector2(0, 40)
-layout_mode = 2
-theme = ExtResource("17_dikdq")
-ignore_texture_size = true
-script = ExtResource("19_k455k")
-music_on_icon = ExtResource("20_0osx2")
-music_off_icon = ExtResource("21_2bcqo")
-
 [node name="Back" type="Button" parent="SandboxScreen/Top Menu" unique_id=1340627916]
 layout_direction = 2
 layout_mode = 2
@@ -285,6 +276,15 @@ theme_override_colors/font_color = Color(0.003921569, 0.015686275, 0.34509805, 1
 theme_override_styles/normal = ExtResource("18_eo88p")
 theme_override_styles/hover = ExtResource("19_enynm")
 text = "Tutorial"
+
+[node name="Mute" type="TextureButton" parent="SandboxScreen/Top Menu" unique_id=1570067401]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme = ExtResource("17_dikdq")
+ignore_texture_size = true
+script = ExtResource("19_k455k")
+music_on_icon = ExtResource("20_0osx2")
+music_off_icon = ExtResource("21_2bcqo")
 
 [node name="MagGlass" parent="SandboxScreen" unique_id=1828750686 instance=ExtResource("21_sclr0")]
 position = Vector2(672.99994, -891)
@@ -338,8 +338,8 @@ texture = ExtResource("25_ukiih")
 [connection signal="toggled" from="SandboxScreen/Container/Side Menu/VBoxContainer/Mag glass" to="SandboxScreen/Bowl" method="_on_glass_toggled"]
 [connection signal="button_down" from="SandboxScreen/Container/Side Menu/VBoxContainer/Clear bowl" to="SandboxScreen/Bowl" method="_on_clear_bowl_button_down"]
 [connection signal="button_down" from="SandboxScreen/Top Menu/Quit" to="SandboxScreen/Top Menu/Quit" method="_on_quit_button_down"]
-[connection signal="toggled" from="SandboxScreen/Top Menu/Mute" to="SandboxScreen/Top Menu/Mute" method="_on_toggled"]
 [connection signal="button_down" from="SandboxScreen/Top Menu/Back" to="SandboxScreen/Top Menu/Back" method="_on_back_button_down"]
+[connection signal="toggled" from="SandboxScreen/Top Menu/Mute" to="SandboxScreen/Top Menu/Mute" method="_on_toggled"]
 
 [editable path="SandboxScreen/Book"]
 [editable path="SandboxScreen/Book/PageSpread"]

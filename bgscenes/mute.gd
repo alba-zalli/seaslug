@@ -5,13 +5,22 @@ extends TextureButton
 
 
 func _ready() -> void:
-	custom_minimum_size = Vector2(40, 40)
-	size = Vector2(40, 40)
-	pressed.connect(_on_pressed)
+	ignore_texture_size = true
+	stretch_mode = TextureButton.STRETCH_KEEP_ASPECT_CENTERED
 
-	MusicManager.mute_changed.connect(
+	custom_minimum_size = Vector2(40, 40)
+	size_flags_horizontal = Control.SIZE_SHRINK_CENTER
+	size_flags_vertical = Control.SIZE_SHRINK_CENTER
+
+	if not pressed.is_connected(_on_pressed):
+		pressed.connect(_on_pressed)
+
+	if not MusicManager.mute_changed.is_connected(
 		_on_music_mute_changed
-	)
+	):
+		MusicManager.mute_changed.connect(
+			_on_music_mute_changed
+		)
 
 	_update_icon(MusicManager.is_muted)
 

@@ -7,9 +7,9 @@ const SETTINGS_PATH := "user://audio_settings.cfg"
 const MUSIC_BUS_NAME := "Music"
 
 var playlist: Array[AudioStream] = [
-	preload("res://music/depths of the sea.wav"),
-	preload("res://music/ocean jazz.wav"),
 	preload("res://music/waves.wav"),
+	preload("res://music/ocean jazz.wav"),
+	preload("res://music/depths of the sea.wav"),
 ]
 
 var current_track_index: int = 0

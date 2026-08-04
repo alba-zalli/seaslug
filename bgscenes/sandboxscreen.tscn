@@ -26,8 +26,11 @@
 [ext_resource type="Theme" uid="uid://chlounns205s" path="res://themes/main_buttons_theme.tres" id="19_fewft"]
 [ext_resource type="StyleBox" uid="uid://brdkljxyuwos4" path="res://bgscenes/whitebuttonnormal.tres" id="19_v7bf4"]
 [ext_resource type="StyleBox" uid="uid://c0cys5bm22016" path="res://bgscenes/whitebuttonhover.tres" id="20_fewft"]
+[ext_resource type="Script" uid="uid://mfnjcag8tgo7" path="res://bgscenes/mute.gd" id="25_mjf0e"]
 [ext_resource type="Shader" uid="uid://burj74mgtfyfp" path="res://shaders/clearwater.gdshader" id="25_qssuf"]
 [ext_resource type="PackedScene" uid="uid://uy4cmrjiohbj" path="res://wave.tscn" id="26_c3mqk"]
+[ext_resource type="Texture2D" uid="uid://d1wxjlv2ajwfe" path="res://scripts/volume-solid-full.svg" id="26_fu3xc"]
+[ext_resource type="Texture2D" uid="uid://csvr443c41fdi" path="res://scripts/volume-xmark-solid-full.svg" id="27_7mabu"]
 [ext_resource type="Texture2D" uid="uid://dgob8bfkctvek" path="res://addons/maaacks_credits_scene/examples/scenes/credits/smilingalba.png" id="28_1vqfj"]
 [ext_resource type="Texture2D" uid="uid://bpoobmtys5l8j" path="res://addons/maaacks_credits_scene/examples/scenes/credits/shockedalba.png" id="29_vox1v"]
 [ext_resource type="Texture2D" uid="uid://dscn1nfybee5t" path="res://addons/maaacks_credits_scene/examples/scenes/credits/concernedalba.png" id="30_63bsy"]
@@ -302,6 +305,15 @@ theme_override_styles/normal = ExtResource("19_v7bf4")
 theme_override_styles/hover = ExtResource("20_fewft")
 text = "Tutorial"
 
+[node name="Mute" type="TextureButton" parent="Top Menu" unique_id=106541810]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+theme = ExtResource("19_fewft")
+ignore_texture_size = true
+script = ExtResource("25_mjf0e")
+music_on_icon = ExtResource("26_fu3xc")
+music_off_icon = ExtResource("27_7mabu")
+
 [node name="MagGlass" parent="." unique_id=1828750686 instance=ExtResource("15_vox1v")]
 position = Vector2(672.99994, -891)
 
@@ -363,5 +375,6 @@ texture = ExtResource("30_63bsy")
 [connection signal="button_down" from="Top Menu/Quit" to="Top Menu/Quit" method="_on_quit_button_down"]
 [connection signal="button_down" from="Top Menu/Back" to="Top Menu/Back" method="_on_back_button_down"]
 [connection signal="button_down" from="Top Menu/Tutorial" to="Bowl" method="_on_tutorial_button_down"]
+[connection signal="toggled" from="Top Menu/Mute" to="Top Menu/Mute" method="_on_toggled"]
 
 [editable path="MagGlass"]

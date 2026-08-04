@@ -18,9 +18,12 @@
 [ext_resource type="Theme" uid="uid://chlounns205s" path="res://themes/main_buttons_theme.tres" id="17_c0875"]
 [ext_resource type="StyleBox" uid="uid://brdkljxyuwos4" path="res://bgscenes/whitebuttonnormal.tres" id="18_a6vbk"]
 [ext_resource type="StyleBox" uid="uid://c0cys5bm22016" path="res://bgscenes/whitebuttonhover.tres" id="19_ggill"]
+[ext_resource type="Script" uid="uid://mfnjcag8tgo7" path="res://bgscenes/mute.gd" id="20_tiuqy"]
 [ext_resource type="Script" uid="uid://uusxfhw2epny" path="res://scripts/buttons.gd" id="20_vlu8j"]
+[ext_resource type="Texture2D" uid="uid://d1wxjlv2ajwfe" path="res://scripts/volume-solid-full.svg" id="21_5jal1"]
 [ext_resource type="PackedScene" uid="uid://cock6q303rlwi" path="res://assetscenes/magglass.tscn" id="21_g2e2v"]
 [ext_resource type="Shader" uid="uid://burj74mgtfyfp" path="res://shaders/clearwater.gdshader" id="22_3c222"]
+[ext_resource type="Texture2D" uid="uid://csvr443c41fdi" path="res://scripts/volume-xmark-solid-full.svg" id="22_im8lf"]
 [ext_resource type="PackedScene" uid="uid://uy4cmrjiohbj" path="res://wave.tscn" id="23_nyohl"]
 [ext_resource type="Shader" uid="uid://1nqwqwsjwac8" path="res://shaders/toonwater.gdshader" id="24_b3hcg"]
 [ext_resource type="Texture2D" uid="uid://dgob8bfkctvek" path="res://addons/maaacks_credits_scene/examples/scenes/credits/smilingalba.png" id="24_uooww"]
@@ -258,15 +261,6 @@ theme_override_styles/hover = ExtResource("19_ggill")
 text = "X"
 script = ExtResource("20_vlu8j")
 
-[node name="Windowed" type="Button" parent="SandboxScreen/Top Menu" unique_id=270490292]
-layout_mode = 2
-theme = ExtResource("17_c0875")
-theme_override_font_sizes/font_size = 22
-theme_override_styles/normal = ExtResource("18_a6vbk")
-theme_override_styles/hover = ExtResource("19_ggill")
-text = "⧉"
-script = ExtResource("20_vlu8j")
-
 [node name="Back" type="Button" parent="SandboxScreen/Top Menu" unique_id=1060716929]
 layout_direction = 2
 layout_mode = 2
@@ -284,6 +278,15 @@ theme_override_colors/font_color = Color(0.003921569, 0.015686275, 0.34509805, 1
 theme_override_styles/normal = ExtResource("18_a6vbk")
 theme_override_styles/hover = ExtResource("19_ggill")
 text = "Tutorial"
+
+[node name="Mute" type="TextureButton" parent="SandboxScreen/Top Menu" unique_id=1767184185]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+theme = ExtResource("17_c0875")
+ignore_texture_size = true
+script = ExtResource("20_tiuqy")
+music_on_icon = ExtResource("21_5jal1")
+music_off_icon = ExtResource("22_im8lf")
 
 [node name="MagGlass" parent="SandboxScreen" unique_id=1828750686 instance=ExtResource("21_g2e2v")]
 position = Vector2(672.99994, -891)
@@ -352,8 +355,8 @@ texture = ExtResource("25_nwqvv")
 [connection signal="toggled" from="SandboxScreen/Container/Side Menu/VBoxContainer/Mag glass" to="SandboxScreen/Bowl" method="_on_glass_toggled"]
 [connection signal="button_down" from="SandboxScreen/Container/Side Menu/VBoxContainer/Clear bowl" to="SandboxScreen/Bowl" method="_on_clear_bowl_button_down"]
 [connection signal="button_down" from="SandboxScreen/Top Menu/Quit" to="SandboxScreen/Top Menu/Quit" method="_on_quit_button_down"]
-[connection signal="button_down" from="SandboxScreen/Top Menu/Windowed" to="SandboxScreen/Top Menu/Quit" method="_on_windowed_button_down"]
 [connection signal="button_down" from="SandboxScreen/Top Menu/Back" to="SandboxScreen/Top Menu/Back" method="_on_back_button_down"]
+[connection signal="toggled" from="SandboxScreen/Top Menu/Mute" to="SandboxScreen/Top Menu/Mute" method="_on_toggled"]
 
 [editable path="SandboxScreen/Book"]
 [editable path="SandboxScreen/Book/PageSpread"]
