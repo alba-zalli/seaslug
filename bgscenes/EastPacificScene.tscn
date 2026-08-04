@@ -240,6 +240,7 @@ offset_right = 1517.0001
 offset_bottom = 142.99998
 
 [node name="Top Menu" type="HBoxContainer" parent="SandboxScreen" unique_id=1569493497]
+custom_minimum_size = Vector2(0, 40)
 offset_left = 27.0
 offset_top = 7.0
 offset_right = 290.0
@@ -259,9 +260,10 @@ text = "X"
 script = ExtResource("20_wiw3c")
 
 [node name="Mute" type="TextureButton" parent="SandboxScreen/Top Menu" unique_id=1570067401]
-custom_minimum_size = Vector2(10, 10)
+custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 theme = ExtResource("17_dikdq")
+ignore_texture_size = true
 script = ExtResource("19_k455k")
 music_on_icon = ExtResource("20_0osx2")
 music_off_icon = ExtResource("21_2bcqo")
