@@ -18,16 +18,20 @@ func _ready():
 	mouse_exited.connect(_on_exit)
 
 func _on_enter():
-	print("Entered")
+	print("ENTERED: ", dialogue_title)
+	print("Mouse position: ", get_global_mouse_position())
+
 	if current_highlight and current_highlight != highlight:
 		current_highlight.visible = false
+
 	current_highlight = highlight
+
+	# TEMPORARY TEST
 	highlight.visible = true
+
+	print("Hovered region: ", dialogue_title)
 	region_hovered.emit(dialogue_title)
 
 func _on_exit():
-	print("Exited")
-	# Intentionally does nothing — the highlight only turns off
-	# once a *different* region's _on_enter fires. This stops the
-	# flicker caused by brief/false exits (overlapping collision
-	# shapes, the text box grabbing focus, etc.)
+	print("EXITED FROM: ", dialogue_title)
+	print("Mouse position: ", get_global_mouse_position())

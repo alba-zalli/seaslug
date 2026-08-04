@@ -195,26 +195,13 @@ func fish_maker(fish, data: SlugData = null):
 # ===================================
 
 func clear_bowl():
-
 	print("CLEARING BOWL")
-
-
 	var food_items = get_tree().get_nodes_in_group("food")
-
 	for food in food_items:
-
 		food.queue_free()
-
-
-
 	var slugs = get_tree().get_nodes_in_group("slug")
-
 	for slug in slugs:
-
 		slug.queue_free()
-
-
-
 	print("BOWL CLEARED")
 
 
@@ -381,22 +368,15 @@ func _on_gonio_button_down():
 func _on_paradisa_button_down():
 	spawn_paradisa()
 
-
-
 func is_main_menu() -> bool:
-
 	return get_tree().current_scene.scene_file_path.ends_with("main_menu.tscn")
 
-
-
 func _on_sea_sponge_button_down():
-
 	spawn_sponge()
 
 
 
 func _on_algae_button_down():
-
 	spawn_algae()
 
 
@@ -416,3 +396,11 @@ func _on_glass_toggled(toggled_on: bool):
 func _on_clear_bowl_button_down() -> void:
 
 	clear_bowl()
+
+
+func _on_clear_bowl_pressed() -> void:
+	pass # Replace with function body.
+
+
+func _on_mag_glass_toggled(toggled_on: bool) -> void:
+	pass # Replace with function body.

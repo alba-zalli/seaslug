@@ -247,7 +247,8 @@ func _physics_process(delta):
 			rotation = lerp_angle(rotation, target_angle, 0.08)
 
 	# keep fish inside bowl ellipse
-	_keep_inside_ellipse()
+	if not main_menu_mode:
+		_keep_inside_ellipse()
 
 
 # --- helper: recompute the fish's allowed vertical band from the CURRENT
@@ -296,7 +297,7 @@ func _keep_inside_ellipse():
 
 func _physics_process_main_menu(delta):
 	var screen_size = get_viewport_rect().size
-	var margin = 30.0
+	var margin = 200.0
 
 	swim_time += delta
 

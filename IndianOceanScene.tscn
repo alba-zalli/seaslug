@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://cc6bnpdg57ulj" path="res://images/slugimages/flab.png" id="13_x3cbv"]
 [ext_resource type="Texture2D" uid="uid://bg5sl0ipmrp3" path="res://images/foodimages/fisheggs.png" id="14_cs4us"]
 [ext_resource type="Texture2D" uid="uid://co81xieitxihr" path="res://images/foodimages/algea.png" id="15_4mbb8"]
+[ext_resource type="Texture2D" uid="uid://xbyu4xwfmfq4" path="res://sparkles-svgrepo-com.svg" id="15_jbon3"]
 [ext_resource type="Texture2D" uid="uid://cqxijc1hir02x" path="res://images/foodimages/sea sponge.png" id="16_0n2gf"]
 [ext_resource type="Texture2D" uid="uid://15qfb8bvi135" path="res://images/icons/magnifying-glass-solid-full.svg" id="17_mwuy2"]
 [ext_resource type="PackedScene" uid="uid://l0nwb61asbiq" path="res://assetscenes/book.tscn" id="18_5748s"]
@@ -30,13 +31,13 @@ noise_type = 3
 seed = 1
 frequency = 0.0037
 
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_c3mqk"]
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_1eat1"]
 noise = SubResource("FastNoiseLite_qssuf")
 seamless = true
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qssuf"]
 shader = ExtResource("25_fcceh")
-shader_parameter/refraction_map = SubResource("NoiseTexture2D_c3mqk")
+shader_parameter/refraction_map = SubResource("NoiseTexture2D_1eat1")
 shader_parameter/refraction_stretch = Vector2(0.1, 0.1)
 shader_parameter/refraction_strength = 0.00800000038
 shader_parameter/water_tint = Color(0.2, 0.6, 1, 0.1)
@@ -176,7 +177,11 @@ icon = ExtResource("16_0n2gf")
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 
-[node name="Glass" type="Button" parent="SandboxScreen/Container/Side Menu" unique_id=519179365]
+[node name="VBoxContainer" type="VBoxContainer" parent="SandboxScreen/Container/Side Menu" unique_id=431072869]
+layout_mode = 2
+size_flags_stretch_ratio = 0.4
+
+[node name="Mag glass" type="Button" parent="SandboxScreen/Container/Side Menu/VBoxContainer" unique_id=1141901981]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -184,6 +189,23 @@ theme_override_constants/icon_max_width = 24
 toggle_mode = true
 text = "Magnifying glass"
 icon = ExtResource("17_mwuy2")
+
+[node name="Spacer7" type="ScrollContainer" parent="SandboxScreen/Container/Side Menu/VBoxContainer" unique_id=2011600355]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="Clear bowl" type="Button" parent="SandboxScreen/Container/Side Menu/VBoxContainer" unique_id=896443125]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/icon_max_width = 24
+toggle_mode = true
+text = "Clear bowl"
+icon = ExtResource("15_jbon3")
+
+[node name="Spacer6" type="ScrollContainer" parent="SandboxScreen/Container/Side Menu/VBoxContainer" unique_id=1799351257]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
 
 [node name="Spacer6" type="ScrollContainer" parent="SandboxScreen/Container/Side Menu" unique_id=669757243]
 custom_minimum_size = Vector2(0, 20)
@@ -315,7 +337,8 @@ texture = ExtResource("27_gljpi")
 [connection signal="button_down" from="SandboxScreen/Container/Side Menu/VBoxContainer4/Hydrozoa" to="SandboxScreen/Bowl" method="_on_fish_eggs_button_down"]
 [connection signal="button_down" from="SandboxScreen/Container/Side Menu/VBoxContainer4/Algae" to="SandboxScreen/Bowl" method="_on_algae_button_down"]
 [connection signal="button_down" from="SandboxScreen/Container/Side Menu/VBoxContainer4/Sea sponge" to="SandboxScreen/Bowl" method="_on_sea_sponge_button_down"]
-[connection signal="toggled" from="SandboxScreen/Container/Side Menu/Glass" to="SandboxScreen/Bowl" method="_on_glass_toggled"]
+[connection signal="toggled" from="SandboxScreen/Container/Side Menu/VBoxContainer/Mag glass" to="SandboxScreen/Bowl" method="_on_glass_toggled"]
+[connection signal="button_down" from="SandboxScreen/Container/Side Menu/VBoxContainer/Clear bowl" to="SandboxScreen/Bowl" method="_on_clear_bowl_button_down"]
 [connection signal="button_down" from="SandboxScreen/Top Menu/Quit" to="SandboxScreen/Top Menu/Quit" method="_on_quit_button_down"]
 [connection signal="button_down" from="SandboxScreen/Top Menu/Windowed" to="SandboxScreen/Top Menu/Quit" method="_on_windowed_button_down"]
 [connection signal="button_down" from="SandboxScreen/Top Menu/Back" to="SandboxScreen/Top Menu/Back" method="_on_back_button_down"]

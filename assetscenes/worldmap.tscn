@@ -18,8 +18,6 @@ shader_parameter/blob_size = 0.25
 shader_parameter/distortion = 0.5
 shader_parameter/smoothness = 0.41200001957
 shader_parameter/edge_softness = 0.001
-shader_parameter/persistence = 0.38700001186273003
-shader_parameter/edge_blur = 0.018000000855
 shader_parameter/BLOB_COL = Color(0.015686275, 0.23921569, 0.5568628, 1)
 
 [node name="Node2D" type="Node2D" unique_id=232880064]
@@ -55,7 +53,7 @@ highlight = NodePath("../WPHighlight")
 dialogue_title = "west_pacific"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="west pac" unique_id=783834245]
-polygon = PackedVector2Array(5, 654, 368, 657, 364, 401, 243, 248, 132, 108, 1, 95)
+polygon = PackedVector2Array(5, 654, 234, 755, 368, 657, 364, 401, 243, 248, 132, 108, 1, 95, -78, 373)
 
 [node name="indian" type="Area2D" parent="." unique_id=2012040630 node_paths=PackedStringArray("highlight") groups=["map_regions"]]
 script = ExtResource("6_o7rek")
@@ -63,7 +61,7 @@ highlight = NodePath("../IndianHighlight")
 dialogue_title = "indian_ocean"
 
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="indian" unique_id=639452333]
-polygon = PackedVector2Array(683, 654, 625, 509, 716, 373, 732, 338, 721, 302, 736, 286, 821, 327, 877, 310, 895, 344, 895, 386, 908, 412, 928, 422, 988, 437, 997, 457, 1030, 544, 1039, 595, 1022, 653)
+polygon = PackedVector2Array(696, 688, 625, 509, 716, 373, 732, 338, 721, 302, 736, 286, 821, 327, 877, 310, 895, 344, 895, 386, 908, 412, 928, 422, 988, 437, 997, 457, 1030, 544, 1039, 595, 1042, 675, 958, 727, 825, 801, 723, 766)
 
 [node name="east pac" type="Area2D" parent="." unique_id=1531773898 node_paths=PackedStringArray("highlight") groups=["map_regions"]]
 script = ExtResource("6_o7rek")
@@ -71,7 +69,7 @@ highlight = NodePath("../EPHighlight")
 dialogue_title = "east_pacific"
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="east pac" unique_id=824564511]
-polygon = PackedVector2Array(914, 375, 909, 327, 948, 317, 956, 290, 939, 255, 956, 239, 975, 250, 1008, 222, 990, 198, 1006, 164, 1035, 147, 1073, 147, 1101, 129, 1123, 143, 1145, 124, 1182, 120, 1185, 659, 1081, 656, 1070, 634, 1041, 598, 1031, 539, 987, 434, 925, 423)
+polygon = PackedVector2Array(914, 375, 909, 327, 948, 317, 956, 290, 939, 255, 956, 239, 975, 250, 1008, 222, 990, 198, 1006, 164, 1035, 147, 1073, 147, 1013, 67, 1097, 42, 1187, 44, 1261, 93, 1292, 204, 1325, 367, 1208, 609, 1136, 644, 1070, 634, 1041, 598, 1031, 539, 987, 434, 925, 423)
 
 [node name="Label2" type="RichTextLabel" parent="." unique_id=1352610802]
 custom_minimum_size = Vector2(400, 100)
@@ -96,7 +94,7 @@ mouse_filter = 1
 theme_override_fonts/normal_font = ExtResource("7_oy4l6")
 theme_override_font_sizes/normal_font_size = 25
 bbcode_enabled = true
-text = "[tornado radius=5.0 freq=0.8 connected=1] West Pacific Ocean [/tornado]"
+text = "[tornado radius=5.0 freq=0.8 connected=1] East Pacific Ocean [/tornado]"
 scroll_active = false
 
 [node name="Label3" type="RichTextLabel" parent="." unique_id=1431623199]
@@ -109,5 +107,5 @@ mouse_filter = 1
 theme_override_fonts/normal_font = ExtResource("7_oy4l6")
 theme_override_font_sizes/normal_font_size = 25
 bbcode_enabled = true
-text = "[wave radius=5.0 freq=0.8 connected=1] East Pacific Ocean [/wave]"
+text = "[wave radius=5.0 freq=0.8 connected=1] West Pacific Ocean [/wave]"
 scroll_active = false

@@ -30,6 +30,7 @@ shader_parameter/mulscale = 3.0
 shader_parameter/timescale = 0.4
 shader_parameter/blob_size = 0.4
 shader_parameter/distortion = 0.2
+shader_parameter/smoothness = 0.0
 shader_parameter/edge_softness = 0.001
 shader_parameter/BLOB_COL = Color(0.21960784, 0.6745098, 0.8509804, 1)
 
@@ -38,7 +39,7 @@ shader_parameter/BLOB_COL = Color(0.21960784, 0.6745098, 0.8509804, 1)
 [node name="Node2D2" parent="." unique_id=232880064 node_paths=PackedStringArray("visit_button") instance=ExtResource("3_w3hxj")]
 position = Vector2(773, 171)
 scale = Vector2(0.84825873, 0.8657806)
-visit_button = NodePath("../Button")
+visit_button = NodePath("../GoThere")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1489375378]
 position = Vector2(302.99997, 486)
@@ -84,7 +85,8 @@ text = "Back"
 icon_alignment = 1
 script = ExtResource("4_u6sld")
 
-[node name="Button" type="Button" parent="." unique_id=692056412]
+[node name="GoThere" type="Button" parent="." unique_id=692056412]
+z_index = 100
 offset_left = 1698.0
 offset_top = 809.0
 offset_right = 1766.0
@@ -111,8 +113,9 @@ offset_right = 50.92094
 offset_bottom = 38.569893
 rotation = -0.06481327
 scale = Vector2(0.75620323, 0.89663285)
+mouse_filter = 2
 
 [connection signal="button_down" from="Top Menu/Quit" to="Top Menu/Quit" method="_on_quit_button_down"]
 [connection signal="button_down" from="Top Menu/Windowed" to="Top Menu/Quit" method="_on_windowed_button_down"]
 [connection signal="button_down" from="Top Menu/Back" to="Top Menu/Back" method="_on_back_button_down"]
-[connection signal="pressed" from="Button" to="Node2D2" method="_on_button_pressed"]
+[connection signal="pressed" from="GoThere" to="Node2D2" method="_on_button_pressed"]

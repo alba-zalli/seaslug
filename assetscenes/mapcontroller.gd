@@ -13,8 +13,8 @@ var last_hovered_region: String = ""
 # right now only IndianOceanScene.tscn is in the repo.
 const REGION_SCENES := {
 	"indian_ocean": "res://IndianOceanScene.tscn",
-	"west_pacific": "res://WestPacificScene.tscn",
-	"east_pacific": "res://EastPacificScene.tscn",
+	"west_pacific": "res://bgscenes/WestPacificScene.tscn",
+	"east_pacific": "res://bgscenes/EastPacificScene.tscn",
 }
 
 func _ready():
@@ -43,11 +43,19 @@ func _on_dialogue_ended(_resource) -> void:
 	balloon_open = false
 
 func _on_button_pressed() -> void:
-	print("BUTTON PRESSED. last_hovered_region = '", last_hovered_region, "'")
-	if last_hovered_region == "" or not REGION_SCENES.has(last_hovered_region):
-		print("No valid region hovered yet — nothing to open")
+	print("========== BUTTON CLICKED ==========")
+	print("last_hovered_region = ", last_hovered_region)
+
+	if last_hovered_region == "":
+		print("NO REGION")
 		return
-	print("Changing scene to: ", REGION_SCENES[last_hovered_region])
+
+	if not REGION_SCENES.has(last_hovered_region):
+		print("REGION NOT FOUND IN DICTIONARY: ", last_hovered_region)
+		return
+
+	print("GOING TO: ", REGION_SCENES[last_hovered_region])
+
 	var err := get_tree().change_scene_to_file(REGION_SCENES[last_hovered_region])
-	if err != OK:
-		print("change_scene_to_file FAILED with error code: ", err)
+
+	print("CHANGE SCENE RESULT: ", err)
