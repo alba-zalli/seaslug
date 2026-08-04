@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bn82xia3pbqgy"]
 
 [ext_resource type="Theme" uid="uid://ew0ljd640imm" path="res://themes/base_theme.tres" id="1_d1yhd"]
+[ext_resource type="Script" uid="uid://btenpdpi75v5c" path="res://bgscenes/speechscreens.gd" id="1_vox1v"]
 [ext_resource type="Texture2D" uid="uid://8k2dq7iq5c4k" path="res://images/slugimages/sapsucker.png" id="2_1wed3"]
 [ext_resource type="Texture2D" uid="uid://ch2fi2csdtu5s" path="res://images/slugimages/dorid.png" id="2_8pf3a"]
 [ext_resource type="Texture2D" uid="uid://c876hv0kams1r" path="res://images/1000000369.png" id="2_08sdj"]
@@ -27,6 +28,9 @@
 [ext_resource type="StyleBox" uid="uid://c0cys5bm22016" path="res://bgscenes/whitebuttonhover.tres" id="20_fewft"]
 [ext_resource type="Shader" uid="uid://burj74mgtfyfp" path="res://shaders/clearwater.gdshader" id="25_qssuf"]
 [ext_resource type="PackedScene" uid="uid://uy4cmrjiohbj" path="res://wave.tscn" id="26_c3mqk"]
+[ext_resource type="Texture2D" uid="uid://dgob8bfkctvek" path="res://addons/maaacks_credits_scene/examples/scenes/credits/smilingalba.png" id="28_1vqfj"]
+[ext_resource type="Texture2D" uid="uid://bpoobmtys5l8j" path="res://addons/maaacks_credits_scene/examples/scenes/credits/shockedalba.png" id="29_vox1v"]
+[ext_resource type="Texture2D" uid="uid://dscn1nfybee5t" path="res://addons/maaacks_credits_scene/examples/scenes/credits/concernedalba.png" id="30_63bsy"]
 
 [sub_resource type="Theme" id="Theme_k85lr"]
 Button/colors/font_color = Color(0.875, 0.875, 0.875, 1)
@@ -61,6 +65,7 @@ shader_parameter/water_tint = Color(0.2, 0.6, 1, 0.1)
 shader_parameter/speed = 0.14000000665
 
 [node name="SandboxScreen" type="Node2D" unique_id=1151149152]
+script = ExtResource("1_vox1v")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1476575955]
 visibility_layer = 4
@@ -279,15 +284,6 @@ theme_override_styles/hover = ExtResource("20_fewft")
 text = "X"
 script = ExtResource("14_1vqfj")
 
-[node name="Windowed" type="Button" parent="Top Menu" unique_id=1793124048]
-layout_mode = 2
-theme = ExtResource("19_fewft")
-theme_override_font_sizes/font_size = 22
-theme_override_styles/normal = ExtResource("19_v7bf4")
-theme_override_styles/hover = ExtResource("20_fewft")
-text = "⧉"
-script = ExtResource("14_1vqfj")
-
 [node name="Back" type="Button" parent="Top Menu" unique_id=391075290]
 layout_direction = 2
 layout_mode = 2
@@ -330,6 +326,24 @@ offset_bottom = 1594.0001
 rotation = -3.1478488
 scale = Vector2(1.1054909, 1.0212824)
 
+[node name="happy_alba" type="Sprite2D" parent="." unique_id=1901330310]
+z_index = 100
+position = Vector2(451.98, 618.48346)
+scale = Vector2(0.24817812, 0.23386836)
+texture = ExtResource("28_1vqfj")
+
+[node name="shocked_alba" type="Sprite2D" parent="." unique_id=320433267]
+z_index = 100
+position = Vector2(451.98, 618.48346)
+scale = Vector2(0.24817812, 0.23386836)
+texture = ExtResource("29_vox1v")
+
+[node name="confused_alba" type="Sprite2D" parent="." unique_id=990979988]
+z_index = 100
+position = Vector2(451.98, 618.48346)
+scale = Vector2(0.24817812, 0.23386836)
+texture = ExtResource("30_63bsy")
+
 [connection signal="button_down" from="Container/Side Menu/ScrollContainer/VBoxContainer/Sapsucker" to="Bowl" method="_on_sapsucker_button_down"]
 [connection signal="button_down" from="Container/Side Menu/ScrollContainer/VBoxContainer/Cal Dorid" to="Bowl" method="_on_cal_dorid_button_down"]
 [connection signal="button_down" from="Container/Side Menu/ScrollContainer/VBoxContainer/Hypselodoris" to="Bowl" method="_on_hypselodoris_button_down"]
@@ -344,7 +358,7 @@ scale = Vector2(1.1054909, 1.0212824)
 [connection signal="toggled" from="Container/Side Menu/VBoxContainer/Mag glass" to="Bowl" method="_on_glass_toggled"]
 [connection signal="button_down" from="Container/Side Menu/VBoxContainer/Clear bowl" to="Bowl" method="_on_clear_bowl_button_down"]
 [connection signal="button_down" from="Top Menu/Quit" to="Top Menu/Quit" method="_on_quit_button_down"]
-[connection signal="button_down" from="Top Menu/Windowed" to="Top Menu/Quit" method="_on_windowed_button_down"]
 [connection signal="button_down" from="Top Menu/Back" to="Top Menu/Back" method="_on_back_button_down"]
+[connection signal="button_down" from="Top Menu/Tutorial" to="Bowl" method="_on_tutorial_button_down"]
 
 [editable path="MagGlass"]

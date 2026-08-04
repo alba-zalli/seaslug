@@ -1,0 +1,22 @@
+~ start
+do hide_sprite()
+do change("happy_alba")
+Alba: To place slugs in the bowl use the left menu!
+do hide_sprite()
+do change("confused_alba")
+Alba: Check the book to learn more information about each slug, including what they eat! 
+do hide_sprite()
+do change("happy_alba")
+Alba: Clicking on a slug once will open the book to its page.
+Alba: Click once on the book to close it.
+Alba: Double click the book to increase its size.
+Alba: Clicking the slug twice will release it from the bowl.
+Alba: Generate food to feed your slugs.
+do hide_sprite()
+do change("confused_alba")
+Alba: To get a closer look, you can drag and drop the magnifying glass.
+Alba: Clear bowl if you want to start from the beginning.
+do hide_sprite()
+do change("happy_alba")
+Alba: Have fun!
+=> END

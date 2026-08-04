@@ -402,5 +402,8 @@ func _on_clear_bowl_pressed() -> void:
 	pass # Replace with function body.
 
 
-func _on_mag_glass_toggled(toggled_on: bool) -> void:
-	pass # Replace with function body.
+func _on_tutorial_button_down() -> void:
+	DialogueManager.show_dialogue_balloon(
+		load("res://dialogue/tutorial.dialogue"),
+		"start"
+	)

@@ -22,9 +22,12 @@
 [ext_resource type="Script" uid="uid://uusxfhw2epny" path="res://scripts/buttons.gd" id="22_8b2pm"]
 [ext_resource type="PackedScene" uid="uid://cock6q303rlwi" path="res://assetscenes/magglass.tscn" id="23_sds1m"]
 [ext_resource type="Shader" uid="uid://burj74mgtfyfp" path="res://shaders/clearwater.gdshader" id="25_fcceh"]
+[ext_resource type="Texture2D" uid="uid://dgob8bfkctvek" path="res://addons/maaacks_credits_scene/examples/scenes/credits/smilingalba.png" id="26_gqr6b"]
 [ext_resource type="PackedScene" uid="uid://uy4cmrjiohbj" path="res://wave.tscn" id="26_nel3j"]
+[ext_resource type="Texture2D" uid="uid://bpoobmtys5l8j" path="res://addons/maaacks_credits_scene/examples/scenes/credits/shockedalba.png" id="27_06ueq"]
 [ext_resource type="Shader" uid="uid://1nqwqwsjwac8" path="res://shaders/toonwater.gdshader" id="27_d664i"]
 [ext_resource type="Texture2D" uid="uid://cb4rd21fmm7ux" path="res://addons/dialogue_manager/example_balloon/sand.png" id="27_gljpi"]
+[ext_resource type="Texture2D" uid="uid://dscn1nfybee5t" path="res://addons/maaacks_credits_scene/examples/scenes/credits/concernedalba.png" id="28_8y2rs"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_qssuf"]
 noise_type = 3
@@ -328,6 +331,24 @@ z_index = -7
 position = Vector2(952, 540)
 scale = Vector2(1.9606884, 1.9574622)
 texture = ExtResource("27_gljpi")
+
+[node name="happy_alba" type="Sprite2D" parent="." unique_id=1515433859]
+z_index = 100
+position = Vector2(451.98, 618.48346)
+scale = Vector2(0.24817812, 0.23386836)
+texture = ExtResource("26_gqr6b")
+
+[node name="shocked_alba" type="Sprite2D" parent="." unique_id=1963773666]
+z_index = 100
+position = Vector2(451.98, 618.48346)
+scale = Vector2(0.24817812, 0.23386836)
+texture = ExtResource("27_06ueq")
+
+[node name="confused_alba" type="Sprite2D" parent="." unique_id=1268268826]
+z_index = 100
+position = Vector2(451.98, 618.48346)
+scale = Vector2(0.24817812, 0.23386836)
+texture = ExtResource("28_8y2rs")
 
 [connection signal="button_down" from="SandboxScreen/Container/Side Menu/ScrollContainer/VBoxContainer/Hypselodoris" to="SandboxScreen/Bowl" method="_on_hypselodoris_button_down"]
 [connection signal="button_down" from="SandboxScreen/Container/Side Menu/ScrollContainer/VBoxContainer/Phyllidiella" to="SandboxScreen/Bowl" method="_on_phyllidiella_button_down"]
