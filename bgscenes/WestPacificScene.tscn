@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://bapx76ndqd2jk"]
 
+[ext_resource type="Script" uid="uid://btenpdpi75v5c" path="res://bgscenes/speechscreens.gd" id="1_pbsti"]
 [ext_resource type="Texture2D" uid="uid://c876hv0kams1r" path="res://images/1000000369.png" id="1_uhach"]
 [ext_resource type="Script" uid="uid://cemp8kuaynvje" path="res://scripts/bowl_logic.gd" id="2_uooww"]
 [ext_resource type="StyleBox" uid="uid://dyorrnpbnbxum" path="res://themes/containerstyle.tres" id="3_pbsti"]
@@ -60,6 +61,7 @@ shader_parameter/FOAM_COL = Color(0.49411035, 0.97952753, 0.9266137, 1)
 [node name="Node2D" type="Node2D" unique_id=70995420]
 
 [node name="SandboxScreen" type="Node2D" parent="." unique_id=2024055596]
+script = ExtResource("1_pbsti")
 
 [node name="Sprite2D" type="Sprite2D" parent="SandboxScreen" unique_id=701072724]
 visibility_layer = 4
@@ -314,29 +316,32 @@ offset_bottom = 2018.0
 scale = Vector2(1.0072612, 0.14789249)
 pivot_offset = Vector2(6, -3)
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=40987585]
-z_index = -7
-position = Vector2(952, 540)
-scale = Vector2(1.9606884, 1.9574622)
-texture = ExtResource("25_nwqvv")
-
-[node name="happy_alba" type="Sprite2D" parent="." unique_id=1094074060]
-z_index = 100
-position = Vector2(451.98, 618.48346)
-scale = Vector2(0.24817812, 0.23386836)
-texture = ExtResource("24_uooww")
-
-[node name="shocked_alba" type="Sprite2D" parent="." unique_id=1675804506]
+[node name="shocked_alba" type="Sprite2D" parent="SandboxScreen" unique_id=1675804506]
+visible = false
 z_index = 100
 position = Vector2(451.98, 618.48346)
 scale = Vector2(0.24817812, 0.23386836)
 texture = ExtResource("25_pbsti")
 
-[node name="confused_alba" type="Sprite2D" parent="." unique_id=2002457938]
+[node name="confused_alba" type="Sprite2D" parent="SandboxScreen" unique_id=2002457938]
+visible = false
 z_index = 100
 position = Vector2(451.98, 618.48346)
 scale = Vector2(0.24817812, 0.23386836)
 texture = ExtResource("26_a8hr7")
+
+[node name="happy_alba" type="Sprite2D" parent="SandboxScreen" unique_id=1094074060]
+visible = false
+z_index = 100
+position = Vector2(451.98, 618.48346)
+scale = Vector2(0.24817812, 0.23386836)
+texture = ExtResource("24_uooww")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=40987585]
+z_index = -7
+position = Vector2(952, 540)
+scale = Vector2(1.9606884, 1.9574622)
+texture = ExtResource("25_nwqvv")
 
 [connection signal="button_down" from="SandboxScreen/Container/Side Menu/ScrollContainer/VBoxContainer/Paradisa" to="SandboxScreen/Bowl" method="_on_paradisa_button_down"]
 [connection signal="button_down" from="SandboxScreen/Container/Side Menu/ScrollContainer/VBoxContainer/Marindica" to="SandboxScreen/Bowl" method="_on_marindica_button_down"]

@@ -10,7 +10,7 @@ Alba: Could I ask you a favour?
 	do hide_sprite()
 	do change("happy_alba")
 	Alba: Thank you so much! You are such a good friend <3
-- This seems suspisious...
+- This seems suspicious...
 	do hide_sprite()
 	do change("shocked_alba") 
 	Alba: Don't forget who helped you when you were having trouble!

@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://c5o3jyvc3ko1s" path="res://images/book_frames/f2.png" id="6_37pi6"]
 [ext_resource type="Texture2D" uid="uid://cpqlvotu6dski" path="res://images/book_frames/f3.png" id="7_cdt36"]
 [ext_resource type="Texture2D" uid="uid://nohulp1sfpdb" path="res://images/book_frames/f4.png" id="8_0461q"]
+[ext_resource type="StyleBox" uid="uid://by0l62gw8poqy" path="res://redbutton.tres" id="8_jd5kc"]
+[ext_resource type="StyleBox" uid="uid://7ff1y1slm6vo" path="res://pressed.tres" id="9_nalmc"]
 [ext_resource type="Texture2D" uid="uid://cyf1xnp7j56cl" path="res://images/book_frames/f5.png" id="9_w08bg"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xecwa"]
@@ -96,10 +98,15 @@ position = Vector2(134.5, 157)
 shape = SubResource("RectangleShape2D_7wrkw")
 
 [node name="CloseButton" type="Button" parent="CharacterBody2D/ClickArea" unique_id=1465287434]
+custom_minimum_size = Vector2(40, 0)
 offset_left = -189.0
 offset_top = -406.0
 offset_right = -171.0
 offset_bottom = -375.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = ExtResource("8_jd5kc")
+theme_override_styles/pressed = ExtResource("9_nalmc")
+theme_override_styles/hover = ExtResource("9_nalmc")
 text = "X"
 
 [node name="PageSpread" parent="." unique_id=953647098 instance=ExtResource("2_fijbg")]

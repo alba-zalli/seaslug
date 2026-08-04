@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://ilsesleggpud"]
 
 [ext_resource type="Texture2D" uid="uid://c876hv0kams1r" path="res://images/1000000369.png" id="1_h7vn0"]
+[ext_resource type="Script" uid="uid://btenpdpi75v5c" path="res://bgscenes/speechscreens.gd" id="1_q3d05"]
 [ext_resource type="Script" uid="uid://cemp8kuaynvje" path="res://scripts/bowl_logic.gd" id="2_q3d05"]
 [ext_resource type="StyleBox" uid="uid://dyorrnpbnbxum" path="res://themes/containerstyle.tres" id="3_eyyw1"]
 [ext_resource type="Theme" uid="uid://bxuek2tcx0gru" path="res://themes/containertheme.tres" id="4_k455k"]
@@ -74,6 +75,7 @@ shader_parameter/FOAM_COL = Color(0.49411035, 0.97952753, 0.9266137, 1)
 [node name="Node2D" type="Node2D" unique_id=1898907116]
 
 [node name="SandboxScreen" type="Node2D" parent="." unique_id=914516719]
+script = ExtResource("1_q3d05")
 
 [node name="Sprite2D" type="Sprite2D" parent="SandboxScreen" unique_id=1355428961]
 visibility_layer = 4
@@ -325,29 +327,32 @@ offset_bottom = 2018.0
 scale = Vector2(1.0072612, 0.14789249)
 pivot_offset = Vector2(6, -3)
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=785786904]
-z_index = -7
-position = Vector2(952, 540)
-scale = Vector2(1.9606884, 1.9574622)
-texture = ExtResource("25_ukiih")
-
 [node name="happy_alba" type="Sprite2D" parent="." unique_id=2019878597]
+visible = false
 z_index = 100
 position = Vector2(451.98, 618.48346)
 scale = Vector2(0.24817812, 0.23386836)
 texture = ExtResource("23_h7vn0")
 
 [node name="shocked_alba" type="Sprite2D" parent="." unique_id=627747775]
+visible = false
 z_index = 100
 position = Vector2(451.98, 618.48346)
 scale = Vector2(0.24817812, 0.23386836)
 texture = ExtResource("24_q3d05")
 
 [node name="confused_alba" type="Sprite2D" parent="." unique_id=2100337282]
+visible = false
 z_index = 100
 position = Vector2(451.98, 618.48346)
 scale = Vector2(0.24817812, 0.23386836)
 texture = ExtResource("25_eyyw1")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=785786904]
+z_index = -7
+position = Vector2(952, 540)
+scale = Vector2(1.9606884, 1.9574622)
+texture = ExtResource("25_ukiih")
 
 [connection signal="button_down" from="SandboxScreen/Container/Side Menu/ScrollContainer/VBoxContainer/Sapsucker" to="SandboxScreen/Bowl" method="_on_sapsucker_button_down"]
 [connection signal="button_down" from="SandboxScreen/Container/Side Menu/ScrollContainer/VBoxContainer/Cal Dorid" to="SandboxScreen/Bowl" method="_on_cal_dorid_button_down"]

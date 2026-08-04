@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://bfoh2krn3h8xa"]
 
+[ext_resource type="Script" uid="uid://btenpdpi75v5c" path="res://bgscenes/speechscreens.gd" id="1_06ueq"]
 [ext_resource type="Texture2D" uid="uid://c876hv0kams1r" path="res://images/1000000369.png" id="1_gljpi"]
 [ext_resource type="Script" uid="uid://cemp8kuaynvje" path="res://scripts/bowl_logic.gd" id="2_gqr6b"]
 [ext_resource type="StyleBox" uid="uid://dyorrnpbnbxum" path="res://themes/containerstyle.tres" id="3_06ueq"]
@@ -62,6 +63,7 @@ shader_parameter/FOAM_COL = Color(0.49411035, 0.97952753, 0.9266137, 1)
 [node name="Node2D" type="Node2D" unique_id=1654988370]
 
 [node name="SandboxScreen" type="Node2D" parent="." unique_id=1151149152]
+script = ExtResource("1_06ueq")
 
 [node name="Sprite2D" type="Sprite2D" parent="SandboxScreen" unique_id=1476575955]
 visibility_layer = 4
@@ -326,29 +328,32 @@ offset_bottom = 2018.0
 scale = Vector2(1.0072612, 0.14789249)
 pivot_offset = Vector2(6, -3)
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=943455015]
-z_index = -7
-position = Vector2(952, 540)
-scale = Vector2(1.9606884, 1.9574622)
-texture = ExtResource("27_gljpi")
-
-[node name="happy_alba" type="Sprite2D" parent="." unique_id=1515433859]
+[node name="happy_alba" type="Sprite2D" parent="SandboxScreen" unique_id=1515433859]
+visible = false
 z_index = 100
 position = Vector2(451.98, 618.48346)
 scale = Vector2(0.24817812, 0.23386836)
 texture = ExtResource("26_gqr6b")
 
-[node name="shocked_alba" type="Sprite2D" parent="." unique_id=1963773666]
+[node name="shocked_alba" type="Sprite2D" parent="SandboxScreen" unique_id=1963773666]
+visible = false
 z_index = 100
 position = Vector2(451.98, 618.48346)
 scale = Vector2(0.24817812, 0.23386836)
 texture = ExtResource("27_06ueq")
 
-[node name="confused_alba" type="Sprite2D" parent="." unique_id=1268268826]
+[node name="confused_alba" type="Sprite2D" parent="SandboxScreen" unique_id=1268268826]
+visible = false
 z_index = 100
 position = Vector2(451.98, 618.48346)
 scale = Vector2(0.24817812, 0.23386836)
 texture = ExtResource("28_8y2rs")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=943455015]
+z_index = -7
+position = Vector2(952, 540)
+scale = Vector2(1.9606884, 1.9574622)
+texture = ExtResource("27_gljpi")
 
 [connection signal="button_down" from="SandboxScreen/Container/Side Menu/ScrollContainer/VBoxContainer/Hypselodoris" to="SandboxScreen/Bowl" method="_on_hypselodoris_button_down"]
 [connection signal="button_down" from="SandboxScreen/Container/Side Menu/ScrollContainer/VBoxContainer/Phyllidiella" to="SandboxScreen/Bowl" method="_on_phyllidiella_button_down"]

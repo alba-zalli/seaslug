@@ -8,13 +8,13 @@ Alba: Check the book to learn more information about each slug, including what t
 do hide_sprite()
 do change("happy_alba")
 Alba: Clicking on a slug once will open the book to its page.
-Alba: Click once on the book to close it.
-Alba: Double click the book to increase its size.
+Alba: Click once on the book to close it. Click again to open it.
+Alba: Double click the book to increase its size. Return to regular size using the red button.
 Alba: Clicking the slug twice will release it from the bowl.
-Alba: Generate food to feed your slugs.
+Alba: Generate food to feed your slugs. The book shows what each slug eats.
+Alba: To get a closer look, you can drag and drop the magnifying glass.
 do hide_sprite()
 do change("confused_alba")
-Alba: To get a closer look, you can drag and drop the magnifying glass.
 Alba: Clear bowl if you want to start from the beginning.
 do hide_sprite()
 do change("happy_alba")
