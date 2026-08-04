@@ -19,4 +19,5 @@ Alba: Clear bowl if you want to start from the beginning.
 do hide_sprite()
 do change("happy_alba")
 Alba: Have fun!
+do hide_sprite()
 => END

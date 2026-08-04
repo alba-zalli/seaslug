@@ -327,18 +327,21 @@ rotation = -3.1478488
 scale = Vector2(1.1054909, 1.0212824)
 
 [node name="happy_alba" type="Sprite2D" parent="." unique_id=1901330310]
+visible = false
 z_index = 100
 position = Vector2(451.98, 618.48346)
 scale = Vector2(0.24817812, 0.23386836)
 texture = ExtResource("28_1vqfj")
 
 [node name="shocked_alba" type="Sprite2D" parent="." unique_id=320433267]
+visible = false
 z_index = 100
 position = Vector2(451.98, 618.48346)
 scale = Vector2(0.24817812, 0.23386836)
 texture = ExtResource("29_vox1v")
 
 [node name="confused_alba" type="Sprite2D" parent="." unique_id=990979988]
+visible = false
 z_index = 100
 position = Vector2(451.98, 618.48346)
 scale = Vector2(0.24817812, 0.23386836)
