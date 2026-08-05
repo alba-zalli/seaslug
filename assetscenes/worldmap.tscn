@@ -47,12 +47,12 @@ position = Vector2(593, 327.5)
 scale = Vector2(0.21991085, 0.25364545)
 texture = ExtResource("1_pqyf4")
 
-[node name="west pac" type="Area2D" parent="." unique_id=724587050 node_paths=PackedStringArray("highlight") groups=["map_regions"]]
+[node name="e pac" type="Area2D" parent="." unique_id=724587050 node_paths=PackedStringArray("highlight") groups=["map_regions"]]
 script = ExtResource("6_o7rek")
 highlight = NodePath("../WPHighlight")
 dialogue_title = "west_pacific"
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="west pac" unique_id=783834245]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="e pac" unique_id=783834245]
 polygon = PackedVector2Array(5, 654, 234, 755, 368, 657, 364, 401, 243, 248, 132, 108, 1, 95, -78, 373)
 
 [node name="indian" type="Area2D" parent="." unique_id=2012040630 node_paths=PackedStringArray("highlight") groups=["map_regions"]]
@@ -63,12 +63,12 @@ dialogue_title = "indian_ocean"
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="indian" unique_id=639452333]
 polygon = PackedVector2Array(696, 688, 625, 509, 716, 373, 732, 338, 721, 302, 736, 286, 821, 327, 877, 310, 895, 344, 895, 386, 908, 412, 928, 422, 988, 437, 997, 457, 1030, 544, 1039, 595, 1042, 675, 958, 727, 825, 801, 723, 766)
 
-[node name="east pac" type="Area2D" parent="." unique_id=1531773898 node_paths=PackedStringArray("highlight") groups=["map_regions"]]
+[node name="w pac" type="Area2D" parent="." unique_id=1531773898 node_paths=PackedStringArray("highlight") groups=["map_regions"]]
 script = ExtResource("6_o7rek")
 highlight = NodePath("../EPHighlight")
 dialogue_title = "east_pacific"
 
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="east pac" unique_id=824564511]
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="w pac" unique_id=824564511]
 polygon = PackedVector2Array(914, 375, 909, 327, 948, 317, 956, 290, 939, 255, 956, 239, 975, 250, 1008, 222, 990, 198, 1006, 164, 1035, 147, 1073, 147, 1013, 67, 1097, 42, 1187, 44, 1261, 93, 1292, 204, 1325, 367, 1208, 609, 1136, 644, 1070, 634, 1041, 598, 1031, 539, 987, 434, 925, 423)
 
 [node name="Label2" type="RichTextLabel" parent="." unique_id=1352610802]

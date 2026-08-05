@@ -12,9 +12,9 @@ var last_hovered_region: String = ""
 # TODO: update these paths once the West/East Pacific scenes exist —
 # right now only IndianOceanScene.tscn is in the repo.
 const REGION_SCENES := {
-	"indian_ocean": "res://IndianOceanScene.tscn",
-	"west_pacific": "res://bgscenes/WestPacificScene.tscn",
-	"east_pacific": "res://bgscenes/EastPacificScene.tscn",
+	"indian_ocean": "res://bgscenes/IndianOceanScene.tscn",
+	"east_pacific": "res://bgscenes/WestPacificScene.tscn",
+	"west_pacific": "res://bgscenes/EastPacificScene.tscn",
 }
 
 func _ready():

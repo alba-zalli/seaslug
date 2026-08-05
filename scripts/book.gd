@@ -195,13 +195,36 @@ func _toggle_zoom() -> void:
 		tween.finished.connect(_exit_zoom_layer, CONNECT_ONE_SHOT)
 
 func open_book_to(data: SlugData) -> void:
-	print("open_book_to received = ", data.slug_name if data else "NULL")
-	my_data = data
+	if data == null:
+		push_warning("open_book_to() received null data")
+		return
+
+	print("open_book_to received = ", data.slug_name)
+
+	# Do nothing when the same slug is selected again.
+	if is_open and my_data == data:
+		return
+
+	# First slug: open the book normally.
 	if not is_open:
+		my_data = data
+		page_spread.visible = false
 		book_anim.play("open")
 		is_open = true
-		page_spread.visible = false
+
 		await book_anim.animation_finished
+
+		page_spread.display(my_data)
+		page_spread.visible = true
+		return
+
+	# Another slug is already displayed: flip the page.
+	my_data = data
+	page_spread.visible = false
+	book_anim.play("flip")
+
+	await book_anim.animation_finished
+
 	page_spread.display(my_data)
 	page_spread.visible = true
 	

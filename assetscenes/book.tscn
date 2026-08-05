@@ -5,11 +5,17 @@
 [ext_resource type="Texture2D" uid="uid://87n8i1xoyekp" path="res://images/book_frames/f1.png" id="3_gw1ob"]
 [ext_resource type="Texture2D" uid="uid://bm3vhe513ut1l" path="res://images/book_frames/f2 (2).png" id="5_tt8fr"]
 [ext_resource type="Texture2D" uid="uid://c5o3jyvc3ko1s" path="res://images/book_frames/f2.png" id="6_37pi6"]
+[ext_resource type="Texture2D" uid="uid://ck6rq8cigkdjk" path="res://images/page_flip/IMG_7877.png" id="7_4ps46"]
 [ext_resource type="Texture2D" uid="uid://cpqlvotu6dski" path="res://images/book_frames/f3.png" id="7_cdt36"]
+[ext_resource type="Texture2D" uid="uid://w3k2ot3pugmb" path="res://images/page_flip/IMG_7878.png" id="8_34dd8"]
 [ext_resource type="Texture2D" uid="uid://nohulp1sfpdb" path="res://images/book_frames/f4.png" id="8_0461q"]
 [ext_resource type="StyleBox" uid="uid://by0l62gw8poqy" path="res://redbutton.tres" id="8_jd5kc"]
+[ext_resource type="Texture2D" uid="uid://uq6j16l2dop8" path="res://images/page_flip/IMG_7879.png" id="9_1pnu3"]
 [ext_resource type="StyleBox" uid="uid://7ff1y1slm6vo" path="res://pressed.tres" id="9_nalmc"]
 [ext_resource type="Texture2D" uid="uid://cyf1xnp7j56cl" path="res://images/book_frames/f5.png" id="9_w08bg"]
+[ext_resource type="Texture2D" uid="uid://dcns46cal73r3" path="res://images/page_flip/IMG_7880.png" id="10_saa3e"]
+[ext_resource type="Texture2D" uid="uid://vm4ugorcydsq" path="res://images/page_flip/IMG_7881.png" id="11_ij5yr"]
+[ext_resource type="Texture2D" uid="uid://ckprnqn6xhg3c" path="res://images/page_flip/IMG_7882.png" id="12_f2af1"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xecwa"]
 animations = [{
@@ -42,6 +48,35 @@ animations = [{
 }],
 "loop": true,
 "name": &"closed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_w08bg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_4ps46")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_34dd8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_1pnu3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_saa3e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_ij5yr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_f2af1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_w08bg")
+}],
+"loop": false,
+"name": &"flip",
 "speed": 5.0
 }, {
 "frames": [{
@@ -87,7 +122,9 @@ scale = Vector2(1.2874871, 1.3517112)
 position = Vector2(141.6443, 141)
 scale = Vector2(0.2448898, 0.20323741)
 sprite_frames = SubResource("SpriteFrames_xecwa")
-animation = &"closed"
+animation = &"flip"
+frame = 7
+frame_progress = 1.0
 
 [node name="ClickArea" type="Area2D" parent="CharacterBody2D" unique_id=1638951339 groups=["book"]]
 position = Vector2(4, -5)
