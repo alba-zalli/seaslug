@@ -34,7 +34,7 @@ Alba: I need to gather some info about [wave] Sea Slugs [/wave]. Did I tell you 
 do hide_sprite()
 do change("confused_alba") 
 Alba: All I need is for you to inspect some sea slugs and learn about them. Could you please help me?
-- Explore sandbox mode
+- Explore open mode
 	do change_to_sandbox()
 - Explore world mode
 	do change_to_world()

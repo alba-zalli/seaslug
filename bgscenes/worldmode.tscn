@@ -7,8 +7,12 @@
 [ext_resource type="Theme" uid="uid://chlounns205s" path="res://themes/main_buttons_theme.tres" id="4_uk5vf"]
 [ext_resource type="StyleBox" uid="uid://brdkljxyuwos4" path="res://bgscenes/whitebuttonnormal.tres" id="5_qbap2"]
 [ext_resource type="StyleBox" uid="uid://c0cys5bm22016" path="res://bgscenes/whitebuttonhover.tres" id="6_5vvfr"]
+[ext_resource type="Script" uid="uid://mfnjcag8tgo7" path="res://bgscenes/mute.gd" id="8_hrelm"]
 [ext_resource type="Shader" uid="uid://1nqwqwsjwac8" path="res://shaders/toonwater.gdshader" id="8_uk5vf"]
+[ext_resource type="Texture2D" uid="uid://d1wxjlv2ajwfe" path="res://scripts/volume-solid-full.svg" id="9_jtt2l"]
 [ext_resource type="Shader" uid="uid://88fwlernnjwe" path="res://bgscenes/blob.gdshader" id="9_qbap2"]
+[ext_resource type="Texture2D" uid="uid://csvr443c41fdi" path="res://scripts/volume-xmark-solid-full.svg" id="10_pxemc"]
+[ext_resource type="Script" uid="uid://dpcd3tprvxu0o" path="res://bgscenes/main_menu_buttons.gd" id="11_jtt2l"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qbap2"]
 shader = ExtResource("8_uk5vf")
@@ -65,15 +69,6 @@ theme_override_styles/hover = ExtResource("6_5vvfr")
 text = "X"
 script = ExtResource("4_u6sld")
 
-[node name="Windowed" type="Button" parent="Top Menu" unique_id=2108007038]
-layout_mode = 2
-theme = ExtResource("4_uk5vf")
-theme_override_font_sizes/font_size = 22
-theme_override_styles/normal = ExtResource("5_qbap2")
-theme_override_styles/hover = ExtResource("6_5vvfr")
-text = "⧉"
-script = ExtResource("4_u6sld")
-
 [node name="Back" type="Button" parent="Top Menu" unique_id=552205679]
 layout_direction = 2
 layout_mode = 2
@@ -85,13 +80,27 @@ text = "Back"
 icon_alignment = 1
 script = ExtResource("4_u6sld")
 
+[node name="Mute" type="TextureButton" parent="Top Menu" unique_id=595068548]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+theme = ExtResource("4_uk5vf")
+ignore_texture_size = true
+script = ExtResource("8_hrelm")
+music_on_icon = ExtResource("9_jtt2l")
+music_off_icon = ExtResource("10_pxemc")
+
 [node name="GoThere" type="Button" parent="." unique_id=692056412]
 z_index = 100
-offset_left = 1698.0
-offset_top = 809.0
-offset_right = 1766.0
-offset_bottom = 840.0
+offset_left = 1680.0
+offset_top = 759.0
+offset_right = 1857.0
+offset_bottom = 850.0
+theme = ExtResource("4_uk5vf")
+theme_override_font_sizes/font_size = 35
 text = "Lets go!"
+script = ExtResource("11_jtt2l")
+wave_amplitude = 40.0
+wave_frequency = 4.0
 
 [node name="Background" type="ColorRect" parent="." unique_id=859486634]
 z_index = -1
@@ -116,6 +125,6 @@ scale = Vector2(0.75620323, 0.89663285)
 mouse_filter = 2
 
 [connection signal="button_down" from="Top Menu/Quit" to="Top Menu/Quit" method="_on_quit_button_down"]
-[connection signal="button_down" from="Top Menu/Windowed" to="Top Menu/Quit" method="_on_windowed_button_down"]
 [connection signal="button_down" from="Top Menu/Back" to="Top Menu/Back" method="_on_back_button_down"]
+[connection signal="toggled" from="Top Menu/Mute" to="Top Menu/Mute" method="_on_toggled"]
 [connection signal="pressed" from="GoThere" to="Node2D2" method="_on_button_pressed"]

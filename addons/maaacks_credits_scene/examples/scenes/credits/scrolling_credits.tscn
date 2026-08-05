@@ -1,9 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://t2dui8ppm3a4"]
+[gd_scene format=3 uid="uid://t2dui8ppm3a4"]
 
 [ext_resource type="PackedScene" uid="uid://b0o5hpukdt644" path="res://addons/maaacks_credits_scene/examples/scenes/credits/credits_label.tscn" id="3_fbdex"]
 [ext_resource type="Script" uid="uid://bnub0cq2y0deh" path="res://addons/maaacks_credits_scene/examples/scenes/credits/scrolling_credits.gd" id="4"]
 
-[node name="ScrollingCredits" type="Control"]
+[node name="ScrollingCredits" type="Control" unique_id=1456674650]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -12,28 +12,154 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("4")
 
-[node name="ScrollContainer" type="ScrollContainer" parent="."]
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=1145831350]
 unique_name_in_owner = true
 layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
+scroll_vertical = 4631
 horizontal_scroll_mode = 0
 vertical_scroll_mode = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer" unique_id=1010220975]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="HeaderSpace" type="Control" parent="ScrollContainer/VBoxContainer"]
+[node name="HeaderSpace" type="Control" parent="ScrollContainer/VBoxContainer" unique_id=1269091927]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 720)
+custom_minimum_size = Vector2(0, 1080)
 layout_mode = 2
 
-[node name="CreditsLabel" parent="ScrollContainer/VBoxContainer" instance=ExtResource("3_fbdex")]
+[node name="CreditsLabel" parent="ScrollContainer/VBoxContainer" unique_id=466672820 instance=ExtResource("3_fbdex")]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(1920, 0)
 layout_mode = 2
+text = "
+[font_size=48]Collaborators[/font_size]
 
-[node name="FooterSpace" type="Control" parent="ScrollContainer/VBoxContainer"]
+[font_size=32]Created By[/font_size]
+Alba Zalli
+
+[font_size=32]Art[/font_size]
+Alba Zalli  
+Alison Wright
+
+[font_size=32]Original Soundtrack[/font_size]
+Arlind Zalli
+
+[font_size=32]Debugging Help[/font_size]
+Nadia Singh
+
+[font_size=32]Playtesters[/font_size]
+Whoever is reading this!
+
+[font_size=32]Special Thanks[/font_size]
+Josh Sabourin (for letting me work on this all day at my co-op for the last two months!)  
+Nadia Singh  
+Arlind Zalli  
+Alison Wright
+
+
+[font_size=64]Sourced[/font_size]
+
+[font_size=48]Shaders[/font_size]
+
+[font_size=32]2D Liquid Wave Shader[/font_size]
+Author: [url=https://godotshaders.com/]Unknown[/url]  
+Source: [url=https://godotshaders.com/shader/2d-liquid-wave/]godotshaders.com : 2d-liquid-wave[/url]  
+ 
+
+[font_size=32]2D Starfield Scrolling Effect Shader[/font_size]
+Author: [url=https://godotshaders.com/]Unknown[/url]  
+Source: [url=https://godotshaders.com/shader/2d-starfield-in-the-sky-with-scrolling-effect-ver-1-0/]godotshaders.com : 2d-starfield-in-the-sky-with-scrolling-effect-ver-1-0[/url]  
+ 
+
+[font_size=32]Magnifying Glass Lens Distortion Shader[/font_size]
+Author: [url=https://godotshaders.com/]Unknown[/url]  
+Source: [url=https://godotshaders.com/shader/magnifying-glass-with-lens-distortion-effect/]godotshaders.com : magnifying-glass-with-lens-distortion-effect[/url]  
+ 
+
+
+[font_size=48]Slug Research Sources[/font_size]
+
+[font_size=32]Sea Slug Biology and Species Research[/font_size]
+[font_size=24]Use Case[/font_size]
+Used for researching sea slug species, habitats, diets, and descriptions.
+
+Author: [url=https://www.worldwildlife.org/]World Wildlife Fund[/url]  
+Source: [url=https://www.worldwildlife.org/resources/facts/what-is-a-leaf-sheep/]worldwildlife.org : What is a Leaf Sheep?[/url]  
+ 
+
+Author: [url=http://www.seaslugforum.net/]The Sea Slug Forum[/url]  
+Source: [url=https://www.seaslugforum.net/showall/chroquad]seaslugforum.net : Chromodoris quadricolor[/url]  
+ 
+
+Author: [url=https://www.reeflex.net/]Reeflex[/url]  
+Source: [url=https://www.reeflex.net/tiere/13242_Hypselodoris_paradisa.htm]reeflex.net : Hypselodoris paradisa[/url]  
+ 
+
+Author: [url=https://www.inaturalist.org/]iNaturalist[/url]  
+Source: [url=https://www.inaturalist.org/taxa/785725-Hypselodoris-paradisa]inaturalist.org : Hypselodoris paradisa[/url]  
+ 
+
+Author: [url=https://www.inaturalist.org/]iNaturalist[/url]  
+Source: [url=https://www.inaturalist.org/taxa/469414-Goniobranchus-reticulatus]inaturalist.org : Goniobranchus reticulatus[/url]  
+ 
+
+Author: [url=https://en.seaslug.world/]Sea Slug World[/url]  
+Source: [url=https://en.seaslug.world/species/phyllidia_marindica]seaslug.world : Phyllidia marindica[/url]  
+ 
+
+Author: [url=https://www.lembehresort.com/]Lembeh Resort[/url]  
+Source: [url=https://www.lembehresort.com/critter-log/critter/flabellina-rubrolineata]lembehresort.com : Flabellina rubrolineata[/url]  
+ 
+
+Author: [url=http://www.seaslugforum.net/]The Sea Slug Forum[/url]  
+Source: [url=http://www.seaslugforum.net/showall/phylmean]seaslugforum.net : Phyllidia meaniana[/url]  
+ 
+
+Author: [url=http://www.seaslugforum.net/]The Sea Slug Forum[/url]  
+Source: [url=https://www.seaslugforum.net/find/hypsmard]seaslugforum.net : Hypselodoris maridadilus[/url]  
+ 
+
+Author: [url=https://vichighmarine.ca/]Vancouver Island Community Marine Education[/url]  
+Source: [url=https://vichighmarine.ca/hedgpeths-sea-hare/]vichighmarine.ca : Hedgpeth's Sea Hare[/url]  
+ 
+
+Author: [url=https://msi.ucsb.edu/]Marine Science Institute - UCSB[/url]  
+Source: [url=https://msi.ucsb.edu/news/colorful-sea-slug]msi.ucsb.edu : Colorful Sea Slug[/url]  
+ 
+
+
+[font_size=64]Tools[/font_size]
+
+[font_size=48]Godot[/font_size]
+[img=80]res:///addons/maaacks_credits_scene/examples/assets/godot_engine_logo/logo_vertical_color_dark.png[/img]  
+
+Author: [url=https://godotengine.org/contact]Juan Linietsky, Ariel Manzur, and contributors[/url]  
+Source: [url=https://godotengine.org/]godotengine.org[/url]  
+License: [url=https://github.com/godotengine/godot/blob/master/LICENSE.txt]MIT License[/url]
+
+
+[font_size=48]Godot Credits Scene[/font_size]
+[img=80]res:///addons/maaacks_credits_scene/examples/assets/plugin_logo/logo.png[/img]  
+
+Author: [url=https://github.com/Maaack/Godot-Credits-Scene/graphs/contributors]Marek Belski and contributors[/url]  
+Source: [url=https://github.com/Maaack/Godot-Credits-Scene]github: Godot-Credits-Scene[/url]  
+License: [url=LICENSE.txt]MIT License[/url]
+
+
+[font_size=48]Git[/font_size]
+[img=80]res:///addons/maaacks_credits_scene/examples/assets/git_logo/Git-Logo-2Color.png[/img]  
+
+Author: [url=https://github.com/torvalds]Linus Torvalds[/url]  
+Source: [url=https://git-scm.com/downloads]git-scm.com[/url]  
+License: [url=https://opensource.org/licenses/GPL-2.0]GNU General Public License version 2[/url]
+"
+normal_font_size = null
+bold_headings = false
+
+[node name="FooterSpace" type="Control" parent="ScrollContainer/VBoxContainer" unique_id=1415701968]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 720)
+custom_minimum_size = Vector2(0, 1080)
 layout_mode = 2

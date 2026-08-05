@@ -7,9 +7,12 @@
 [ext_resource type="StyleBox" uid="uid://brdkljxyuwos4" path="res://bgscenes/whitebuttonnormal.tres" id="4_qm2oe"]
 [ext_resource type="StyleBox" uid="uid://c0cys5bm22016" path="res://bgscenes/whitebuttonhover.tres" id="5_ylvm1"]
 [ext_resource type="Script" uid="uid://uusxfhw2epny" path="res://scripts/buttons.gd" id="6_6r1oo"]
+[ext_resource type="Script" uid="uid://mfnjcag8tgo7" path="res://bgscenes/mute.gd" id="7_e6a3c"]
 [ext_resource type="Texture2D" uid="uid://dgob8bfkctvek" path="res://addons/maaacks_credits_scene/examples/scenes/credits/smilingalba.png" id="7_ylvm1"]
 [ext_resource type="Texture2D" uid="uid://bpoobmtys5l8j" path="res://addons/maaacks_credits_scene/examples/scenes/credits/shockedalba.png" id="8_6r1oo"]
+[ext_resource type="Texture2D" uid="uid://d1wxjlv2ajwfe" path="res://scripts/volume-solid-full.svg" id="8_6wq3x"]
 [ext_resource type="Texture2D" uid="uid://dscn1nfybee5t" path="res://addons/maaacks_credits_scene/examples/scenes/credits/concernedalba.png" id="9_2tb2a"]
+[ext_resource type="Texture2D" uid="uid://csvr443c41fdi" path="res://scripts/volume-xmark-solid-full.svg" id="9_ppwn6"]
 [ext_resource type="Script" uid="uid://d2mhxqjd4fuig" path="res://assetscenes/slugscenes/circle_slug_swimming.gd" id="11_2tb2a"]
 [ext_resource type="Script" uid="uid://gkyr13sk2ups" path="res://bgscenes/halo_manager.gd" id="12_bdktm"]
 [ext_resource type="PackedScene" uid="uid://8ivt2kh5xj51" path="res://assetscenes/slugscenes/sapsucker.tscn" id="13_15nvs"]
@@ -40,15 +43,6 @@ theme_override_styles/hover = ExtResource("5_ylvm1")
 text = "X"
 script = ExtResource("6_6r1oo")
 
-[node name="Windowed" type="Button" parent="CanvasLayer/Top Menu" unique_id=329633315]
-layout_mode = 2
-theme = ExtResource("3_6m5cr")
-theme_override_font_sizes/font_size = 22
-theme_override_styles/normal = ExtResource("4_qm2oe")
-theme_override_styles/hover = ExtResource("5_ylvm1")
-text = "⧉"
-script = ExtResource("6_6r1oo")
-
 [node name="Back" type="Button" parent="CanvasLayer/Top Menu" unique_id=1722311912]
 layout_direction = 2
 layout_mode = 2
@@ -59,6 +53,15 @@ theme_override_styles/hover = ExtResource("5_ylvm1")
 text = "Back"
 icon_alignment = 1
 script = ExtResource("6_6r1oo")
+
+[node name="Mute" type="TextureButton" parent="CanvasLayer/Top Menu" unique_id=2020263573]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+theme = ExtResource("3_6m5cr")
+ignore_texture_size = true
+script = ExtResource("7_e6a3c")
+music_on_icon = ExtResource("8_6wq3x")
+music_off_icon = ExtResource("9_ppwn6")
 
 [node name="happy_alba" type="Sprite2D" parent="." unique_id=1420239197]
 position = Vector2(881, 477.00006)
@@ -130,7 +133,7 @@ max_meals = 3
 externally_managed = true
 
 [connection signal="button_down" from="CanvasLayer/Top Menu/Quit" to="CanvasLayer/Top Menu/Quit" method="_on_quit_button_down"]
-[connection signal="button_down" from="CanvasLayer/Top Menu/Windowed" to="CanvasLayer/Top Menu/Quit" method="_on_windowed_button_down"]
 [connection signal="button_down" from="CanvasLayer/Top Menu/Back" to="CanvasLayer/Top Menu/Back" method="_on_back_button_down"]
+[connection signal="toggled" from="CanvasLayer/Top Menu/Mute" to="CanvasLayer/Top Menu/Mute" method="_on_toggled"]
 
 [editable path="HaloManager/Paradisa"]

@@ -8,11 +8,16 @@
 [ext_resource type="StyleBox" uid="uid://c0cys5bm22016" path="res://bgscenes/whitebuttonhover.tres" id="4_uy23p"]
 [ext_resource type="Script" uid="uid://uusxfhw2epny" path="res://scripts/buttons.gd" id="5_sx3ea"]
 [ext_resource type="Shader" uid="uid://b8s4yndsmmh7a" path="res://bgscenes/upperwave.gdshader" id="6_uy23p"]
+[ext_resource type="Script" uid="uid://dpcd3tprvxu0o" path="res://bgscenes/main_menu_buttons.gd" id="7_evqlu"]
 [ext_resource type="Theme" uid="uid://bxuek2tcx0gru" path="res://themes/containertheme.tres" id="7_i3x55"]
 [ext_resource type="Texture2D" uid="uid://bt47h055xx2y2" path="res://images/boat.png" id="7_ok5lk"]
 [ext_resource type="Script" uid="uid://dxy1u3txbephe" path="res://bgscenes/wavemaker.gd" id="8_awy0k"]
 [ext_resource type="Script" uid="uid://cemp8kuaynvje" path="res://scripts/bowl_logic.gd" id="10_uy23p"]
+[ext_resource type="Shader" uid="uid://bvmjc4g31unbk" path="res://bgscenes/invert.gdshader" id="11_0326h"]
 [ext_resource type="Shader" uid="uid://c5dtjqshoh1ms" path="res://bgscenes/stars.gdshader" id="11_ok5lk"]
+[ext_resource type="Script" uid="uid://mfnjcag8tgo7" path="res://bgscenes/mute.gd" id="12_evqlu"]
+[ext_resource type="Texture2D" uid="uid://d1wxjlv2ajwfe" path="res://scripts/volume-solid-full.svg" id="13_1k1rq"]
+[ext_resource type="Texture2D" uid="uid://csvr443c41fdi" path="res://scripts/volume-xmark-solid-full.svg" id="14_uwa1u"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0326h"]
 shader = ExtResource("6_uy23p")
@@ -60,6 +65,9 @@ corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 expand_margin_left = 8.0
 expand_margin_right = 8.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_waws4"]
+shader = ExtResource("11_0326h")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_i3x55"]
 shader = ExtResource("11_ok5lk")
@@ -127,8 +135,10 @@ layout_mode = 2
 theme = ExtResource("2_4oy8p")
 theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = ExtResource("3_awy0k")
-text = "Play"
-script = ExtResource("5_sx3ea")
+text = "Intro"
+script = ExtResource("7_evqlu")
+wave_amplitude = 40.0
+wave_frequency = 4.0
 
 [node name="Open" type="Button" parent="CanvasLayer/CenterContainer/MainButtons" unique_id=1439565575]
 layout_mode = 2
@@ -137,7 +147,9 @@ theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = ExtResource("3_awy0k")
 theme_override_styles/hover = ExtResource("4_uy23p")
 text = "Open"
-script = ExtResource("5_sx3ea")
+script = ExtResource("7_evqlu")
+wave_amplitude = 40.0
+wave_frequency = 4.0
 
 [node name="Worldmode" type="Button" parent="CanvasLayer/CenterContainer/MainButtons" unique_id=1559610756]
 layout_mode = 2
@@ -146,7 +158,9 @@ theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = ExtResource("3_awy0k")
 theme_override_styles/hover = ExtResource("4_uy23p")
 text = "World"
-script = ExtResource("5_sx3ea")
+script = ExtResource("7_evqlu")
+wave_amplitude = 40.0
+wave_frequency = 4.0
 
 [node name="Credits" type="Button" parent="CanvasLayer/CenterContainer/MainButtons" unique_id=1665455270]
 layout_mode = 2
@@ -155,7 +169,10 @@ theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = ExtResource("3_awy0k")
 theme_override_styles/hover = ExtResource("4_uy23p")
 text = "Credits"
-script = ExtResource("5_sx3ea")
+script = ExtResource("7_evqlu")
+wave_amplitude = 40.0
+wave_frequency = 4.0
+shake_level = 8.0
 
 [node name="Quit" type="Button" parent="CanvasLayer/CenterContainer/MainButtons" unique_id=83623115]
 visible = false
@@ -210,14 +227,16 @@ theme_override_styles/hover = ExtResource("4_uy23p")
 text = "X"
 script = ExtResource("5_sx3ea")
 
-[node name="Windowed" type="Button" parent="CanvasLayer/Top Menu" unique_id=318076114]
+[node name="Mute" type="TextureButton" parent="CanvasLayer/Top Menu" unique_id=1503754245]
+z_index = 8
+material = SubResource("ShaderMaterial_waws4")
+custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 theme = ExtResource("2_4oy8p")
-theme_override_font_sizes/font_size = 22
-theme_override_styles/normal = ExtResource("3_awy0k")
-theme_override_styles/hover = ExtResource("4_uy23p")
-text = "⧉"
-script = ExtResource("5_sx3ea")
+ignore_texture_size = true
+script = ExtResource("12_evqlu")
+music_on_icon = ExtResource("13_1k1rq")
+music_off_icon = ExtResource("14_uwa1u")
 
 [node name="Node2D" parent="CanvasLayer" unique_id=969373638 instance=ExtResource("1_4oy8p")]
 position = Vector2(-320, 76)
@@ -250,4 +269,4 @@ polygon = PackedVector2Array(-3, 504, 2043, 487, 2065, 711, 2145, 796, 2131, 322
 [connection signal="button_down" from="CanvasLayer/CenterContainer/MainButtons/Credits" to="CanvasLayer/CenterContainer/MainButtons/Credits" method="_on_credits_button_down"]
 [connection signal="button_down" from="CanvasLayer/CenterContainer/MainButtons/Quit" to="CanvasLayer/CenterContainer/MainButtons/Play" method="_on_quit_button_down"]
 [connection signal="button_down" from="CanvasLayer/Top Menu/Quit" to="CanvasLayer/Top Menu/Quit" method="_on_quit_button_down"]
-[connection signal="button_down" from="CanvasLayer/Top Menu/Windowed" to="CanvasLayer/Top Menu/Quit" method="_on_windowed_button_down"]
+[connection signal="toggled" from="CanvasLayer/Top Menu/Mute" to="CanvasLayer/Top Menu/Mute" method="_on_toggled"]

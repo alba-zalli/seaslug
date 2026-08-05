@@ -149,7 +149,6 @@ func _ready():
 		var spawn_x = randf_range(0.0, screen_size.x) # TODO: fix ater fish being spawned so high up
 		global_position.x = spawn_x
 		_reset_wave_band(screen_size)
-		var surface = WaveManager.get_surface_y_px(global_position.x)
 		swim_y = screen_size.y - 10.0
 		
 

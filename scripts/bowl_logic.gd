@@ -18,12 +18,6 @@ func _get_radius_x() -> float:
 func _get_radius_y() -> float:
 	return 60. * _get_scaler()
 
-
-var radius_x = 90. * _get_scaler()
-var radius_y = 60. * _get_scaler()
-
-
-
 # ===================================
 # LIMITS
 # ===================================

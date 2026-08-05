@@ -34,8 +34,8 @@ func _process(delta: float) -> void:
 	water_material.set_shader_parameter("show_boat", show_boat)
 
 	var rect_size: Vector2 = water_rect.size
-	var centered := boat_position - Vector2(0.5, 0.5)
-	var rotated := centered.rotated(-gravity_angle) + Vector2(0.5, 0.5)
+	var centered_pos := boat_position - Vector2(0.5, 0.5)
+	var rotated := centered_pos.rotated(-gravity_angle) + Vector2(0.5, 0.5)
 	var wave := sin(rotated.x * frequency + speed * t) * amplitude
 	var wave_uv := boat_position + Vector2(0.0, wave + float_offset)
 	position = wave_uv * rect_size

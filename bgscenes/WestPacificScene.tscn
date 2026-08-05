@@ -225,15 +225,10 @@ theme_override_constants/margin_bottom = 10
 layout_mode = 2
 theme = ExtResource("4_a8hr7")
 
-[node name="Label" type="Label" parent="SandboxScreen/Panel/MarginContainer/VBoxContainer" unique_id=1602591654]
-layout_mode = 2
-text = "Information"
-autowrap_mode = 3
-
 [node name="Label2" type="Label" parent="SandboxScreen/Panel/MarginContainer/VBoxContainer" unique_id=1904634744]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
-text = "West pacific shoreline"
+text = "Welcome to the West Pacific shoreline! "
 autowrap_mode = 3
 
 [node name="Book" parent="SandboxScreen" unique_id=1072664842 instance=ExtResource("16_oqdk7")]
