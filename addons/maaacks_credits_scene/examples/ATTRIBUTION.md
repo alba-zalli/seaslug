@@ -39,6 +39,7 @@ Alison Wright
 [vichighmarine.ca : Hedgpeth's Sea Hare](https://vichighmarine.ca/hedgpeths-sea-hare/)  
 [msi.ucsb.edu : Colorful Sea Slug](https://msi.ucsb.edu/news/colorful-sea-slug)  
 
+
 ## Tools
 
 ![Godot Engine Logo](/addons/maaacks_credits_scene/examples/assets/godot_engine_logo/logo_vertical_color_dark.png)  
@@ -46,11 +47,13 @@ Author: [Juan Linietsky, Ariel Manzur, and contributors](https://godotengine.org
 Source: [godotengine.org](https://godotengine.org/)  
 License: [MIT License](https://github.com/godotengine/godot/blob/master/LICENSE.txt)
 
+
 Godot Credits Scene
 ![Maaack Plugin Icon](/addons/maaacks_credits_scene/examples/assets/plugin_logo/logo.png)  
 Author: [Marek Belski and contributors](https://github.com/Maaack/Godot-Credits-Scene/graphs/contributors)  
 Source: [github: Godot-Credits-Scene](https://github.com/Maaack/Godot-Credits-Scene)  
 License: [MIT License](LICENSE.txt)
+
 
 ![Git Logo](/addons/maaacks_credits_scene/examples/assets/git_logo/Git-Logo-2Color.png)  
 Author: [Linus Torvalds](https://github.com/torvalds)  
@@ -64,3 +67,5 @@ I've been working on this game constantly for the last two months.
 Honestly, it's been really hard, it's taken so long to make this!
 It's also been my first game ever! I hope that you enjoy it :3 <3 I am learning to be more proud of my work. 
 Thank you for caring.
+
+![Trans Flag](/images/transgender-flag.png)  

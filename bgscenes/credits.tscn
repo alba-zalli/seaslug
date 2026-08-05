@@ -58,133 +58,79 @@ offset_bottom = 1005.0
 [node name="CreditsLabel" parent="ScrollableCredits" index="0" unique_id=492156833]
 offset_left = -141.0
 offset_right = 139.0
-text = "
-[font_size=48]Collaborators[/font_size]
-
-[font_size=32]Created By[/font_size]
+theme_override_font_sizes/normal_font_size = 20
+text = "[center][font=\"res://fonts/ElmsSans-Black.ttf\"][font_size=30]Created By[/font_size][/font]
 Alba Zalli
 
-[font_size=32]Art[/font_size]
+[font=\"res://fonts/ElmsSans-Black.ttf\"][font_size=30]Art[/font_size][/font]
 Alba Zalli  
 Alison Wright
 
-[font_size=32]Original Soundtrack[/font_size]
+[font=\"res://fonts/ElmsSans-Black.ttf\"][font_size=30]Original Soundtrack[/font_size][/font]
 Arlind Zalli
 
-[font_size=32]Debugging Help[/font_size]
+[font=\"res://fonts/ElmsSans-Black.ttf\"][font_size=30]Debugging Help[/font_size][/font]
 Nadia Singh
 
-[font_size=32]Playtesters[/font_size]
+[font=\"res://fonts/ElmsSans-Black.ttf\"][font_size=30]Playtesters[/font_size][/font]
 Whoever is reading this!
 
-[font_size=32]Special Thanks[/font_size]
-Josh Sabourin (for letting me work on this all day at my co-op for the last two months!)  
+[font=\"res://fonts/ElmsSans-Black.ttf\"][font_size=30]Special Thanks[/font_size][/font]
+Josh Sabourin
 Nadia Singh  
 Arlind Zalli  
 Alison Wright
 
-
-[font_size=64]Sourced[/font_size]
-
-[font_size=48]Shaders[/font_size]
-
-[font_size=32]2D Liquid Wave Shader[/font_size]
-Author: [url=https://godotshaders.com/]Unknown[/url]  
-Source: [url=https://godotshaders.com/shader/2d-liquid-wave/]godotshaders.com : 2d-liquid-wave[/url]  
- 
-
-[font_size=32]2D Starfield Scrolling Effect Shader[/font_size]
-Author: [url=https://godotshaders.com/]Unknown[/url]  
-Source: [url=https://godotshaders.com/shader/2d-starfield-in-the-sky-with-scrolling-effect-ver-1-0/]godotshaders.com : 2d-starfield-in-the-sky-with-scrolling-effect-ver-1-0[/url]  
- 
-
-[font_size=32]Magnifying Glass Lens Distortion Shader[/font_size]
-Author: [url=https://godotshaders.com/]Unknown[/url]  
-Source: [url=https://godotshaders.com/shader/magnifying-glass-with-lens-distortion-effect/]godotshaders.com : magnifying-glass-with-lens-distortion-effect[/url]  
- 
+[font=\"res://fonts/ElmsSans-Black.ttf\"][font_size=30]Shaders[/font_size][/font]
+[url=https://godotshaders.com/shader/2d-liquid-wave/]godotshaders.com : 2d-liquid-wave[/url]  
+[url=https://godotshaders.com/shader/2d-starfield-in-the-sky-with-scrolling-effect-ver-1-0/]godotshaders.com : 2d-starfield-in-the-sky-with-scrolling-effect-ver-1-0[/url]  
+[url=https://godotshaders.com/shader/magnifying-glass-with-lens-distortion-effect/]godotshaders.com : magnifying-glass-with-lens-distortion-effect[/url]  
 
 
-[font_size=48]Slug Research Sources[/font_size]
+[font=\"res://fonts/ElmsSans-Black.ttf\"][font_size=30]Slug Research Sources[/font_size][/font]
+[url=https://www.worldwildlife.org/resources/facts/what-is-a-leaf-sheep/]worldwildlife.org : What is a Leaf Sheep?[/url]  
+[url=https://www.seaslugforum.net/showall/chroquad]seaslugforum.net : Chromodoris quadricolor[/url]  
+[url=https://www.reeflex.net/tiere/13242_Hypselodoris_paradisa.htm]reeflex.net : Hypselodoris paradisa[/url]  
+[url=https://www.inaturalist.org/taxa/785725-Hypselodoris-paradisa]inaturalist.org : Hypselodoris paradisa[/url]  
+[url=https://www.inaturalist.org/taxa/469414-Goniobranchus-reticulatus]inaturalist.org : Goniobranchus reticulatus[/url]  
+[url=https://en.seaslug.world/species/phyllidia_marindica]seaslug.world : Phyllidia marindica[/url]  
+[url=https://www.lembehresort.com/critter-log/critter/flabellina-rubrolineata]lembehresort.com : Flabellina rubrolineata[/url]  
+[url=http://www.seaslugforum.net/showall/phylmean]seaslugforum.net : Phyllidia meaniana[/url]  
+[url=https://www.seaslugforum.net/find/hypsmard]seaslugforum.net : Hypselodoris maridadilus[/url]  
+[url=https://vichighmarine.ca/hedgpeths-sea-hare/]vichighmarine.ca : Hedgpeth's Sea Hare[/url]  
+[url=https://msi.ucsb.edu/news/colorful-sea-slug]msi.ucsb.edu : Colorful Sea Slug[/url]  
 
-[font_size=32]Sea Slug Biology and Species Research[/font_size]
-[font_size=24]Use Case[/font_size]
-Used for researching sea slug species, habitats, diets, and descriptions.
+[font=\"res://fonts/ElmsSans-Black.ttf\"][font_size=30]Tools[/font_size][/font]
 
-Author: [url=https://www.worldwildlife.org/]World Wildlife Fund[/url]  
-Source: [url=https://www.worldwildlife.org/resources/facts/what-is-a-leaf-sheep/]worldwildlife.org : What is a Leaf Sheep?[/url]  
- 
-
-Author: [url=http://www.seaslugforum.net/]The Sea Slug Forum[/url]  
-Source: [url=https://www.seaslugforum.net/showall/chroquad]seaslugforum.net : Chromodoris quadricolor[/url]  
- 
-
-Author: [url=https://www.reeflex.net/]Reeflex[/url]  
-Source: [url=https://www.reeflex.net/tiere/13242_Hypselodoris_paradisa.htm]reeflex.net : Hypselodoris paradisa[/url]  
- 
-
-Author: [url=https://www.inaturalist.org/]iNaturalist[/url]  
-Source: [url=https://www.inaturalist.org/taxa/785725-Hypselodoris-paradisa]inaturalist.org : Hypselodoris paradisa[/url]  
- 
-
-Author: [url=https://www.inaturalist.org/]iNaturalist[/url]  
-Source: [url=https://www.inaturalist.org/taxa/469414-Goniobranchus-reticulatus]inaturalist.org : Goniobranchus reticulatus[/url]  
- 
-
-Author: [url=https://en.seaslug.world/]Sea Slug World[/url]  
-Source: [url=https://en.seaslug.world/species/phyllidia_marindica]seaslug.world : Phyllidia marindica[/url]  
- 
-
-Author: [url=https://www.lembehresort.com/]Lembeh Resort[/url]  
-Source: [url=https://www.lembehresort.com/critter-log/critter/flabellina-rubrolineata]lembehresort.com : Flabellina rubrolineata[/url]  
- 
-
-Author: [url=http://www.seaslugforum.net/]The Sea Slug Forum[/url]  
-Source: [url=http://www.seaslugforum.net/showall/phylmean]seaslugforum.net : Phyllidia meaniana[/url]  
- 
-
-Author: [url=http://www.seaslugforum.net/]The Sea Slug Forum[/url]  
-Source: [url=https://www.seaslugforum.net/find/hypsmard]seaslugforum.net : Hypselodoris maridadilus[/url]  
- 
-
-Author: [url=https://vichighmarine.ca/]Vancouver Island Community Marine Education[/url]  
-Source: [url=https://vichighmarine.ca/hedgpeths-sea-hare/]vichighmarine.ca : Hedgpeth's Sea Hare[/url]  
- 
-
-Author: [url=https://msi.ucsb.edu/]Marine Science Institute - UCSB[/url]  
-Source: [url=https://msi.ucsb.edu/news/colorful-sea-slug]msi.ucsb.edu : Colorful Sea Slug[/url]  
- 
-
-
-[font_size=64]Tools[/font_size]
-
-[font_size=48]Godot[/font_size]
-[img=80]res:///addons/maaacks_credits_scene/examples/assets/godot_engine_logo/logo_vertical_color_dark.png[/img]  
-
+[img=100x100]res:///addons/maaacks_credits_scene/examples/assets/godot_engine_logo/logo_vertical_color_dark.png[/img]  
 Author: [url=https://godotengine.org/contact]Juan Linietsky, Ariel Manzur, and contributors[/url]  
 Source: [url=https://godotengine.org/]godotengine.org[/url]  
 License: [url=https://github.com/godotengine/godot/blob/master/LICENSE.txt]MIT License[/url]
 
-
-[font_size=48]Godot Credits Scene[/font_size]
-[img=80]res:///addons/maaacks_credits_scene/examples/assets/plugin_logo/logo.png[/img]  
-
+Godot Credits Scene
+[img=100x100]res:///addons/maaacks_credits_scene/examples/assets/plugin_logo/logo.png[/img]  
 Author: [url=https://github.com/Maaack/Godot-Credits-Scene/graphs/contributors]Marek Belski and contributors[/url]  
 Source: [url=https://github.com/Maaack/Godot-Credits-Scene]github: Godot-Credits-Scene[/url]  
 License: [url=LICENSE.txt]MIT License[/url]
 
-
-[font_size=48]Git[/font_size]
-[img=80]res:///addons/maaacks_credits_scene/examples/assets/git_logo/Git-Logo-2Color.png[/img]  
-
+[img=100x100]res:///addons/maaacks_credits_scene/examples/assets/git_logo/Git-Logo-2Color.png[/img]  
 Author: [url=https://github.com/torvalds]Linus Torvalds[/url]  
 Source: [url=https://git-scm.com/downloads]git-scm.com[/url]  
 License: [url=https://opensource.org/licenses/GPL-2.0]GNU General Public License version 2[/url]
-"
+
+
+
+[font_size=32]Thank you <3[/font_size]
+I've been working on this game constantly for the last two months.
+Honestly, it's been really hard, it's taken so long to make this!
+It's also been my first game ever! I hope that you enjoy it :3 <3 I am learning to be more proud of my work. 
+Thank you for caring.
+[/center]"
 scroll_following = false
 scroll_following_visible_characters = false
-normal_font_size = null
 h2_font_size = 30
-bold_headings = false
+max_image_width = 80
+max_image_height = 0
 
 [node name="CenterContainer" type="CenterContainer" parent="." unique_id=959750198]
 offset_left = -6.0

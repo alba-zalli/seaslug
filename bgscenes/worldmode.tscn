@@ -97,6 +97,7 @@ offset_right = 1857.0
 offset_bottom = 850.0
 theme = ExtResource("4_uk5vf")
 theme_override_font_sizes/font_size = 35
+theme_override_styles/pressed = ExtResource("6_5vvfr")
 text = "Lets go!"
 script = ExtResource("11_jtt2l")
 wave_amplitude = 40.0

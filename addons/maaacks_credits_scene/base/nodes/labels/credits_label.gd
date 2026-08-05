@@ -42,11 +42,11 @@ const BOLD_HEADING_WITHOUT_FONT := (
 @export var normal_font_size: int = 20
 
 ## Heading sizes.
-@export var h1_font_size: int = 38
+@export var h1_font_size: int = 40
 @export var h2_font_size: int = 30
-@export var h3_font_size: int = 28
-@export var h4_font_size: int = 24
-@export var h5_font_size: int = 22
+@export var h3_font_size: int = 27
+@export var h4_font_size: int = 22
+@export var h5_font_size: int = 20
 @export var h6_font_size: int = 20
 
 ## Bold all headings.
@@ -269,7 +269,7 @@ func _update_text_from_file() -> void:
 	file_text = regex_replace_titles(file_text)
 
 	bbcode_enabled = true
-	text = file_text
+	text = "[center]%s[/center]" % file_text
 
 	add_theme_font_size_override(
 		"normal_font_size",
@@ -336,6 +336,8 @@ func _on_meta_clicked(meta: Variant) -> void:
 
 func _ready() -> void:
 	bbcode_enabled = true
+	horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+
 	scroll_following = false
 	scroll_following_visible_characters = false
 

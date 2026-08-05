@@ -4,11 +4,15 @@
 [ext_resource type="StyleBox" uid="uid://c0cys5bm22016" path="res://bgscenes/whitebuttonhover.tres" id="1_qu3ew"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4ouc2"]
-bg_color = Color(0.83961904, 0.9360494, 0.9756661, 1)
+bg_color = Color(0.8, 0.9599999, 1, 1)
 corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
+expand_margin_left = 8.0
+expand_margin_top = 8.0
+expand_margin_right = 8.0
+expand_margin_bottom = 8.0
 
 [resource]
 default_font = ExtResource("1_g2meo")
