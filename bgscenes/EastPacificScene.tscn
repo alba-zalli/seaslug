@@ -73,9 +73,10 @@ position = Vector2(911, 519)
 scale = Vector2(0.2308, 0.18245003)
 texture = ExtResource("1_h7vn0")
 
-[node name="Bowl" type="Node2D" parent="SandboxScreen" unique_id=1400895333]
+[node name="Bowl" type="Node2D" parent="SandboxScreen" unique_id=1400895333 node_paths=PackedStringArray("warning_label")]
 position = Vector2(0, 405)
 script = ExtResource("2_q3d05")
+warning_label = NodePath("../Panel/MarginContainer/VBoxContainer/Label2")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="SandboxScreen/Bowl" unique_id=2004645284]
 

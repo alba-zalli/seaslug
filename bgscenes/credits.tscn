@@ -8,6 +8,8 @@
 [ext_resource type="StyleBox" uid="uid://c0cys5bm22016" path="res://bgscenes/whitebuttonhover.tres" id="5_yragn"]
 [ext_resource type="Shader" uid="uid://c5dtjqshoh1ms" path="res://bgscenes/stars.gdshader" id="7_q5mcn"]
 [ext_resource type="PackedScene" uid="uid://osxulxw2oas3" path="res://addons/maaacks_credits_scene/examples/scenes/credits/scrollable_credits.tscn" id="8_6l4rv"]
+[ext_resource type="Texture2D" uid="uid://bxpv1lmumif05" path="res://2.png" id="9_tb0c1"]
+[ext_resource type="Script" uid="uid://b67vwtnwornhf" path="res://bgscenes/sprite_2d.gd" id="10_tkucq"]
 
 [sub_resource type="Theme" id="Theme_pjc1l"]
 
@@ -50,10 +52,10 @@ shader_parameter/background_color = Color(0.76763624, 0.46242857, 0.6456987, 1)
 
 [node name="ScrollableCredits" parent="." unique_id=2118552706 instance=ExtResource("8_6l4rv")]
 custom_minimum_size = Vector2(1000, 800)
-offset_left = 483.0
-offset_top = 205.0
-offset_right = 1483.0
-offset_bottom = 1005.0
+offset_left = 729.0
+offset_top = 199.0
+offset_right = 1729.0
+offset_bottom = 999.0
 
 [node name="CreditsLabel" parent="ScrollableCredits" index="0" unique_id=492156833]
 offset_left = -141.0
@@ -100,20 +102,23 @@ Alison Wright
 [url=https://vichighmarine.ca/hedgpeths-sea-hare/]vichighmarine.ca : Hedgpeth's Sea Hare[/url]  
 [url=https://msi.ucsb.edu/news/colorful-sea-slug]msi.ucsb.edu : Colorful Sea Slug[/url]  
 
+
 [font=\"res://fonts/ElmsSans-Black.ttf\"][font_size=30]Tools[/font_size][/font]
 
-[img=100x100]res:///addons/maaacks_credits_scene/examples/assets/godot_engine_logo/logo_vertical_color_dark.png[/img]  
+[img=80]res:///addons/maaacks_credits_scene/examples/assets/godot_engine_logo/logo_vertical_color_dark.png[/img]  
 Author: [url=https://godotengine.org/contact]Juan Linietsky, Ariel Manzur, and contributors[/url]  
 Source: [url=https://godotengine.org/]godotengine.org[/url]  
 License: [url=https://github.com/godotengine/godot/blob/master/LICENSE.txt]MIT License[/url]
 
+
 Godot Credits Scene
-[img=100x100]res:///addons/maaacks_credits_scene/examples/assets/plugin_logo/logo.png[/img]  
+[img=80]res:///addons/maaacks_credits_scene/examples/assets/plugin_logo/logo.png[/img]  
 Author: [url=https://github.com/Maaack/Godot-Credits-Scene/graphs/contributors]Marek Belski and contributors[/url]  
 Source: [url=https://github.com/Maaack/Godot-Credits-Scene]github: Godot-Credits-Scene[/url]  
 License: [url=LICENSE.txt]MIT License[/url]
 
-[img=100x100]res:///addons/maaacks_credits_scene/examples/assets/git_logo/Git-Logo-2Color.png[/img]  
+
+[img=80]res:///addons/maaacks_credits_scene/examples/assets/git_logo/Git-Logo-2Color.png[/img]  
 Author: [url=https://github.com/torvalds]Linus Torvalds[/url]  
 Source: [url=https://git-scm.com/downloads]git-scm.com[/url]  
 License: [url=https://opensource.org/licenses/GPL-2.0]GNU General Public License version 2[/url]
@@ -125,6 +130,8 @@ I've been working on this game constantly for the last two months.
 Honestly, it's been really hard, it's taken so long to make this!
 It's also been my first game ever! I hope that you enjoy it :3 <3 I am learning to be more proud of my work. 
 Thank you for caring.
+
+[img=80]res:///images/transgender-flag.png[/img]  
 [/center]"
 scroll_following = false
 scroll_following_visible_characters = false
@@ -185,6 +192,14 @@ offset_right = 34.0
 offset_bottom = 34.0
 scale = Vector2(48.352295, 27.314573)
 mouse_filter = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1161973033]
+position = Vector2(260, 557)
+scale = Vector2(0.7901753, 0.7905752)
+texture = ExtResource("9_tb0c1")
+script = ExtResource("10_tkucq")
+float_height = 20.0
+float_speed = 1.0
 
 [connection signal="button_down" from="Top Menu/Quit" to="Top Menu/Quit" method="_on_quit_button_down"]
 [connection signal="button_down" from="Top Menu/Back" to="Top Menu/Back" method="_on_back_button_down"]

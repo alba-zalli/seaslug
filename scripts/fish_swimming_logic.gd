@@ -590,49 +590,50 @@ func _keep_inside_ellipse() -> void:
 	if radius_x <= 0.0 or radius_y <= 0.0:
 		return
 
-	var offset: Vector2 = (
-		global_position
-		- bowl_center
+	# Leave room for the slug collision shape instead of allowing
+	# the slug center to reach the visible bowl edge.
+	var safe_radius_x: float = maxf(radius_x - 25.0, 1.0)
+	var safe_radius_y: float = maxf(radius_y - 25.0, 1.0)
+
+	var offset: Vector2 = global_position - bowl_center
+	var ellipse_distance: float = (
+		(offset.x * offset.x) / (safe_radius_x * safe_radius_x)
+		+ (offset.y * offset.y) / (safe_radius_y * safe_radius_y)
 	)
 
-	var ellipse_check: float = (
-		(offset.x * offset.x)
-		/ (radius_x * radius_x)
-		+
-		(offset.y * offset.y)
-		/ (radius_y * radius_y)
-	)
-
-	if ellipse_check <= 1.0:
+	if ellipse_distance <= 1.0:
 		return
 
-	var angle: float = atan2(
-		offset.y / radius_y,
-		offset.x / radius_x
-	)
-
+	# Move the slug slightly inside the ellipse, not directly onto
+	# the boundary, which prevents repeated correction jitter.
+	var correction_scale: float = 1.0 / sqrt(ellipse_distance)
 	global_position = (
 		bowl_center
-		+ Vector2(
-			cos(angle) * radius_x,
-			sin(angle) * radius_y
-		)
+		+ offset * correction_scale * 0.98
 	)
 
+	# Redirect movement inward so the slug does not immediately
+	# attempt to cross the boundary again.
 	var inward_direction: Vector2 = (
-		bowl_center
-		- global_position
+		bowl_center - global_position
 	).normalized()
 
-	var inward_blend: Vector2 = (
-		swim_direction.lerp(
-			inward_direction,
-			0.25
-		)
+	var inward_blend: Vector2 = swim_direction.lerp(
+		inward_direction,
+		0.75
 	)
 
 	if inward_blend.length_squared() > 0.0001:
 		swim_direction = inward_blend.normalized()
+	else:
+		swim_direction = inward_direction
+
+	velocity = (
+		swim_direction
+		* minf(swim_speed * speed_multiplier, maximum_swim_speed)
+	)
+
+	target_speed_multiplier = 1.0
 
 
 func _physics_process_main_menu(

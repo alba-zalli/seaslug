@@ -23,6 +23,7 @@ buses/default_bus_layout="uid://biawuav5u7vcp"
 DialogueManager="*uid://c3rodes2l3gxb"
 WaveManager="*uid://dhc6doj1gkoix"
 MusicManager="*uid://grenalkv4sir"
+SceneLoader="*uid://bxjs7v24lqcrd"
 
 [display]
 

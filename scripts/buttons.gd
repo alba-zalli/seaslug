@@ -1,41 +1,65 @@
 extends Button
-# handles all buttons choices in the game
 
-# Called when the node enters the scene tree for the first time.
+# Handles all button choices in the game.
+
+
 func _ready() -> void:
 	pass
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+
 func _process(_delta: float) -> void:
 	pass
 
-# handles dialogue box choices
-func change_to_sandbox():
-	get_tree().change_scene_to_file("res://bgscenes/sandboxscreen.tscn")
 
-func change_to_world():
-	get_tree().change_scene_to_file("res://bgscenes/bowl.tscn")
+# Handles dialogue box choices.
+func change_to_sandbox() -> void:
+	SceneLoader.load_scene(
+		"res://bgscenes/sandboxscreen.tscn"
+	)
 
-# switch from main menu to bowl scene
+
+func change_to_world() -> void:
+	SceneLoader.load_scene(
+		"res://bgscenes/bowl.tscn"
+	)
+
+
+# Switch from main menu to dialogue intro.
 func _on_play_button_down() -> void:
-	get_tree().change_scene_to_file("res://bgscenes/dialogueintroscreen.tscn")
+	SceneLoader.load_scene(
+		"res://bgscenes/dialogueintroscreen.tscn"
+	)
+
 
 func _on_credits_button_down() -> void:
-	get_tree().change_scene_to_file("res://bgscenes/credits.tscn")
-		
+	SceneLoader.load_scene(
+		"res://bgscenes/credits.tscn"
+	)
+
+
 func _on_settings_button_down() -> void:
-	get_tree().change_scene_to_file("res://bgscenes/worldmode.tscn")
+	SceneLoader.load_scene(
+		"res://bgscenes/worldmode.tscn"
+	)
 
-# switch from bowl scene to main menu
+
+# Switch back to the main menu.
 func _on_back_button_down() -> void:
-	get_tree().change_scene_to_file("res://bgscenes/bettermainmenu.tscn")
+	SceneLoader.load_scene(
+		"res://bgscenes/bettermainmenu.tscn"
+	)
 
-# quit game
+
+# Quit the game.
 func _on_quit_button_down() -> void:
 	get_tree().quit()
+
 
 func _on_windowed_button_down() -> void:
 	pass
 
+
 func _on_button_down() -> void:
-	get_tree().change_scene_to_file("res://bgscenes/sandboxscreen.tscn")
+	SceneLoader.load_scene(
+		"res://bgscenes/sandboxscreen.tscn"
+	)

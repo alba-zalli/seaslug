@@ -2,6 +2,12 @@ extends Node2D
 
 # HANDLES FOOD AND SLUG SPAWNING
 
+@export var warning_label: Label
+@export var warning_duration: float = 2.5
+
+var normal_warning_text: String = ""
+var warning_message_id: int = 0
+
 
 func _get_scaler() -> float:
 	return get_viewport_rect().size.y / 175.
@@ -119,7 +125,9 @@ func food_maker(food):
 
 	if not can_spawn_food():
 
-		print("MAX FOOD REACHED")
+		show_temporary_warning(
+			"There is too much food in the bowl!"
+		)
 
 		food.queue_free()
 
@@ -144,7 +152,9 @@ func food_maker(food):
 func fish_maker(fish, data: SlugData = null):
 
 	if not can_spawn_slug():
-
+		show_temporary_warning(
+			"There are too many slugs in the bowl!"
+		)
 		print("MAX SLUGS REACHED")
 
 		fish.queue_free()
@@ -207,24 +217,25 @@ func clear_bowl():
 # ===================================
 
 func _random_bowl_position() -> Vector2:
+	var center: Vector2 = _get_bowl_center()
 
-	var center = _get_bowl_center()
+	# maxf returns a float instead of Variant.
+	var safe_radius_x: float = maxf(
+		_get_radius_x() - 35.0,
+		1.0
+	)
+	var safe_radius_y: float = maxf(
+		_get_radius_y() - 35.0,
+		1.0
+	)
 
-	var rx = _get_radius_x()
+	var angle: float = randf_range(0.0, TAU)
+	var distance: float = sqrt(randf()) * 0.70
 
-	var ry = _get_radius_y()
-
-
-	var angle = randf() * TAU
-
-	var dist = sqrt(randf())
-
-
-	var offset = Vector2(
-		cos(angle) * rx,
-		sin(angle) * ry
-	) * dist * 0.85
-
+	var offset: Vector2 = Vector2(
+		cos(angle) * safe_radius_x,
+		sin(angle) * safe_radius_y
+	) * distance
 
 	return center + offset
 
@@ -293,7 +304,23 @@ func spawn_paradisa():
 
 
 
+func show_temporary_warning(message: String) -> void:
+	if warning_label == null:
+		push_warning("Warning Label has not been assigned.")
+		return
 
+	warning_message_id += 1
+	var current_message_id: int = warning_message_id
+
+	warning_label.text = message
+
+	await get_tree().create_timer(warning_duration).timeout
+
+	if not is_instance_valid(warning_label):
+		return
+
+	if current_message_id == warning_message_id:
+		warning_label.text = normal_warning_text
 
 # ===================================
 # READY
@@ -301,7 +328,8 @@ func spawn_paradisa():
 
 func _ready():
 
-	print("BOWL SPAWNER")
+	if warning_label != null:
+		normal_warning_text = warning_label.text
 
 	randomize()
 

@@ -77,9 +77,10 @@ position = Vector2(911, 519)
 scale = Vector2(0.2308, 0.18245003)
 texture = ExtResource("2_08sdj")
 
-[node name="Bowl" type="Node2D" parent="." unique_id=1365031602]
+[node name="Bowl" type="Node2D" parent="." unique_id=1365031602 node_paths=PackedStringArray("warning_label")]
 position = Vector2(0, 405)
 script = ExtResource("12_ofjh6")
+warning_label = NodePath("../Panel/MarginContainer/VBoxContainer/Label2")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Bowl" unique_id=2082252086]
 
