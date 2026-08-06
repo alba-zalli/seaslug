@@ -21,75 +21,82 @@ unique_name_in_owner = true
 layout_mode = 1
 offset_right = 1280.0
 theme_override_fonts/normal_font = ExtResource("3_p2rg7")
-text = "[center]
-[font=\"res://fonts/ElmsSans-Black.ttf\"][font_size=40]Created By[/font_size][/font]
+theme_override_font_sizes/normal_font_size = 20
+text = "[center][font=\"res://fonts/ElmsSans-Black.ttf\"][font_size=48]Created By[/font_size][/font]
 Alba Zalli
 
-[font=\"res://fonts/ElmsSans-Black.ttf\"][font_size=40]Art[/font_size][/font]
-Alba Zalli
+[font=\"res://fonts/ElmsSans-Black.ttf\"][font_size=48]Art[/font_size][/font]
+Alba Zalli  
 Alison Wright
 
-[font=\"res://fonts/ElmsSans-Black.ttf\"][font_size=40]Original Soundtrack[/font_size][/font]
+[font=\"res://fonts/ElmsSans-Black.ttf\"][font_size=48]Original Soundtrack[/font_size][/font]
 Arlind Zalli
 
-[font=\"res://fonts/ElmsSans-Black.ttf\"][font_size=40]Debugging Help[/font_size][/font]
+[font=\"res://fonts/ElmsSans-Black.ttf\"][font_size=48]Debugging Help[/font_size][/font]
 Nadia Singh
 
-[font=\"res://fonts/ElmsSans-Black.ttf\"][font_size=40]Playtesters[/font_size][/font]
+[font=\"res://fonts/ElmsSans-Black.ttf\"][font_size=48]Playtesters[/font_size][/font]
 Whoever is reading this!
 
-[font=\"res://fonts/ElmsSans-Black.ttf\"][font_size=40]Special Thanks[/font_size][/font]
+[font=\"res://fonts/ElmsSans-Black.ttf\"][font_size=48]Special Thanks[/font_size][/font]
 Josh Sabourin
-Nadia Singh
-Arlind Zalli
+Nadia Singh  
+Arlind Zalli  
 Alison Wright
 
-[font=\"res://fonts/ElmsSans-Black.ttf\"][font_size=40]Shaders[/font_size][/font]
-[url=https://godotshaders.com/shader/2d-liquid-wave/]godotshaders.com : 2d-liquid-wave[/url]
-[url=https://godotshaders.com/shader/2d-starfield-in-the-sky-with-scrolling-effect-ver-1-0/]godotshaders.com : 2d-starfield-in-the-sky-with-scrolling-effect-ver-1-0[/url]
-[url=https://godotshaders.com/shader/magnifying-glass-with-lens-distortion-effect/]godotshaders.com : magnifying-glass-with-lens-distortion-effect[/url]
+[font=\"res://fonts/ElmsSans-Black.ttf\"][font_size=48]Shaders[/font_size][/font]
+[url=https://godotshaders.com/shader/2d-liquid-wave/]godotshaders.com : 2d-liquid-wave[/url]  
+[url=https://godotshaders.com/shader/2d-starfield-in-the-sky-with-scrolling-effect-ver-1-0/]godotshaders.com : 2d-starfield-in-the-sky-with-scrolling-effect-ver-1-0[/url]  
+[url=https://godotshaders.com/shader/magnifying-glass-with-lens-distortion-effect/]godotshaders.com : magnifying-glass-with-lens-distortion-effect[/url]  
 
-[font=\"res://fonts/ElmsSans-Black.ttf\"][font_size=40]Slug Research Sources[/font_size][/font]
-[url=https://www.worldwildlife.org/resources/facts/what-is-a-leaf-sheep/]worldwildlife.org : What is a Leaf Sheep?[/url]
-[url=https://www.seaslugforum.net/showall/chroquad]seaslugforum.net : Chromodoris quadricolor[/url]
-[url=https://www.reeflex.net/tiere/13242_Hypselodoris_paradisa.htm]reeflex.net : Hypselodoris paradisa[/url]
-[url=https://www.inaturalist.org/taxa/785725-Hypselodoris-paradisa]inaturalist.org : Hypselodoris paradisa[/url]
-[url=https://www.inaturalist.org/taxa/469414-Goniobranchus-reticulatus]inaturalist.org : Goniobranchus reticulatus[/url]
-[url=https://en.seaslug.world/species/phyllidia_marindica]seaslug.world : Phyllidia marindica[/url]
-[url=https://www.lembehresort.com/critter-log/critter/flabellina-rubrolineata]lembehresort.com : Flabellina rubrolineata[/url]
-[url=http://www.seaslugforum.net/showall/phylmean]seaslugforum.net : Phyllidia meaniana[/url]
-[url=https://www.seaslugforum.net/find/hypsmard]seaslugforum.net : Hypselodoris maridadilus[/url]
-[url=https://vichighmarine.ca/hedgpeths-sea-hare/]vichighmarine.ca : Hedgpeths Sea Hare[/url]
-[url=https://msi.ucsb.edu/news/colorful-sea-slug]msi.ucsb.edu : Colorful Sea Slug[/url]
 
-[font=\"res://fonts/ElmsSans-Black.ttf\"][font_size=40]Tools[/font_size][/font]
+[font=\"res://fonts/ElmsSans-Black.ttf\"][font_size=48]Slug Research Sources[/font_size][/font]
+[url=https://www.worldwildlife.org/resources/facts/what-is-a-leaf-sheep/]worldwildlife.org : What is a Leaf Sheep?[/url]  
+[url=https://www.seaslugforum.net/showall/chroquad]seaslugforum.net : Chromodoris quadricolor[/url]  
+[url=https://www.reeflex.net/tiere/13242_Hypselodoris_paradisa.htm]reeflex.net : Hypselodoris paradisa[/url]  
+[url=https://www.inaturalist.org/taxa/785725-Hypselodoris-paradisa]inaturalist.org : Hypselodoris paradisa[/url]  
+[url=https://www.inaturalist.org/taxa/469414-Goniobranchus-reticulatus]inaturalist.org : Goniobranchus reticulatus[/url]  
+[url=https://en.seaslug.world/species/phyllidia_marindica]seaslug.world : Phyllidia marindica[/url]  
+[url=https://www.lembehresort.com/critter-log/critter/flabellina-rubrolineata]lembehresort.com : Flabellina rubrolineata[/url]  
+[url=http://www.seaslugforum.net/showall/phylmean]seaslugforum.net : Phyllidia meaniana[/url]  
+[url=https://www.seaslugforum.net/find/hypsmard]seaslugforum.net : Hypselodoris maridadilus[/url]  
+[url=https://vichighmarine.ca/hedgpeths-sea-hare/]vichighmarine.ca : Hedgpeth's Sea Hare[/url]  
+[url=https://msi.ucsb.edu/news/colorful-sea-slug]msi.ucsb.edu : Colorful Sea Slug[/url]  
 
-[img=80]res:///addons/maaacks_credits_scene/examples/assets/godot_engine_logo/logo_vertical_color_dark.png[/img]
-Author: [url=https://godotengine.org/contact]Juan Linietsky, Ariel Manzur, and contributors[/url]
-Source: [url=https://godotengine.org/]godotengine.org[/url]
+
+[font=\"res://fonts/ElmsSans-Black.ttf\"][font_size=48]Tools[/font_size][/font]
+
+[img=100x100]res:///addons/maaacks_credits_scene/examples/assets/godot_engine_logo/logo_vertical_color_dark.png[/img]  
+Author: [url=https://godotengine.org/contact]Juan Linietsky, Ariel Manzur, and contributors[/url]  
+Source: [url=https://godotengine.org/]godotengine.org[/url]  
 License: [url=https://github.com/godotengine/godot/blob/master/LICENSE.txt]MIT License[/url]
 
-[font=\"res://fonts/ElmsSans-Black.ttf\"][font_size=40]Godot Credits Scene[/font_size][/font]
-[img=80]res:///addons/maaacks_credits_scene/examples/assets/plugin_logo/logo.png[/img]
-Author: [url=https://github.com/Maaack/Godot-Credits-Scene/graphs/contributors]Marek Belski and contributors[/url]
-Source: [url=https://github.com/Maaack/Godot-Credits-Scene]github: Godot-Credits-Scene[/url]
+
+Godot Credits Scene
+[img=100x100]res:///addons/maaacks_credits_scene/examples/assets/plugin_logo/logo.png[/img]  
+Author: [url=https://github.com/Maaack/Godot-Credits-Scene/graphs/contributors]Marek Belski and contributors[/url]  
+Source: [url=https://github.com/Maaack/Godot-Credits-Scene]github: Godot-Credits-Scene[/url]  
 License: [url=LICENSE.txt]MIT License[/url]
 
-[img=80]res:///addons/maaacks_credits_scene/examples/assets/git_logo/Git-Logo-2Color.png[/img]
-Author: [url=https://github.com/torvalds]Linus Torvalds[/url]
-Source: [url=https://git-scm.com/downloads]git-scm.com[/url]
+
+[img=100x100]res:///addons/maaacks_credits_scene/examples/assets/git_logo/Git-Logo-2Color.png[/img]  
+Author: [url=https://github.com/torvalds]Linus Torvalds[/url]  
+Source: [url=https://git-scm.com/downloads]git-scm.com[/url]  
 License: [url=https://opensource.org/licenses/GPL-2.0]GNU General Public License version 2[/url]
 
-[font_size=36]Thank you <3[/font_size]
-I have been working on this game constantly for the last two months.
-Honestly, it has been really hard, and it has taken so long to make this.
-It has also been my first game ever. I hope that you enjoy it :3 <3
-I am learning to be more proud of my work.
-Thank you for caring.
-[img=100]res://images/trans.svg[/img]
 
+
+[font_size=32]Thank you <3[/font_size]
+I've been working on this game constantly for the last two months.
+Honestly, it's been really hard, it's taken so long to make this!
+It's also been my first game ever! I hope that you enjoy it :3 <3 I am learning to be more proud of my work. 
+Thank you for caring.
+
+[img=100x100]res:///images/transgender-flag.png[/img]  
 [/center]"
 fit_content = false
+scroll_following = false
+scroll_following_visible_characters = false
 h1_font = ExtResource("4_akxw1")
 h2_font = ExtResource("4_akxw1")
 bold_headings = false

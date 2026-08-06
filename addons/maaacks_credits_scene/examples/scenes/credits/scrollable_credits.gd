@@ -26,7 +26,6 @@ func _reset_credits_position() -> void:
 
 	_line_number = 0.0
 	credits_label.scroll_to_line(0)
-	credits_label.grab_focus()
 
 
 func _process(delta: float) -> void:
