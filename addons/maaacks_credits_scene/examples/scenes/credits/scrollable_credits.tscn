@@ -10,8 +10,10 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -1920.0
-offset_bottom = -1080.0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_hny8b")
@@ -19,12 +21,15 @@ script = ExtResource("1_hny8b")
 [node name="CreditsLabel" parent="." unique_id=492156833 instance=ExtResource("2_1ldew")]
 unique_name_in_owner = true
 layout_mode = 1
-offset_right = 1280.0
-theme_override_fonts/normal_font = ExtResource("3_p2rg7")
-theme_override_font_sizes/normal_font_size = 20
-text = "[center][font=\"res://fonts/ElmsSans-Black.ttf\"][font_size=48]Created By[/font_size][/font]
-Alba Zalli
-
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 2
+grow_vertical = 2
 [font=\"res://fonts/ElmsSans-Black.ttf\"][font_size=48]Art[/font_size][/font]
 Alba Zalli  
 Alison Wright
@@ -66,20 +71,20 @@ Alison Wright
 
 [font=\"res://fonts/ElmsSans-Black.ttf\"][font_size=48]Tools[/font_size][/font]
 
-[img=100x100]res:///addons/maaacks_credits_scene/examples/assets/godot_engine_logo/logo_vertical_color_dark.png[/img]  
+[img=100x100]res://addons/maaacks_credits_scene/examples/assets/godot_engine_logo/logo_vertical_color_dark.png[/img]  
 Author: [url=https://godotengine.org/contact]Juan Linietsky, Ariel Manzur, and contributors[/url]  
 Source: [url=https://godotengine.org/]godotengine.org[/url]  
 License: [url=https://github.com/godotengine/godot/blob/master/LICENSE.txt]MIT License[/url]
 
 
 Godot Credits Scene
-[img=100x100]res:///addons/maaacks_credits_scene/examples/assets/plugin_logo/logo.png[/img]  
+[img=100x100]res://addons/maaacks_credits_scene/examples/assets/plugin_logo/logo.png[/img]  
 Author: [url=https://github.com/Maaack/Godot-Credits-Scene/graphs/contributors]Marek Belski and contributors[/url]  
 Source: [url=https://github.com/Maaack/Godot-Credits-Scene]github: Godot-Credits-Scene[/url]  
 License: [url=LICENSE.txt]MIT License[/url]
 
 
-[img=100x100]res:///addons/maaacks_credits_scene/examples/assets/git_logo/Git-Logo-2Color.png[/img]  
+[img=100x100]res://addons/maaacks_credits_scene/examples/assets/git_logo/Git-Logo-2Color.png[/img]  
 Author: [url=https://github.com/torvalds]Linus Torvalds[/url]  
 Source: [url=https://git-scm.com/downloads]git-scm.com[/url]  
 License: [url=https://opensource.org/licenses/GPL-2.0]GNU General Public License version 2[/url]
@@ -92,7 +97,7 @@ Honestly, it's been really hard, it's taken so long to make this!
 It's also been my first game ever! I hope that you enjoy it :3 <3 I am learning to be more proud of my work. 
 Thank you for caring.
 
-[img=100x100]res:///images/transgender-flag.png[/img]  
+[img=100x100]res://images/transgender-flag.png[/img]  
 [/center]"
 fit_content = false
 scroll_following = false
