@@ -72,10 +72,11 @@ offset_top = 386.0
 offset_right = 1772.0
 offset_bottom = 646.0
 theme_override_fonts/font = ExtResource("4_ecfth")
-theme_override_font_sizes/font_size = 150
+theme_override_font_sizes/font_size = 70
 text = "Loading..."
 
 [node name="ProgressBar" type="ProgressBar" parent="." unique_id=1412094639]
+visible = false
 layout_mode = 0
 offset_left = 1009.0
 offset_top = 648.0

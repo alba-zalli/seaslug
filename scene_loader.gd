@@ -1,24 +1,47 @@
 extends Node
 
-const LOADING_SCREEN: PackedScene = preload(
+const LOADING_SCREEN_PATH: String = (
 	"res://bgscenes/loading.tscn"
 )
 
+var destination_scene: String = ""
+var is_loading: bool = false
+
 
 func load_scene(scene_path: String) -> void:
-	if scene_path.is_empty():
-		push_error("Scene path is empty.")
+	if is_loading:
+		print("A scene is already loading.")
 		return
 
-	var loading_screen: Node = LOADING_SCREEN.instantiate()
+	if scene_path.is_empty():
+		push_error("SceneLoader received an empty path.")
+		return
 
-	loading_screen.destination_scene = scene_path
+	if not ResourceLoader.exists(scene_path):
+		push_error(
+			"Destination scene does not exist: "
+			+ scene_path
+		)
+		return
 
-	get_tree().root.add_child(loading_screen)
+	destination_scene = scene_path
+	is_loading = true
 
-	var current_scene: Node = get_tree().current_scene
+	print("Selected destination: ", destination_scene)
 
-	if current_scene != null:
-		current_scene.queue_free()
+	var error: Error = get_tree().change_scene_to_file(
+		LOADING_SCREEN_PATH
+	)
 
-	get_tree().current_scene = loading_screen
+	if error != OK:
+		push_error(
+			"Could not open loading screen. Error: "
+			+ str(error)
+		)
+
+		reset()
+
+
+func reset() -> void:
+	destination_scene = ""
+	is_loading = false

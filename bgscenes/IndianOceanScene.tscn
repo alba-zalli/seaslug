@@ -208,7 +208,6 @@ custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_constants/icon_max_width = 24
-toggle_mode = true
 text = "Clear bowl"
 icon = ExtResource("16_2mabd")
 

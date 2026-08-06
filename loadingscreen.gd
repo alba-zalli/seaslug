@@ -1,91 +1,111 @@
 extends Control
 
-@export_file("*.tscn")
+@export var loading_duration: float = 1.5
+
+@onready var progress_bar: ProgressBar = (
+	get_node_or_null("ProgressBar") as ProgressBar
+)
+
+@onready var loading_label: Label = (
+	get_node_or_null("Label") as Label
+)
+
 var destination_scene: String = ""
-
-@export var minimum_display_time: float = 0.5
-
-@onready var progress_bar: ProgressBar = %ProgressBar
-@onready var loading_label: Label = %LoadingLabel
-
 var elapsed_time: float = 0.0
-var loading_started: bool = false
+var transition_started: bool = false
 
 
 func _ready() -> void:
-	if destination_scene.is_empty():
-		push_error("No destination scene was assigned.")
+	destination_scene = SceneLoader.destination_scene
+
+	print("Loading screen received: ", destination_scene)
+
+	if progress_bar == null:
+		_fail("ProgressBar node was not found.")
 		return
 
-	var error: Error = ResourceLoader.load_threaded_request(
-		destination_scene,
-		"PackedScene"
-	)
+	if loading_label == null:
+		_fail("Label node was not found.")
+		return
 
-	if error != OK:
-		push_error(
-			"Could not start loading: " + destination_scene
+	if destination_scene.is_empty():
+		_fail("No world scene was selected.")
+		return
+
+	if not ResourceLoader.exists(destination_scene):
+		_fail(
+			"World scene does not exist: "
+			+ destination_scene
 		)
 		return
 
-	loading_started = true
+	progress_bar.min_value = 0.0
+	progress_bar.max_value = 100.0
+	progress_bar.value = 0.0
+
+	loading_label.text = "Loading world... 0%"
+
+	set_process(true)
 
 
 func _process(delta: float) -> void:
-	if not loading_started:
+	if transition_started:
 		return
 
 	elapsed_time += delta
 
-	var progress: Array = []
-
-	var status: ResourceLoader.ThreadLoadStatus = (
-		ResourceLoader.load_threaded_get_status(
-			destination_scene,
-			progress
-		)
+	var percentage: float = clampf(
+		(elapsed_time / loading_duration) * 100.0,
+		0.0,
+		100.0
 	)
 
-	if not progress.is_empty():
-		var progress_value: float = float(progress[0])
-		progress_bar.value = progress_value * 100.0
+	progress_bar.value = percentage
 
-		loading_label.text = (
-			"Loading... "
-			+ str(roundi(progress_value * 100.0))
-			+ "%"
-		)
-
-	match status:
-		ResourceLoader.THREAD_LOAD_IN_PROGRESS:
-			pass
-
-		ResourceLoader.THREAD_LOAD_LOADED:
-			if elapsed_time >= minimum_display_time:
-				_open_loaded_scene()
-
-		ResourceLoader.THREAD_LOAD_FAILED:
-			loading_started = false
-			loading_label.text = "Loading failed."
-
-		ResourceLoader.THREAD_LOAD_INVALID_RESOURCE:
-			loading_started = false
-			loading_label.text = "Invalid scene path."
-
-
-func _open_loaded_scene() -> void:
-	loading_started = false
-
-	var loaded_resource: Resource = (
-		ResourceLoader.load_threaded_get(
-			destination_scene
-		)
+	loading_label.text = (
+		"Loading world... "
+		+ str(roundi(percentage))
+		+ "%"
 	)
 
-	var packed_scene: PackedScene = loaded_resource as PackedScene
+	if elapsed_time >= loading_duration:
+		_open_destination_scene()
 
-	if packed_scene == null:
-		loading_label.text = "Could not open scene."
+
+func _open_destination_scene() -> void:
+	if transition_started:
 		return
 
-	get_tree().change_scene_to_packed(packed_scene)
+	transition_started = true
+	set_process(false)
+
+	progress_bar.value = 100.0
+	loading_label.text = "Opening world..."
+
+	print("Opening destination: ", destination_scene)
+
+	var scene_path: String = destination_scene
+
+	# Reset before leaving the loading scene.
+	SceneLoader.reset()
+
+	var error: Error = get_tree().change_scene_to_file(
+		scene_path
+	)
+
+	if error != OK:
+		transition_started = false
+		_fail(
+			"Could not open world. Error: "
+			+ str(error)
+		)
+
+
+func _fail(message: String) -> void:
+	set_process(false)
+
+	if loading_label != null:
+		loading_label.text = message
+
+	SceneLoader.reset()
+	push_error(message)
